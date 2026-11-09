@@ -3,479 +3,673 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>异议函两版比对 · 策略分析与法律验证</title>
+<title>异议函两版比对 · 策略取向与法律验证</title>
 <style>
+/* ================= 设计基准 =================
+   纸张暖白 + 墨色 + 朱砂印章红，无渐变无发光
+   8px 间距基准 · 宋体标题 · 线性 SVG 图标
+============================================ */
 :root{
-  --bg:#F7F7F8;
-  --surface:#fff;
-  --text:#171717;
-  --text-muted:#52525B;
-  --border:rgba(23,23,23,.12);
-  --border-strong:rgba(23,23,23,.20);
-  --brand:#0FDC78;--brand-soft:#E5FFF2;--brand-text:#004D26;
-  --danger:#E8463A;--danger-soft:rgba(232,70,58,.10);
-  --blue:#3B82F6;--blue-soft:rgba(59,130,246,.10);--blue-text:#1E40AF;
-  --amber:#F59E0B;--amber-soft:rgba(245,158,11,.10);--amber-text:#92400E;
-  --radius:8px;--radius-card:12px;--radius-full:999px;
-  --font-sans:"SF Pro Text","PingFang SC",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-  --font-mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --paper:#FAFAF7;
+  --card:#FFFFFF;
+  --ink:#1A1A18;
+  --ink-2:#4A4A45;
+  --ink-3:#8A8A82;
+  --line:rgba(26,26,24,.14);
+  --line-soft:rgba(26,26,24,.08);
+  --seal:#B03A2E;          /* 朱砂 · 唯一强调色 */
+  --seal-soft:rgba(176,58,46,.08);
+  --v1:#3D5A80;            /* 第一版 · 青灰蓝 */
+  --v1-soft:rgba(61,90,128,.08);
+  --v2:#2D6A4F;            /* 第二版 · 墨绿 */
+  --v2-soft:rgba(45,106,79,.08);
+  --common:#6B6B63;
+  --common-soft:rgba(107,107,99,.10);
+  --ok:#2D6A4F;
+  --warn:#9A6A1A;
+  --bad:#B03A2E;
+  --r:6px;--r-lg:10px;
+  --serif:"Songti SC","STSong","Noto Serif SC",Georgia,serif;
+  --sans:"SF Pro Text","PingFang SC",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
 }
 *{box-sizing:border-box}
+html{scroll-behavior:smooth}
 html,body{margin:0;padding:0}
-body{background:#fff;color:var(--text);font:400 14px/22px var(--font-sans);-webkit-font-smoothing:antialiased}
-.page{max-width:1080px;margin:0 auto;padding:48px 32px 72px}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font:400 14px/24px var(--sans);
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--seal-soft)}
+.page{max-width:1040px;margin:0 auto;padding:64px 32px 96px}
 
-/* 头部 */
-.hd{border-bottom:1px solid var(--border);padding-bottom:24px;margin-bottom:40px}
-.eyebrow{display:inline-block;padding:2px 10px;border:1px solid var(--border);border-radius:var(--radius-full);font-size:12px;line-height:18px;color:var(--text-muted);letter-spacing:.04em}
-h1{margin:12px 0 16px;font-size:26px;line-height:36px;font-weight:600;letter-spacing:.01em}
-.subtitle{color:var(--text-muted);font-size:13px;line-height:20px}
+/* 图标 */
+.ic{display:inline-block;width:15px;height:15px;vertical-align:-2px;flex:none}
+.ic svg{display:block;width:100%;height:100%}
+
+/* ================= 头部 ================= */
+.hd{padding-bottom:32px;border-bottom:2px solid var(--ink)}
+.hd-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font:500 11px/18px var(--mono);letter-spacing:.14em;
+  color:var(--seal);text-transform:uppercase;
+}
+.hd-eyebrow::before{content:"";width:24px;height:2px;background:var(--seal)}
+h1{
+  margin:16px 0 12px;
+  font:700 32px/44px var(--serif);
+  letter-spacing:.02em;
+}
+.hd-sub{margin:0;font-size:13px;line-height:22px;color:var(--ink-2);max-width:640px}
+.hd-meta{
+  display:flex;flex-wrap:wrap;gap:8px 32px;margin-top:20px;
+  font:400 12px/20px var(--sans);color:var(--ink-3);
+}
+.hd-meta b{color:var(--ink-2);font-weight:500}
+
+/* 锚点导航 */
+.nav{
+  position:sticky;top:0;z-index:20;
+  display:flex;gap:4px;margin:0 -32px;padding:10px 32px;
+  background:rgba(250,250,247,.88);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line-soft);
+}
+.nav a{
+  padding:6px 14px;border-radius:var(--r);
+  color:var(--ink-2);text-decoration:none;
+  font:500 13px/20px var(--sans);
+  transition:color .15s ease,background .15s ease;
+}
+.nav a:hover{color:var(--seal);background:var(--seal-soft)}
+.nav a .no{font:500 11px/20px var(--mono);color:var(--ink-3);margin-right:6px}
+.nav a:hover .no{color:var(--seal)}
+
+/* ================= 章节 ================= */
+.sec{margin-top:72px}
+.sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:8px}
+.sec-no{font:600 13px/22px var(--mono);color:var(--seal);letter-spacing:.06em}
+.sec-head h2{margin:0;font:700 22px/32px var(--serif);letter-spacing:.01em}
+.sec-desc{margin:0 0 32px;font-size:13px;line-height:22px;color:var(--ink-3)}
 
 /* 版本标签 */
-.tag-v1,.tag-v2,.tag-both,.tag-law{display:inline-block;padding:2px 8px;border-radius:var(--radius-full);font-size:11px;line-height:16px;font-weight:600;letter-spacing:.02em}
-.tag-v1{background:var(--blue-soft);color:var(--blue-text)}
-.tag-v2{background:var(--brand-soft);color:var(--brand-text)}
-.tag-both{background:#F3E8FF;color:#6B21A8}
-.tag-law{background:var(--amber-soft);color:var(--amber-text)}
+.vtag{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:3px 10px;border-radius:var(--r);
+  font:600 12px/18px var(--sans);letter-spacing:.02em;
+}
+.vtag::before{content:"";width:8px;height:8px;border-radius:2px}
+.vtag.v1{background:var(--v1-soft);color:var(--v1)}
+.vtag.v1::before{background:var(--v1)}
+.vtag.v2{background:var(--v2-soft);color:var(--v2)}
+.vtag.v2::before{background:var(--v2)}
+.vtag.both{background:var(--common-soft);color:var(--common)}
+.vtag.both::before{background:var(--common)}
 
-/* 通用 */
-.sec{margin-top:56px}
-.sec-h{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:0 0 4px}
-.sec-h h2{margin:0;font-size:18px;line-height:28px;font-weight:600}
-.sec-sub{margin:0 0 20px;font-size:12px;line-height:18px;color:var(--text-muted)}
+/* ================= 策略总览表 ================= */
+.tbl-wrap{border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:var(--card)}
+table.tbl{width:100%;border-collapse:collapse}
+.tbl th,.tbl td{padding:16px 20px;text-align:left;vertical-align:top;font-size:13px;line-height:22px}
+.tbl th{
+  background:var(--card);
+  font:600 12px/18px var(--sans);color:var(--ink-3);
+  letter-spacing:.04em;
+  border-bottom:2px solid var(--ink);
+}
+.tbl td{border-bottom:1px solid var(--line-soft)}
+.tbl tr:last-child td{border-bottom:0}
+.tbl tbody tr{transition:background .15s ease}
+.tbl tbody tr:hover{background:rgba(26,26,24,.025)}
+.tbl td.dim{font-weight:600;white-space:nowrap}
+.tbl td.law{font:400 12px/20px var(--sans);color:var(--ink-3)}
+.mark{display:inline-flex;align-items:flex-start;gap:7px}
+.mark .ic{margin-top:3px}
+.mark.ok .ic{color:var(--ok)}
+.mark.warn .ic{color:var(--warn)}
+.mark.bad .ic{color:var(--bad)}
+.mark.txt-none{color:var(--ink-2)}
+.kbd-chip{
+  display:inline-block;padding:0 6px;border-radius:4px;
+  background:var(--seal-soft);color:var(--seal);
+  font:500 12px/20px var(--sans);
+}
 
-/* 策略对比表 */
-.strategy-table{width:100%;border-collapse:collapse;border:1px solid var(--border);border-radius:var(--radius-card);overflow:hidden;background:var(--surface)}
-.strategy-table th,.strategy-table td{padding:14px 18px;text-align:left;vertical-align:top;border-bottom:1px solid var(--border);font-size:13px;line-height:20px}
-.strategy-table th:last-child,.strategy-table td:last-child{border-right:0}
-.strategy-table tr:last-child th,.strategy-table tr:last-child td{border-bottom:0}
-.strategy-table th{background:var(--bg);font-weight:600;color:var(--text-muted);font-size:12px;line-height:18px}
-.strategy-table td b{font-weight:600}
-.strategy-table td .good{color:var(--brand-text);background:var(--brand-soft);border-radius:4px;padding:0 4px;font-weight:500}
-.strategy-table td .bad{color:#991B1B;background:#FEE2E2;border-radius:4px;padding:0 4px;font-weight:500}
-.strategy-table td .miss{color:var(--amber-text);background:var(--amber-soft);border-radius:4px;padding:0 4px;font-weight:500}
-.strategy-table tr:nth-child(even) td{background:#FAFAFA}
+/* ================= 逐章对照 ================= */
+.cmp{border:1px solid var(--line);border-radius:var(--r-lg);background:var(--card);margin-bottom:24px;overflow:hidden}
+.cmp-head{
+  display:flex;align-items:center;gap:12px;
+  padding:14px 24px;border-bottom:1px solid var(--line-soft);
+}
+.cmp-head .t{font:600 15px/24px var(--serif);flex:1}
+.cmp-flag{
+  display:inline-flex;align-items:center;gap:6px;
+  font:600 11px/18px var(--mono);color:var(--seal);letter-spacing:.04em;
+}
+.cmp-flag .ic{color:var(--seal)}
+.cmp-cols{display:grid;grid-template-columns:1fr 1fr}
+.col{padding:24px;position:relative}
+.col:first-child{border-right:1px solid var(--line-soft)}
+.col::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:3px;
+}
+.col.cv1::before{background:var(--v1)}
+.col.cv2::before{background:var(--v2)}
+.col-label{display:flex;align-items:center;gap:8px;margin-bottom:14px}
+.col-label .src{font:400 12px/18px var(--sans);color:var(--ink-3)}
+.col p{margin:0 0 12px;font-size:13.5px;line-height:23px;text-align:justify}
+.col p:last-child{margin-bottom:0}
+.col ol,.col ul{margin:0 0 12px;padding-left:20px;font-size:13.5px;line-height:23px}
+.col li{margin-bottom:6px}
+.hl{border-radius:3px;padding:0 3px}
+.hl.v1{background:var(--v1-soft);color:var(--v1)}
+.hl.v2{background:var(--v2-soft);color:var(--v2)}
+.hl.both{background:var(--common-soft);color:var(--common)}
+.note-box{
+  margin-top:14px;padding:12px 14px;border-radius:var(--r);
+  font-size:12.5px;line-height:21px;
+}
+.note-box.risk{background:var(--seal-soft);color:#7C2A21;border-left:3px solid var(--seal)}
+.note-box.v1x{background:var(--v1-soft);color:#2C435F;border-left:3px solid var(--v1)}
+.note-box.v2x{background:var(--v2-soft);color:#1F4A37;border-left:3px solid var(--v2)}
+.cmp-read{
+  padding:14px 24px;border-top:1px dashed var(--line);
+  background:rgba(26,26,24,.02);
+  font-size:12.5px;line-height:21px;color:var(--ink-2);
+}
+.cmp-read b{color:var(--ink);font-weight:600}
+.cmp-read .rt{
+  display:inline-flex;align-items:center;gap:6px;margin-right:10px;
+  font:600 11px/18px var(--mono);color:var(--ink-3);letter-spacing:.06em;
+}
 
-/* 逐章对照 */
-.section-block{border:1px solid var(--border);border-radius:var(--radius-card);margin-bottom:24px;overflow:hidden}
-.section-header{background:var(--bg);padding:14px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px}
-.section-header .title{font-weight:600;font-size:15px;line-height:24px;flex:1}
-.section-header .diff-count{color:var(--text-muted);font-size:12px;line-height:18px}
-.compare-row{display:grid;grid-template-columns:1fr 1fr;gap:0}
-.compare-cell{padding:20px;border-right:1px solid var(--border)}
-.compare-cell:last-child{border-right:0}
-.cell-label{font-size:11px;line-height:16px;font-weight:600;letter-spacing:.04em;margin-bottom:10px;text-transform:uppercase}
-.compare-cell p{margin:0 0 10px;font-size:13px;line-height:22px;text-align:justify}
-.compare-cell ul,.compare-cell ol{margin:0 0 10px;padding-left:20px;font-size:13px;line-height:22px}
-.compare-cell li{margin:0 0 6px}
-.compare-cell .hl-v1{background:var(--blue-soft);color:var(--blue-text);border-radius:4px;padding:0 3px}
-.compare-cell .hl-v2{background:var(--brand-soft);color:var(--brand-text);border-radius:4px;padding:0 3px}
-.compare-cell .hl-both{background:#F3E8FF;color:#6B21A8;border-radius:4px;padding:0 3px}
-.compare-cell .del{text-decoration:line-through;color:#9CA3AF}
+/* ================= 法律卡片 ================= */
+.law-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.law{
+  border:1px solid var(--line);border-radius:var(--r-lg);
+  background:var(--card);padding:24px;
+  transition:transform .18s ease,box-shadow .18s ease;
+}
+.law:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(26,26,24,.07)}
+.law-src{
+  display:flex;align-items:center;gap:8px;
+  font:500 11px/18px var(--mono);color:var(--ink-3);letter-spacing:.03em;
+  margin-bottom:12px;
+}
+.law-src .ic{color:var(--seal)}
+.law-title{margin:0 0 12px;font:700 15px/24px var(--serif)}
+.law-title .star{color:var(--seal)}
+.law-body{
+  margin:0 0 14px;padding-left:14px;
+  border-left:2px solid var(--line);
+  font-size:12.5px;line-height:21px;color:var(--ink-2);
+}
+.law-impact{
+  padding-top:12px;border-top:1px dashed var(--line);
+  font-size:12.5px;line-height:21px;color:var(--ink-2);
+}
+.law-impact b{color:var(--ink)}
+.em-seal{background:var(--seal-soft);color:var(--seal);border-radius:3px;padding:0 4px}
+.em-warn{background:rgba(154,106,26,.10);color:var(--warn);border-radius:3px;padding:0 4px}
 
-/* 单栏段 */
-.single-row{padding:20px;border-top:1px solid var(--border);background:#FAFAFA}
-.single-row .compare-cell{border-right:0;padding:0}
+/* ================= 结论 ================= */
+.verdict{
+  position:relative;
+  border:1px solid var(--line);border-radius:var(--r-lg);
+  background:var(--card);padding:32px 32px 32px 40px;overflow:hidden;
+}
+.verdict::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--seal);
+}
+.verdict h3{margin:0 0 6px;font:700 19px/30px var(--serif)}
+.verdict .lead{margin:0 0 24px;font-size:13.5px;line-height:23px;color:var(--ink-2);max-width:720px}
+.verdict .lead b{color:var(--ink)}
+.v-cols{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:24px}
+.v-col h4{
+  display:flex;align-items:center;gap:8px;
+  margin:0 0 12px;font:600 13.5px/22px var(--sans);
+}
+.v-col h4 .ic{flex:none}
+.v-col.must h4{color:var(--seal)}
+.v-col.keep h4{color:var(--v2)}
+.v-col ul{margin:0;padding-left:18px;font-size:13px;line-height:22px}
+.v-col li{margin-bottom:8px}
+.v-col li b{font-weight:600}
+.merge{
+  border-top:1px dashed var(--line);padding-top:20px;
+}
+.merge h4{margin:0 0 12px;font:600 13.5px/22px var(--sans)}
+.merge ol{margin:0;padding-left:0;list-style:none;counter-reset:m}
+.merge li{
+  counter-increment:m;position:relative;
+  padding:8px 0 8px 40px;
+  font-size:13px;line-height:22px;
+  border-bottom:1px solid var(--line-soft);
+}
+.merge li:last-child{border-bottom:0}
+.merge li::before{
+  content:counter(m,decimal-leading-zero);
+  position:absolute;left:0;top:9px;
+  font:600 12px/20px var(--mono);color:var(--seal);
+}
+.merge li b{font-weight:600}
 
-/* 法律卡片 */
-.law-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px}
-.law-card{border:1px solid var(--border);border-radius:var(--radius-card);padding:20px;background:var(--surface)}
-.law-card .law-source{font-size:11px;line-height:16px;color:var(--text-muted);margin-bottom:8px}
-.law-card .law-title{font-weight:600;font-size:14px;line-height:22px;margin-bottom:8px}
-.law-card .law-content{font-size:12px;line-height:20px;color:var(--text);margin-bottom:10px}
-.law-card .law-impact{font-size:12px;line-height:20px;padding-top:10px;border-top:1px dashed var(--border);color:var(--text-muted)}
-.law-card .law-impact b{color:var(--text)}
+/* ================= 页脚 ================= */
+.ft{
+  margin-top:72px;padding-top:24px;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+  font-size:12px;line-height:20px;color:var(--ink-3);
+}
+.ft a{color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--line)}
+.ft a:hover{color:var(--seal);border-color:var(--seal)}
 
-/* 结论 */
-.verdict{border:1px solid var(--border);border-radius:var(--radius-card);padding:28px;background:linear-gradient(135deg,#E5FFF2 0%,#F3E8FF 100%)}
-.verdict h3{margin:0 0 12px;font-size:16px;line-height:24px;font-weight:600}
-.verdict .winner{font-size:14px;line-height:22px;margin-bottom:16px}
-.verdict .winner b{color:var(--brand-text);background:var(--brand-soft);padding:2px 8px;border-radius:4px}
-.verdict .points{font-size:13px;line-height:22px}
-.verdict .points b{font-weight:600}
-.verdict .points ul{margin:8px 0 0;padding-left:20px}
-.verdict .points li{margin:0 0 6px}
+/* ================= 动效 ================= */
+.fade{opacity:1;transform:none}
+.fade.armed{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
+.fade.armed.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .fade.armed{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+  .law:hover{transform:none}
+}
 
-/* 对比图例 */
-.legend{display:flex;flex-wrap:wrap;gap:12px 24px;margin:0 0 16px;font-size:12px;line-height:18px;color:var(--text-muted)}
-.legend span{display:inline-flex;align-items:center;gap:6px}
-.legend .dot{display:inline-block;width:10px;height:10px;border-radius:3px}
-
-.ft{margin-top:48px;padding-top:24px;border-top:1px solid var(--border);font-size:12px;line-height:18px;color:var(--text-muted);text-align:center}
-
-@media (max-width:800px){
-  .page{padding:24px 16px 48px}
-  h1{font-size:22px;line-height:32px}
-  .compare-row{grid-template-columns:1fr}
-  .compare-cell{border-right:0;border-bottom:1px solid var(--border)}
-  .compare-cell:last-child{border-bottom:0}
-  .strategy-table{font-size:12px}
-  .strategy-table th,.strategy-table td{padding:10px 12px}
+/* ================= 响应式 ================= */
+@media (max-width:820px){
+  .page{padding:40px 20px 64px}
+  h1{font-size:25px;line-height:36px}
+  .nav{margin:0 -20px;padding:8px 20px;overflow-x:auto}
+  .cmp-cols{grid-template-columns:1fr}
+  .col:first-child{border-right:0;border-bottom:1px solid var(--line-soft)}
+  .law-grid{grid-template-columns:1fr}
+  .v-cols{grid-template-columns:1fr}
+  .tbl th,.tbl td{padding:12px 14px;font-size:12.5px}
 }
 @media print{
-  body{font-size:11pt}
-  .page{max-width:none;padding:0}
-  .sec{page-break-inside:avoid}
-  .section-block{page-break-inside:avoid}
+  .nav{display:none}
+  .fade{opacity:1;transform:none}
+  .cmp,.law,.verdict{page-break-inside:avoid}
+  body{background:#fff}
 }
 </style>
 </head>
 <body>
 <main class="page">
 
+  <!-- ================= 头部 ================= -->
   <header class="hd">
-    <span class="eyebrow">两版异议函 · 深度比对</span>
-    <h1>异议函两版比对 · 策略取向与法律验证</h1>
-    <p class="subtitle">比对版本：<span class="tag-v1">第一版</span> 用户初始稿（六章节、中性询问策略） vs <span class="tag-v2">第二版</span> 我方修正稿（五章节、强硬维权策略）<br>法律条文引自人社部、北京市政府、中国法院网 2026 年官方公开口径 · 比对日期 2026-11-09</p>
+    <span class="hd-eyebrow">Document Comparison</span>
+    <h1>异议函两版比对<br>策略取向与法律验证</h1>
+    <p class="hd-sub">第一版为用户初始稿，六章节、中性询问策略；第二版为修正稿，五章节、强硬维权策略。法律条文依据人社部、北京市政府、中国法院网 2026 年公开口径核验。</p>
+    <div class="hd-meta">
+      <span>比对日期 <b>2026-11-09</b></span>
+      <span>对照章节 <b>7 组</b></span>
+      <span>法律依据 <b>6 部</b></span>
+      <span>策略维度 <b>10 项</b></span>
+    </div>
   </header>
 
-  <!-- 一、策略总览对比表 ---------------------------------------------------- -->
-  <section class="sec">
-    <div class="sec-h"><h2>一、策略总览对比</h2><span>按维权策略维度对比两版核心取向</span></div>
-    <p class="sec-sub">下表为两版在关键策略维度的取向对比，<span class="good">绿</span>为优势、<span class="miss">黄</span>为缺失、<span class="bad">红</span>为法律风险。</p>
+  <nav class="nav">
+    <a href="#s1"><span class="no">01</span>策略总览</a>
+    <a href="#s2"><span class="no">02</span>逐章对照</a>
+    <a href="#s3"><span class="no">03</span>法律依据</a>
+    <a href="#s4"><span class="no">04</span>结论</a>
+  </nav>
 
-    <table class="strategy-table">
-      <thead>
-        <tr>
-          <th>维度</th>
-          <th><span class="tag-v1">第一版</span>（用户初始稿）</th>
-          <th><span class="tag-v2">第二版</span>（我方修正稿）</th>
-          <th>法律依据</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><b>总体策略</b></td>
-          <td>中性询问 · 先摸底再对抗 · 留协商空间</td>
-          <td>强硬维权 · 直接否决单方安排 · 不留余地</td>
-          <td>两种均合法，取决于用工性质</td>
-        </tr>
-        <tr>
-          <td><b>用工性质追问</b></td>
-          <td><span class="good">✅ 主动追问</span>：劳务派遣？外包？要求书面说明</td>
-          <td><span class="bad">❌ 完全缺失</span>：未先确认用工性质</td>
-          <td class="tag-law">★ 核心前提</td>
-        </tr>
-        <tr>
-          <td><b>待岗合法性依据</b></td>
-          <td><span class="good">✅ 要求公司提供</span>：制度、公示、适用前提</td>
-          <td><span class="good">✅ 直接反驳</span>：援引合同 5.7 条前提不成立 + 三个论点</td>
-          <td>《劳动合同法》第 35 条 + 合同约定</td>
-        </tr>
-        <tr>
-          <td><b>工作地点变更</b></td>
-          <td><span class="good">✅ 主张协商一致</span>，不接受跨省市</td>
-          <td><span class="good">✅ 更强硬</span>：明确"无权单方强制"、"重大变更"、"实质性困难"</td>
-          <td>《劳动合同法》第 35 条 · 人社部 2026.06 重申</td>
-        </tr>
-        <tr>
-          <td><b>最低工资本身合法性</b></td>
-          <td><span class="good">✅ 要求公司说明依据</span>（事实+法律+合同+制度）</td>
-          <td><span class="bad">⚠️ 直接否定</span>："不予认可" + 威胁第三十八条解除——但劳务派遣场景下最低工资是<span style="color:var(--amber-text);background:var(--amber-soft);border-radius:4px;padding:0 4px">法定允许</span>的</td>
-          <td class="tag-law">★ 关键分歧</td>
-        </tr>
-        <tr>
-          <td><b>威胁第三十八条解除</b></td>
-          <td><span class="miss">未提及</span>（隐含）</td>
-          <td><span class="good">✅ 明确</span>：如第二个月发最低工资 → 保留第三十八条解除权</td>
-          <td>《劳动合同法》第 38、46 条 · 合法</td>
-        </tr>
-        <tr>
-          <td><b>诉求明确度</b></td>
-          <td><span class="good">✅ 四选一</span>：北京岗位 / 协商解除 + N / 工资差额 + 经济补偿 / 待岗生活费</td>
-          <td><span class="miss">三选一</span>：撤销待岗 / 原薪 + 匹配岗位 / 协商解除 + N（缺待岗生活费和工资差额选项）</td>
-          <td>——</td>
-        </tr>
-        <tr>
-          <td><b>协商解除方案</b></td>
-          <td><span class="good">✅ 细致</span>：N 基数、奖金、年假工资单独核算</td>
-          <td><span class="miss">简洁</span>：仅 N（含月工资 + 社保公积金），未明确奖金、年假</td>
-          <td>《劳动合同法》第 47 条</td>
-        </tr>
-        <tr>
-          <td><b>事实陈述完整度</b></td>
-          <td><span class="good">✅ 补充了</span>：已向家委/工会反映等事实</td>
-          <td><span class="miss">简洁</span>：未涉及额外沟通事实</td>
-          <td>——</td>
-        </tr>
-        <tr>
-          <td><b>报到声明严密度</b></td>
-          <td><span class="good">✅ 覆盖全场景</span>：不视为同意/不视为认可/协商一致前不接受</td>
-          <td><span class="good">✅ 明确</span>：弹性打卡申请 + 5 点声明（通勤弹性设计更友好）</td>
-          <td>——</td>
-        </tr>
-      </tbody>
-    </table>
+  <!-- ================= 01 策略总览 ================= -->
+  <section class="sec fade" id="s1">
+    <div class="sec-head"><span class="sec-no">01</span><h2>策略总览</h2></div>
+    <p class="sec-desc">十个维度对比两版核心取向。图标含义：对勾为优势，三角为缺失或隐患，叉为法律风险。</p>
+
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead>
+          <tr><th style="width:130px">维度</th><th><span class="vtag v1">第一版</span></th><th><span class="vtag v2">第二版</span></th><th style="width:170px">法律依据</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="dim">总体策略</td>
+            <td>中性询问，先摸底再对抗，留协商空间</td>
+            <td>强硬维权，直接否决单方安排，不留余地</td>
+            <td class="law">两种均合法，取决于用工性质</td>
+          </tr>
+          <tr>
+            <td class="dim">用工性质追问</td>
+            <td><span class="mark ok"><span class="ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3.5 3.5L13 4.5"/></svg></span><span>主动追问：劳务派遣还是外包，要求书面说明</span></span></td>
+            <td><span class="mark bad"><span class="ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 4l8 8M12 4l-8 8"/></svg></span><span>完全缺失，未先确认用工性质</span></span></td>
+            <td class="law"><span class="kbd-chip">核心前提</span></td>
+          </tr>
+          <tr>
+            <td class="dim">待岗合法性依据</td>
+            <td><span class="mark ok"><span class="ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3.5 3.5L13 4.5"/></svg></span><span>要求公司提供制度、公示、适用前提</span></span></td>
+            <td><span class="mark ok"><span class="ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3.5 3.5L13 4.5"/></svg></span><span>直接反驳：合同 5.7 条前提不成立，附三个论点</span></span></td>
+            <td class="law">劳动合同法第 35 条 + 合同约定</td>
+          </tr>
+          <tr>
+            <td class="dim">工作地点变更</td>
+            <td><span class="mark ok"><span class="ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3.5 3.5L13 4.5"/></svg></span><span>主张协商一致，不接受跨省市</span></span></td>
+            <td><span class="mark ok"><span class="ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3.5 3.5L13 4.5"/></svg></span><span>更强硬：「无权单方强制」「重大变更」「实质性困难」</span></span></td>
+            <td class="law">劳动合同法第 35 条 · 人社部 2026.06 重申</td>
+          </tr>
+          <tr>
+            <td class="dim">最低工资合法性</td>
+            <td><span class="mark ok"><span class="ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3.5 3.5L13 4.5"/></svg></span><span>要求公司说明依据：事实、法律、合同、制度</span></span></td>
+            <td><span class="mark warn"><span class="ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2.2L1.8 13.4h12.4L8 2.2z"/><path d="M8 6.6v3.2M8 11.6v.4"/></svg></span><span>直接否定并威胁第三十八条解除——但劳务派遣场景下最低工资是<span class="em-warn">法定允许</span>的</span></span></td>
+            <td class="law"><span class="kbd-chip">关键分歧</span></td>
+          </tr>
+          <tr>
+            <td class="dim">第三十八条威胁</td>
+            <td class="txt-none">未提及（隐含保留）</td>
+            <td><span class="mark ok"><span class="ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3.5 3.5L13 4.5"/></svg></span><span>明确：第二个月发最低工资即保留解除权</span></span></td>
+            <td class="law">劳动合同法第 38、46 条</td>
+          </tr>
+          <tr>
+            <td class="dim">诉求明确度</td>
+            <td><span class="mark ok"><span class="ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3.5 3.5L13 4.5"/></svg></span><span>四选一：北京岗位 / 待岗生活费 / 工资差额 + 补偿 / 协商解除</span></span></td>
+            <td><span class="mark warn"><span class="ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2.2L1.8 13.4h12.4L8 2.2z"/><path d="M8 6.6v3.2M8 11.6v.4"/></svg></span><span>三选一，缺待岗生活费与工资差额选项</span></span></td>
+            <td class="law">——</td>
+          </tr>
+          <tr>
+            <td class="dim">协商解除方案</td>
+            <td><span class="mark ok"><span class="ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3.5 3.5L13 4.5"/></svg></span><span>细致：N 基数、奖金、年假工资单独核算</span></span></td>
+            <td class="txt-none">简洁：仅 N，未明确奖金、年假</td>
+            <td class="law">劳动合同法第 47 条</td>
+          </tr>
+          <tr>
+            <td class="dim">事实陈述完整度</td>
+            <td><span class="mark ok"><span class="ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3.5 3.5L13 4.5"/></svg></span><span>补充已向家委、工会反映等事实</span></span></td>
+            <td class="txt-none">简洁，未涉及额外沟通事实</td>
+            <td class="law">——</td>
+          </tr>
+          <tr>
+            <td class="dim">报到声明严密度</td>
+            <td><span class="mark ok"><span class="ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3.5 3.5L13 4.5"/></svg></span><span>覆盖全场景：不视为同意、不视为认可、协商前不接受</span></span></td>
+            <td><span class="mark ok"><span class="ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3.5 3.5L13 4.5"/></svg></span><span>弹性打卡申请 + 五点声明，通勤设计更友好</span></span></td>
+            <td class="law">——</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </section>
 
-  <!-- 二、逐章文本对照 ---------------------------------------------------- -->
-  <section class="sec">
-    <div class="sec-h"><h2>二、逐章文本对照</h2><span>左侧第一版 · 右侧第二版 · 标亮为差异点</span></div>
-    <div class="legend">
-      <span><span class="dot" style="background:var(--blue)"></span>第一版独有内容</span>
-      <span><span class="dot" style="background:var(--brand)"></span>第二版独有/增强内容</span>
-      <span><span class="dot" style="background:#A855F7"></span>两版共同观点</span>
-    </div>
+  <!-- ================= 02 逐章对照 ================= -->
+  <section class="sec fade" id="s2">
+    <div class="sec-head"><span class="sec-no">02</span><h2>逐章文本对照</h2></div>
+    <p class="sec-desc">左栏第一版，右栏第二版，栏顶色条与底色高亮对应版本归属。</p>
 
-    <!-- 章节：开头 -->
-    <div class="section-block">
-      <div class="section-header"><span class="title">开头 · 致送对象与身份信息</span></div>
-      <div class="compare-row">
-        <div class="compare-cell">
-          <div class="cell-label"><span class="tag-v1">第一版</span></div>
-          <p>致：<span class="hl-v1">上海微创软件股份有限公司北京分公司及相关管理部门</span></p>
+    <!-- 开头 -->
+    <div class="cmp fade">
+      <div class="cmp-head"><span class="t">开头 · 致送对象与身份信息</span></div>
+      <div class="cmp-cols">
+        <div class="col cv1">
+          <div class="col-label"><span class="vtag v1">第一版</span></div>
+          <p>致：上海微创软件股份有限公司北京分公司<span class="hl v1">及相关管理部门</span></p>
           <p>本人________，系公司________岗位员工，劳动合同期限自________年____月____日起至________年____月____日止，劳动合同约定工作地点为________。</p>
-          <p class="hl-v1">（空白字段设计，通用性强）</p>
+          <div class="note-box v1x">空白字段设计，通用性强，适合细节未全部确认时使用</div>
         </div>
-        <div class="compare-cell">
-          <div class="cell-label"><span class="tag-v2">第二版</span></div>
+        <div class="col cv2">
+          <div class="col-label"><span class="vtag v2">第二版</span></div>
           <p>致：上海微创软件股份有限公司北京分公司</p>
-          <p>本人: (身份证号: ) ，系贵公司 UI 设计师岗位员工，劳动合同期限自 2024 年 3 月 8 日起至 2027 年 3 月 7 日止，工作地点为北京。</p>
-          <p class="hl-v2">（填入具体事实：岗位、合同期限、工作地点）</p>
+          <p>本人：（身份证号：），系贵公司 UI 设计师岗位员工，劳动合同期限自 2024 年 3 月 8 日起至 2027 年 3 月 7 日止，工作地点为北京。</p>
+          <div class="note-box v2x">填入具体事实：岗位、合同期限、工作地点</div>
         </div>
       </div>
-      <div class="single-row">
-        <div class="compare-cell" style="background:transparent">
-          <div class="cell-label" style="color:var(--text-muted)">差异分析</div>
-          <p>第一版加了"及相关管理部门"扩大抄送范围；第二版直接填入具体信息。第一版为通用模板，第二版为定制稿。<span class="good">第二版信息越具体，后续举证越方便</span>；第一版适合尚未确认全部细节时使用。</p>
-        </div>
-      </div>
+      <div class="cmp-read"><span class="rt">解读</span>第一版加「及相关管理部门」扩大抄送范围；第二版直接填入具体信息。<b>信息越具体，后续举证越方便</b>；第一版作为通用模板更稳妥。</div>
     </div>
 
-    <!-- 章节：总体声明 -->
-    <div class="section-block">
-      <div class="section-header"><span class="title">第一章 · 事实陈述与履约态度</span></div>
-      <div class="compare-row">
-        <div class="compare-cell">
-          <div class="cell-label"><span class="tag-v1">第一版</span> · "关于项目调整及本人履约态度"</div>
-          <p>本次岗位变化系客户项目业务及人员安排调整所致，并非本人主动申请离职，也非因本人存在不能胜任工作或违反劳动纪律等情形。</p>
+    <!-- 第一章 -->
+    <div class="cmp fade">
+      <div class="cmp-head"><span class="t">第一章 · 事实陈述与履约态度</span></div>
+      <div class="cmp-cols">
+        <div class="col cv1">
+          <div class="col-label"><span class="vtag v1">第一版</span><span class="src">关于项目调整及本人履约态度</span></div>
+          <p>本次岗位变化系客户项目业务及人员安排调整所致，<span class="hl v1">并非本人主动申请离职，也非因本人存在不能胜任工作或违反劳动纪律等情形</span>。</p>
           <p>本人没有主动辞职的意愿，愿意继续履行劳动合同，并将按照通知完成原项目工作交接。</p>
-          <p class="hl-both"><b>→ 两版共同主张</b>：非主动离职、愿意履约、将完成交接</p>
-          <p class="hl-v1"><b>第一版独有</b>：明确"并非不能胜任或违纪"，排除负面暗示</p>
+          <div class="note-box v1x"><b>独有</b>：明确「并非不能胜任或违纪」，排除负面暗示</div>
         </div>
-        <div class="compare-cell">
-          <div class="cell-label"><span class="tag-v2">第二版</span> · "本人不同意贵司单方作出的待岗安排"</div>
+        <div class="col cv2">
+          <div class="col-label"><span class="vtag v2">第二版</span><span class="src">本人不同意贵司单方作出的待岗安排</span></div>
           <p>据本人了解，本次调整的起因是百度项目外迁西安等地，贵司因此对派驻该项目的外包人员进行调配。</p>
-          <p>依据《劳动合同法》第 35 条及双方劳动合同第三条约定，<span class="hl-v2">工作地点系劳动合同核心条款</span>，变更应当经双方协商一致。<span class="hl-v2">跨城市调岗属于重大变更，且将给本人造成实质性困难，贵司无权单方强制</span>。</p>
-          <p class="hl-v2"><b>第二版独有</b>：直接进入法律反驳，三个论点否定合同 5.7 条前提</p>
+          <p>依据《劳动合同法》第 35 条及双方劳动合同第三条约定，<span class="hl v2">工作地点系劳动合同核心条款</span>，变更应当经双方协商一致。<span class="hl v2">跨城市调岗属于重大变更，且将给本人造成实质性困难，贵司无权单方强制</span>。</p>
+          <div class="note-box v2x"><b>独有</b>：直接进入法律反驳，三个论点否定合同 5.7 条前提</div>
         </div>
       </div>
-      <div class="single-row">
-        <div class="compare-cell" style="background:transparent">
-          <div class="cell-label" style="color:var(--text-muted)">差异分析</div>
-          <p><span class="tag-v1">第一版</span>策略：先立后破——先陈述事实和意愿，再谈异议。语气更"合作式"，对方更容易接受，为后续协商留空间。<br>
-          <span class="tag-v2">第二版</span>策略：先破后立——开篇即强力驳斥，直接引用法律条款否定合同 5.7 条三个适用前提。优点是法律说服力强、态度明确；缺点是可能让公司产生对抗心态，且<span class="bad">未先确认用工性质</span>（劳务派遣 vs 直接用工对"最低工资"合法性影响巨大）。</p>
-        </div>
-      </div>
+      <div class="cmp-read"><span class="rt">解读</span><b>两版共同主张</b>：非主动离职、愿意履约、将完成交接。第一版<b>先立后破</b>，语气合作，为协商留空间；第二版<b>先破后立</b>，法律说服力强但易激发对抗，且未先确认用工性质。</div>
     </div>
 
-    <!-- 章节：用工性质追问 -->
-    <div class="section-block">
-      <div class="section-header"><span class="title">第二章 · 用工性质追问 <span style="color:var(--danger);font-weight:600">★ 第一版独有 · 关键法律盲区</span></span></div>
-      <div class="compare-row">
-        <div class="compare-cell">
-          <div class="cell-label"><span class="tag-v1">第一版</span> · "关于本次安排的性质和依据"</div>
-          <p class="hl-v1"><b>请公司书面明确四个问题：</b></p>
+    <!-- 第二章 · 关键 -->
+    <div class="cmp fade">
+      <div class="cmp-head"><span class="t">第二章 · 用工性质追问</span><span class="cmp-flag"><span class="ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2.2L1.8 13.4h12.4L8 2.2z"/><path d="M8 6.6v3.2M8 11.6v.4"/></svg></span>第一版独有 · 关键法律盲区</span></div>
+      <div class="cmp-cols">
+        <div class="col cv1">
+          <div class="col-label"><span class="vtag v1">第一版</span><span class="src">关于本次安排的性质和依据</span></div>
+          <p><b>请公司书面明确四个问题：</b></p>
           <ol>
-            <li>本人与百度项目之间属于<span class="hl-v1">劳务派遣、业务外包还是其他用工安排</span>；</li>
+            <li>本人与百度项目之间属于<span class="hl v1">劳务派遣、业务外包还是其他用工安排</span>；</li>
             <li>如属劳务派遣，退回的事实和法律依据、派遣协议是否到期；</li>
             <li>如属停工停业或内部待岗，适用的事实、法律规定、劳动合同条款及公司规章制度；</li>
             <li>2026 年 12 月 1 日后拟安排的具体工作内容、是否认定为无工作期间。</li>
           </ol>
-          <p class="hl-v1"><b>法律意义</b>：劳务派遣场景下，《劳务派遣暂行规定》第 12 条法定允许"第二个月起最低工资"；直接用工则适用《北京市工资支付规定》第 27 条（首月正常工资、超过一个周期未安排工作按最低工资 70% 付基本生活费）。<b>两版工资主张的法律适用完全不同</b>。</p>
+          <div class="note-box v1x"><b>法律意义</b>：劳务派遣场景下，《劳务派遣暂行规定》第 12 条法定允许「第二个月起最低工资」；直接用工则适用《北京市工资支付规定》第 27 条（首月正常工资、超过一个周期未安排工作按最低工资 70% 付基本生活费）。<b>两种场景的工资主张法律适用完全不同</b>。</div>
         </div>
-        <div class="compare-cell">
-          <div class="cell-label"><span class="tag-v2">第二版</span></div>
-          <p>完全未涉及。</p>
-          <p class="bad" style="color:#991B1B;background:#FEE2E2;border-radius:4px;padding:8px 10px;font-size:12px;line-height:18px">⚠️ 法律风险：第二版直接否定"第二个月起最低工资"并威胁第三十八条解除，但如果公司主张本人是劳务派遣（百度项目由外派公司派驻），则该做法<span style="text-decoration:underline">可能完全合法</span>。此时第二版的威胁不成立，反而暴露我方对自身用工性质认知不清。</p>
+        <div class="col cv2">
+          <div class="col-label"><span class="vtag v2">第二版</span></div>
+          <p style="color:var(--ink-3)">完全未涉及。</p>
+          <div class="note-box risk"><b>法律风险</b>：第二版直接否定「第二个月起最低工资」并威胁第三十八条解除，但如果公司主张本人是劳务派遣（百度项目由外派公司派驻），则该做法<b>可能完全合法</b>。此时第二版的威胁不成立，反而暴露对自身用工性质认知不清。</div>
         </div>
       </div>
     </div>
 
-    <!-- 章节：报到声明 -->
-    <div class="section-block">
-      <div class="section-header"><span class="title">第三章 · 报到事宜声明</span></div>
-      <div class="compare-row">
-        <div class="compare-cell">
-          <div class="cell-label"><span class="tag-v1">第一版</span></div>
+    <!-- 第三章 -->
+    <div class="cmp fade">
+      <div class="cmp-head"><span class="t">第三章 · 报到事宜声明</span></div>
+      <div class="cmp-cols">
+        <div class="col cv1">
+          <div class="col-label"><span class="vtag v1">第一版</span></div>
           <p>本人愿意接受公司在北京地区提供的、符合劳动合同约定条件并与本人工作经历和能力合理匹配的岗位安排。</p>
-          <p>对于跨省市变更工作地点、实质降低工资待遇、职级或其他劳动合同约定条件的安排，本人将根据具体方案依法进行评估；<span class="hl-v1">在双方协商一致前，不应视为本人已同意变更劳动合同</span>。</p>
-          <p class="hl-v1"><b>第一版独有</b>：明确"协商一致前不视为同意变更"、"不视为同意永久降薪"、"不视为同意跨省市变更"——覆盖多个被追认的场景。</p>
+          <p>对于跨省市变更工作地点、实质降低工资待遇、职级或其他劳动合同约定条件的安排，本人将根据具体方案依法进行评估；<span class="hl v1">在双方协商一致前，不应视为本人已同意变更劳动合同</span>。</p>
+          <div class="note-box v1x"><b>独有</b>：「协商一致前不视为同意变更」「不视为同意永久降薪」「不视为同意跨省市变更」，覆盖多个被追认的场景</div>
         </div>
-        <div class="compare-cell">
-          <div class="cell-label"><span class="tag-v2">第二版</span></div>
-          <p>本人将于 2026 年 12 月 1 日按通知地址报到，但本人到场仅为等候贵司在北京地区安排同等条件新项目，<span class="hl-v2">不认可本人处于"待岗"状态</span>；报到、打卡行为不视为同意或追认；面试结果不影响按原合同履行的权利。</p>
-          <p class="hl-v2"><b>第二版独有</b>：额外申请了<span style="color:#1E40AF;background:#DBEAFE;border-radius:4px;padding:0 4px">通勤弹性</span>（8:30–9:30/17:30–18:30 弹性打卡），设计更人性化，减少报到阻力。</p>
+        <div class="col cv2">
+          <div class="col-label"><span class="vtag v2">第二版</span></div>
+          <p>本人将于 2026 年 12 月 1 日按通知地址报到，但本人到场仅为等候贵司在北京地区安排同等条件新项目，<span class="hl v2">不认可本人处于「待岗」状态</span>；报到、打卡行为不视为同意或追认；面试结果不影响按原合同履行的权利。</p>
+          <div class="note-box v2x"><b>独有</b>：额外申请通勤弹性（8:30–9:30 / 17:30–18:30 弹性打卡），设计更人性化，减少报到阻力</div>
         </div>
       </div>
     </div>
 
-    <!-- 章节：劳动报酬 -->
-    <div class="section-block">
-      <div class="section-header"><span class="title">第四章 · 劳动报酬主张 <span style="color:var(--danger);font-weight:600">★ 核心分歧</span></span></div>
-      <div class="compare-row">
-        <div class="compare-cell">
-          <div class="cell-label"><span class="tag-v1">第一版</span></div>
+    <!-- 第四章 · 核心分歧 -->
+    <div class="cmp fade">
+      <div class="cmp-head"><span class="t">第四章 · 劳动报酬主张</span><span class="cmp-flag"><span class="ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2.2L1.8 13.4h12.4L8 2.2z"/><path d="M8 6.6v3.2M8 11.6v.4"/></svg></span>核心分歧</span></div>
+      <div class="cmp-cols">
+        <div class="col cv1">
+          <div class="col-label"><span class="vtag v1">第一版</span></div>
           <p>本人未与公司就永久降低劳动合同约定的工资标准达成一致。</p>
-          <p>此前沟通中，公司曾表示拟在项目调整后的第一个月正常发放工资，第二个月起按照北京市最低工资标准支付。<span class="hl-v1"><b>请公司书面明确该工资方案所依据的事实、法律规定、劳动合同条款或规章制度</b>，并说明具体支付金额、工资组成、社保和公积金的缴纳及扣缴方式。</span></p>
+          <p>此前沟通中，公司曾表示拟在项目调整后的第一个月正常发放工资，第二个月起按照北京市最低工资标准支付。<span class="hl v1">请公司书面明确该工资方案所依据的事实、法律规定、劳动合同条款或规章制度</span>，并说明具体支付金额、工资组成、社保和公积金的缴纳及扣缴方式。</p>
           <p>如公司安排本人提供工作、培训、内部业务或其他实际劳动，请公司依法根据劳动合同约定和实际工作情况支付相应劳动报酬。</p>
           <p>如公司实际发生未依法足额支付劳动报酬或其他侵害本人劳动权益的情形，本人保留根据届时事实依法主张工资差额、经济补偿及其他劳动权益的权利。</p>
-          <p class="hl-v1"><b>策略</b>：先问清楚依据，再根据事实应对。不预设最低工资一定违法。</p>
+          <div class="note-box v1x"><b>策略</b>：先问清楚依据，再根据事实应对，不预设最低工资一定违法</div>
         </div>
-        <div class="compare-cell">
-          <div class="cell-label"><span class="tag-v2">第二版</span></div>
+        <div class="col cv2">
+          <div class="col-label"><span class="vtag v2">第二版</span></div>
           <p>在双方就劳动合同变更达成书面一致前，贵司应按原劳动合同约定的工资标准足额支付本人劳动报酬，不得单方降薪。</p>
-          <p><span class="hl-v2"><b>若贵司自第二个月起单方按北京市最低工资标准发放报酬，本人将认为该行为构成未足额支付劳动报酬，并保留依据《劳动合同法》第三十八条解除劳动合同并要求经济补偿的权利。</b></span></p>
-          <p class="bad" style="color:#991B1B;background:#FEE2E2;border-radius:4px;padding:8px 10px;font-size:12px;line-height:18px">⚠️ 法律风险：《劳务派遣暂行规定》第 12 条明确规定"无工作期间，派遣单位应按不低于最低工资标准按月支付报酬"。如果公司主张本人是劳务派遣，"最低工资"是<b>法定允许</b>的做法。直接指控"未足额支付"并威胁解除，<b>可能落空</b>，甚至暴露对自身用工性质认知不清。</p>
+          <p><span class="hl v2">若贵司自第二个月起单方按北京市最低工资标准发放报酬，本人将认为该行为构成未足额支付劳动报酬，并保留依据《劳动合同法》第三十八条解除劳动合同并要求经济补偿的权利。</span></p>
+          <div class="note-box risk"><b>法律风险</b>：《劳务派遣暂行规定》第 12 条明确「无工作期间，派遣单位应按不低于最低工资标准按月支付报酬」。如果公司主张本人是劳务派遣，「最低工资」是<b>法定允许</b>的做法。直接指控「未足额支付」并威胁解除，可能落空。</div>
         </div>
       </div>
     </div>
 
-    <!-- 章节：诉求 -->
-    <div class="section-block">
-      <div class="section-header"><span class="title">第五章 · 诉求与后续方案</span></div>
-      <div class="compare-row">
-        <div class="compare-cell">
-          <div class="cell-label"><span class="tag-v1">第一版</span> · "后续处理方案"</div>
-          <p><b>四选一方案</b>（优先级）：</p>
+    <!-- 第五章 -->
+    <div class="cmp fade">
+      <div class="cmp-head"><span class="t">第五章 · 诉求与后续方案</span></div>
+      <div class="cmp-cols">
+        <div class="col cv1">
+          <div class="col-label"><span class="vtag v1">第一版</span><span class="src">后续处理方案 · 四选一</span></div>
           <ol>
             <li><b>维持原合同条件</b>：安排不低于原劳动合同约定的工资和岗位的北京工作；</li>
             <li><b>提供待岗生活费</b>：按原合同提供劳动条件或支付不低于北京最低工资的待岗生活费，社保公积金正常缴纳；</li>
             <li><b>支付工资差额 + 经济补偿</b>：如实际克扣工资，按劳动合同法第 38 条、第 46 条主张；</li>
-            <li><b>协商解除</b>：提出书面方案，按本人实际工作年限和解除前十二个月应得平均工资依法核算经济补偿。工资、奖金、未休年休假工资及其他应付款项应根据其性质单独核算。</li>
+            <li><b>协商解除</b>：提出书面方案，按实际工作年限和解除前十二个月应得平均工资核算经济补偿；<span class="hl v1">工资、奖金、未休年休假工资单独核算，不笼统打包</span>。</li>
           </ol>
-          <p class="hl-v1"><b>第一版独有</b>：覆盖所有可能结果，协商解除方案非常细致（N 基数 + 奖金 + 年假单独核算 + 不笼统打包）。</p>
+          <div class="note-box v1x"><b>独有</b>：覆盖所有可能结果，协商解除方案非常细致</div>
         </div>
-        <div class="compare-cell">
-          <div class="cell-label"><span class="tag-v2">第二版</span> · "本人诉求"</div>
-          <p><b>三选一方案</b>：</p>
+        <div class="col cv2">
+          <div class="col-label"><span class="vtag v2">第二版</span><span class="src">本人诉求 · 三选一</span></div>
           <ol>
             <li><b>撤销待岗决定</b>（3 个工作日内）；</li>
             <li><b>原薪 + 匹配岗位</b>（北京范围内同等条件）；</li>
-            <li><b>协商解除 + N</b>（按劳动合同 11.2.4 条，N = 工作年限折算）。</li>
+            <li><b>协商解除 + N</b>（按劳动合同 <span class="hl v2">11.2.4 条</span>，N 按工作年限折算）。</li>
           </ol>
           <p>双方未达成书面协议前，本人不接受任何单方变更。</p>
-          <p class="hl-v2"><b>第二版独有</b>：速度要求明确（3 个工作日），引用合同具体条款 11.2.4，诉求更聚焦。</p>
+          <div class="note-box v2x"><b>独有</b>：速度要求明确（3 个工作日），引用合同具体条款 11.2.4，诉求更聚焦</div>
         </div>
       </div>
     </div>
 
-    <!-- 章节：结尾 -->
-    <div class="section-block">
-      <div class="section-header"><span class="title">第六章 · 结尾与声明</span></div>
-      <div class="compare-row">
-        <div class="compare-cell">
-          <div class="cell-label"><span class="tag-v1">第一版</span></div>
-          <p>请公司在收到本函后<span class="hl-v1"><b>五个工作日内</b></span>，就上述事项作出书面回复。</p>
-          <p>在双方签署书面协议并实际履行前，<span class="hl-v1">本函不构成本人主动辞职、拒绝合理工作安排、同意降低劳动合同条件或者放弃任何劳动权益的意思表示</span>。</p>
-          <p class="hl-v1"><b>第一版独有</b>："四不"声明覆盖多种默示风险；答复期限更宽松（5 工作日），更易给公司台阶。</p>
+    <!-- 第六章 -->
+    <div class="cmp fade">
+      <div class="cmp-head"><span class="t">第六章 · 结尾与声明</span></div>
+      <div class="cmp-cols">
+        <div class="col cv1">
+          <div class="col-label"><span class="vtag v1">第一版</span></div>
+          <p>请公司在收到本函后<span class="hl v1">五个工作日内</span>，就上述事项作出书面回复。</p>
+          <p>在双方签署书面协议并实际履行前，<span class="hl v1">本函不构成本人主动辞职、拒绝合理工作安排、同意降低劳动合同条件或者放弃任何劳动权益的意思表示</span>。</p>
+          <div class="note-box v1x"><b>独有</b>：「四不」声明覆盖多种默示风险；5 工作日期限更宽松，给公司台阶</div>
         </div>
-        <div class="compare-cell">
-          <div class="cell-label"><span class="tag-v2">第二版</span></div>
-          <p>请贵司于收到本函之日起<span class="hl-v2"><b>3 个工作日内</b></span>，就上述事项作出书面答复。逾期未答复或答复未能解决本人合理诉求的，本人将通过劳动仲裁等法律途径维护自身合法权益。</p>
-          <p class="hl-v2"><b>第二版独有</b>：明确逾期后果（仲裁威胁），答复期限更紧迫（3 工作日）。</p>
+        <div class="col cv2">
+          <div class="col-label"><span class="vtag v2">第二版</span></div>
+          <p>请贵司于收到本函之日起<span class="hl v2">3 个工作日内</span>，就上述事项作出书面答复。<span class="hl v2">逾期未答复或答复未能解决本人合理诉求的，本人将通过劳动仲裁等法律途径维护自身合法权益</span>。</p>
+          <div class="note-box v2x"><b>独有</b>：明确逾期后果（仲裁威胁），答复期限更紧迫</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 三、法律依据验证 ---------------------------------------------------- -->
-  <section class="sec">
-    <div class="sec-h"><h2>三、关键法律依据验证</h2><span>2026 年官方公开口径 · 逐条文比对</span></div>
+  <!-- ================= 03 法律依据 ================= -->
+  <section class="sec fade" id="s3">
+    <div class="sec-head"><span class="sec-no">03</span><h2>关键法律依据验证</h2></div>
+    <p class="sec-desc">2026 年官方公开口径，逐条文核验两版引用是否成立。</p>
 
     <div class="law-grid">
-      <!-- 法律卡1 -->
-      <div class="law-card">
-        <div class="law-source">《中华人民共和国劳动合同法》第三十五条 · 人社部官方</div>
-        <div class="law-title">变更劳动合同须协商一致 + 书面形式</div>
-        <div class="law-content">用人单位与劳动者协商一致，可以变更劳动合同约定的内容。变更劳动合同，应当采用书面形式。变更后的劳动合同文本由用人单位和劳动者各执一份。</div>
-        <div class="law-impact"><b>对两版的影响</b>：两版均引用此条、均正确。<br><b>2026.06 人社部再次重申</b>（中新网、人社部微信公众号），工作地点变更须协商一致。</div>
+      <div class="law">
+        <div class="law-src"><span class="ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2.5h8v11l-4-2.6-4 2.6v-11z"/></svg></span>劳动合同法第三十五条 · 人社部</div>
+        <h3 class="law-title">变更劳动合同须协商一致并采用书面形式</h3>
+        <p class="law-body">用人单位与劳动者协商一致，可以变更劳动合同约定的内容。变更劳动合同，应当采用书面形式。变更后的劳动合同文本由用人单位和劳动者各执一份。</p>
+        <div class="law-impact"><b>对两版的影响</b>：两版均引用此条、均正确。2026 年 6 月人社部再次重申，工作地点变更须协商一致。</div>
       </div>
 
-      <!-- 法律卡2 -->
-      <div class="law-card">
-        <div class="law-source">《劳务派遣暂行规定》第十二条 · 人社部 · 中国政府网</div>
-        <div class="law-title">★ 劳务派遣退回后最低工资是法定允许的</div>
-        <div class="law-content">被派遣劳动者退回后在无工作期间，劳务派遣单位应当按照不低于所在地人民政府规定的最低工资标准，向其按月支付报酬。</div>
-        <div class="law-impact"><b>第二版关键盲区</b>：如属劳务派遣，"第二个月起最低工资"是<span style="color:var(--brand-text);background:var(--brand-soft);border-radius:4px;padding:0 4px">法定允许</span>的。第二版直接威胁第三十八条解除<span style="color:#991B1B;background:#FEE2E2;border-radius:4px;padding:0 4px">可能落空</span>。<br><b>第一版主动追问用工性质</b>，是正确策略。</div>
+      <div class="law">
+        <div class="law-src"><span class="ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2.5h8v11l-4-2.6-4 2.6v-11z"/></svg></span>劳务派遣暂行规定第十二条 · 人社部 · 中国政府网</div>
+        <h3 class="law-title"><span class="star">※</span> 劳务派遣退回后，最低工资是法定允许的</h3>
+        <p class="law-body">被派遣劳动者退回后在无工作期间，劳务派遣单位应当按照不低于所在地人民政府规定的最低工资标准，向其按月支付报酬。</p>
+        <div class="law-impact"><b>第二版关键盲区</b>：如属劳务派遣，「第二个月起最低工资」<span class="em-seal">法定允许</span>，第二版直接威胁第三十八条解除可能落空。第一版主动追问用工性质，是正确策略。</div>
       </div>
 
-      <!-- 法律卡3 -->
-      <div class="law-card">
-        <div class="law-source">《北京市工资支付规定》第二十七条 · 北京市政府</div>
-        <div class="law-title">★ 直接用工停工停业：首月正常工资、之后最低工资 70%</div>
-        <div class="law-content">非因劳动者本人原因造成用人单位停工、停业的，在一个工资支付周期内，用人单位应当按照提供正常劳动支付劳动者工资；超过一个工资支付周期的，可以根据劳动者提供的劳动，按照双方新约定的标准支付工资，但不得低于本市最低工资标准；用人单位没有安排劳动者工作的，应当按照不低于本市最低工资标准的 70% 支付劳动者基本生活费。</div>
-        <div class="law-impact"><b>直接用工场景下</b>：第二个月发最低工资是违法的，应发<span style="color:var(--amber-text);background:var(--amber-soft);border-radius:4px;padding:0 4px">最低工资 70%</span> 基本生活费。但注意<span style="color:var(--amber-text);background:var(--amber-soft);border-radius:4px;padding:0 4px">派遣 vs 直接用工两场景规定完全不同</span>。</div>
+      <div class="law">
+        <div class="law-src"><span class="ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2.5h8v11l-4-2.6-4 2.6v-11z"/></svg></span>北京市工资支付规定第二十七条 · 北京市政府</div>
+        <h3 class="law-title"><span class="star">※</span> 直接用工停工停业：首月正常工资，之后最低工资 70%</h3>
+        <p class="law-body">非因劳动者本人原因造成用人单位停工、停业的，在一个工资支付周期内，用人单位应当按照提供正常劳动支付劳动者工资；超过一个工资支付周期的，可以根据劳动者提供的劳动，按照双方新约定的标准支付工资，但不得低于本市最低工资标准；用人单位没有安排劳动者工作的，应当按照不低于本市最低工资标准的 70% 支付劳动者基本生活费。</p>
+        <div class="law-impact"><b>直接用工场景下</b>：第二个月只发最低工资违法，应发<span class="em-warn">最低工资 70%</span> 基本生活费。注意派遣与直接用工两场景规定完全不同。</div>
       </div>
 
-      <!-- 法律卡4 -->
-      <div class="law-card">
-        <div class="law-source">《劳动合同法》第三十八条 · 官方</div>
-        <div class="law-title">被迫解除劳动合同（劳动者主动解除权）</div>
-        <div class="law-content">用人单位有下列情形之一的，劳动者可以解除劳动合同：……（二）未及时足额支付劳动报酬的；……（六）法律、行政法规规定劳动者可以解除劳动合同的其他情形。</div>
-        <div class="law-impact"><b>合法</b>，但触发条件是"未及时足额支付"。如公司主张按派遣规定合法支付最低工资，则该条不触发。<br>第二版的威胁<span style="color:var(--amber-text);background:var(--amber-soft);border-radius:4px;padding:0 4px">依赖于先确认用工性质</span>。</div>
+      <div class="law">
+        <div class="law-src"><span class="ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2.5h8v11l-4-2.6-4 2.6v-11z"/></svg></span>劳动合同法第三十八条</div>
+        <h3 class="law-title">被迫解除劳动合同（劳动者主动解除权）</h3>
+        <p class="law-body">用人单位有下列情形之一的，劳动者可以解除劳动合同：……（二）未及时足额支付劳动报酬的；……</p>
+        <div class="law-impact"><b>合法但有前提</b>：触发条件是「未及时足额支付」。如公司主张按派遣规定合法支付最低工资，则该条不触发。第二版的威胁<span class="em-warn">依赖于先确认用工性质</span>。</div>
       </div>
 
-      <!-- 法律卡5 -->
-      <div class="law-card">
-        <div class="law-source">《劳动合同法》第四十六条、第四十七条 · 官方</div>
-        <div class="law-title">经济补偿标准</div>
-        <div class="law-content">经济补偿按劳动者在本单位工作的年限，每满一年支付一个月工资的标准向劳动者支付。六个月以上不满一年的，按一年计算；不满六个月的，向劳动者支付半个月工资的经济补偿。本条所称月工资是指劳动者在劳动合同解除或者终止前十二个月的平均工资。</div>
-        <div class="law-impact">第一版主张"解除前十二个月应得平均工资"、要求奖金/年假单独核算，更细致。<br>第二版仅说"N 个月工资"，可能被对方狭义理解。</div>
+      <div class="law">
+        <div class="law-src"><span class="ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2.5h8v11l-4-2.6-4 2.6v-11z"/></svg></span>劳动合同法第四十六条、第四十七条</div>
+        <h3 class="law-title">经济补偿标准</h3>
+        <p class="law-body">经济补偿按劳动者在本单位工作的年限，每满一年支付一个月工资的标准向劳动者支付。本条所称月工资是指劳动者在劳动合同解除或者终止前十二个月的平均工资。</p>
+        <div class="law-impact">第一版主张「解除前十二个月应得平均工资」、要求奖金与年假单独核算，更细致；第二版仅说「N 个月工资」，可能被对方狭义理解。</div>
       </div>
 
-      <!-- 法律卡6 -->
-      <div class="law-card">
-        <div class="law-source">2026 年多地仲裁案例 · 光明网/中国法院网</div>
-        <div class="law-title">协商 vs 单方变更的司法口径</div>
-        <div class="law-content">2026 年 1–11 月公开案例：广州员工拒绝调岗佛山被辞退→法院判公司违法解除；重庆员工拒绝调岗海外被关账号→支持劳动者；2026.06 人社部重申工作地点变更须协商一致。</div>
-        <div class="law-impact"><b>跨省市调岗案近年司法口径普遍支持劳动者</b>，第二版关于"重大变更"、"实质性困难"的论点有先例支撑。但"最低工资"争议仍需先确认用工性质。</div>
+      <div class="law">
+        <div class="law-src"><span class="ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2.5h8v11l-4-2.6-4 2.6v-11z"/></svg></span>2026 年多地仲裁案例 · 光明网 · 中国法院网</div>
+        <h3 class="law-title">协商与单方变更的司法口径</h3>
+        <p class="law-body">2026 年公开案例：广州员工拒绝调岗佛山被辞退，法院判公司违法解除；重庆员工拒绝调岗海外被关账号，支持劳动者；2026 年 6 月人社部重申工作地点变更须协商一致。</p>
+        <div class="law-impact">跨省市调岗案近年司法口径普遍支持劳动者，第二版「重大变更」「实质性困难」论点有先例支撑。但「最低工资」争议仍需先确认用工性质。</div>
       </div>
     </div>
   </section>
 
-  <!-- 四、结论 ---------------------------------------------------- -->
-  <section class="sec">
-    <div class="sec-h"><h2>四、结论 · 哪个版本更合理</h2></div>
+  <!-- ================= 04 结论 ================= -->
+  <section class="sec fade" id="s4">
+    <div class="sec-head"><span class="sec-no">04</span><h2>结论 · 哪个版本更合理</h2></div>
+
     <div class="verdict">
-      <h3>🏆 结论：<span style="color:var(--brand-text)">两版应合并</span>，以第一版为框架 + 吸收第二版的强硬法律论点</h3>
+      <h3>两版应合并：以第一版为框架，吸收第二版的强硬论点</h3>
+      <p class="lead">第一版在策略框架和法律基础构建上明显更合理；第二版在具体论点的强硬度上有独特优势。最优方案是合并——<b>先用工性质追问，再待岗法律反驳，协商路径与法律威胁并存</b>。</p>
 
-      <div class="winner"><b>第一版</b>在策略框架和法律基础构建上<b>明显更合理</b>；<span style="color:var(--blue-text);background:var(--blue-soft);border-radius:4px;padding:0 4px">第二版</span>在具体论点的强硬度上<b>有独特优势</b>。<br>最优方案是合并：<span style="font-weight:600">先用工性质追问（第一版）+ 待岗法律反驳（第二版）+ 温和协商路径（第一版）+ 强硬法律威胁（第二版）</span>。</div>
+      <div class="v-cols">
+        <div class="v-col must">
+          <h4><span class="ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.8l1.9 3.8 4.2.6-3 3 .7 4.2L8 11.5l-3.8 1.9.7-4.2-3-3 4.2-.6L8 1.8z"/></svg></span>第一版不可替代的优势（必须吸收）</h4>
+          <ul>
+            <li><b>用工性质追问</b>：全部工资主张的法律基础，派遣与直接用工的最低工资合法性结论完全相反。第二版缺失此点是最大法律盲区。</li>
+            <li><b>先问再答策略</b>：先要求公司说明依据再针对性反驳，既显诚意又让对方无法回避核心问题。</li>
+            <li><b>四选一诉求 + 细致的协商解除方案</b>：覆盖所有可能结果，N 基数明确、奖金年假单独核算。</li>
+            <li><b>「四不」声明</b>：覆盖主动辞职、拒绝工作、同意降薪、放弃权益等多种默示追认风险。</li>
+            <li><b>5 个工作日答复期</b>：比 3 个工作日更宽松，减少对立。</li>
+          </ul>
+        </div>
+        <div class="v-col keep">
+          <h4><span class="ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3.5 3.5L13 4.5"/></svg></span>第二版应保留的优势（可吸收）</h4>
+          <ul>
+            <li><b>合同 5.7 条的三个反驳论点</b>：「单一项目结束 ≠ 整体经营困难」「针对性而非全面停工」等角度很有力度。</li>
+            <li><b>通勤弹性申请</b>：具体、人性化，减少报到阻力。</li>
+            <li><b>合同 11.2.4 条引用</b>：协商解除引用具体条款，比笼统说「依法」更具体。</li>
+            <li><b>「实质性困难」「无权单方强制」等强硬措辞</b>。</li>
+            <li><b>明确威胁第三十八条解除权</b>——但须补上第一版的用工性质追问作为前提。</li>
+          </ul>
+        </div>
+      </div>
 
-      <div class="points">
-        <b>第一版不可替代的优势（<span style="color:var(--brand-text)">必须吸收</span>）：</b>
-        <ul>
-          <li><b>用工性质追问</b>：这是全部工资主张的法律基础。劳务派遣 vs 直接用工的最低工资合法性结论完全相反。<b>第二版缺失此点是最大法律盲区</b>。</li>
-          <li><b>"先问再答"策略</b>：先要求公司说明依据，再针对性反驳。既显示诚意，又让对方无法回避核心问题，为后续协商留空间。</li>
-          <li><b>四选一诉求 + 细致的协商解除方案</b>：覆盖所有可能结果，N 基数明确、奖金/年假单独核算。</li>
-          <li><b>"四不"声明</b>：覆盖主动辞职、拒绝工作、同意降薪、放弃权益等多种默示追认风险。</li>
-          <li><b>5 工作日答复期</b>：比 3 工作日更宽松，减少对立。</li>
-        </ul>
-
-        <b>第二版应保留的优势（<span style="color:var(--blue-text)">可吸收</span>）：</b>
-        <ul>
-          <li><b>合同 5.7 条的三个反驳论点</b>：论证详实，"单一项目结束≠整体经营困难"、"针对性非全面停工"等角度很有力度。</li>
-          <li><b>通勤弹性申请</b>：具体、人性化，减少报到阻力。</li>
-          <li><b>合同 11.2.4 条引用</b>：协商解除引用合同具体条款，比笼统说"依法"更具体。</li>
-          <li><b>"实质性困难"、"无权单方强制"</b>等强硬措辞</li>
-          <li><b>明确威胁第三十八条解除权</b>（但前提是先确认用工性质——这点需补上第一版的追问）</li>
-        </ul>
-
-        <b>合并后的推荐结构：</b>
-        <ul>
-          <li>① 事实陈述（非主动离职 + 愿意履约）—— 第一版框架</li>
-          <li>② <span style="font-weight:600;color:var(--brand-text)">用工性质追问</span> —— 第一版独有，必须放最前面</li>
-          <li>③ 待岗法律反驳（合同 5.7 条不成立 + 劳动合同法 35 条）—— 第二版论点</li>
-          <li>④ 报到声明（弹性打卡 + 不视为追认 + 协商一致前不接受变更）—— 两版合并</li>
-          <li>⑤ 劳动报酬（先问依据 + 保留第三十八条权利，待确认用工性质后再具体主张）—— 第一版策略 + 第二版威胁</li>
-          <li>⑥ 诉求（四选一 + 细致 N 方案）—— 第一版方案 + 第二版合同条款引用</li>
-          <li>⑦ 后续声明（四不声明 + 5 工作日答复 + 逾期仲裁）—— 两版合并</li>
-        </ul>
+      <div class="merge">
+        <h4>合并后的推荐结构</h4>
+        <ol>
+          <li><b>事实陈述</b>（非主动离职 + 愿意履约）—— 第一版框架</li>
+          <li><b>用工性质追问</b> —— 第一版独有，必须放最前面</li>
+          <li><b>待岗法律反驳</b>（合同 5.7 条不成立 + 劳动合同法 35 条）—— 第二版论点</li>
+          <li><b>报到声明</b>（弹性打卡 + 不视为追认 + 协商一致前不接受变更）—— 两版合并</li>
+          <li><b>劳动报酬</b>（先问依据 + 保留第三十八条权利，待确认用工性质后再具体主张）—— 第一版策略 + 第二版威胁</li>
+          <li><b>诉求</b>（四选一 + 细致 N 方案）—— 第一版方案 + 第二版合同条款引用</li>
+          <li><b>后续声明</b>（四不声明 + 5 个工作日答复 + 逾期仲裁）—— 两版合并</li>
+        </ol>
       </div>
     </div>
   </section>
 
-  <p class="ft">法律依据引自人社部、北京市政府、中国政府网、中国法院网、光明网 2026 年公开口径 · 仅供参考，正式仲裁前建议咨询劳动法律师</p>
+  <footer class="ft">
+    <span>法律依据引自人社部、北京市政府、中国政府网、中国法院网、光明网 2026 年公开口径 · 仅供参考，正式仲裁前建议咨询劳动法律师</span>
+    <a href="compare-v1-v2-before.html">查看改造前版本</a>
+  </footer>
 </main>
+
+<script>
+(function(){
+  var els = Array.prototype.slice.call(document.querySelectorAll('.fade'));
+  if (!('IntersectionObserver' in window) || !els.length) return;
+  requestAnimationFrame(function(){
+    els.forEach(function(el){ el.classList.add('armed'); });
+    requestAnimationFrame(function(){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if (e.isIntersecting) {
+            e.target.classList.add('in');
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.06, rootMargin: '0px 0px -24px 0px' });
+      els.forEach(function(el){ io.observe(el); });
+      /* 兜底：3.5s 后全部显示，防止异常环境下内容不可见 */
+      setTimeout(function(){
+        els.forEach(function(el){ el.classList.add('in'); });
+      }, 3500);
+    });
+  });
+})();
+</script>
 </body>
 </html>
