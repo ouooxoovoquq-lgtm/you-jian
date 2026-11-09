@@ -133,6 +133,68 @@ html,body{
 .doc-wrap{display:none}
 .doc-wrap.active{display:block}
 
+/* ===== 纠错指引 ===== */
+.fix-wrap{
+  margin-top:40px;padding-top:28px;border-top:2px solid var(--border);
+}
+.fix-title-row{
+  display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:6px;
+}
+.fix-title{font-size:17px;font-weight:700;letter-spacing:-.01em}
+.fix-sub{font-size:12px;color:var(--text-s)}
+.fix-total{font-family:var(--mono);font-size:12px;color:var(--text-m);
+  border:1px solid var(--border);border-radius:10px;padding:2px 9px}
+.fix-group{
+  border:1px solid var(--border);border-radius:6px;margin-top:18px;
+  background:var(--bg);overflow:hidden;
+}
+.fix-head{
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+  padding:11px 16px;background:var(--bg-muted);border-bottom:1px solid var(--border);
+}
+.lvl{
+  font-family:var(--mono);font-size:11px;font-weight:700;color:#fff;
+  width:20px;height:20px;border-radius:4px;display:inline-flex;
+  align-items:center;justify-content:center;flex:none;
+}
+.lvl-neg{background:#cb2431}
+.lvl-warn{background:#d2842a}
+.lvl-info{background:#0366d6}
+.lvl-muted{background:#8b949e}
+.fix-name{font-size:14px;font-weight:600}
+.fix-prio{
+  font-size:11px;color:var(--text-m);border:1px solid var(--border);
+  border-radius:3px;padding:1px 7px;background:var(--bg);
+}
+.fix-count{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--text-s)}
+.fix-desc{font-size:12px;color:var(--text-m);padding:12px 16px 4px;line-height:1.7}
+.fix-item{
+  display:grid;grid-template-columns:34px 1fr;gap:0;
+  padding:12px 16px;border-top:1px solid var(--border-s);
+}
+.fix-no{
+  font-family:var(--mono);font-size:11px;color:var(--text-s);padding-top:2px;
+}
+.fix-main{min-width:0}
+.fix-line{display:flex;gap:8px;align-items:flex-start;margin-bottom:5px}
+.fix-tag{
+  font-size:10px;font-family:var(--mono);font-weight:700;padding:2px 6px;
+  border-radius:3px;flex:none;line-height:1.5;
+}
+.fix-tag.bad{background:var(--del-bg);color:var(--del-txt);border:1px solid #ffdce0}
+.fix-tag.good{background:var(--ins-bg);color:var(--ins-txt);border:1px solid #c8f0d0}
+.fix-orig{font-size:13px;color:var(--del-txt);text-decoration:line-through;text-decoration-color:#f0a6ae;line-height:1.65}
+.fix-fix{font-size:13px;color:var(--ins-txt);line-height:1.65}
+.fix-why{
+  font-size:12px;color:var(--text-m);line-height:1.75;
+  background:var(--bg-muted);border-radius:4px;padding:7px 10px;margin-top:6px;
+}
+.fix-why-k{
+  font-size:10px;font-family:var(--mono);font-weight:700;color:var(--text-s);
+  margin-right:7px;text-transform:uppercase;
+}
+
+
 .report-intro{
   background:var(--bg-muted);border-radius:8px;padding:16px 20px;
   margin-bottom:24px;border-left:4px solid var(--accent);
@@ -240,22 +302,23 @@ html,body{
   <div class="hd-l">
     <span class="hd-title">
       <span class="v">1.1</span><span class="s">→</span><span class="v">1.2</span>
-      <span class="s">·</span>待岗异议回复函 差异解读
+      <span class="s">·</span>《待岗通知》异议函 差异解读
     </span>
   </div>
   <div class="hd-r">
-    共 <b style="color:var(--accent)">8</b> 处核心改动
-    <span class="badge del">删除侧</span>
-    <span class="badge ins">新增侧</span>
+    改动 <b style="color:var(--accent)">12</b> 处
+    · 待修 <b style="color:var(--accent)">25</b> 处
+    <span class="badge del">原文</span>
+    <span class="badge ins">新版</span>
   </div>
 </header>
 
 <nav class="tabs">
   <div class="tab" id="tabDoc" onclick="switchView('doc')">
-    对照视图<span class="cnt">30</span>
+    对照视图<span class="cnt">53</span>
   </div>
   <div class="tab active" id="tabReport" onclick="switchView('report')">
-    解读报告<span class="cnt">8</span>
+    解读报告<span class="cnt">12</span>
   </div>
 </nav>
 
@@ -264,170 +327,251 @@ html,body{
 <!-- ====== 解读报告 ====== -->
 <section class="report-wrap active" id="viewReport">
   <div class="report-intro">
-    <p><strong>报告说明</strong>：以下 7 处是两版之间的核心改动。每处包含 ① 具体改了什么（1.1 vs 1.2 对照） ② 为什么这么改 ③ 改动侧重的方向。对比后可以看出，1.2 版本在 <strong>法律依据、论证角度、行动策略、法律威慑</strong> 四个维度都做了强化。</p>
+    <p><strong>报告说明</strong>：左侧 1.1 为初稿原文（完整保留、未作改动），右侧 1.2 为本次提交的新版。以下 <strong>12</strong> 处是两版之间的核心改动，每处包含 ① 改了什么（1.1 / 1.2 对照） ② 为什么这么改 ③ 侧重方向。整体看，新版是在<strong>事实要素、条款适用前提、报酬请求权、诉求量化</strong>四个层面同时加固。</p>
     <div class="summary">
-      <div class="summary-item">核心改动 <b>8</b> 处</div>
-      <div class="summary-item">全部为 <b class="ins">1.2 新增/重写</b></div>
-      <div class="summary-item">改动集中于 <b>法律 + 策略</b></div>
+      <div class="summary-item">核心改动 <b>12</b> 处</div>
+      <div class="summary-item">差异句子 <b>53</b> 行</div>
+      <div class="summary-item">新增章节 <b>1</b> 章（劳动报酬）</div>
+      <div class="summary-item">待修文字 <b>25</b> 处</div>
     </div>
   </div>
 <div class="card" id="r1">
   <div class="card-head">
     <span class="id-badge">#1</span>
-    <span class="card-title">标题 + 抬头格式规范化</span>
+    <span class="card-title">标题与抬头：草稿模板 → 正式函件</span>
     <span class="side-badge">1.1 → 1.2 改动</span>
-    <span class="direction-tag">从草稿模板 → 正式法律文书格式</span>
-    <span class="card-tags"><span class="tag-kw">格式规范</span><span class="tag-kw">主体锚定</span></span>
+    <span class="direction-tag">从内部草稿 → 可送达的正式法律文书</span>
+    <span class="card-tags"><span class="tag-kw">文书体例</span><span class="tag-kw">主体具名</span></span>
   </div>
   <div class="card-body">
     <div class="compare">
-      <div class="cmp-row"><div class="cmp-lbl">1.1</div><div class="cmp-txt del">主题：关于待岗通知的异议及工作安排的回复 / 致：【外包公司全称】人力资源部 / 抄送：【项目负责人…】</div></div>
+      <div class="cmp-row"><div class="cmp-lbl">1.1</div><div class="cmp-txt del">主题：关于待岗通知的异议及工作安排的回复 / 致：【外包公司全称】人力资源部 / 抄送：【项目负责人、直属上级、李雅琪】</div></div>
       <div class="cmp-arrow">↓</div>
-      <div class="cmp-row"><div class="cmp-lbl">1.2</div><div class="cmp-txt ins">关于《待岗通知》的异议函 / 上海微创软件股份有限公司北京分公司 / 本人（身份证号…）系贵公司岗位员工</div></div>
+      <div class="cmp-row"><div class="cmp-lbl">1.2</div><div class="cmp-txt ins">对《待岗通知》的异议函 / 致：上海微创软件股份有限公司北京分公司</div></div>
     </div>
     <div class="analysis">
-      <div class="ana-row"><span class="ana-key">改动原因</span><span class="ana-val">从草稿模板（【占位符】+抄送多人）变成正式文书格式：① 标题去掉&quot;主题：&quot;前缀和冗余的&quot;及工作安排的回复&quot;；② 抬头从泛指&quot;外包公司全称&quot;改成具体全称&quot;上海微创软件股份有限公司北京分公司&quot;，直接对准主体；③ 加了本人身份锚定（姓名、身份证号、岗位）；④ 删掉抄送（异议函是单方正式文书，抄送反而削弱严肃性）。</span></div>
-      <div class="ana-row"><span class="ana-key">侧重方向</span><span class="ana-val focus">从草稿模板 → 正式法律文书格式</span></div>
+      <div class="ana-row"><span class="ana-key">改动原因</span><span class="ana-val">① 标题去掉&quot;主题：&quot;前缀与&quot;及工作安排的回复&quot;这半截冗余，改为标准函名&quot;对《待岗通知》的异议函&quot;，并用书名号把被异议的对象（那份通知）锁死；② 抬头从&quot;【外包公司全称】人力资源部&quot;改为具名主体全称，异议函的当事人是公司而非某个部门；③ 删掉抄送行——抄送多人会让文书从&quot;单方主张&quot;变成&quot;多方传阅&quot;，削弱法律文书的严肃性与可控性。</span></div>
+      <div class="ana-row"><span class="ana-key">侧重方向</span><span class="ana-val focus">从内部草稿 → 可送达的正式法律文书</span></div>
     </div>
   </div>
 </div>
 <div class="card" id="r2">
   <div class="card-head">
     <span class="id-badge">#2</span>
-    <span class="card-title">劳动合同法35条加&quot;书面形式&quot;</span>
+    <span class="card-title">补齐身份与合同要素</span>
     <span class="side-badge">1.1 → 1.2 改动</span>
-    <span class="direction-tag">法律依据更完整</span>
-    <span class="card-tags"><span class="tag-kw">法律依据</span></span>
+    <span class="direction-tag">为后续法律主张预埋事实要素</span>
+    <span class="card-tags"><span class="tag-kw">事实要素</span><span class="tag-kw">证据基础</span></span>
   </div>
   <div class="card-body">
     <div class="compare">
-      <div class="cmp-row"><div class="cmp-lbl">1.1</div><div class="cmp-txt del">应当经用人单位与劳动者协商一致</div></div>
+      <div class="cmp-row"><div class="cmp-lbl">1.1</div><div class="cmp-txt del">本人已收到贵司于【XXXX年XX月XX日】发出的《待岗通知》。</div></div>
       <div class="cmp-arrow">↓</div>
-      <div class="cmp-row"><div class="cmp-lbl">1.2</div><div class="cmp-txt ins">应当经双方协商一致并采用书面形式</div></div>
+      <div class="cmp-row"><div class="cmp-lbl">1.2</div><div class="cmp-txt ins">本人（身份证号…）系贵公司UI设计师岗位员工，劳动合同期限自2024年3月8日起至2027年3月7日止，工作地点为北京。／本人于2026年11月6日收到贵司出具的《待岗通知》……并要求前往北京市海淀区海淀大街8号中钢国际广场A座5层C区报到。</div></div>
     </div>
     <div class="analysis">
-      <div class="ana-row"><span class="ana-key">改动原因</span><span class="ana-val">35 条后半句&quot;变更劳动合同应当采用书面形式&quot;是法定要件，1.1 漏了。补上后，&quot;书面形式&quot;既是权利也是武器——公司单方通知本身就是没有协商一致、没有书面变更的典型违法。</span></div>
-      <div class="ana-row"><span class="ana-key">侧重方向</span><span class="ana-val focus">法律依据更完整</span></div>
+      <div class="ana-row"><span class="ana-key">改动原因</span><span class="ana-val">1.1 只有一句&quot;已收到通知&quot;，主体身份与事实要素全缺。1.2 一次性补齐 5 项关键要素：岗位（UI设计师）、合同期限（2024.3.8–2027.3.7）、约定的工作地点（北京）、收函日期（2026.11.6）、通知载明的报到地址（中钢国际广场）。这些要素在日后仲裁时都直接决定&quot;合同约定履行地&quot;和&quot;变更是否重大&quot;的认定，必须先落在纸面上。</span></div>
+      <div class="ana-row"><span class="ana-key">侧重方向</span><span class="ana-val focus">为后续法律主张预埋事实要素</span></div>
     </div>
   </div>
 </div>
 <div class="card" id="r3">
   <div class="card-head">
     <span class="id-badge">#3</span>
-    <span class="card-title">法定待岗定义重写</span>
+    <span class="card-title">新增调岗起因与本人立场的事实链</span>
     <span class="side-badge">1.1 → 1.2 改动</span>
-    <span class="direction-tag">法律定义更精准</span>
-    <span class="card-tags"><span class="tag-kw">法定定义</span></span>
+    <span class="direction-tag">把&quot;拒绝调岗&quot;从态度问题变成客观事实</span>
+    <span class="card-tags"><span class="tag-kw">事实链</span><span class="tag-kw">协商留痕</span></span>
   </div>
   <div class="card-body">
     <div class="compare">
-      <div class="cmp-row"><div class="cmp-lbl">1.1</div><div class="cmp-txt del">仅限用人单位自身停工停产的情形</div></div>
+      <div class="cmp-row"><div class="cmp-lbl">1.1</div><div class="cmp-txt del">（1.1 无此内容）</div></div>
       <div class="cmp-arrow">↓</div>
-      <div class="cmp-row"><div class="cmp-lbl">1.2</div><div class="cmp-txt ins">适用于用人单位停工停产、无法提供劳动岗位的法定情形</div></div>
+      <div class="cmp-row"><div class="cmp-lbl">1.2</div><div class="cmp-txt ins">据本人了解，本次调整的起因是百度项目外迁西安等地……本人因家庭及个人实际情况（家庭住址、生活基础均在北京），无法接受跨省市外迁，该情况已向贵司说明。</div></div>
     </div>
     <div class="analysis">
-      <div class="ana-row"><span class="ana-key">改动原因</span><span class="ana-val">1.1 说&quot;仅限&quot;（只允许），1.2 说&quot;适用于&quot;（适用范围），更准确地描述待岗制度的法定前提是&quot;无法提供劳动岗位&quot;，而不是只强调&quot;停工停产&quot;——单一项目终止≠无法提供岗位。</span></div>
-      <div class="ana-row"><span class="ana-key">侧重方向</span><span class="ana-val focus">法律定义更精准</span></div>
+      <div class="ana-row"><span class="ana-key">改动原因</span><span class="ana-val">新增了一段纯事实陈述：外迁起因是&quot;项目迁往西安&quot;，本人拒绝的原因是&quot;生活基础在北京&quot;，且&quot;已向公司说明&quot;。这三句是整封函的证据地基——它把&quot;我不接受&quot;从主观不愿意，改成客观不能（家庭与生活基础），并留下&quot;已说明&quot;的书面痕迹，防对方主张&quot;你从未提出异议或协商&quot;。</span></div>
+      <div class="ana-row"><span class="ana-key">侧重方向</span><span class="ana-val focus">把&quot;拒绝调岗&quot;从态度问题变成客观事实</span></div>
     </div>
   </div>
 </div>
 <div class="card" id="r4">
   <div class="card-head">
     <span class="id-badge">#4</span>
-    <span class="card-title">锚定具体项目名 + 简化论证</span>
+    <span class="card-title">法律依据：单引 35 条 → 35 条 + 合同第三条</span>
     <span class="side-badge">1.1 → 1.2 改动</span>
-    <span class="direction-tag">论证从&quot;多维夹击&quot;→&quot;单点直击法定前提&quot;</span>
-    <span class="card-tags"><span class="tag-kw">论证简化</span><span class="tag-kw">项目实名</span></span>
+    <span class="direction-tag">法条 + 合同条款双重锁定</span>
+    <span class="card-tags"><span class="tag-kw">法律依据</span><span class="tag-kw">合同条款</span></span>
   </div>
   <div class="card-body">
     <div class="compare">
-      <div class="cmp-row"><div class="cmp-lbl">1.1</div><div class="cmp-txt del">本次仅为客户方业务调整、项目裁撤…不属于法定可单方安排员工待岗的情形</div></div>
+      <div class="cmp-row"><div class="cmp-lbl">1.1</div><div class="cmp-txt del">依据《中华人民共和国劳动合同法》第三十五条，变更劳动合同约定内容，应当经用人单位与劳动者协商一致。</div></div>
       <div class="cmp-arrow">↓</div>
-      <div class="cmp-row"><div class="cmp-lbl">1.2</div><div class="cmp-txt ins">本次仅为百度派驻项目的业务调整，不属于贵司整体停工停产的法定待岗情形</div></div>
+      <div class="cmp-row"><div class="cmp-lbl">1.2</div><div class="cmp-txt ins">依据《中华人民共和国劳动合同法》第三十五条及双方劳动合同第三条约定，工作地点是劳动合同的核心条款，变更工作地点应当经双方协商一致。跨城市调岗属于对劳动合同的重大变更，且会给本人造成实质性困难，贵司无权单方强制。</div></div>
     </div>
     <div class="analysis">
-      <div class="ana-row"><span class="ana-key">改动原因</span><span class="ana-val">① 把&quot;客户方业务调整&quot;改成&quot;百度派驻项目的业务调整&quot;——点名具体项目，让论述有实据；② 删掉了&quot;贵司整体正常经营&quot;的冗余（前面已经说了&quot;无法提供劳动岗位&quot;，这里再说属于重复）；③ 删掉了之前引用公司自己通知原文&quot;公司会为你匹配合适的新项目&quot;那段——因为新版本不再用&quot;公司自己说会给新岗位&quot;来打公司的脸，策略转向更简洁直接的&quot;法定前提不满足&quot;。</span></div>
-      <div class="ana-row"><span class="ana-key">侧重方向</span><span class="ana-val focus">论证从&quot;多维夹击&quot;→&quot;单点直击法定前提&quot;</span></div>
+      <div class="ana-row"><span class="ana-key">改动原因</span><span class="ana-val">1.1 只引法条，缺&quot;合同第三条&quot;这一层约定依据。1.2 把&quot;法律 + 合同&quot;两条腿并起来：法律说变更须协商一致，合同第三条把工作地点写成了核心条款——两者叠加才能推出&quot;跨城市调岗属于重大变更、公司无权单方强制&quot;。同时补了&quot;造成实质性困难&quot;这一合理性判断，为&quot;拒绝不构成不服从管理&quot;做铺垫。</span></div>
+      <div class="ana-row"><span class="ana-key">侧重方向</span><span class="ana-val focus">法条 + 合同条款双重锁定</span></div>
     </div>
   </div>
 </div>
 <div class="card" id="r5">
   <div class="card-head">
     <span class="id-badge">#5</span>
-    <span class="card-title">删掉薪酬细节 + 简化前提论述</span>
+    <span class="card-title">驳斥待岗条款：从泛论改为逐条攻破 5.7 条</span>
     <span class="side-badge">1.1 → 1.2 改动</span>
-    <span class="direction-tag">去掉无关细节，集中火力打前提</span>
-    <span class="card-tags"><span class="tag-kw">论证策略</span><span class="tag-kw">聚焦前提</span></span>
+    <span class="direction-tag">从&quot;泛泛否定法定情形&quot; → &quot;逐条攻破合同条款适用前提&quot;</span>
+    <span class="card-tags"><span class="tag-kw">论证结构</span><span class="tag-kw">条款适用前提</span></span>
   </div>
   <div class="card-body">
     <div class="compare">
-      <div class="cmp-row"><div class="cmp-lbl">1.1</div><div class="cmp-txt del">虽已约定待岗期间薪酬规则（首月发放全薪，后续按北京市最低工资标准发放），但该约定附适用前提…不能直接适用于单一客户项目终止形成的岗位空档</div></div>
+      <div class="cmp-row"><div class="cmp-lbl">1.1</div><div class="cmp-txt del">停工待岗有法定适用前提，仅限用人单位自身停工停产的情形。本次仅为客户方业务调整、项目裁撤，贵司整体正常经营，不属于法定可单方安排员工待岗的情形。</div></div>
       <div class="cmp-arrow">↓</div>
-      <div class="cmp-row"><div class="cmp-lbl">1.2</div><div class="cmp-txt ins">关于待岗薪酬的约定，需以符合法定待岗前提为适用基础，不能据此任意单方启动待岗</div></div>
+      <div class="cmp-row"><div class="cmp-lbl">1.2</div><div class="cmp-txt ins">贵司援引劳动合同第5.7条安排待岗，本人认为该条款的适用前提不成立：1. 北京地区仍有多项在执行项目，并非&quot;无法安排乙方在业务、项目上工作&quot;；2. 仅因单个项目结束即长期待岗，是将经营风险转嫁给劳动者；3. 仅针对百度项目外迁涉及的少数员工，并非整体性停工停产。</div></div>
     </div>
     <div class="analysis">
-      <div class="ana-row"><span class="ana-key">改动原因</span><span class="ana-val">1.1 展开说了薪酬规则细节（首月全薪、后续最低工资），1.2 整段压缩。策略上：薪酬约定的具体内容在异议函里不重要，重要的是&quot;这个约定的适用前提不成立&quot;——既然前提不成立，约定就全部失效，说多少钱都没意义。简洁比详细更有力量。</span></div>
-      <div class="ana-row"><span class="ana-key">侧重方向</span><span class="ana-val focus">去掉无关细节，集中火力打前提</span></div>
+      <div class="ana-row"><span class="ana-key">改动原因</span><span class="ana-val">这是本版最实质的升级。1.1 是&quot;我认为不符合法定情形&quot;这类泛论，对方一句&quot;合同第5.7条已经约定了&quot;就能顶回来。1.2 改变打法：不再空谈法定情形，而是直接对准公司自己援引的合同条款，用三点编号逐条攻其&quot;适用前提&quot;——① 合同原文要求&quot;无法安排工作&quot;，而北京仍有多项在执行项目，条件不满足；② 单个项目结束即长期待岗＝经营风险转嫁；③ 只针对少数员工＝不是整体停工。三点都是可举证的事实，不是评价。</span></div>
+      <div class="ana-row"><span class="ana-key">侧重方向</span><span class="ana-val focus">从&quot;泛泛否定法定情形&quot; → &quot;逐条攻破合同条款适用前提&quot;</span></div>
     </div>
   </div>
 </div>
 <div class="card" id="r6">
   <div class="card-head">
     <span class="id-badge">#6</span>
-    <span class="card-title">⚠️ 新增通勤弹性申请（唯一新增段落）</span>
+    <span class="card-title">结论句补&quot;缺乏合同依据&quot;</span>
     <span class="side-badge">1.1 → 1.2 改动</span>
-    <span class="direction-tag">展示合作姿态 + 给具体可落地方案</span>
-    <span class="card-tags"><span class="tag-kw">策略平衡</span><span class="tag-kw">具体方案</span></span>
+    <span class="direction-tag">结论与论证首尾闭合</span>
+    <span class="card-tags"><span class="tag-kw">结论收口</span></span>
   </div>
   <div class="card-body">
     <div class="compare">
-      <div class="cmp-row"><div class="cmp-lbl">1.1</div><div class="cmp-txt del">（1.1 无此段）</div></div>
+      <div class="cmp-row"><div class="cmp-lbl">1.1</div><div class="cmp-txt del">贵司单方通知自2026年12月1日起将本人纳入待岗管理，属于单方变更劳动合同履行方式，本人明确不予同意。</div></div>
       <div class="cmp-arrow">↓</div>
-      <div class="cmp-row"><div class="cmp-lbl">1.2</div><div class="cmp-txt ins">考虑到原派驻办公地址与报到地址通勤距离较远、通勤时间与成本显著增加…申请每日前后1小时弹性空间（8:00-17:00 或 10:00-19:00）</div></div>
+      <div class="cmp-row"><div class="cmp-lbl">1.2</div><div class="cmp-txt ins">综上，贵司单方通知将本人纳入待岗管理，属于单方变更劳动合同履行方式，缺乏充分的法律依据和合同依据，本人明确不予同意。</div></div>
     </div>
     <div class="analysis">
-      <div class="ana-row"><span class="ana-key">改动原因</span><span class="ana-val">这是整版唯一真正新增的内容。策略意义：① 在&quot;愿意报到等候新项目&quot;的主动姿态下，用通勤弹性申请展示合作意愿，不是硬刚到底；② 同时声明&quot;该申请不构成对待岗安排的认可&quot;——留足底线；③ 具体给出两个时间段而非模糊要求，便于执行，也不让公司有空子钻&quot;你到底要多少弹性&quot;。</span></div>
-      <div class="ana-row"><span class="ana-key">侧重方向</span><span class="ana-val focus">展示合作姿态 + 给具体可落地方案</span></div>
+      <div class="ana-row"><span class="ana-key">改动原因</span><span class="ana-val">收口句补上&quot;缺乏充分的法律依据和合同依据&quot;，与前面&quot;法条 + 合同第三条 + 5.7条不适用&quot;的论证形成闭环：法律上没有依据，合同上条款也不适用。同时删掉重复的&quot;自2026年12月1日起&quot;（前文已载明日期），句子更紧。</span></div>
+      <div class="ana-row"><span class="ana-key">侧重方向</span><span class="ana-val focus">结论与论证首尾闭合</span></div>
     </div>
   </div>
 </div>
 <div class="card" id="r7">
   <div class="card-head">
     <span class="id-badge">#7</span>
-    <span class="card-title">诉求简化 + 删掉 38 条武器</span>
+    <span class="card-title">报到部分：散文式两段 → 条款式声明</span>
     <span class="side-badge">1.1 → 1.2 改动</span>
-    <span class="direction-tag">从法律威慑 → 务实谈判姿态</span>
-    <span class="card-tags"><span class="tag-kw">策略转向</span><span class="tag-kw">务实</span></span>
+    <span class="direction-tag">从叙述性表态 → 可引用的条款式声明</span>
+    <span class="card-tags"><span class="tag-kw">条款化</span><span class="tag-kw">合同锚定</span></span>
   </div>
   <div class="card-body">
     <div class="compare">
-      <div class="cmp-row"><div class="cmp-lbl">1.1</div><div class="cmp-txt del">③ 保留依据《劳动合同法》第三十八条主张权利的一切法律途径</div></div>
+      <div class="cmp-row"><div class="cmp-lbl">1.1</div><div class="cmp-txt del">二、关于报到及工作等候的郑重申明／本人愿意继续提供劳动，接受在北京地区匹配……／本人将按照通知要求，于2026年12月1日前往通知载明地址报到打卡。</div></div>
       <div class="cmp-arrow">↓</div>
-      <div class="cmp-row"><div class="cmp-lbl">1.2</div><div class="cmp-txt ins">③ 请与本人协商劳动合同解除事宜，并依法支付经济补偿</div></div>
+      <div class="cmp-row"><div class="cmp-lbl">1.2</div><div class="cmp-txt ins">二、关于报到事宜的郑重声明／依据劳动合同第11.1.3条约定，本人在此郑重声明：1. 将于2026年12月1日按通知地址报到，但到场仅为等候同等条件新项目…… 2. 报到、打卡不视为同意或追认；</div></div>
     </div>
     <div class="analysis">
-      <div class="ana-row"><span class="ana-key">改动原因</span><span class="ana-val">与上一版（v1.2b）相比，这版反而收了：删掉了&quot;保留依据38条&quot;的威慑条款，把诉求从&quot;我要被迫解除的权力&quot;改成&quot;请协商解除+补偿&quot;。整体策略从&quot;硬刚施压&quot;转向&quot;务实谈判&quot;——同时配合通勤弹性申请的合作姿态，形成&quot;软姿态+硬底线&quot;的平衡。</span></div>
-      <div class="ana-row"><span class="ana-key">侧重方向</span><span class="ana-val focus">从法律威慑 → 务实谈判姿态</span></div>
+      <div class="ana-row"><span class="ana-key">改动原因</span><span class="ana-val">① 标题&quot;申明&quot;改&quot;声明&quot;，并去掉&quot;及工作等候&quot;——本节讲的就是报到这一件事；② 声明前先挂一句&quot;依据劳动合同第11.1.3条约定&quot;，把这份声明锚到合同条款上，而不是个人表态；③ 原来两段叙述性文字改成分点条款（1、2、3、4），每一点单独成立，日后引用时可直接指&quot;声明第X点&quot;。</span></div>
+      <div class="ana-row"><span class="ana-key">侧重方向</span><span class="ana-val focus">从叙述性表态 → 可引用的条款式声明</span></div>
     </div>
   </div>
 </div>
 <div class="card" id="r8">
   <div class="card-head">
     <span class="id-badge">#8</span>
-    <span class="card-title">落款精简为姓名+日期</span>
+    <span class="card-title">新增两点防御性声明</span>
     <span class="side-badge">1.1 → 1.2 改动</span>
-    <span class="direction-tag">文书精简</span>
-    <span class="card-tags"><span class="tag-kw">格式</span><span class="tag-kw">精简</span></span>
+    <span class="direction-tag">预先封堵对方两大抗辩</span>
+    <span class="card-tags"><span class="tag-kw">防御条款</span><span class="tag-kw">默示同意</span></span>
   </div>
   <div class="card-body">
     <div class="compare">
-      <div class="cmp-row"><div class="cmp-lbl">1.1</div><div class="cmp-txt del">回复人：【你的姓名】/ 身份证号：…/ 联系电话：…/ 日期：…</div></div>
+      <div class="cmp-row"><div class="cmp-lbl">1.1</div><div class="cmp-txt del">（1.1 无此内容）</div></div>
       <div class="cmp-arrow">↓</div>
-      <div class="cmp-row"><div class="cmp-lbl">1.2</div><div class="cmp-txt ins">回复人：___________/ 日期：________年____月____日</div></div>
+      <div class="cmp-row"><div class="cmp-lbl">1.2</div><div class="cmp-txt ins">3. 面试等对接事宜本人将积极配合，但面试结果不影响本人要求按原合同标准履行的权利；4. 本函即为书面异议，不存在&quot;到岗后一个月未提异议视为同意&quot;之适用情形。</div></div>
     </div>
     <div class="analysis">
-      <div class="ana-row"><span class="ana-key">改动原因</span><span class="ana-val">删掉了正文里已经有（身份证号、岗位）或没必要放（手机号）的冗余落款项，更简洁。也避免了占位符的模板感。</span></div>
-      <div class="ana-row"><span class="ana-key">侧重方向</span><span class="ana-val focus">文书精简</span></div>
+      <div class="ana-row"><span class="ana-key">改动原因</span><span class="ana-val">这两点是纯粹的防守条款。第3点：防止公司用&quot;你面试没通过&quot;来论证&quot;公司已尽安排义务、你无岗可上&quot;，先把&quot;面试结果≠合同义务免除&quot;写在前面。第4点：直接掐死公司最常用的一招——主张&quot;你到岗后一个月没提异议，视为默示同意变更&quot;。有了这句，再加上函件本身的送达，默示同意的主张基本站不住。</span></div>
+      <div class="ana-row"><span class="ana-key">侧重方向</span><span class="ana-val focus">预先封堵对方两大抗辩</span></div>
+    </div>
+  </div>
+</div>
+<div class="card" id="r9">
+  <div class="card-head">
+    <span class="id-badge">#9</span>
+    <span class="card-title">通勤弹性申请（1.1 完全没有）</span>
+    <span class="side-badge">1.1 → 1.2 改动</span>
+    <span class="direction-tag">姿态上配合，立场上不松口</span>
+    <span class="card-tags"><span class="tag-kw">策略平衡</span><span class="tag-kw">具体可执行</span></span>
+  </div>
+  <div class="card-body">
+    <div class="compare">
+      <div class="cmp-row"><div class="cmp-lbl">1.1</div><div class="cmp-txt del">（1.1 无此内容）</div></div>
+      <div class="cmp-arrow">↓</div>
+      <div class="cmp-row"><div class="cmp-lbl">1.2</div><div class="cmp-txt ins">5. 考虑到原派驻地址与报到地址通勤距离较远、成本显著增加，申请每日前后1小时弹性空间（8:00-17:00 或 10:00-19:00 内完成8小时标准工时）……该申请不构成对待岗安排的认可。</div></div>
+    </div>
+    <div class="analysis">
+      <div class="ana-row"><span class="ana-key">改动原因</span><span class="ana-val">这是唯一&quot;示好&quot;的内容，但设计得很克制：① 只申请时间弹性，不涉及薪资、岗位，姿态是配合而非对抗；② 给出两个具体区间（8:00-17:00 / 10:00-19:00），让公司没有&quot;你到底要什么&quot;的模糊空间，也证明仍是满 8 小时工时；③ 末句立刻回收——&quot;不构成对待岗安排的认可&quot;，合作姿态绝不被解读为让步。</span></div>
+      <div class="ana-row"><span class="ana-key">侧重方向</span><span class="ana-val focus">姿态上配合，立场上不松口</span></div>
+    </div>
+  </div>
+</div>
+<div class="card" id="r10">
+  <div class="card-head">
+    <span class="id-badge">#10</span>
+    <span class="card-title">新增&quot;劳动报酬&quot;专章 + 38 条武器</span>
+    <span class="side-badge">1.1 → 1.2 改动</span>
+    <span class="direction-tag">从辅助论证 → 独立请求权 + 被迫解除权</span>
+    <span class="card-tags"><span class="tag-kw">劳动报酬</span><span class="tag-kw">38条</span></span>
+  </div>
+  <div class="card-body">
+    <div class="compare">
+      <div class="cmp-row"><div class="cmp-lbl">1.1</div><div class="cmp-txt del">双方劳动合同虽已约定待岗期间薪酬规则（首月发放全薪，后续按北京市最低工资标准发放），但该约定附适用前提……（1.1 无独立报酬章节，也未提 38 条）</div></div>
+      <div class="cmp-arrow">↓</div>
+      <div class="cmp-row"><div class="cmp-lbl">1.2</div><div class="cmp-txt ins">三、关于劳动报酬的明确主张／不得单方降薪／若自第二个月起单方按北京市最低工资标准发放，本人将视为未足额支付劳动报酬，并保留依据《劳动合同法》第三十八条解除劳动合同并要求经济补偿的权利。</div></div>
+    </div>
+    <div class="analysis">
+      <div class="ana-row"><span class="ana-key">改动原因</span><span class="ana-val">1.1 把薪酬只当成&quot;论证待岗不合法的辅助材料&quot;；1.2 把它单独立成一章，性质完全变了：① 明确&quot;不得单方降薪&quot;是一项独立主张；② 提前定义&quot;按最低工资发放＝未足额支付劳动报酬&quot;，把事实定性写死在函里；③ 挂上《劳动合同法》第三十八条——一旦公司真的降薪，本人即取得被迫解除并索赔经济补偿的权利。这一章是全函真正的&quot;牙齿&quot;。</span></div>
+      <div class="ana-row"><span class="ana-key">侧重方向</span><span class="ana-val focus">从辅助论证 → 独立请求权 + 被迫解除权</span></div>
+    </div>
+  </div>
+</div>
+<div class="card" id="r11">
+  <div class="card-head">
+    <span class="id-badge">#11</span>
+    <span class="card-title">三项诉求全面加码</span>
+    <span class="side-badge">1.1 → 1.2 改动</span>
+    <span class="direction-tag">诉求从原则性表述 → 可量化、可执行</span>
+    <span class="card-tags"><span class="tag-kw">诉求量化</span><span class="tag-kw">兜底条款</span></span>
+  </div>
+  <div class="card-body">
+    <div class="compare">
+      <div class="cmp-row"><div class="cmp-lbl">1.1</div><div class="cmp-txt del">三、本人正式诉求：1. 请贵司撤销本次单方作出的待岗安排；2. ……优先在北京范围内为本人匹配同等条件的工作岗位；3. ……请及时与本人协商劳动合同变更或者协商解除事宜。</div></div>
+      <div class="cmp-arrow">↓</div>
+      <div class="cmp-row"><div class="cmp-lbl">1.2</div><div class="cmp-txt ins">四、本人诉求：1. 请贵司于收到本函之日起3个工作日内撤销；2. 自2026年12月1日起按原标准足额支付，并匹配与原岗位（UI设计师，10级）相当岗位；3. 若无法提供，请依据劳动合同第11.2.4条协商解除并依法支付经济补偿（每满一年一个月工资）；双方未达成书面协议前，不接受任何单方变更，包括但不限于待岗、跨城调岗、降薪。</div></div>
+    </div>
+    <div class="analysis">
+      <div class="ana-row"><span class="ana-key">改动原因</span><span class="ana-val">三条全改：① 第1条加了&quot;3个工作日内&quot;的时限——不设期限的诉求等于没有诉求；② 第2条把&quot;同等条件岗位&quot;具体化为&quot;UI设计师，10级&quot;，并锚定&quot;自2026年12月1日起&quot;，堵住&quot;从何时开始补&quot;的争议；③ 第3条从&quot;请及时协商&quot;改为&quot;依据合同第11.2.4条协商解除 + 按年限每满一年一个月工资&quot;，把抽象的&quot;落实补偿&quot;换成可计算的钱；④ 末尾补兜底条款&quot;包括但不限于待岗、跨城调岗、降薪&quot;，防止对方用别的形式绕开。</span></div>
+      <div class="ana-row"><span class="ana-key">侧重方向</span><span class="ana-val focus">诉求从原则性表述 → 可量化、可执行</span></div>
+    </div>
+  </div>
+</div>
+<div class="card" id="r12">
+  <div class="card-head">
+    <span class="id-badge">#12</span>
+    <span class="card-title">收尾：交接 + 仲裁预告 + 落款</span>
+    <span class="side-badge">1.1 → 1.2 改动</span>
+    <span class="direction-tag">以法律程序预告收尾</span>
+    <span class="card-tags"><span class="tag-kw">收尾施压</span><span class="tag-kw">落款精简</span></span>
+  </div>
+  <div class="card-body">
+    <div class="compare">
+      <div class="cmp-row"><div class="cmp-lbl">1.1</div><div class="cmp-txt del">四、关于工作交接／……完整移交工作文档、账号、资产；但完成交接，不代表本人认可、接受本次待岗安排。／请贵司在收到本函之日起3个工作日内……出具书面答复。／回复人：【你的姓名】 身份证号：… 联系电话：… 日期：…</div></div>
+      <div class="cmp-arrow">↓</div>
+      <div class="cmp-row"><div class="cmp-lbl">1.2</div><div class="cmp-txt ins">五、关于工作交接／……完整移交工作资料、账号及相关资产。工作交接的履行，不视为对本次待岗安排或跨城市调岗的认可。／……逾期未答复或答复不能解决本人合理诉求的，本人将通过劳动仲裁等法律途径维护自身合法权益。／回复人：____ 日期：2026年__月__日</div></div>
+    </div>
+    <div class="analysis">
+      <div class="ana-row"><span class="ana-key">改动原因</span><span class="ana-val">① 章节顺延为&quot;五&quot;，并把&quot;不认可&quot;的范围从&quot;待岗安排&quot;扩大到&quot;待岗安排或跨城市调岗&quot;，两个风险点都封住；② 结尾新增&quot;逾期未答复……将通过劳动仲裁等法律途径维权&quot;——这是把函件从&quot;请求&quot;升级为&quot;程序起点&quot;，给公司一个明确的成本预期；③ 落款删掉身份证号、手机号（正文已载明身份），只留回复人与日期，避免占位符堆叠的模板感。</span></div>
+      <div class="ana-row"><span class="ana-key">侧重方向</span><span class="ana-val focus">以法律程序预告收尾</span></div>
     </div>
   </div>
 </div>
@@ -438,50 +582,446 @@ html,body{
   <div class="doc-panel">
     <div class="doc-head">
       <div></div>
-      <div class="left">版本 1.1 · 原始版（被替换 / 删除）</div>
+      <div class="left">版本 1.1 · 初稿原文（被替换 / 删除）</div>
       <div class="mid">关系</div>
       <div></div>
-      <div class="right">版本 1.2 · 更新版（替换后 / 新增）</div>
+      <div class="right">版本 1.2 · 本次新版（替换后 / 新增）</div>
     </div>
     <table class="doc-table">
       <tbody>
-<tr class="rw diff" id="c0"><td class="ln">1</td><td class="st mixed"><span class="side-tag">原文</span><del>主题：</del>关于待岗通知的异议<del>及工作安排的回复</del></td><td class="ln rel">→</td><td class="ln right">1</td><td class="st mixed"><span class="side-tag">改后</span>关于<ins>《</ins>待岗通知<ins>》</ins>的异议<ins>函</ins></td></tr>
-<tr class="rw diff" id="c1"><td class="ln">2</td><td class="st mixed"><span class="side-tag">原文</span><del>致：【外包</del>公司<del>全称】人力资源部</del></td><td class="ln rel">→</td><td class="ln right">2</td><td class="st mixed"><span class="side-tag">改后</span><ins>上海微创软件股份有限</ins>公司<ins>北京分公司:</ins></td></tr>
-<tr class="rw diff" id="c2"><td class="ln">3</td><td class="st mixed"><span class="side-tag">原文</span><del>抄送</del>：<del>【项目负责人、直属上级、李雅琪】</del></td><td class="ln rel">→</td><td class="ln right">3</td><td class="st mixed"><span class="side-tag">改后</span><ins>本人_____________（身份证号</ins>：<ins>_________________），系贵公司______________岗位员工。</ins></td></tr>
-<tr class="rw diff" id="c3"><td class="ln">4</td><td class="st mixed"><span class="side-tag">原文</span>本人<del>已</del>收到<del>贵</del>司<del>于【XXXX年XX月XX日】发</del>出<del>的《</del>待岗通知<del>》</del>。</td><td class="ln rel">→</td><td class="ln right">4</td><td class="st mixed"><span class="side-tag">改后</span>本人<ins>于____年___月___日</ins>收到<ins>公</ins>司出<ins>项</ins>待岗通知。</td></tr>
-<tr class="rw diff" id="c4"><td class="ln">5</td><td class="st mixed"><span class="side-tag">原文</span>现就<del>该通知项下安排，</del>正式<del>回复并</del>提出异议<del>如下</del>：</td><td class="ln rel">→</td><td class="ln right">5</td><td class="st mixed"><span class="side-tag">改后</span>现就<ins>此事</ins>正式提出<ins>书面</ins>异议：</td></tr>
-<tr class="rw diff" id="c5"><td class="ln">6</td><td class="st mixed"><span class="side-tag">原文</span>一、本人不同意贵司单方<del>启动本次</del>待岗<del>的</del>安排</td><td class="ln rel">→</td><td class="ln right">6</td><td class="st mixed"><span class="side-tag">改后</span>一、本人不同意贵司单方<ins>作出的</ins>待岗安排</td></tr>
-<tr class="rw diff" id="c6"><td class="ln">7</td><td class="st mixed"><span class="side-tag">原文</span>依据《中华人民共和国劳动合同法》第三十五条，变更劳动合同约定内容，应当经<del>用人单位与劳动者</del>协商一致。</td><td class="ln rel">→</td><td class="ln right">7</td><td class="st mixed"><span class="side-tag">改后</span>依据《中华人民共和国劳动合同法》第三十五条，变更劳动合同约定<ins>的</ins>内容，应当经<ins>双方</ins>协商一致<ins>并采用书面形式</ins>。</td></tr>
-<tr class="rw diff" id="c7"><td class="ln">8</td><td class="st mixed"><span class="side-tag">原文</span><del>停工</del>待岗<del>有法定</del>适用<del>前提，仅限</del>用人单位<del>自身</del>停工停产的情形。</td><td class="ln rel">→</td><td class="ln right">8</td><td class="st mixed"><span class="side-tag">改后</span><ins>我国劳动法律项下的</ins>待岗<ins>制度，</ins>适用<ins>于</ins>用人单位停工停产<ins>、无法提供劳动岗位</ins>的<ins>法定</ins>情形。</td></tr>
-<tr class="rw diff" id="c8"><td class="ln">9</td><td class="st mixed"><span class="side-tag">原文</span>本次仅为<del>客户方</del>业务调整<del>、项目裁撤</del>，贵司整体<del>正常经营，不属于</del>法定<del>可单方安排员工</del>待岗<del>的</del>情形。</td><td class="ln rel">→</td><td class="ln right">9</td><td class="st mixed"><span class="side-tag">改后</span>本次仅为<ins>百度派驻项目的</ins>业务调整，<ins>不属于</ins>贵司整体<ins>停工停产的</ins>法定待岗情形。</td></tr>
-<tr class="rw diff" id="c9"><td class="ln">10</td><td class="st mixed"><span class="side-tag">原文</span>双方劳动合同<del>虽已</del>约定<del>待岗期间薪酬规则（首月发放全薪</del>，<del>后续按北京市最低工资标准发放），但该约定附适用前提，仅在</del>符合法定<del>停工</del>待岗<del>条件时方可生效</del>，不能<del>直接适用于</del>单<del>一客户项目终止形成的</del>岗<del>位空档</del>。</td><td class="ln rel">→</td><td class="ln right">10</td><td class="st mixed"><span class="side-tag">改后</span>双方劳动合同<ins>中关于待岗薪酬的</ins>约定，<ins>需以</ins>符合法定待岗<ins>前提为适用基础</ins>，不能<ins>据此任意</ins>单<ins>方启动待</ins>岗。</td></tr>
-<tr class="rw diff" id="c10"><td class="ln">11</td><td class="st mixed"><span class="side-tag">原文</span>贵司单方通知自2026年12月1日起将本人纳入待岗管理，属于单方变更劳动合同履行方式，本人明确不予同意。</td><td class="ln rel">→</td><td class="ln right">11</td><td class="st mixed"><span class="side-tag">改后</span>贵司单方通知自2026年12月1日起将本人纳入待岗管理，属于单方变更劳动合同履行方式，<ins>缺乏法律依据，</ins>本人明确不予同意。</td></tr>
-<tr class="rw diff" id="c11"><td class="ln">12</td><td class="st mixed"><span class="side-tag">原文</span>二、关于报到<del>及工作等候</del>的郑重申明</td><td class="ln rel">→</td><td class="ln right">12</td><td class="st mixed"><span class="side-tag">改后</span>二、关于报到<ins>事宜</ins>的郑重申明</td></tr>
-<tr class="rw diff" id="c12"><td class="ln">13</td><td class="st mixed"><span class="side-tag">原文</span>本人愿意继续<del>提供</del>劳动，接受在北京地区匹配与原岗位职级、薪酬标准、工作条件相当的岗位，并<del>愿意</del>配合<del>对应项目</del>面试<del>与</del>对接<del>；</del></td><td class="ln rel">→</td><td class="ln right">13</td><td class="st mixed"><span class="side-tag">改后</span>本人愿意继续<ins>履行</ins>劳动<ins>合同</ins>，接受<ins>贵司</ins>在北京地区匹配与原岗位职级、薪酬标准、工作条件相当的<ins>工作</ins>岗位，并配合<ins>相关</ins>面试对接<ins>。</ins></td></tr>
-<tr class="rw diff" id="c13"><td class="ln">14</td><td class="st mixed"><span class="side-tag">原文</span>跨城市调岗属于对<del>劳动合同</del>工作地点的重大变更，未经协商一致，本人无法接受，该拒绝不<del>属于</del>拒不服从合理用工安排。</td><td class="ln rel">→</td><td class="ln right">14</td><td class="st mixed"><span class="side-tag">改后</span>跨城市调岗属于对工作地点的重大变更，未经协商一致，本人无法接受，该拒绝不<ins>构成</ins>拒不服从合理用工安排。</td></tr>
-<tr class="rw diff" id="c14"><td class="ln">15</td><td class="st mixed"><span class="side-tag">原文</span>本人将<del>按照通知要求，</del>于2026年12月1日<del>前往</del>通知<del>载明</del>地址报到<del>打卡</del>。</td><td class="ln rel">→</td><td class="ln right">15</td><td class="st mixed"><span class="side-tag">改后</span>本人将于2026年12月1日<ins>按</ins>通知地址报到。</td></tr>
-<tr class="rw diff" id="c15"><td class="ln">16</td><td class="st mixed"><span class="side-tag">原文</span>特此<del>郑重</del>申明：本人<del>本次</del>到场<del>，是</del>等候公司安排同等条件新项目，不认可<del>目前</del>处于待岗状态；</td><td class="ln rel">→</td><td class="ln right">16</td><td class="st mixed"><span class="side-tag">改后</span>特此申明：本人到场<ins>仅为</ins>等候公司安排同等条件新项目，不认可<ins>本人</ins>处于待岗状态；</td></tr>
-<tr class="rw diff" id="c16"><td class="ln">17</td><td class="st mixed"><span class="side-tag">原文</span><del>本次</del>报到、打卡行为<del>，</del>不<del>构成本人</del>对本次单方待岗安排的同意或<del>者</del>追认。</td><td class="ln rel">→</td><td class="ln right">17</td><td class="st mixed"><span class="side-tag">改后</span>报到、打卡行为不<ins>视为</ins>对本次单方待岗安排的同意或追认。</td></tr>
-<tr class="rw diff" id="c17"><td class="ln">18</td><td class="st mixed"><span class="side-tag">原文</span><del>三、</del>本人<del>正式诉求1. 请贵司撤销</del>本次<del>单方作出</del>的<del>待岗</del>安排<del>；</del></td><td class="ln rel">→</td><td class="ln right">18</td><td class="st mixed"><span class="side-tag">改后</span><ins>考虑到</ins>本人<ins>原派驻办公地址与</ins>本次<ins>通知载明</ins>的<ins>报到地址通勤距离较远、通勤时间与成本显著增加，在等候新项目</ins>安排<ins>期间，本人申请工作时间给予每日前后1小时的弹性空间（可在8:00-17:00或10:00-19:00区间内完成8小时标准工时），确保不影响日常工作对接与事项沟通。</ins></td></tr>
-<tr class="rw diff" id="c18"><td class="ln">19</td><td class="st mixed"><span class="side-tag">原文</span><del>2. 在双方就劳动合同变更达</del>成<del>书面一致前，请贵司按照原劳动合同约定标准足额向</del>本人<del>支付劳动报酬，并优先在北京范围内为</del>本<del>人匹配同等条件</del>的<del>工作岗位；</del></td><td class="ln rel">→</td><td class="ln right">19</td><td class="st mixed"><span class="side-tag">改后</span><ins>该通勤便利申请，不构</ins>成本人<ins>对</ins>本<ins>次单方待岗安排</ins>的<ins>认可。</ins></td></tr>
-<tr class="rw diff" id="c19"><td class="ln">20</td><td class="st mixed"><span class="side-tag">原文</span><del>3</del>. <del>若</del>贵司<del>客观上已无法在北京为</del>本<del>人提供同等条件</del>岗<del>位，请及时与本人协商劳动合同变更或者协商解除事宜，并依法落实经济补偿。</del></td><td class="ln rel">→</td><td class="ln right">20</td><td class="st mixed"><span class="side-tag">改后</span><ins>三、本人诉求1</ins>. <ins>请</ins>贵司<ins>撤销</ins>本<ins>次单方待</ins>岗<ins>决定；</ins></td></tr>
-<tr class="rw diff" id="c20"><td class="ln">21</td><td class="st mixed"><span class="side-tag">原文</span>在<del>签署书面协议之前，本人不接受任何单</del>方<del>变更</del>劳动合同<del>的安排。</del></td><td class="ln rel">→</td><td class="ln right">21</td><td class="st mixed"><span class="side-tag">改后</span><ins>2. </ins>在<ins>双</ins>方<ins>就</ins>劳动合同<ins>变更达成书面一致前，贵司应按原劳动合同约定标准足额支付劳动报酬，并优先在北京范围内为本人匹配同等条件岗位；</ins></td></tr>
-<tr class="rw diff" id="c21"><td class="ln empty">—</td><td class="st empty-cell"></td><td class="ln rel">↗</td><td class="ln right">22</td><td class="st ins"><span class="side-tag">新增</span>3. 若贵司客观上无法提供同等条件岗位，请与本人协商劳动合同解除事宜，并依法支付经济补偿。</td></tr>
-<tr class="rw diff" id="c22"><td class="ln empty">—</td><td class="st empty-cell"></td><td class="ln rel">↗</td><td class="ln right">23</td><td class="st ins"><span class="side-tag">新增</span>双方未达成书面协议前，本人不接受任何单方变更。</td></tr>
-<tr class="rw same"><td class="ln">22</td><td class="st">四、关于工作交接</td><td class="ln rel">＝</td><td class="ln right">24</td><td class="st">四、关于工作交接</td></tr>
-<tr class="rw diff" id="c24"><td class="ln">23</td><td class="st mixed"><span class="side-tag">原文</span>本人将在2026年12月1日前<del>，配合</del>完成百度项目<del>全部</del>工作交接，完整移交工作<del>文档</del>、账号<del>、</del>资产<del>；</del></td><td class="ln rel">→</td><td class="ln right">25</td><td class="st mixed"><span class="side-tag">改后</span>本人将在2026年12月1日前完成百度项目<ins>对应</ins>工作<ins>的</ins>交接，完整移交工作<ins>资料</ins>、账号<ins>及相关</ins>资产<ins>。</ins></td></tr>
-<tr class="rw diff" id="c25"><td class="ln">24</td><td class="st mixed"><span class="side-tag">原文</span><del>但完成</del>交接，不<del>代表本人认可、接受</del>本次待岗安排。</td><td class="ln rel">→</td><td class="ln right">26</td><td class="st mixed"><span class="side-tag">改后</span><ins>工作</ins>交接<ins>的履行</ins>，不<ins>视为对</ins>本次待岗安排<ins>的认可</ins>。</td></tr>
-<tr class="rw diff" id="c26"><td class="ln">25</td><td class="st mixed"><span class="side-tag">原文</span>请贵司<del>在</del>收到本函之日起3个工作日内，就上述事项<del>向本人</del>出<del>具</del>书面答复。</td><td class="ln rel">→</td><td class="ln right">27</td><td class="st mixed"><span class="side-tag">改后</span>请贵司<ins>于</ins>收到本函之日起3个工作日内，就上述事项<ins>作</ins>出书面答复。</td></tr>
-<tr class="rw diff" id="c27"><td class="ln">26</td><td class="st mixed"><span class="side-tag">原文</span>回复人：<del>【你的姓名】</del></td><td class="ln rel">→</td><td class="ln right">28</td><td class="st mixed"><span class="side-tag">改后</span>回复人：<ins>_________________</ins></td></tr>
-<tr class="rw diff" id="c28"><td class="ln">27</td><td class="st mixed"><span class="side-tag">原文</span><del>身份证号</del>：<del>【你的身份证号】</del></td><td class="ln rel">→</td><td class="ln right">29</td><td class="st mixed"><span class="side-tag">改后</span><ins>日期</ins>：<ins>_________年_____月_____日</ins></td></tr>
-<tr class="rw diff" id="c29"><td class="ln">28</td><td class="st del"><span class="side-tag">删除</span>联系电话：【你的手机号】</td><td class="ln rel">↘</td><td class="ln right empty">—</td><td class="st empty-cell"></td></tr>
-<tr class="rw diff" id="c30"><td class="ln">29</td><td class="st del"><span class="side-tag">删除</span>日期：【发送当日日期】</td><td class="ln rel">↘</td><td class="ln right empty">—</td><td class="st empty-cell"></td></tr>
+<tr class="rw diff" id="c0"><td class="ln">1</td><td class="st mixed"><span class="side-tag">原文</span><del>主题：关于</del>待岗通知的异议<del>及工作安排的回复</del></td><td class="ln rel">→</td><td class="ln right">1</td><td class="st mixed"><span class="side-tag">改后</span><ins>对《</ins>待岗通知<ins>》</ins>的异议<ins>函</ins></td></tr>
+<tr class="rw diff" id="c1"><td class="ln">2</td><td class="st del"><span class="side-tag">删除</span>致：【外包公司全称】人力资源部</td><td class="ln rel">↘</td><td class="ln right empty">—</td><td class="st empty-cell"></td></tr>
+<tr class="rw diff" id="c2"><td class="ln">3</td><td class="st del"><span class="side-tag">删除</span>抄送：【项目负责人、直属上级、李雅琪】</td><td class="ln rel">↘</td><td class="ln right empty">—</td><td class="st empty-cell"></td></tr>
+<tr class="rw diff" id="c3"><td class="ln">4</td><td class="st del"><span class="side-tag">删除</span>本人已收到贵司于【XXXX年XX月XX日】发出的《待岗通知》。</td><td class="ln rel">↘</td><td class="ln right empty">—</td><td class="st empty-cell"></td></tr>
+<tr class="rw diff" id="c4"><td class="ln empty">—</td><td class="st empty-cell"></td><td class="ln rel">↗</td><td class="ln right">2</td><td class="st ins"><span class="side-tag">新增</span>致：上海微创软件股份有限公司北京分公司</td></tr>
+<tr class="rw diff" id="c5"><td class="ln empty">—</td><td class="st empty-cell"></td><td class="ln rel">↗</td><td class="ln right">3</td><td class="st ins"><span class="side-tag">新增</span>本人: (身份证号: )，系贵公司UI设计师岗位员工，劳动合同期限自2024年3月8日起至2027年3月7日止，工作地点为北京。</td></tr>
+<tr class="rw diff" id="c6"><td class="ln empty">—</td><td class="st empty-cell"></td><td class="ln rel">↗</td><td class="ln right">4</td><td class="st ins"><span class="side-tag">新增</span>本人于2026年11月06日收到贵司出具的《待岗通知》，通知称因百度项目业务调整，自2026年12月1日起安排本人待岗，并要求前往北京市海淀区海淀大街8号中钢国际广场A座5层C区报到。</td></tr>
+<tr class="rw diff" id="c7"><td class="ln">5</td><td class="st mixed"><span class="side-tag">原文</span>现就该通知<del>项下安排</del>，正式<del>回复并</del>提出异议如下：</td><td class="ln rel">→</td><td class="ln right">5</td><td class="st mixed"><span class="side-tag">改后</span>现就该通知<ins>及相关事宜</ins>，正式提出<ins>书面</ins>异议如下：</td></tr>
+<tr class="rw diff" id="c8"><td class="ln">6</td><td class="st mixed"><span class="side-tag">原文</span>一、本人不同意贵司单方<del>启动本次</del>待岗<del>的</del>安排</td><td class="ln rel">→</td><td class="ln right">6</td><td class="st mixed"><span class="side-tag">改后</span>一、本人不同意贵司单方<ins>作出的</ins>待岗安排</td></tr>
+<tr class="rw diff" id="c9"><td class="ln empty">—</td><td class="st empty-cell"></td><td class="ln rel">↗</td><td class="ln right">7</td><td class="st ins"><span class="side-tag">新增</span>据本人了解，本次调整的起因是百度项目外迁西安等地，贵司因此对派驻该项目的外包人员进行调配。</td></tr>
+<tr class="rw diff" id="c10"><td class="ln empty">—</td><td class="st empty-cell"></td><td class="ln rel">↗</td><td class="ln right">8</td><td class="st ins"><span class="side-tag">新增</span>本人因家庭及个人实际情况（家庭住址、生活基础均在北京），无法接受跨省市外迁，该情况已向贵司说明。</td></tr>
+<tr class="rw diff" id="c11"><td class="ln">7</td><td class="st mixed"><span class="side-tag">原文</span>依据《中华人民共和国劳动合同法》第三十五条<del>，变更</del>劳动合同约定<del>内容</del>，应当经<del>用人单位与劳动者</del>协商一致。</td><td class="ln rel">→</td><td class="ln right">9</td><td class="st mixed"><span class="side-tag">改后</span>依据《中华人民共和国劳动合同法》第三十五条<ins>及双方</ins>劳动合同<ins>第三条</ins>约定，<ins>工作地点是劳动合同的核心条款，变更工作地点</ins>应当经<ins>双方</ins>协商一致。</td></tr>
+<tr class="rw diff" id="c12"><td class="ln">8</td><td class="st del"><span class="side-tag">删除</span>停工待岗有法定适用前提，仅限用人单位自身停工停产的情形。</td><td class="ln rel">↘</td><td class="ln right empty">—</td><td class="st empty-cell"></td></tr>
+<tr class="rw diff" id="c13"><td class="ln">9</td><td class="st del"><span class="side-tag">删除</span>本次仅为客户方业务调整、项目裁撤，贵司整体正常经营，不属于法定可单方安排员工待岗的情形。</td><td class="ln rel">↘</td><td class="ln right empty">—</td><td class="st empty-cell"></td></tr>
+<tr class="rw diff" id="c14"><td class="ln">10</td><td class="st del"><span class="side-tag">删除</span>双方劳动合同虽已约定待岗期间薪酬规则（首月发放全薪，后续按北京市最低工资标准发放），但该约定附适用前提，仅在符合法定停工待岗条件时方可生效，不能直接适用于单一客户项目终止形成的岗位空档。</td><td class="ln rel">↘</td><td class="ln right empty">—</td><td class="st empty-cell"></td></tr>
+<tr class="rw diff" id="c15"><td class="ln empty">—</td><td class="st empty-cell"></td><td class="ln rel">↗</td><td class="ln right">10</td><td class="st ins"><span class="side-tag">新增</span>跨城市调岗属于对劳动合同的重大变更，且会给本人造成实质性困难，贵司无权单方强制。</td></tr>
+<tr class="rw diff" id="c16"><td class="ln empty">—</td><td class="st empty-cell"></td><td class="ln rel">↗</td><td class="ln right">11</td><td class="st ins"><span class="side-tag">新增</span>贵司援引劳动合同第5.7条安排待岗，本人认为该条款的适用前提不成立：</td></tr>
+<tr class="rw diff" id="c17"><td class="ln empty">—</td><td class="st empty-cell"></td><td class="ln rel">↗</td><td class="ln right">12</td><td class="st ins"><span class="side-tag">新增</span>1. 贵司作为专业的信息技术服务外包公司，在北京地区仍有多项在执行业务和项目，并非&quot;无法安排乙方在业务、项目上工作&quot;，而是未积极履行用人单位的用工安排义务；</td></tr>
+<tr class="rw diff" id="c18"><td class="ln empty">—</td><td class="st empty-cell"></td><td class="ln rel">↗</td><td class="ln right">13</td><td class="st ins"><span class="side-tag">新增</span>2. 仅因单个派驻项目结束即安排员工长期待岗，实质上是将贵司的经营风险转嫁给劳动者，违背了劳动合同法的立法本意；</td></tr>
+<tr class="rw diff" id="c19"><td class="ln empty">—</td><td class="st empty-cell"></td><td class="ln rel">↗</td><td class="ln right">14</td><td class="st ins"><span class="side-tag">新增</span>3. 本次待岗仅针对百度项目外迁涉及的少数员工，具有明显的针对性，并非贵司整体经营困难导致的普遍性停工停产。</td></tr>
+<tr class="rw diff" id="c20"><td class="ln">11</td><td class="st mixed"><span class="side-tag">原文</span>贵司单方通知<del>自2026年12月1日起</del>将本人纳入待岗管理，属于单方变更劳动合同履行方式，本人明确不予同意。</td><td class="ln rel">→</td><td class="ln right">15</td><td class="st mixed"><span class="side-tag">改后</span><ins>综上，</ins>贵司单方通知将本人纳入待岗管理，属于单方变更劳动合同履行方式，<ins>缺乏充分的法律依据和合同依据，</ins>本人明确不予同意。</td></tr>
+<tr class="rw diff" id="c21"><td class="ln">12</td><td class="st mixed"><span class="side-tag">原文</span>二、关于报到<del>及工作等候</del>的郑重<del>申</del>明</td><td class="ln rel">→</td><td class="ln right">16</td><td class="st mixed"><span class="side-tag">改后</span>二、关于报到<ins>事宜</ins>的郑重<ins>声</ins>明</td></tr>
+<tr class="rw diff" id="c22"><td class="ln">13</td><td class="st del"><span class="side-tag">删除</span>本人愿意继续提供劳动，接受在北京地区匹配与原岗位职级、薪酬标准、工作条件相当的岗位，并愿意配合对应项目面试与对接；</td><td class="ln rel">↘</td><td class="ln right empty">—</td><td class="st empty-cell"></td></tr>
+<tr class="rw diff" id="c23"><td class="ln">14</td><td class="st del"><span class="side-tag">删除</span>跨城市调岗属于对劳动合同工作地点的重大变更，未经协商一致，本人无法接受，该拒绝不属于拒不服从合理用工安排。</td><td class="ln rel">↘</td><td class="ln right empty">—</td><td class="st empty-cell"></td></tr>
+<tr class="rw diff" id="c24"><td class="ln">15</td><td class="st del"><span class="side-tag">删除</span>本人将按照通知要求，于2026年12月1日前往通知载明地址报到打卡。</td><td class="ln rel">↘</td><td class="ln right empty">—</td><td class="st empty-cell"></td></tr>
+<tr class="rw diff" id="c25"><td class="ln empty">—</td><td class="st empty-cell"></td><td class="ln rel">↗</td><td class="ln right">17</td><td class="st ins"><span class="side-tag">新增</span>依据劳动合同第11.1.3条约定，本人在此郑重声明：</td></tr>
+<tr class="rw diff" id="c26"><td class="ln">16</td><td class="st mixed"><span class="side-tag">原文</span><del>特此郑重申明：</del>本人本<del>次</del>到场<del>，是</del>等候<del>公</del>司安排同等条件新项目，不认可<del>目前</del>处于待岗状态；</td><td class="ln rel">→</td><td class="ln right">18</td><td class="st mixed"><span class="side-tag">改后</span><ins>1. </ins>本人<ins>将于2026年12月1日按通知地址报到，但</ins>本<ins>人</ins>到场<ins>仅为</ins>等候<ins>贵</ins>司<ins>在北京地区</ins>安排同等条件新项目，不认可<ins>本人</ins>处于<ins>&quot;</ins>待岗<ins>&quot;</ins>状态；</td></tr>
+<tr class="rw diff" id="c27"><td class="ln">17</td><td class="st mixed"><span class="side-tag">原文</span><del>本次</del>报到、打卡行为<del>，</del>不<del>构成本人</del>对本次单方待岗安排的同意或<del>者</del>追认<del>。</del></td><td class="ln rel">→</td><td class="ln right">19</td><td class="st mixed"><span class="side-tag">改后</span><ins>2. </ins>报到、打卡行为不<ins>视为</ins>对本次单方待岗安排的同意或追认<ins>；</ins></td></tr>
+<tr class="rw diff" id="c28"><td class="ln empty">—</td><td class="st empty-cell"></td><td class="ln rel">↗</td><td class="ln right">20</td><td class="st ins"><span class="side-tag">新增</span>3. 贵司安排的面试等对接事宜，本人将积极配合，但面试结果不影响本人要求按原合同标准履行的权利；</td></tr>
+<tr class="rw diff" id="c29"><td class="ln empty">—</td><td class="st empty-cell"></td><td class="ln rel">↗</td><td class="ln right">21</td><td class="st ins"><span class="side-tag">新增</span>4. 本函即为本人对本次岗位/工作状态调整的书面异议，不存在&quot;到岗后一个月未提异议视为同意&quot;之适用情形。</td></tr>
+<tr class="rw diff" id="c30"><td class="ln empty">—</td><td class="st empty-cell"></td><td class="ln rel">↗</td><td class="ln right">22</td><td class="st ins"><span class="side-tag">新增</span>5. 考虑到本人原派驻办公地址与本次通知载明的报到地址通勤距离较远、通勤时间与成本显著增加，在等候新项目安排期间，本人申请工作时间给予每日前后1小时的弹性空间（可在8:00-17:00或10:00-19:00区间内完成8小时标准工时），确保不影响日常工作对接与事项沟通。</td></tr>
+<tr class="rw diff" id="c31"><td class="ln empty">—</td><td class="st empty-cell"></td><td class="ln rel">↗</td><td class="ln right">23</td><td class="st ins"><span class="side-tag">新增</span>该通勤便利申请，不构成本人对本次单方待岗安排的认可。</td></tr>
+<tr class="rw diff" id="c32"><td class="ln empty">—</td><td class="st empty-cell"></td><td class="ln rel">↗</td><td class="ln right">24</td><td class="st ins"><span class="side-tag">新增</span>三、关于劳动报酬的明确主张</td></tr>
+<tr class="rw diff" id="c33"><td class="ln empty">—</td><td class="st empty-cell"></td><td class="ln rel">↗</td><td class="ln right">25</td><td class="st ins"><span class="side-tag">新增</span>贵司通知中提及的待岗期间薪酬安排，本人不予认可。</td></tr>
+<tr class="rw diff" id="c34"><td class="ln empty">—</td><td class="st empty-cell"></td><td class="ln rel">↗</td><td class="ln right">26</td><td class="st ins"><span class="side-tag">新增</span>在双方就劳动合同变更达成书面一致前，贵司应按原劳动合同约定的工资标准足额支付本人劳动报酬，不得单方降薪。</td></tr>
+<tr class="rw diff" id="c35"><td class="ln empty">—</td><td class="st empty-cell"></td><td class="ln rel">↗</td><td class="ln right">27</td><td class="st ins"><span class="side-tag">新增</span>若贵司自第二个月起单方按北京市最低工资标准发放报酬，本人将视为未足额支付劳动报酬，并保留依据《劳动合同法》第三十八条解除劳动合同并要求经济补偿的权利。</td></tr>
+<tr class="rw diff" id="c36"><td class="ln">18</td><td class="st mixed"><span class="side-tag">原文</span><del>三</del>、本人<del>正式</del>诉求1. 请贵司撤销本次单方<del>作出的</del>待岗<del>安排</del>；</td><td class="ln rel">→</td><td class="ln right">28</td><td class="st mixed"><span class="side-tag">改后</span><ins>四</ins>、本人诉求1. 请贵司<ins>于收到本函之日起3个工作日内，</ins>撤销本次单方待岗<ins>决定</ins>；</td></tr>
+<tr class="rw diff" id="c37"><td class="ln">19</td><td class="st mixed"><span class="side-tag">原文</span>2. <del>在双方就劳动合同变更达成书面一致前，</del>请贵司按<del>照</del>原劳动合同约定标准足额<del>向</del>本人<del>支付</del>劳动报酬，并<del>优先</del>在北京范围内为本人匹配<del>同等</del>条件的工作岗位；</td><td class="ln rel">→</td><td class="ln right">29</td><td class="st mixed"><span class="side-tag">改后</span>2. 请贵司<ins>自2026年12月1日起</ins>按原劳动合同约定标准足额<ins>支付</ins>本人劳动报酬，并在北京范围内为本人匹配<ins>与原岗位（UI设计师，10级）职级、薪酬标准、工作</ins>条件<ins>相当</ins>的工作岗位；</td></tr>
+<tr class="rw diff" id="c38"><td class="ln">20</td><td class="st mixed"><span class="side-tag">原文</span>3. 若贵司客观上<del>已</del>无法在北京<del>为本人</del>提供同等条件岗位，请<del>及时</del>与本人协商劳动合同<del>变更或者协商解除</del>事宜，并依法<del>落实</del>经济补偿。</td><td class="ln rel">→</td><td class="ln right">30</td><td class="st mixed"><span class="side-tag">改后</span>3. 若贵司客观上无法在北京提供同等条件岗位，请<ins>依据劳动合同第11.2.4条之规定，</ins>与本人协商<ins>解除</ins>劳动合同事宜，并依法<ins>支付</ins>经济补偿<ins>（按本人在贵司工作年限，每满一年支付一个月工资的标准计算，即N个月工资）</ins>。</td></tr>
+<tr class="rw diff" id="c39"><td class="ln">21</td><td class="st mixed"><span class="side-tag">原文</span><del>在签署</del>书面协议<del>之</del>前，本人不接受任何单方变更<del>劳动合同的</del>安排。</td><td class="ln rel">→</td><td class="ln right">31</td><td class="st mixed"><span class="side-tag">改后</span><ins>双方未达成</ins>书面协议前，本人不接受任何单方变更<ins>，包括但不限于待岗</ins>安排<ins>、跨城市调岗、降薪等</ins>。</td></tr>
+<tr class="rw diff" id="c40"><td class="ln">22</td><td class="st mixed"><span class="side-tag">原文</span><del>四</del>、关于工作交接</td><td class="ln rel">→</td><td class="ln right">32</td><td class="st mixed"><span class="side-tag">改后</span><ins>五</ins>、关于工作交接</td></tr>
+<tr class="rw diff" id="c41"><td class="ln">23</td><td class="st mixed"><span class="side-tag">原文</span>本人将在2026年12月1日前<del>，配合</del>完成百度项目<del>全部</del>工作交接，完整移交工作<del>文档</del>、账号<del>、</del>资产<del>；</del></td><td class="ln rel">→</td><td class="ln right">33</td><td class="st mixed"><span class="side-tag">改后</span>本人将在2026年12月1日前完成百度项目<ins>对应</ins>工作<ins>的</ins>交接，完整移交工作<ins>资料</ins>、账号<ins>及相关</ins>资产<ins>。</ins></td></tr>
+<tr class="rw diff" id="c42"><td class="ln">24</td><td class="st mixed"><span class="side-tag">原文</span><del>但完成</del>交接，不<del>代表本人认可、接受</del>本次待岗安排。</td><td class="ln rel">→</td><td class="ln right">34</td><td class="st mixed"><span class="side-tag">改后</span><ins>工作</ins>交接<ins>的履行</ins>，不<ins>视为对</ins>本次待岗安排<ins>或跨城市调岗的认可</ins>。</td></tr>
+<tr class="rw diff" id="c43"><td class="ln">25</td><td class="st mixed"><span class="side-tag">原文</span>请贵司<del>在</del>收到本函之日起3个工作日内，就上述事项<del>向本人</del>出<del>具</del>书面答复。</td><td class="ln rel">→</td><td class="ln right">35</td><td class="st mixed"><span class="side-tag">改后</span>请贵司<ins>于</ins>收到本函之日起3个工作日内，就上述事项<ins>作</ins>出书面答复。</td></tr>
+<tr class="rw diff" id="c44"><td class="ln">26</td><td class="st del"><span class="side-tag">删除</span>回复人：【你的姓名】</td><td class="ln rel">↘</td><td class="ln right empty">—</td><td class="st empty-cell"></td></tr>
+<tr class="rw diff" id="c45"><td class="ln">27</td><td class="st del"><span class="side-tag">删除</span>身份证号：【你的身份证号】</td><td class="ln rel">↘</td><td class="ln right empty">—</td><td class="st empty-cell"></td></tr>
+<tr class="rw diff" id="c46"><td class="ln">28</td><td class="st del"><span class="side-tag">删除</span>联系电话：【你的手机号】</td><td class="ln rel">↘</td><td class="ln right empty">—</td><td class="st empty-cell"></td></tr>
+<tr class="rw diff" id="c47"><td class="ln">29</td><td class="st del"><span class="side-tag">删除</span>日期：【发送当日日期】</td><td class="ln rel">↘</td><td class="ln right empty">—</td><td class="st empty-cell"></td></tr>
+<tr class="rw diff" id="c48"><td class="ln empty">—</td><td class="st empty-cell"></td><td class="ln rel">↗</td><td class="ln right">36</td><td class="st ins"><span class="side-tag">新增</span>逾期未答复或答复不能解决本人合理诉求的，本人将通过劳动仲裁等法律途径维护自身合法权益。</td></tr>
+<tr class="rw diff" id="c49"><td class="ln empty">—</td><td class="st empty-cell"></td><td class="ln rel">↗</td><td class="ln right">37</td><td class="st ins"><span class="side-tag">新增</span>此致</td></tr>
+<tr class="rw diff" id="c50"><td class="ln empty">—</td><td class="st empty-cell"></td><td class="ln rel">↗</td><td class="ln right">38</td><td class="st ins"><span class="side-tag">新增</span>上海微创软件股份有限公司北京分公司</td></tr>
+<tr class="rw diff" id="c51"><td class="ln empty">—</td><td class="st empty-cell"></td><td class="ln rel">↗</td><td class="ln right">39</td><td class="st ins"><span class="side-tag">新增</span>回复人：_________________</td></tr>
+<tr class="rw diff" id="c52"><td class="ln empty">—</td><td class="st empty-cell"></td><td class="ln rel">↗</td><td class="ln right">40</td><td class="st ins"><span class="side-tag">新增</span>日期：2026年___月___日</td></tr>
       </tbody>
     </table>
   </div>
   <div style="text-align:center;padding:16px;color:var(--text-s);font-size:12px">
-    灰色行 = 句子相同 · <span style="color:var(--del-txt);font-weight:600">红色</span> = 1.1 的原句 · <span style="color:var(--ins-txt);font-weight:600">绿色</span> = 1.2 的改句
+    未变色 = 两版一致 · <span style="color:var(--del-txt);font-weight:600">红色</span> = 1.1 原句或删除句 · <span style="color:var(--ins-txt);font-weight:600">绿色</span> = 1.2 改句或新增句 · 行内 <code style="background:var(--del-bg);color:var(--del-txt);padding:0 3px;border-radius:2px">xx</code> / <code style="background:var(--ins-bg);color:var(--ins-txt);padding:0 3px;border-radius:2px">xx</code> = 逐字差异
   </div>
+</section>
+
+<!-- ====== 纠错指引（始终显示在页面底部） ====== -->
+<section class="fix-wrap" id="fixGuide">
+  <div class="fix-title-row">
+    <span class="fix-title">纠错指引 · 针对新版 1.2 正文</span>
+    <span class="fix-total">25 处待修</span>
+  </div>
+  <p class="fix-sub">按优先级分四级：<b>A 必须修改</b>（影响法律主张效力）→ <b>B 建议修改</b>（病句语病）→ <b>C 快速修正</b>（标点错字体例）→ <b>D 可选微调</b>（结构逻辑）。每处均给出「原文 → 建议 → 为什么」三段。</p>
+<section class="fix-group">
+  <div class="fix-head">
+    <span class="lvl lvl-neg">A</span>
+    <span class="fix-name">法律表述准确性</span>
+    <span class="fix-prio">优先修改（直接影响主张效力）</span>
+    <span class="fix-count">5 处</span>
+  </div>
+  <p class="fix-desc">以下 5 处涉及法条、金额计算或条款指代，措辞偏差可能被对方抓住做文章，建议逐条改定后再发函。</p>
+  <div class="fix-item">
+      <div class="fix-no">01</div>
+      <div class="fix-main">
+        <div class="fix-line">
+          <span class="fix-tag bad">原文</span>
+          <span class="fix-orig">若贵司自第二个月起单方按北京市最低工资标准发放报酬</span>
+        </div>
+        <div class="fix-line">
+          <span class="fix-tag good">建议</span>
+          <span class="fix-fix">若贵司自待岗次月起，单方按北京市最低工资标准的70%发放基本生活费</span>
+        </div>
+        <div class="fix-why"><span class="fix-why-k">为什么</span>《北京市工资支付规定》第27条：待岗期间应按不低于本市最低工资标准的70%支付基本生活费。原文&quot;按最低工资标准发放&quot;比法定标准更宽，等于替对方把标准提高了条件的写法写得模糊，反被用来论证&quot;你已认可最低工资即可&quot;。写明&quot;70%基本生活费&quot;反而守住底线。</div>
+      </div>
+    </div><div class="fix-item">
+      <div class="fix-no">02</div>
+      <div class="fix-main">
+        <div class="fix-line">
+          <span class="fix-tag bad">原文</span>
+          <span class="fix-orig">按本人在贵司工作年限，每满一年支付一个月工资的标准计算，即N个月工资</span>
+        </div>
+        <div class="fix-line">
+          <span class="fix-tag good">建议</span>
+          <span class="fix-fix">按本人在贵司的工作年限，每满一年支付一个月工资；六个月以上不满一年的，按一年计算；不满六个月的，支付半个月工资</span>
+        </div>
+        <div class="fix-why"><span class="fix-why-k">为什么</span>《劳动合同法》第47条的计算规则不完整。&quot;N个月工资&quot;是口头说法，正式函件里应写完整规则，否则对方可按&quot;满一年才算&quot;做取整，少算补偿。</div>
+      </div>
+    </div><div class="fix-item">
+      <div class="fix-no">03</div>
+      <div class="fix-main">
+        <div class="fix-line">
+          <span class="fix-tag bad">原文</span>
+          <span class="fix-orig">劳动合同第5.7条 / 双方劳动合同第三条 / 第11.1.3条 / 第11.2.4条</span>
+        </div>
+        <div class="fix-line">
+          <span class="fix-tag good">建议</span>
+          <span class="fix-fix">统一为一套编号体例（建议全文统一为&quot;合同第X条&quot;&quot;合同第X.X.X条&quot;）</span>
+        </div>
+        <div class="fix-why"><span class="fix-why-k">为什么</span>同一份文书里中文数字条款号与阿拉伯数字条款号混用（&quot;第三条&quot; vs &quot;第5.7条&quot;），会削弱文本严谨度，也可能被对方以&quot;条款指向不明&quot;为由回避正面回应。</div>
+      </div>
+    </div><div class="fix-item">
+      <div class="fix-no">04</div>
+      <div class="fix-main">
+        <div class="fix-line">
+          <span class="fix-tag bad">原文</span>
+          <span class="fix-orig">工作地点是劳动合同的核心条款</span>
+        </div>
+        <div class="fix-line">
+          <span class="fix-tag good">建议</span>
+          <span class="fix-fix">工作地点系劳动合同必备条款（《劳动合同法》第十七条），变更须经协商一致并采用书面形式（第三十五条）</span>
+        </div>
+        <div class="fix-why"><span class="fix-why-k">为什么</span>&quot;核心条款&quot;是评价性表述，&quot;必备条款&quot;才是法定术语；补上第十七条法源，并把第三十五条的&quot;书面形式&quot;要件一并写明，主张更硬。</div>
+      </div>
+    </div><div class="fix-item">
+      <div class="fix-no">05</div>
+      <div class="fix-main">
+        <div class="fix-line">
+          <span class="fix-tag bad">原文</span>
+          <span class="fix-orig">保留依据《劳动合同法》第三十八条解除劳动合同并要求经济补偿的权利</span>
+        </div>
+        <div class="fix-line">
+          <span class="fix-tag good">建议</span>
+          <span class="fix-fix">保留依据《劳动合同法》第三十八条第一款（未按照劳动合同约定提供劳动保护或者劳动条件、未及时足额支付劳动报酬）解除劳动合同并主张经济补偿的权利</span>
+        </div>
+        <div class="fix-why"><span class="fix-why-k">为什么</span>第38条含多项情形。锚定具体款项，可避免对方主张&quot;你未说明依据哪一项、不符合解除条件&quot;。</div>
+      </div>
+    </div>
+</section>
+<section class="fix-group">
+  <div class="fix-head">
+    <span class="lvl lvl-warn">B</span>
+    <span class="fix-name">病句与语病</span>
+    <span class="fix-prio">建议修改（影响阅读与专业观感）</span>
+    <span class="fix-count">7 处</span>
+  </div>
+  <p class="fix-desc">以下 7 处搭配不当、成分残缺或同句重复，语义仍可理解，但读起来别扭，正式文书应避免。</p>
+  <div class="fix-item">
+      <div class="fix-no">01</div>
+      <div class="fix-main">
+        <div class="fix-line">
+          <span class="fix-tag bad">原文</span>
+          <span class="fix-orig">在北京地区仍有多项在执行业务和项目</span>
+        </div>
+        <div class="fix-line">
+          <span class="fix-tag good">建议</span>
+          <span class="fix-fix">在北京地区仍有多项在执行的项目及业务</span>
+        </div>
+        <div class="fix-why"><span class="fix-why-k">为什么</span>&quot;在执行业务&quot;属生造搭配，&quot;业务&quot;不能用&quot;在执行&quot;修饰；应说&quot;在执行的项目&quot;与&quot;仍在开展的业务&quot;。</div>
+      </div>
+    </div><div class="fix-item">
+      <div class="fix-no">02</div>
+      <div class="fix-main">
+        <div class="fix-line">
+          <span class="fix-tag bad">原文</span>
+          <span class="fix-orig">本次待岗仅针对百度项目外迁涉及的少数员工，具有明显的针对性</span>
+        </div>
+        <div class="fix-line">
+          <span class="fix-tag good">建议</span>
+          <span class="fix-fix">本次待岗仅涉及百度项目外迁的少数员工，显系针对特定人员作出</span>
+        </div>
+        <div class="fix-why"><span class="fix-why-k">为什么</span>同句&quot;针对……&quot;与&quot;针对性&quot;重复；且&quot;具有针对性&quot;偏评价，改为&quot;仅涉及……显系针对特定人员&quot;更接近事实陈述。</div>
+      </div>
+    </div><div class="fix-item">
+      <div class="fix-no">03</div>
+      <div class="fix-main">
+        <div class="fix-line">
+          <span class="fix-tag bad">原文</span>
+          <span class="fix-orig">本人申请工作时间给予每日前后1小时的弹性空间</span>
+        </div>
+        <div class="fix-line">
+          <span class="fix-tag good">建议</span>
+          <span class="fix-fix">本人申请贵司在工作时间上给予每日前后各1小时的弹性空间</span>
+        </div>
+        <div class="fix-why"><span class="fix-why-k">为什么</span>原句缺主语（谁给予），且&quot;前后1小时&quot;应写&quot;前后各1小时&quot;，否则可被理解为&quot;合计1小时&quot;。</div>
+      </div>
+    </div><div class="fix-item">
+      <div class="fix-no">04</div>
+      <div class="fix-main">
+        <div class="fix-line">
+          <span class="fix-tag bad">原文</span>
+          <span class="fix-orig">综上，贵司单方通知将本人纳入待岗管理</span>
+        </div>
+        <div class="fix-line">
+          <span class="fix-tag good">建议</span>
+          <span class="fix-fix">综上，贵司单方作出将本人纳入待岗管理的决定</span>
+        </div>
+        <div class="fix-why"><span class="fix-why-k">为什么</span>动宾搭配生硬，且&quot;通知&quot;作动词与上文《待岗通知》的名词用法混淆，易生歧义。</div>
+      </div>
+    </div><div class="fix-item">
+      <div class="fix-no">05</div>
+      <div class="fix-main">
+        <div class="fix-line">
+          <span class="fix-tag bad">原文</span>
+          <span class="fix-orig">逾期未答复或答复不能解决本人合理诉求的</span>
+        </div>
+        <div class="fix-line">
+          <span class="fix-tag good">建议</span>
+          <span class="fix-fix">逾期未答复，或答复未能解决本人合理诉求的</span>
+        </div>
+        <div class="fix-why"><span class="fix-why-k">为什么</span>&quot;答复不能解决&quot;缺时态助词，语感不顺；补&quot;未能&quot;后与&quot;逾期未答复&quot;并列更整齐。</div>
+      </div>
+    </div><div class="fix-item">
+      <div class="fix-no">06</div>
+      <div class="fix-main">
+        <div class="fix-line">
+          <span class="fix-tag bad">原文</span>
+          <span class="fix-orig">报到、打卡行为不视为对本次单方待岗安排的同意或追认</span>
+        </div>
+        <div class="fix-line">
+          <span class="fix-tag good">建议</span>
+          <span class="fix-fix">报到、打卡行为不视为本人对本次单方待岗安排的同意或追认</span>
+        </div>
+        <div class="fix-why"><span class="fix-why-k">为什么</span>缺&quot;本人&quot;作主语，&quot;不视为&quot;的施动主体不清——究竟是谁不视为？补主语后语义闭合。</div>
+      </div>
+    </div><div class="fix-item">
+      <div class="fix-no">07</div>
+      <div class="fix-main">
+        <div class="fix-line">
+          <span class="fix-tag bad">原文</span>
+          <span class="fix-orig">本人认为该条款的适用前提不成立：</span>
+        </div>
+        <div class="fix-line">
+          <span class="fix-tag good">建议</span>
+          <span class="fix-fix">本人认为，该条款在本案中不具备适用前提：</span>
+        </div>
+        <div class="fix-why"><span class="fix-why-k">为什么</span>&quot;适用前提不成立&quot;搭配略勉强，加&quot;在本案中&quot;限定范围，也避免被读成&quot;条款本身无效&quot;（那会变成另一种主张）。</div>
+      </div>
+    </div>
+</section>
+<section class="fix-group">
+  <div class="fix-head">
+    <span class="lvl lvl-info">C</span>
+    <span class="fix-name">标点 · 错字 · 体例</span>
+    <span class="fix-prio">快速修正（机械性）</span>
+    <span class="fix-count">8 处</span>
+  </div>
+  <p class="fix-desc">以下 8 处为标点、全半角与称谓一致性问题，逐处替换即可。</p>
+  <div class="fix-item">
+      <div class="fix-no">01</div>
+      <div class="fix-main">
+        <div class="fix-line">
+          <span class="fix-tag bad">原文</span>
+          <span class="fix-orig">2026年11月06日</span>
+        </div>
+        <div class="fix-line">
+          <span class="fix-tag good">建议</span>
+          <span class="fix-fix">2026年11月6日</span>
+        </div>
+        <div class="fix-why"><span class="fix-why-k">为什么</span>中文日期不补零，&quot;06日&quot;是表格化写法，正式函件写&quot;6日&quot;。</div>
+      </div>
+    </div><div class="fix-item">
+      <div class="fix-no">02</div>
+      <div class="fix-main">
+        <div class="fix-line">
+          <span class="fix-tag bad">原文</span>
+          <span class="fix-orig">上海微创软件股份有限公司北京分公司:</span>
+        </div>
+        <div class="fix-line">
+          <span class="fix-tag good">建议</span>
+          <span class="fix-fix">致：上海微创软件股份有限公司北京分公司（行末不加冒号）</span>
+        </div>
+        <div class="fix-why"><span class="fix-why-k">为什么</span>抬头行末用半角冒号既不合中文标点，也不符合函件体例；&quot;致：&quot;已承担提示作用，行末不必再加冒号。</div>
+      </div>
+    </div><div class="fix-item">
+      <div class="fix-no">03</div>
+      <div class="fix-main">
+        <div class="fix-line">
+          <span class="fix-tag bad">原文</span>
+          <span class="fix-orig">本人:            (身份证号:                          )  ，系</span>
+        </div>
+        <div class="fix-line">
+          <span class="fix-tag good">建议</span>
+          <span class="fix-fix">本人_____________（身份证号：_________________），系</span>
+        </div>
+        <div class="fix-why"><span class="fix-why-k">为什么</span>半角冒号与半角括号混入中文句子、空格堆叠，&quot;本人&quot;后也不该加冒号；改为全角括号与连续下划线。</div>
+      </div>
+    </div><div class="fix-item">
+      <div class="fix-no">04</div>
+      <div class="fix-main">
+        <div class="fix-line">
+          <span class="fix-tag bad">原文</span>
+          <span class="fix-orig">贵公司…（其余各处&quot;贵司&quot;）</span>
+        </div>
+        <div class="fix-line">
+          <span class="fix-tag good">建议</span>
+          <span class="fix-fix">全文统一为&quot;贵司&quot;（首次出现可写&quot;贵司（上海微创软件股份有限公司北京分公司）&quot;）</span>
+        </div>
+        <div class="fix-why"><span class="fix-why-k">为什么</span>同一文书内&quot;贵公司&quot;&quot;贵司&quot;混用，读感不统一，也显得未经统稿。</div>
+      </div>
+    </div><div class="fix-item">
+      <div class="fix-no">05</div>
+      <div class="fix-main">
+        <div class="fix-line">
+          <span class="fix-tag bad">原文</span>
+          <span class="fix-orig">违背了劳动合同法的立法本意</span>
+        </div>
+        <div class="fix-line">
+          <span class="fix-tag good">建议</span>
+          <span class="fix-fix">违背了《劳动合同法》的立法本意</span>
+        </div>
+        <div class="fix-why"><span class="fix-why-k">为什么</span>法律名称须加书名号；全文中&quot;《中华人民共和国劳动合同法》&quot;与&quot;劳动合同法&quot;并存，建议统一简称并加书名号。</div>
+      </div>
+    </div><div class="fix-item">
+      <div class="fix-no">06</div>
+      <div class="fix-main">
+        <div class="fix-line">
+          <span class="fix-tag bad">原文</span>
+          <span class="fix-orig">开头&quot;致：…&quot;，结尾又有&quot;此致 / 上海微创软件股份有限公司北京分公司&quot;</span>
+        </div>
+        <div class="fix-line">
+          <span class="fix-tag good">建议</span>
+          <span class="fix-fix">二选一：保留开头&quot;致：&quot;并删结尾&quot;此致&quot;及重复公司名，或反之</span>
+        </div>
+        <div class="fix-why"><span class="fix-why-k">为什么</span>同一收件主体在文首、文末各出现一次，属重复；&quot;此致&quot;体例通常需与&quot;敬礼&quot;配对，法律函件中可不使用。</div>
+      </div>
+    </div><div class="fix-item">
+      <div class="fix-no">07</div>
+      <div class="fix-main">
+        <div class="fix-line">
+          <span class="fix-tag bad">原文</span>
+          <span class="fix-orig">&quot;待岗&quot;（半角直引号）</span>
+        </div>
+        <div class="fix-line">
+          <span class="fix-tag good">建议</span>
+          <span class="fix-fix">统一为中文引号“待岗”</span>
+        </div>
+        <div class="fix-why"><span class="fix-why-k">为什么</span>正文中英文直引号与中文引号混用，正式文书应统一为中文引号。</div>
+      </div>
+    </div><div class="fix-item">
+      <div class="fix-no">08</div>
+      <div class="fix-main">
+        <div class="fix-line">
+          <span class="fix-tag bad">原文</span>
+          <span class="fix-orig">郑重申明（1.1）／郑重声明（1.2）</span>
+        </div>
+        <div class="fix-line">
+          <span class="fix-tag good">建议</span>
+          <span class="fix-fix">统一为&quot;郑重声明&quot;</span>
+        </div>
+        <div class="fix-why"><span class="fix-why-k">为什么</span>&quot;申明&quot;多用于口头陈述，&quot;声明&quot;是标准书面用语，法律文书中统一用&quot;声明&quot;。</div>
+      </div>
+    </div>
+</section>
+<section class="fix-group">
+  <div class="fix-head">
+    <span class="lvl lvl-muted">D</span>
+    <span class="fix-name">结构与逻辑</span>
+    <span class="fix-prio">可选微调（提升严谨度）</span>
+    <span class="fix-count">5 处</span>
+  </div>
+  <p class="fix-desc">以下 5 处为结构层面的建议，不改也不影响效力，但改后文本更严密、更好读。</p>
+  <div class="fix-item">
+      <div class="fix-no">01</div>
+      <div class="fix-main">
+        <div class="fix-line">
+          <span class="fix-tag bad">原文</span>
+          <span class="fix-orig">通勤弹性申请被编为&quot;二、郑重声明&quot;的第 5 点</span>
+        </div>
+        <div class="fix-line">
+          <span class="fix-tag good">建议</span>
+          <span class="fix-fix">单列一段（或移入&quot;四、本人诉求&quot;），不与前 4 点声明并列编号</span>
+        </div>
+        <div class="fix-why"><span class="fix-why-k">为什么</span>前 4 点是&quot;不认可、不追认&quot;的法律声明，第 5 点是通勤便利申请，性质不同；混编会让声明部分显得不严肃，也稀释其法律意义。</div>
+      </div>
+    </div><div class="fix-item">
+      <div class="fix-no">02</div>
+      <div class="fix-main">
+        <div class="fix-line">
+          <span class="fix-tag bad">原文</span>
+          <span class="fix-orig">第四部分第 1 点要求&quot;3个工作日内撤销&quot;，结尾又要求&quot;3个工作日内书面答复&quot;</span>
+        </div>
+        <div class="fix-line">
+          <span class="fix-tag good">建议</span>
+          <span class="fix-fix">时限合并为一处：结尾只保留&quot;逾期未答复&quot;的法律后果</span>
+        </div>
+        <div class="fix-why"><span class="fix-why-k">为什么</span>同一时限两处重复，对方可能只回应其一；合并后更清晰，也让&quot;逾期&quot;的触发条件唯一。</div>
+      </div>
+    </div><div class="fix-item">
+      <div class="fix-no">03</div>
+      <div class="fix-main">
+        <div class="fix-line">
+          <span class="fix-tag bad">原文</span>
+          <span class="fix-orig">章节由四部分扩为五部分（新增&quot;三、关于劳动报酬的明确主张&quot;）</span>
+        </div>
+        <div class="fix-line">
+          <span class="fix-tag good">建议</span>
+          <span class="fix-fix">复核顺延后的编号与全文引用（四、本人诉求／五、关于工作交接）已一致</span>
+        </div>
+        <div class="fix-why"><span class="fix-why-k">为什么</span>增章后若仍沿用旧编号，会出现&quot;三、本人诉求&quot;与&quot;三、劳动报酬&quot;并存；本文已顺延，但发送前建议再通读一遍编号。</div>
+      </div>
+    </div><div class="fix-item">
+      <div class="fix-no">04</div>
+      <div class="fix-main">
+        <div class="fix-line">
+          <span class="fix-tag bad">原文</span>
+          <span class="fix-orig">自第二个月起</span>
+        </div>
+        <div class="fix-line">
+          <span class="fix-tag good">建议</span>
+          <span class="fix-fix">自待岗次月起</span>
+        </div>
+        <div class="fix-why"><span class="fix-why-k">为什么</span>&quot;次月&quot;为法律文书常用表述，比&quot;第二个月&quot;更精确、少歧义。</div>
+      </div>
+    </div><div class="fix-item">
+      <div class="fix-no">05</div>
+      <div class="fix-main">
+        <div class="fix-line">
+          <span class="fix-tag bad">原文</span>
+          <span class="fix-orig">文末&quot;此致&quot;后又写一遍公司全称</span>
+        </div>
+        <div class="fix-line">
+          <span class="fix-tag good">建议</span>
+          <span class="fix-fix">与开头抬头重复，删其一</span>
+        </div>
+        <div class="fix-why"><span class="fix-why-k">为什么</span>见 C6；若保留&quot;此致&quot;体例，应写成&quot;此致／上海微创软件股份有限公司北京分公司&quot;，并删掉开头&quot;致：&quot;。</div>
+      </div>
+    </div>
+</section>
 </section>
 
 </main>
