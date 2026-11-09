@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>《待岗通知》异议函 · 定稿与纠错对照</title>
+<style>
+:root{
+  color-scheme: light;
+  --surface:#F7F7F8;
+  --surface-muted:#EFEFF2;
+  --text:#171717;
+  --text-muted:#52525B;
+  --border:rgba(23,23,23,.12);
+  --brand:#0FDC78;
+  --brand-soft:#E5FFF2;
+  --brand-text:#004D26;
+  --danger:#E8463A;
+  --danger-soft:rgba(232,70,58,.10);
+  --radius:8px;
+  --radius-card:12px;
+  --radius-full:999px;
+  --font-sans:"SF Pro Text","PingFang SC",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --font-mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:#fff;
+  color:var(--text);
+  font:400 14px/20px var(--font-sans);
+  -webkit-font-smoothing:antialiased;
+}
+.page{max-width:880px;margin:0 auto;padding:48px 32px 72px}
+
+/* 头部 */
+.hd{border-bottom:1px solid var(--border);padding-bottom:24px;margin-bottom:40px}
+.eyebrow{
+  display:inline-block;padding:2px 10px;border:1px solid var(--border);
+  border-radius:var(--radius-full);font-size:12px;line-height:18px;
+  color:var(--text-muted);letter-spacing:.04em;
+}
+h1{margin:12px 0 16px;font-size:26px;line-height:36px;font-weight:600;letter-spacing:.01em}
+.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px 24px}
+.meta div{font-size:12px;line-height:18px;color:var(--text-muted)}
+.meta b{display:block;margin-top:2px;font-size:13px;line-height:20px;color:var(--text);font-weight:500}
+
+/* 通用 section */
+.sec{margin-top:48px}
+.sec-h{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:0 0 4px}
+.sec-h h2{margin:0;font-size:17px;line-height:26px;font-weight:600}
+.sec-h span{font-size:12px;line-height:18px;color:var(--text-muted)}
+.sec-sub{margin:0 0 20px;font-size:12px;line-height:18px;color:var(--text-muted)}
+
+/* 定稿正文 */
+.letter{border:1px solid var(--border);border-radius:var(--radius-card);padding:36px 40px;background:var(--surface)}
+.letter .title{text-align:center;font-size:19px;line-height:28px;font-weight:600;margin:0 0 28px}
+.letter .to{margin:0 0 16px;font-weight:500}
+.letter p{margin:0 0 16px;line-height:26px;text-align:justify}
+.letter h3{margin:26px 0 12px;font-size:15px;line-height:24px;font-weight:600}
+.letter ol,.letter ul{margin:0 0 16px;padding-left:24px}
+.letter li{margin:0 0 10px;line-height:26px;text-align:justify}
+.letter .sign{margin-top:32px;text-align:right;line-height:26px}
+.letter .sign em{font-style:normal;color:var(--text-muted)}
+.hl{background:var(--brand-soft);color:var(--brand-text);border-radius:var(--radius);padding:0 4px}
+.blank{display:inline-block;min-width:88px;border-bottom:1px solid var(--text-muted)}
+
+/* 纠错对照 */
+.panel{border:1px solid var(--border);border-radius:var(--radius-card);background:var(--surface);overflow:hidden}
+.item{padding:20px 24px;border-bottom:1px solid var(--border);page-break-inside:avoid}
+.item:last-child{border-bottom:0}
+.item-hd{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.idx{font:500 13px/20px var(--font-mono);color:var(--text-muted);font-variant-numeric:tabular-nums}
+.key .idx{color:var(--danger)}
+.loc{font-weight:500}
+.tag{margin-left:auto;padding:0 8px;border:1px solid var(--border);border-radius:var(--radius-full);font-size:12px;line-height:18px;font-weight:500;color:var(--text-muted)}
+.key .tag{color:var(--danger);border-color:var(--danger)}
+.line{margin:0;line-height:22px;text-align:justify}
+.line + .line{margin-top:8px}
+.lab{display:inline-block;margin-right:8px;padding:0 4px;border-radius:var(--radius);background:var(--surface-muted);color:var(--text-muted);font-size:12px;line-height:18px;font-weight:500}
+del{background:var(--danger-soft);color:var(--danger);border-radius:var(--radius);padding:0 4px;text-decoration:line-through;text-decoration-thickness:1px}
+ins{background:var(--brand-soft);color:var(--brand-text);border-radius:var(--radius);padding:0 4px;text-decoration:none}
+.note{margin:8px 0 0;font-size:12px;line-height:18px;color:var(--text-muted)}
+.note b{color:var(--text);font-weight:500}
+
+.ft{margin-top:40px;font-size:12px;line-height:18px;color:var(--text-muted);text-align:center}
+
+@media (max-width:640px){
+  .page{padding:32px 20px 56px}
+  h1{font-size:22px;line-height:32px}
+  .letter{padding:24px 20px}
+}
+@media print{
+  body{font-size:12pt;line-height:1.8}
+  .page{max-width:none;padding:0}
+  .hd,.sec{margin:0}
+  .sec{margin-top:24pt}
+  .letter{border:0;padding:0;background:#fff}
+  .panel{border:0;background:#fff}
+  .item{padding:10pt 0;border-bottom:1px solid #ddd}
+  .note{color:#555}
+  del{color:#b3000a}
+  ins{color:#0a5c2c}
+  .ft{display:none}
+}
+</style>
+</head>
+<body>
+<main class="page">
+
+  <header class="hd">
+    <span class="eyebrow">异议函 · 定稿</span>
+    <h1>《待岗通知》异议函 · 定稿与纠错对照</h1>
+    <div class="meta">
+      <div>致<b>上海微创软件股份有限公司北京分公司</b></div>
+      <div>岗位<b>UI 设计师（10 级）</b></div>
+      <div>劳动合同期限<b>2024.03.08 — 2027.03.07</b></div>
+      <div>收到《待岗通知》<b>2026 年 11 月 6 日</b></div>
+      <div>待岗起始日<b>2026 年 12 月 1 日</b></div>
+      <div>本轮文字修正<b>9 处（关键错别字 1 处）</b></div>
+    </div>
+  </header>
+
+  <section class="sec">
+    <div class="sec-h"><h2>一、定稿全文</h2><span>已应用下方 9 处修正，个人信息处保留待填横线</span></div>
+    <p class="sec-sub">仅修正文字表达，未改动任何事实陈述、法律主张与诉求内容。</p>
+
+    <article class="letter">
+      <p class="title">对《待岗通知》的异议函</p>
+
+      <p class="to">致：上海微创软件股份有限公司北京分公司</p>
+
+      <p>本人：<span class="blank"></span>（身份证号：<span class="blank"></span>），系<strong>贵司</strong>UI 设计师岗位员工，劳动合同期限自 2024 年 3 月 8 日起至 2027 年 3 月 7 日止，工作地点为北京。</p>
+
+      <p>本人于 2026 年 11 月 6 日收到贵司出具的《待岗通知》，通知称因百度项目业务调整，自 2026 年 12 月 1 日起安排本人待岗，并要求前往北京市海淀区海淀大街 8 号中钢国际广场 A 座 5 层 C 区报到。现就该通知及相关事宜，正式提出书面异议如下：</p>
+
+      <h3>一、本人不同意贵司单方作出的待岗安排</h3>
+
+      <p>据本人了解，本次调整的起因是百度项目外迁西安等地，贵司因此对派驻该项目的外包人员进行调配。本人因家庭及个人实际情况（家庭住址、生活基础均在北京），无法接受跨省市外迁，该情况已向贵司说明。</p>
+
+      <p>依据《中华人民共和国劳动合同法》第三十五条及双方劳动合同第三条约定，<strong>工作地点系劳动合同核心条款</strong>，变更工作地点应当经双方协商一致。跨城市调岗属于对劳动合同的重大变更，<strong>且将给</strong>本人造成实质性困难，贵司无权单方强制。</p>
+
+      <p>贵司援引劳动合同第 5.7 条安排待岗，本人认为该条款的适用前提不成立：</p>
+
+      <ol>
+        <li>贵司作为专业的信息技术服务外包公司，在北京地区仍有<strong>多个正在执行的业务和项目</strong>，并非"无法安排乙方在业务、项目上工作"，而是未积极履行用人单位的用工安排义务；</li>
+        <li>仅因单个派驻项目结束即安排员工长期待岗，实质上是将贵司的经营风险转嫁给劳动者，违背了劳动合同法的立法本意；</li>
+        <li>本次待岗仅针对百度项目外迁涉及的少数员工，具有明显的针对性，并非贵司整体经营困难导致的普遍性停工停产。</li>
+      </ol>
+
+      <p>综上，贵司单方通知将本人纳入待岗管理，属于单方变更劳动合同履行方式，缺乏充分的法律依据和合同依据，本人明确不予同意。</p>
+
+      <h3>二、关于报到事宜的郑重声明</h3>
+
+      <p>依据劳动合同第 11.1.3 条约定，本人在此郑重声明：</p>
+
+      <ol>
+        <li>本人将于 2026 年 12 月 1 日按通知地址报到，但本人到场仅为等候贵司在北京地区安排同等条件新项目，不认可本人处于"待岗"状态；</li>
+        <li>报到、打卡行为不视为对本次单方待岗安排的同意或追认；</li>
+        <li>贵司安排的面试等对接事宜，本人将积极配合，但面试结果不影响本人要求按原合同标准履行的权利；</li>
+        <li>本函即为本人对本次岗位／工作状态调整的书面异议，不存在"到岗后一个月未提异议视为同意"之适用情形；</li>
+        <li>考虑到本人原派驻办公地址与本次通知载明的报到地址通勤距离较远、通勤时间与成本显著增加，在等候新项目安排期间，本人申请工作时间给予每日前后 1 小时的弹性空间（可在 8:00—17:00 或 10:00—19:00 区间内完成 8 小时标准工时），确保不影响日常工作对接与<strong>事务沟通</strong>。该通勤便利申请，不构成本人对本次单方待岗安排的<strong>认可</strong>。</li>
+      </ol>
+
+      <h3>三、关于劳动报酬的明确主张</h3>
+
+      <p>贵司通知中提及的待岗期间薪酬安排，本人不予认可。在双方就劳动合同变更达成书面一致前，贵司应按原劳动合同约定的工资标准足额支付本人劳动报酬，不得单方降薪。</p>
+
+      <p>若贵司自第二个月起单方按北京市最低工资标准发放报酬，<strong>本人将认为该行为构成</strong>未足额支付劳动报酬，并保留依据《劳动合同法》第三十八条解除劳动合同并要求经济补偿的权利。</p>
+
+      <h3>四、本人诉求</h3>
+
+      <ol>
+        <li>请贵司于收到本函之日起 3 个工作日内，撤销本次单方待岗决定；</li>
+        <li>请贵司自 2026 年 12 月 1 日起按原劳动合同约定标准足额支付本人劳动报酬，并在北京范围内为本人匹配与原岗位（UI 设计师，10 级）职级、薪酬标准、工作条件相当的工作岗位；</li>
+        <li>若贵司客观上无法在北京提供同等条件岗位，请依据劳动合同第 11.2.4 条之规定，与本人协商解除劳动合同事宜，并依法支付经济补偿（按本人在贵司工作年限，每满一年支付一个月工资的标准计算，即 N 个月工资<span class="hl">（N 按工作年限折算）</span>）。</li>
+      </ol>
+
+      <p>双方未达成书面协议前，本人不接受任何单方变更，包括但不限于待岗安排、跨城市调岗、降薪等。</p>
+
+      <h3>五、关于工作交接</h3>
+
+      <p>本人将在 2026 年 12 月 1 日前完成百度项目对应工作的交接，完整移交工作资料、账号及相关资产。工作交接的履行，不视为对本次待岗安排或跨城市调岗的认可。</p>
+
+      <p>请贵司于收到本函之日起 3 个工作日内，就上述事项作出书面答复。逾期未答复或答复<strong>未能解决</strong>本人合理诉求的，本人将通过劳动仲裁等法律途径维护自身合法权益。</p>
+
+      <p style="margin-top:28px">此致</p>
+      <p>上海微创软件股份有限公司北京分公司</p>
+
+      <div class="sign">
+        <p>回复人：<span class="blank"></span></p>
+        <p>日期：2026 年 <em>___</em> 月 <em>___</em> 日</p>
+      </div>
+    </article>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h"><h2>二、逐条纠错对照</h2><span>共 9 处 · 语句逻辑 3 · 关键错别字 1 · 用词格式 5</span></div>
+    <p class="sec-sub">标红为原文待改处，标绿为修改后表述，按函件顺序排列。</p>
+
+    <div class="panel">
+      <article class="item">
+        <div class="item-hd"><span class="idx">01</span><span class="loc">一、第 1 句</span><span class="tag">语句逻辑</span></div>
+        <p class="line"><span class="lab">原文</span>依据《中华人民共和国劳动合同法》第三十五条及双方劳动合同第三条约定，工作地点<del>是劳动合同的核心条款</del>，变更工作地点应当经双方协商一致。</p>
+        <p class="line"><span class="lab">改为</span>……工作地点<ins>系劳动合同核心条款</ins>，变更工作地点应当经双方协商一致。</p>
+        <p class="note"><b>纠错点：</b>状语"依据……约定"后直接接"工作地点是……"，衔接生硬、逻辑断裂。</p>
+      </article>
+
+      <article class="item">
+        <div class="item-hd"><span class="idx">02</span><span class="loc">一、第 2 句</span><span class="tag">语句逻辑</span></div>
+        <p class="line"><span class="lab">原文</span>跨城市调岗属于对劳动合同的重大变更，<del>且会给</del>本人造成实质性困难。</p>
+        <p class="line"><span class="lab">改为</span>跨城市调岗属于对劳动合同的重大变更，<ins>且将给</ins>本人造成实质性困难。</p>
+        <p class="note"><b>纠错点：</b>"且会给"缺少主语关联，与前句主语衔接拗口。</p>
+      </article>
+
+      <article class="item">
+        <div class="item-hd"><span class="idx">03</span><span class="loc">一、第 1 点</span><span class="tag">用词格式</span></div>
+        <p class="line"><span class="lab">原文</span>在北京地区仍有<del>多项在执行业务和项目</del></p>
+        <p class="line"><span class="lab">改为</span>在北京地区仍有<ins>多个正在执行的业务和项目</ins></p>
+        <p class="note"><b>纠错点：</b>"在执行业务"不是规范中文表达，"多项"与"业务"搭配亦不当。</p>
+      </article>
+
+      <article class="item key">
+        <div class="item-hd"><span class="idx">04</span><span class="loc">二、声明第 5 点</span><span class="tag">关键错别字</span></div>
+        <p class="line"><span class="lab">原文</span>不构成本人对本次单方待岗安排的<del>认识</del></p>
+        <p class="line"><span class="lab">改为</span>不构成本人对本次单方待岗安排的<ins>认可</ins></p>
+        <p class="note"><b>纠错点：</b>"认识"应为"认可"，一字之差法律含义完全不同——"认可"才对应同意、追认，务必核验定稿。</p>
+      </article>
+
+      <article class="item">
+        <div class="item-hd"><span class="idx">05</span><span class="loc">二、声明第 5 点</span><span class="tag">用词格式</span></div>
+        <p class="line"><span class="lab">原文</span>确保不影响日常工作对接与<del>事项沟通</del></p>
+        <p class="line"><span class="lab">改为</span>确保不影响日常工作对接与<ins>事务沟通</ins></p>
+        <p class="note"><b>纠错点：</b>"事项沟通"搭配生硬。</p>
+      </article>
+
+      <article class="item">
+        <div class="item-hd"><span class="idx">06</span><span class="loc">三、第 2 句</span><span class="tag">语句逻辑</span></div>
+        <p class="line"><span class="lab">原文</span><del>本人将视为</del>未足额支付劳动报酬</p>
+        <p class="line"><span class="lab">改为</span><ins>本人将认为该行为构成</ins>未足额支付劳动报酬</p>
+        <p class="note"><b>纠错点：</b>"视为"缺主语，"本人将视为"搭配不当。</p>
+      </article>
+
+      <article class="item">
+        <div class="item-hd"><span class="idx">07</span><span class="loc">四、诉求 3</span><span class="tag">用词格式</span></div>
+        <p class="line"><span class="lab">原文</span>即 N 个月工资</p>
+        <p class="line"><span class="lab">改为</span>即 N 个月工资<ins>（N 按工作年限折算）</ins></p>
+        <p class="note"><b>纠错点：</b>N 未作说明，正式函件中表述略随意。</p>
+      </article>
+
+      <article class="item">
+        <div class="item-hd"><span class="idx">08</span><span class="loc">结尾</span><span class="tag">用词格式</span></div>
+        <p class="line"><span class="lab">原文</span>答复<del>不能解决</del>本人合理诉求的</p>
+        <p class="line"><span class="lab">改为</span>答复<ins>未能解决</ins>本人合理诉求的</p>
+        <p class="note"><b>纠错点：</b>"不能解决"口语化，正式函件宜用"未能解决"。</p>
+      </article>
+
+      <article class="item">
+        <div class="item-hd"><span class="idx">09</span><span class="loc">全文</span><span class="tag">用词格式</span></div>
+        <p class="line"><span class="lab">原文</span>系<del>贵公司</del>UI 设计师岗位员工，后文却称"贵司"</p>
+        <p class="line"><span class="lab">改为</span>全文统一为<ins>"贵司"</ins></p>
+        <p class="note"><b>纠错点：</b>"贵公司"与"贵司"称谓混用，不统一。</p>
+      </article>
+    </div>
+  </section>
+
+  <p class="ft">本页仅作文字校订用途 · 定稿前请核对姓名、身份证号、签署日期等空白项</p>
+</main>
+</body>
+</html>
