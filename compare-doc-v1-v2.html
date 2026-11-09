@@ -86,6 +86,15 @@ h1{margin:16px 0 12px;font:700 31px/44px var(--serif);letter-spacing:.02em}
 
 /* 双页对照 */
 .desk{background:#EDEBE5;border-radius:12px;padding:30px 26px;box-shadow:inset 0 1px 0 rgba(255,255,255,.65)}
+.paper{max-width:820px;margin:0 auto;padding:40px 48px 44px;background:#FDFCF9;border:1px solid rgba(26,26,24,.10);
+  border-radius:4px;box-shadow:0 2px 12px rgba(26,26,24,.08)}
+.paper p{margin:0 0 12px;font:400 14.5px/27px var(--sans);text-align:justify;color:#232320;white-space:pre-wrap;word-break:break-word;overflow-wrap:anywhere}
+.fin-t{margin:0 0 28px;text-align:center;font:700 20px/34px var(--serif);letter-spacing:.04em}
+.fin-h{margin:26px 0 12px;font:700 15.5px/26px var(--serif);letter-spacing:.02em}
+.fin-r{text-align:right}
+mark.fx,.fx-demo{background:#F7E3B8;color:#201F1B;border-radius:2px;padding:0 2px;
+  -webkit-box-decoration-break:clone;box-decoration-break:clone;box-shadow:inset 0 -1.5px 0 rgba(171,116,20,.45)}
+mark.fx sup,.fx-demo sup{margin-left:2px;font:600 9px/1 var(--mono);color:var(--amber-deep);vertical-align:super}
 .spread{background:#FDFCF9;border:1px solid rgba(26,26,24,.10);border-radius:4px;box-shadow:0 2px 12px rgba(26,26,24,.08);display:grid;grid-template-columns:1fr 1fr;overflow:hidden}
 .sheet-head{display:flex;align-items:baseline;gap:10px;padding:16px 26px 13px;background:rgba(26,26,24,.03);border-bottom:1px solid rgba(26,26,24,.10)}
 .sheet-head .sname{font:600 12px/18px var(--sans);padding:2px 9px;border-radius:4px}
@@ -221,6 +230,7 @@ h1{margin:16px 0 12px;font:700 31px/44px var(--serif);letter-spacing:.02em}
   .panel{padding-top:28px}
   .stat-grid{grid-template-columns:repeat(2,1fr)}
   .desk{padding:16px 12px;border-radius:10px}
+  .paper{padding:24px 18px 28px}
   .spread{grid-template-columns:1fr}
   .sheet-head{padding:12px 16px 10px}
   .sheet-head:nth-of-type(2),.sheet-head.h2{display:none}
@@ -255,7 +265,7 @@ h1{margin:16px 0 12px;font:700 31px/44px var(--serif);letter-spacing:.02em}
   <header class="hd">
     <span class="eyebrow">Legal Review</span>
     <h1>两版异议函对照审阅</h1>
-    <p class="sub">两份文档原文完整保留、不作改写、正文不标色。同一主题左右对齐，横题给出关系徽章，下方「解读」一句话说清两版各自的做法与利弊；另按法律依据核查两版各自的不合理之处。顶部可按「差异概览 / 逐段对照 / 必要修改 / 法律依据 / 结论」切换，必要修改一栏分屏展示、按程度与版本归类。</p>
+    <p class="sub">两份文档原文完整保留、不作改写、正文不标色。同一主题左右对齐，横题给出关系徽章，下方「解读」一句话说清两版各自的做法与利弊；另按法律依据核查两版各自的不合理之处。顶部可按「差异概览 / 逐段对照 / 必要修改 / 法律依据 / 结论 / 最终版」切换；最终版在正文中标出需要修改的句子，必要修改一栏分屏展示、按程度与版本归类。</p>
     <div class="meta">
       <span>第一版 <b>34 段 · 5 章</b></span>
       <span>修改2 <b>45 段 · 6 章</b></span>
@@ -279,6 +289,7 @@ h1{margin:16px 0 12px;font:700 31px/44px var(--serif);letter-spacing:.02em}
       <button class="tab" id="t3" role="tab" aria-selected="false" aria-controls="s3" data-panel="s3" tabindex="-1"><span class="no">03</span>必要修改</button>
       <button class="tab" id="t4" role="tab" aria-selected="false" aria-controls="s4" data-panel="s4" tabindex="-1"><span class="no">04</span>法律依据</button>
       <button class="tab" id="t5" role="tab" aria-selected="false" aria-controls="s5" data-panel="s5" tabindex="-1"><span class="no">05</span>结论</button>
+      <button class="tab" id="t6" role="tab" aria-selected="false" aria-controls="s6" data-panel="s6" tabindex="-1"><span class="no">06</span>最终版</button>
       <span class="tab-ink" aria-hidden="true"></span>
     </div>
   </div>
@@ -787,6 +798,64 @@ h1{margin:16px 0 12px;font:700 31px/44px var(--serif);letter-spacing:.02em}
     </div>
   </section>
 
+  <section class="panel" id="s6" role="tabpanel" aria-labelledby="t6" hidden>
+    <div class="sec-head"><span class="sec-no">06</span><h2>最终版</h2></div>
+    <p class="sec-desc">以修改2 为底稿，吸收第一版的第三十五条论证与撤销诉求，并修掉不利自认、诉求主体错位两处硬伤。正文中<span class="fx-demo">黄色底纹<sup>n</sup></span>＝相对两版新增或改动的句子，角标数字对应第 03 节「必要修改」的同号条目，共 10 处；其余文字与两版一致，未作改写。第 5 条（北京在执行业务）因缺乏证据未写入本文，第 10 条（回复期限改为 5 个工作日）已并入第 4 处。</p>
+
+    <div class="desk">
+      <div class="paper">
+        <h2 class="fin-t">关于项目调整、待岗安排及劳动合同履行的书面异议函</h2>
+        <p>致：上海微创软件股份有限公司北京分公司（人力资源部及相关部门）</p>
+        <p>本人________，系公司________岗位员工，劳动合同期限自________年____月____日起至________年____月____日止，劳动合同约定工作地点为________。</p>
+        <p>本人于2026年11月6日收到公司发送的《待岗通知》。通知称，因客户方业务调整、岗位裁撤，百度项目自2026年12月1日起不再需要本人继续服务，要求本人此前完成项目交接，并自2026年12月1日起前往通知载明的北京办公地点报到、出勤打卡，等待后续工作安排。</p>
+        <p>现就有关事项提出书面异议，并请求公司确认如下。</p>
+        <h3 class="fin-h">一、本人愿意继续履行劳动合同，未申请待岗或离职</h3>
+        <p>通知所述调整原因为客户业务调整及岗位裁撤，未载明本人存在不能胜任工作或违反劳动纪律等情形。</p>
+        <p>本人未提出辞职、解除劳动合同，亦未申请待岗或无薪休假，愿意继续履行劳动合同。<mark class="fx" data-n="6" title="对应第 03 节必要修改第 6 条">本人将按通知要求配合完成原项目工作交接，并于2026年12月1日前往北京市海淀区海淀大街8号中钢国际广场A座5层C区报到、出勤打卡，遵守公司合法合理的考勤与管理要求。上述报到与配合仅系履行出勤义务，不表示本人认可本次待岗的定性。<sup>6</sup></mark></p>
+        <p>本人上述报到、交接和配合行为，不表示本人认可本次待岗符合劳动合同第5.7条的适用条件，也不表示本人同意据此降低工资待遇、跨省市变更工作地点或放弃相关异议。</p>
+        <p><mark class="fx" data-n="9" title="对应第 03 节必要修改第 9 条">如公司在此期间安排实际工作，本人可申请每日前后一小时的弹性打卡；该申请以实际到岗工作为前提，与本人对待岗安排的异议无关。<sup>9</sup></mark></p>
+        <h3 class="fin-h">二、本人对本次待岗是否符合合同约定条件提出异议</h3>
+        <p>劳动合同第5.7条将客观情况发生重大变化、公司无法安排本人在业务或项目上工作，作为安排待岗的条件。</p>
+        <p>现有通知说明了原项目不再需要本人继续服务，但尚未说明公司无法安排本人从事其他业务或项目工作的具体情况。原项目不再需要本人服务，与公司是否无法安排其他工作，仍需分别说明。</p>
+        <p>本人对本次是否符合第5.7条的适用条件提出书面异议，请公司明确：</p>
+        <p>1. 本人被安排至百度项目工作的实际用工形式；如认定属于劳务派遣，请明确派遣单位、用工单位，以及本次退回的具体事实和依据。</p>
+        <p>2. 本次安排待岗的具体事实、法律及合同依据；如同时依据公司规章制度，请提供相关内容及制定、公示或告知情况。</p>
+        <p>3. 北京地区适合本人岗位的匹配情况、公司已经或计划采取的岗位匹配措施，以及目前暂不能安排本人工作的具体原因。</p>
+        <p>4. 待岗预计期限、复岗条件及后续岗位匹配的预计时间。</p>
+        <p>5. 自2026年12月1日起拟安排本人的具体工作、培训及管理内容，以及公司是否将该期间认定为无工作期间。</p>
+        <p>本人提出异议期间，仍将按通知报到、出勤，并配合合理工作安排。本函同时作为本人依据劳动合同第11.1.3条、第14.2条就本次安排提出的书面异议。</p>
+        <h3 class="fin-h">三、关于工作地点及后续岗位安排</h3>
+        <p><mark class="fx" data-n="7" title="对应第 03 节必要修改第 7 条">工作地点属于劳动合同约定的核心内容。根据《劳动合同法》第三十五条，变更劳动合同约定内容应当经双方协商一致并采用书面形式；即便公司主张客观情况发生重大变化，依据该法第四十条第（三）项，亦应先就变更劳动合同内容与本人协商，公司无权单方强制跨省市调岗。<sup>7</sup></mark></p>
+        <p>对于此前会议中口头提出的跨城市外迁安排，本人因家庭及生活基础均在北京，跨城市迁移将造成实质性生活困难，明确不同意。</p>
+        <p>本人希望继续在北京履行劳动合同，愿意配合公司在北京地区提供的、符合劳动合同约定并与本人工作经历和能力合理匹配的岗位安排。</p>
+        <p>对于后续拟匹配的岗位，请公司提供具体工作地点、岗位职责、任职要求、职级及薪酬待遇等信息，以便充分沟通。</p>
+        <p>本人参与岗位沟通、简历更新和面试，不代表同意跨城市变更工作地点或降低劳动合同约定待遇；公司不应仅因本人参与上述流程而认定双方已经就相关变更达成一致。</p>
+        <h3 class="fin-h">四、关于劳动报酬及社会保险、住房公积金</h3>
+        <p><mark class="fx" data-n="3" title="对应第 03 节必要修改第 3 条">公司通知所援引的劳动合同第5.7条，本人从未确认其适用于本次情形。该条以「客观情况发生重大变化、公司无法安排本人在业务或项目上工作」为前提，本次待岗是否符合该前提，尚待公司举证说明。<sup>3</sup></mark></p>
+        <p><mark class="fx" data-n="2" title="对应第 03 节必要修改第 2 条">在待岗是否依法成立确定之前，公司应按原劳动合同约定的正常工资标准支付劳动报酬。本人并非仅就支付金额提出异议，而是对本次待岗的成立条件本身提出异议。<sup>2</sup></mark></p>
+        <p>请公司书面明确本次是否拟适用第5.7条，以及适用的具体事实、各阶段起止日期、支付金额、工资组成和计算方式，并明确社会保险及住房公积金的缴纳地点、基数和扣缴安排；如拟调整，请说明依据。</p>
+        <p>如公司实际安排本人承担业务、项目工作，请按照合同关于恢复正常工作后薪资标准的约定执行。对于培训及其他工作安排，请结合实际履行情况依法支付相应劳动报酬。</p>
+        <p><mark class="fx" data-n="12" title="对应第 03 节必要修改第 12 条">如公司未按照劳动合同约定提供劳动条件，或未依法足额支付劳动报酬，本人保留依据《劳动合同法》第三十八条第（一）项、第（二）项解除劳动合同并主张经济补偿及其他劳动权益的权利。<sup>12</sup></mark></p>
+        <h3 class="fin-h">五、关于项目交接</h3>
+        <p>本人将在2026年12月1日前，按照公司及客户明确的要求和授权流程，配合完成本人职责范围内的工作资料、工作账号权限及相关资产交接。</p>
+        <p><mark class="fx" data-n="11" title="对应第 03 节必要修改第 11 条">请公司明确接收人员、交接清单及验收方式，并在交接完成后由接收人员签署交接清单、出具书面确认。<sup>11</sup></mark></p>
+        <p>如交接需要其他人员配合或存在客观障碍，本人将及时反馈。</p>
+        <p>本人办理的是项目工作交接，不代表本人申请离职、同意解除劳动合同，亦不代表本人认可待岗、跨城市调动或降低待遇。</p>
+        <h3 class="fin-h">六、关于后续处理及书面回复</h3>
+        <p>本人希望公司优先提供符合劳动合同约定条件的北京岗位。如公司认为无法继续按照劳动合同约定安排工作，请书面说明原因及拟采取的处理方案。本人未提出解除劳动合同。</p>
+        <p><mark class="fx" data-n="4" title="对应第 03 节必要修改第 4 条">请公司于收到本函后五个工作日内，书面撤销本次待岗决定，恢复本人原岗位及原工资待遇，并就上述事项一并作出书面回复；逾期未回复或未撤销的，本人将依法主张相应权利。<sup>4</sup></mark></p>
+        <p><mark class="fx" data-n="1" title="对应第 03 节必要修改第 1 条">如公司拟协商解除劳动合同，应由公司提出解除动议，双方协商一致后依法支付经济补偿；<sup>1</sup></mark>相关解除条件、经济补偿及其他应付款项，应另行协商并以明确的书面协议为准。</p>
+        <p>依法应支付的工资、奖金、未休年休假工资及其他款项，应分别列明项目及金额，不应在未明确明细的情况下笼统包含在经济补偿中。</p>
+        <p>本函仅用于提出异议、确认履约意愿及请求公司说明，不构成本人的辞职申请、解除劳动合同通知，亦不构成对降薪、跨城市调动或放弃劳动权益的同意。后续如另行签署协议，其效力及履行按协议约定和法律规定处理。</p>
+        <p><mark class="fx" data-n="8" title="对应第 03 节必要修改第 8 条">本人愿意在继续正常履行劳动合同的同时，以不降低劳动合同约定条件为前提，与公司就本次项目调整问题进行沟通。<sup>8</sup></mark></p>
+        <p class="fin-r">此致</p>
+        <p class="fin-r">上海微创软件股份有限公司北京分公司</p>
+        <p class="fin-r">回复人：_________________</p>
+        <p class="fin-r">日期：2026年___月___日</p>
+      </div>
+    </div>
+  </section>
+
   <footer class="ft">
     <span>原文一字未改 · 问题判断与条文引用仅供参考，正式仲裁前请交由执业劳动法律师复核</span>
     <a href="./">返回入口</a>
@@ -816,6 +885,11 @@ h1{margin:16px 0 12px;font:700 31px/44px var(--serif);letter-spacing:.02em}
     });
     panels.forEach(function(p){ p.hidden = p.id !== id; });
     moveInk(active);
+    if(active){
+      var box = active.parentNode, l = active.offsetLeft, r = l + active.offsetWidth;
+      if(l < box.scrollLeft + 8) box.scrollLeft = Math.max(0, l - 12);
+      else if(r > box.scrollLeft + box.clientWidth - 8) box.scrollLeft = r - box.clientWidth + 12;
+    }
     if(active && opts.scroll && bar){
       var top = bar.getBoundingClientRect().top + window.pageYOffset;
       if(window.pageYOffset > top + 4) window.scrollTo({ top: top, behavior: 'smooth' });
