@@ -179,7 +179,9 @@ mark.fx sup{margin-left:2px;font:600 9px/1 var(--mono);color:var(--amber-deep);v
 .dprob{margin:0 0 9px;font-size:12.6px;line-height:21px;color:var(--ink-2)}
 .dadv{margin:0;padding-top:8px;border-top:1px dashed var(--line-soft);font-size:12.6px;line-height:21px}
 .dadv .lb,.rhow .lb{display:inline-block;margin-right:7px;padding:0 6px;border-radius:3px;font:600 10px/17px var(--sans);background:var(--v2-soft);color:var(--v2)}
-.dlaw{margin:7px 0 0;font-size:11.5px;line-height:19px;color:var(--ink-3)}
+.dlaw{margin:8px 0 0;padding:6px 10px;background:rgba(176,58,46,.045);
+  border-left:2px solid rgba(176,58,46,.42);border-radius:0 3px 3px 0;
+  font-size:11.9px;line-height:20px;color:var(--ink-2)}
 .djump{margin-top:9px;display:flex;gap:6px;flex-wrap:wrap}
 .chip{display:inline-block;padding:1px 8px;border-radius:3px;background:rgba(26,26,24,.055);color:var(--ink-2);
   font:500 11px/19px var(--sans);text-decoration:none;transition:background .15s,color .15s}
@@ -219,13 +221,19 @@ mark.fx sup{margin-left:2px;font:600 9px/1 var(--mono);color:var(--amber-deep);v
 .law-src{display:flex;align-items:center;gap:7px;margin-bottom:9px;font:500 11.5px/18px var(--sans);color:var(--ink-3)}
 .law-src .ic{color:var(--ink-3)}
 .law.key .law-src .ic{color:var(--seal)}
-.law-src .srcname{color:var(--ink-2)}
+.law-src .srcname{color:var(--ink);font-weight:600}
+.law-src .issuer{color:var(--ink-3)}
 .law-src .verdict{margin-left:auto;flex:none}
-.law h4{margin:0 0 9px;font:700 13.5px/22px var(--serif)}
-.law.key h4{color:var(--seal-deep)}
-.law-text{margin:0 0 10px;padding:9px 11px;background:#F6F5F1;border-radius:4px;font-size:11.8px;line-height:20px;color:#5E5E57;text-align:justify}
-.law-apply{margin:auto 0 0;font-size:12.3px;line-height:21px;color:var(--ink-2)}
-.law-apply .ap{display:inline-block;margin-right:6px;font:600 10px/17px var(--sans);padding:0 6px;border-radius:3px;background:rgba(26,26,24,.06);color:var(--ink-3)}
+.law-name{display:flex;gap:6px;margin:0 0 11px;font:600 13px/21px var(--sans);color:var(--ink-2)}
+.law-name .ar{flex:none;color:var(--seal);font-weight:600}
+.law.key .law-name{color:var(--seal-deep)}
+.law-text{margin:0 0 11px;padding:11px 14px;background:#FBF6F2;border-left:3px solid var(--seal);
+  border-radius:0 5px 5px 0;font:400 13.4px/23px var(--serif);color:var(--ink);text-align:justify;letter-spacing:.01em}
+.law:not(.key) .law-text{background:#FAF8F3;border-left-color:rgba(176,58,46,.38);color:var(--ink)}
+.law-apply{margin:auto 0 0;padding-top:11px;border-top:1px dashed var(--line-soft);
+  font-size:12.2px;line-height:21px;color:var(--ink-3)}
+.law-apply .ap{display:inline-block;margin-right:6px;font:600 10.5px/17px var(--mono);
+  letter-spacing:.04em;color:var(--ink-3);background:none;padding:0}
 .verdict{font:600 10px/18px var(--sans);padding:1px 8px;border-radius:3px;white-space:nowrap}
 .verdict.sup-v1{background:var(--v1-soft);color:var(--v1)}
 .verdict.sup-v2{background:var(--v2-soft);color:var(--v2)}
@@ -647,26 +655,26 @@ mark.flash{animation:flash2 1.5s ease}
         <div class="law-grid">
         <article class="law sup-none">
           <div class="law-src"><span class="ic" aria-hidden="true">§</span><span class="srcname">劳动合同法第三十五条</span><span class="issuer">· 全国人大常委会</span><span class="verdict sup-none">两版均未完整引用（第一版曾引、修改2 删除）</span></div>
-          <h4>变更劳动合同须协商一致并采用书面形式</h4>
           <p class="law-text">用人单位与劳动者协商一致，可以变更劳动合同约定的内容。变更劳动合同，应当采用书面形式。</p>
+          <p class="law-name"><span class="ar" aria-hidden="true">&#8627;</span>变更劳动合同须协商一致并采用书面形式</p>
           <p class="law-apply"><span class="ap">对本函的影响</span>单方发出的《待岗通知》不是「协商一致的书面变更」，不产生变更效力。这是全案最核心的条文。</p>
         </article>
         <article class="law sup-none">
           <div class="law-src"><span class="ic" aria-hidden="true">§</span><span class="srcname">劳动合同法第四十条 第(三)项</span><span class="issuer">· 全国人大常委会</span><span class="verdict sup-none">两版均未引用</span></div>
-          <h4>客观情况重大变化应先协商变更，协商不成才能解除</h4>
           <p class="law-text">劳动合同订立时所依据的客观情况发生重大变化，致使劳动合同无法履行，经用人单位与劳动者协商，未能就变更劳动合同内容达成协议的，用人单位提前三十日书面通知或额外支付一个月工资后，可以解除劳动合同。</p>
+          <p class="law-name"><span class="ar" aria-hidden="true">&#8627;</span>客观情况重大变化应先协商变更，协商不成才能解除</p>
           <p class="law-apply"><span class="ap">对本函的影响</span>公司若主张项目外迁属「客观情况重大变化」，法定路径是先行协商变更；协商不成也须解除并付补偿，而非单方待岗降薪。</p>
         </article>
         <article class="law sup-v1">
           <div class="law-src"><span class="ic" aria-hidden="true">§</span><span class="srcname">工资支付暂行规定第十二条</span><span class="issuer">· 原劳动部</span><span class="verdict sup-v1">支持第一版的三个论点</span></div>
-          <h4>「待岗」的事实前提是停工停产</h4>
           <p class="law-text">非因劳动者原因造成单位停工、停产，在一个工资支付周期内，用人单位应按劳动合同规定的标准支付工资；超过一个工资支付周期的，按国家有关规定办理。</p>
+          <p class="law-name"><span class="ar" aria-hidden="true">&#8627;</span>「待岗」的事实前提是停工停产</p>
           <p class="law-apply"><span class="ap">对本函的影响</span>待岗的合法性以「停工停产」为前提。仅单个项目结束、公司其他项目仍在运行，不构成停工停产。</p>
         </article>
         <article class="law sup-v1">
           <div class="law-src"><span class="ic" aria-hidden="true">§</span><span class="srcname">劳动合同法第四十一条</span><span class="issuer">· 全国人大常委会</span><span class="verdict sup-v1">支持第一版的第三个论点</span></div>
-          <h4>经济性裁员须达法定规模</h4>
           <p class="law-text">裁减人员二十人以上，或者裁减不足二十人但占企业职工总数百分之十以上的，适用经济性裁员程序。</p>
+          <p class="law-name"><span class="ar" aria-hidden="true">&#8627;</span>经济性裁员须达法定规模</p>
           <p class="law-apply"><span class="ap">对本函的影响</span>本次仅针对百度项目外迁涉及的少数员工，未达裁员规模，不能以「经营困难」为由抗辩。</p>
         </article>
         </div>
@@ -676,26 +684,26 @@ mark.flash{animation:flash2 1.5s ease}
         <div class="law-grid">
         <article class="law sup-v2 key">
           <div class="law-src"><span class="ic" aria-hidden="true">✳</span><span class="srcname">劳务派遣暂行规定第十二条</span><span class="issuer">· 人社部</span><span class="verdict sup-v2">对修改2 有利</span></div>
-          <h4>派遣退回后无工作期间，按最低工资支付即属合法</h4>
           <p class="law-text">被派遣劳动者退回后在无工作期间，劳务派遣单位应当按照不低于所在地人民政府规定的最低工资标准，向其按月支付报酬。</p>
+          <p class="law-name"><span class="ar" aria-hidden="true">&#8627;</span>派遣退回后无工作期间，按最低工资支付即属合法</p>
           <p class="law-apply"><span class="ap">对本函的影响</span>若本人属劳务派遣，公司自第二个月起按最低工资支付完全合法。第一版「未足额支付→第三十八条解除」的威胁会落空，这也是修改2 追问用工形式的价值。</p>
         </article>
         <article class="law sup-v2 key">
           <div class="law-src"><span class="ic" aria-hidden="true">✳</span><span class="srcname">北京市工资支付规定第二十七条</span><span class="issuer">· 北京市人民政府</span><span class="verdict sup-v2">对修改2 有利</span></div>
-          <h4>直接用工停工停业：首月正常工资，之后不低于最低工资70%</h4>
           <p class="law-text">停工、停业在一个工资支付周期内按正常劳动支付工资；超过一个工资支付周期的，按双方新约定标准支付但不得低于本市最低工资标准；用人单位没有安排劳动者工作的，应当按照不低于本市最低工资标准的70%支付劳动者基本生活费。</p>
+          <p class="law-name"><span class="ar" aria-hidden="true">&#8627;</span>直接用工停工停业：首月正常工资，之后不低于最低工资70%</p>
           <p class="law-apply"><span class="ap">对本函的影响</span>即便是直接用工，按最低工资支付也高于70%的法定底线，并不构成「未足额支付」。能否追差额，关键在「待岗是否成立」，而非「发了多少钱」。</p>
         </article>
         <article class="law sup-none">
           <div class="law-src"><span class="ic" aria-hidden="true">§</span><span class="srcname">劳动合同法第四条</span><span class="issuer">· 全国人大常委会</span><span class="verdict sup-none">两版均未引用</span></div>
-          <h4>涉劳动报酬的规章制度须经民主程序并公示告知</h4>
           <p class="law-text">用人单位在制定、修改直接涉及劳动者切身利益的规章制度时，应当经职工代表大会或者全体职工讨论，与工会或者职工代表平等协商确定，并公示或者告知劳动者。</p>
+          <p class="law-name"><span class="ar" aria-hidden="true">&#8627;</span>涉劳动报酬的规章制度须经民主程序并公示告知</p>
           <p class="law-apply"><span class="ap">对本函的影响</span>公司援引待岗制度时，须证明其制定程序合法且已向本人公示告知。修改2 已就此发问，可直接要求公司举证。</p>
         </article>
         <article class="law sup-none">
           <div class="law-src"><span class="ic" aria-hidden="true">§</span><span class="srcname">民法典第四百九十六条、第四百九十七条</span><span class="issuer">· 全国人民代表大会</span><span class="verdict sup-none">两版均未引用</span></div>
-          <h4>格式条款的提示说明义务与无效情形</h4>
           <p class="law-text">采用格式条款订立合同的，提供方应当提示对方注意免除或者减轻其责任等与对方有重大利害关系的条款；不合理地免除或者减轻其责任、加重对方责任、限制对方主要权利的格式条款无效。</p>
+          <p class="law-name"><span class="ar" aria-hidden="true">&#8627;</span>格式条款的提示说明义务与无效情形</p>
           <p class="law-apply"><span class="ap">对本函的影响</span>劳动合同第5.7条若系公司单方提供的格式条款且未作提示说明，可主张其不成为合同内容或属无效。</p>
         </article>
         </div>
@@ -705,26 +713,26 @@ mark.flash{animation:flash2 1.5s ease}
         <div class="law-grid">
         <article class="law sup-v2">
           <div class="law-src"><span class="ic" aria-hidden="true">§</span><span class="srcname">劳动争议调解仲裁法第六条</span><span class="issuer">· 全国人大常委会</span><span class="verdict sup-v2">支持修改2 的追问策略</span></div>
-          <h4>减少劳动报酬等争议由用人单位负举证责任</h4>
           <p class="law-text">与争议事项有关的证据属于用人单位掌握管理的，用人单位应当提供；用人单位不提供的，应当承担不利后果。</p>
+          <p class="law-name"><span class="ar" aria-hidden="true">&#8627;</span>减少劳动报酬等争议由用人单位负举证责任</p>
           <p class="law-apply"><span class="ap">对本函的影响</span>修改2 以书面清单要求公司说明制度依据、岗位匹配、待岗期限，实质是把举证责任固定到公司一侧。</p>
         </article>
         <article class="law defect key">
           <div class="law-src"><span class="ic" aria-hidden="true">✳</span><span class="srcname">劳动合同法第四十六条</span><span class="issuer">· 全国人大常委会</span><span class="verdict defect">第一版诉求3 存在风险</span></div>
-          <h4>协商解除须「用人单位提出」才付补偿</h4>
           <p class="law-text">用人单位依照本法第三十六条规定向劳动者提出解除劳动合同并与劳动者协商一致解除劳动合同的，应当向劳动者支付经济补偿。</p>
+          <p class="law-name"><span class="ar" aria-hidden="true">&#8627;</span>协商解除须「用人单位提出」才付补偿</p>
           <p class="law-apply"><span class="ap">对本函的影响</span>若函件被理解为「劳动者主动提出协商解除」，公司可主张不负补偿义务。应改为「请公司提出解除动议」。</p>
         </article>
         <article class="law sup-both key">
           <div class="law-src"><span class="ic" aria-hidden="true">✳</span><span class="srcname">劳动合同法第三十八条</span><span class="issuer">· 全国人大常委会</span><span class="verdict sup-both">两版各有取舍</span></div>
-          <h4>未足额支付报酬、未提供劳动条件均可被迫解除</h4>
           <p class="law-text">用人单位未按照劳动合同约定提供劳动保护或者劳动条件的，或未及时足额支付劳动报酬的，劳动者可以解除劳动合同。</p>
+          <p class="law-name"><span class="ar" aria-hidden="true">&#8627;</span>未足额支付报酬、未提供劳动条件均可被迫解除</p>
           <p class="law-apply"><span class="ap">对本函的影响</span>第一版只用「未足额支付」，修改2 只保留「保留权利」。长期不安排工作岗位同样构成未提供劳动条件，两项并列可显著提高成立概率。</p>
         </article>
         <article class="law sup-v1">
           <div class="law-src"><span class="ic" aria-hidden="true">§</span><span class="srcname">劳动合同法第四十七条</span><span class="issuer">· 全国人大常委会</span><span class="verdict sup-v1">支持第一版的核算口径</span></div>
-          <h4>经济补偿按工作年限计，基数为解除前十二个月平均工资</h4>
           <p class="law-text">经济补偿按劳动者在本单位工作的年限，每满一年支付一个月工资的标准向劳动者支付；月工资是指劳动者在劳动合同解除或者终止前十二个月的平均工资。</p>
+          <p class="law-name"><span class="ar" aria-hidden="true">&#8627;</span>经济补偿按工作年限计，基数为解除前十二个月平均工资</p>
           <p class="law-apply"><span class="ap">对本函的影响</span>第一版「按解除前十二个月应得平均工资核算，奖金、年休假工资单独核算」的表述准确；修改2 仅笼统提及。</p>
         </article>
         </div>
@@ -734,20 +742,20 @@ mark.flash{animation:flash2 1.5s ease}
         <div class="law-grid">
         <article class="law sup-none key">
           <div class="law-src"><span class="ic" aria-hidden="true">✳</span><span class="srcname">劳动合同法第二十九条</span><span class="issuer">· 全国人大常委会</span><span class="verdict sup-none">两版均未引用</span></div>
-          <h4>双方应当按照劳动合同约定全面履行各自义务</h4>
           <p class="law-text">用人单位与劳动者应当按照劳动合同的约定，全面履行各自的义务。</p>
+          <p class="law-name"><span class="ar" aria-hidden="true">&#8627;</span>双方应当按照劳动合同约定全面履行各自义务</p>
           <p class="law-apply"><span class="ap">对本函的影响</span>合同有效存续期间，公司不仅有支付报酬的义务，也有按约定提供岗位与劳动条件的义务。「没有合适项目」不是免除该义务的理由，不能以待岗替代用工安排。</p>
         </article>
         <article class="law sup-none">
           <div class="law-src"><span class="ic" aria-hidden="true">§</span><span class="srcname">劳动合同法第十七条</span><span class="issuer">· 全国人大常委会</span><span class="verdict sup-none">两版均未引用</span></div>
-          <h4>工作内容与工作地点是劳动合同必备条款</h4>
           <p class="law-text">劳动合同应当具备以下条款：（一）用人单位的名称、住所和法定代表人或者主要负责人；……（四）工作内容和工作地点；……</p>
+          <p class="law-name"><span class="ar" aria-hidden="true">&#8627;</span>工作内容与工作地点是劳动合同必备条款</p>
           <p class="law-apply"><span class="ap">对本函的影响</span>原岗位与原工作地点均属约定必备条款，非经协商一致不得变更。项目仍在存续、岗位并未消灭，公司无权以「项目调整」为由长期不安排工作。</p>
         </article>
         <article class="law sup-none key">
           <div class="law-src"><span class="ic" aria-hidden="true">✳</span><span class="srcname">劳动合同法第三十条</span><span class="issuer">· 全国人大常委会</span><span class="verdict sup-none">两版均未引用</span></div>
-          <h4>用人单位应按约定及时足额支付劳动报酬</h4>
           <p class="law-text">用人单位应当按照劳动合同约定和国家规定，向劳动者及时足额支付劳动报酬。</p>
+          <p class="law-name"><span class="ar" aria-hidden="true">&#8627;</span>用人单位应按约定及时足额支付劳动报酬</p>
           <p class="law-apply"><span class="ap">对本函的影响</span>只要能证明公司仍有业务、仍在经营，则「停工停产」不成立，按最低工资支付即失去依据，差额部分可全额主张。</p>
         </article>
         <article class="law concl">
