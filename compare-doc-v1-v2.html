@@ -100,6 +100,7 @@ mark.fx sup,.fx-demo sup{margin-left:2px;font:600 9px/1 var(--mono);color:var(--
 .sheet-head .sname{font:600 12px/18px var(--sans);padding:2px 9px;border-radius:4px}
 .sheet-head .sname.v1{background:var(--v1-soft);color:var(--v1)}
 .sheet-head .sname.v2{background:var(--v2-soft);color:var(--v2)}
+.sname.final{background:var(--amber-soft);color:var(--amber-deep)}
 .sheet-head .smeta{font:400 11px/18px var(--mono);color:var(--ink-3)}
 .band{grid-column:1/-1;display:flex;align-items:center;gap:10px;padding:9px 26px;background:rgba(26,26,24,.045);border-bottom:1px solid rgba(26,26,24,.07)}
 .band .bno{font:600 11px/18px var(--mono);color:var(--ink-3)}
@@ -289,7 +290,9 @@ mark.fx sup,.fx-demo sup{margin-left:2px;font:600 9px/1 var(--mono);color:var(--
       <button class="tab" id="t3" role="tab" aria-selected="false" aria-controls="s3" data-panel="s3" tabindex="-1"><span class="no">03</span>必要修改</button>
       <button class="tab" id="t4" role="tab" aria-selected="false" aria-controls="s4" data-panel="s4" tabindex="-1"><span class="no">04</span>法律依据</button>
       <button class="tab" id="t5" role="tab" aria-selected="false" aria-controls="s5" data-panel="s5" tabindex="-1"><span class="no">05</span>结论</button>
-      <button class="tab" id="t6" role="tab" aria-selected="false" aria-controls="s6" data-panel="s6" tabindex="-1"><span class="no">06</span>最终版</button>
+      <button class="tab" id="t6" role="tab" aria-selected="false" aria-controls="s6" data-panel="s6" tabindex="-1"><span class="no">06</span>最终版正文</button>
+      <button class="tab" id="t7" role="tab" aria-selected="false" aria-controls="s7" data-panel="s7" tabindex="-1"><span class="no">07</span>最终版 vs 第一版</button>
+      <button class="tab" id="t8" role="tab" aria-selected="false" aria-controls="s8" data-panel="s8" tabindex="-1"><span class="no">08</span>最终版 vs 修改2</button>
       <span class="tab-ink" aria-hidden="true"></span>
     </div>
   </div>
@@ -859,7 +862,504 @@ mark.fx sup,.fx-demo sup{margin-left:2px;font:600 9px/1 var(--mono);color:var(--
   <footer class="ft">
     <span>原文一字未改 · 问题判断与条文引用仅供参考，正式仲裁前请交由执业劳动法律师复核</span>
     <a href="./">返回入口</a>
-  </footer>
+    <section class="panel" id="s7" role="tabpanel" aria-labelledby="t7" hidden>
+    <div class="sec-head"><span class="sec-no">07</span><h2>最终版 vs 第一版</h2></div>
+    <p class="sec-desc">左栏为最终版（吸收两版精华、修掉 12 处必要修改），右栏为第一版；主题标题下一行底部「解读」说明最终版的改法与理由。共 29 组，最终版独有的内容标记为「仅最终版」。</p>
+    <div class="desk"><div class="spread">
+      <div class="sheet-head"><span class="sname final">最终版</span><span class="smeta">综合稿</span></div>
+      <div class="sheet-head h2"><span class="sname v1">第一版</span><span class="smeta">34 段 · 5 章</span></div>
+      <div class="band">
+        <span class="bno">01</span><h3>标题</h3><span class="badge k-rewrite">整段改写</span>
+      </div>
+      <div class="cell left"><p>关于项目调整、待岗安排及劳动合同履行的书面异议函</p>
+      </div>
+      <div class="cell right"><p>对《待岗通知》的异议函</p>
+      </div>
+      <div class="anno"><span class="nt">解读</span>F 标题扩为覆盖项目调整、待岗、合同履行的总标题，范围更全，但争议面也随之扩大。</div>
+      <div class="band">
+        <span class="bno">02</span><h3>致送对象</h3><span class="badge k-mod">措辞不同</span>
+      </div>
+      <div class="cell left"><p>致：上海微创软件股份有限公司北京分公司（人力资源部及相关部门）</p>
+      </div>
+      <div class="cell right"><p>致：上海微创软件股份有限公司北京分公司</p>
+      </div>
+      <div class="anno"><span class="nt">解读</span><b class="rv v1">第一版</b> 只写「公司」；F 改为「人力资源部及相关部门」，收件主体更明确，内部流转更直接。</div>
+      <div class="band">
+        <span class="bno">03</span><h3>身份信息</h3><span class="badge k-rewrite">整段改写</span>
+      </div>
+      <div class="cell left"><p>本人________，系公司________岗位员工，劳动合同期限自________年____月____日起至________年____月____日止，劳动合同约定工作地点为________。</p>
+      </div>
+      <div class="cell right"><p>本人:             (身份证号:                                         )  ，系贵公司                   岗位员工，劳动合同期限自            年      月      日起至            年     月      日止，工作地点为            。</p>
+      </div>
+      <div class="anno"><span class="nt">解读</span><b class="rv v1">第一版</b> 留身份证号栏、写「贵公司」；F 去掉身份证号、改「公司」、加「劳动合同约定工作地点」，表述更严谨。</div>
+      <div class="band">
+        <span class="bno">04</span><h3>待岗事实陈述</h3><span class="badge k-mod">措辞不同</span>
+      </div>
+      <div class="cell left"><p>本人于2026年11月6日收到公司发送的《待岗通知》。通知称，因客户方业务调整、岗位裁撤，百度项目自2026年12月1日起不再需要本人继续服务，要求本人此前完成项目交接，并自2026年12月1日起前往通知载明的北京办公地点报到、出勤打卡，等待后续工作安排。</p>
+      </div>
+      <div class="cell right"><p>本人于2026年11月06日收到贵司出具的《待岗通知》，通知称因百度项目业务调整，自2026年12月1日起安排本人待岗，并要求前往北京市海淀区海淀大街8号中钢国际广场A座5层C区报到。现就该通知及相关事宜，正式提出书面异议如下：</p>
+      </div>
+      <div class="anno"><span class="nt">解读</span><b class="rv v1">第一版</b> 只转述通知；F 补足原因并把报到地址收窄为通知载明的地点，更完整，但「客户方业务调整」等于接受了公司口径。</div>
+      <div class="band">
+        <span class="bno">05</span><h3>诉求开场白（新增）</h3><span class="badge k-add">仅最终版</span>
+      </div>
+      <div class="cell left"><p>现就有关事项提出书面异议，并请求公司确认如下。</p>
+      </div>
+      <div class="cell right"><div class="empty"><span>此版无对应内容</span></div>
+      </div>
+      <div class="anno"><span class="nt">解读</span><b class="rv v1">第一版</b> 无此段；F 加过渡句「现就有关事项提出书面异议，并请求公司确认如下」，为后续章节做铺垫。</div>
+      <div class="band">
+        <span class="bno">06</span><h3>第一章 立场定性</h3><span class="badge k-rewrite">整段改写</span>
+      </div>
+      <div class="cell left"><p>一、本人愿意继续履行劳动合同，未申请待岗或离职</p>
+      </div>
+      <div class="cell right"><p>一、本人不同意贵司单方作出的待岗安排</p>
+      </div>
+      <div class="anno"><span class="nt">解读</span><b class="rv v1">第一版</b> 开篇即「不同意单方待岗安排」，立场鲜明但易激化；F 先表履约意愿再点出通知缺项，语气更稳，更有利于后续协商。</div>
+      <div class="band">
+        <span class="bno">07</span><h3>通知未载明不能胜任或违纪（新增）</h3><span class="badge k-add">仅最终版</span>
+      </div>
+      <div class="cell left"><p>通知所述调整原因为客户业务调整及岗位裁撤，未载明本人存在不能胜任工作或违反劳动纪律等情形。</p>
+      </div>
+      <div class="cell right"><div class="empty"><span>此版无对应内容</span></div>
+      </div>
+      <div class="anno"><span class="nt">解读</span><b class="rv v1">第一版</b> 无此段；F 明确点出通知没有给出本人不能胜任或违纪的理由，进一步削弱通知的合法性。</div>
+      <div class="band">
+        <span class="bno">08</span><h3>报到声明</h3><span class="badge k-rewrite">整段改写</span>
+      </div>
+      <div class="cell left"><p>本人未提出辞职、解除劳动合同，亦未申请待岗或无薪休假，愿意继续履行劳动合同。本人将按通知要求配合完成原项目工作交接，并于2026年12月1日前往北京市海淀区海淀大街8号中钢国际广场A座5层C区报到、出勤打卡，遵守公司合法合理的考勤与管理要求。上述报到与配合仅系履行出勤义务，不表示本人认可本次待岗的定性。</p>
+      </div>
+      <div class="cell right"><p>依据劳动合同第11.1.3条约定，本人在此郑重声明：</p><p>1. 本人将于2026年12月1日按通知地址报到，但本人到场仅为等候贵司在北京地区安排同等条件新项目，不认可本人处于&quot;待岗&quot;状态；</p><p>2. 报到、打卡行为不视为对本次单方待岗安排的同意或追认；</p><p>3. 贵司安排的面试等对接事宜，本人将积极配合，但面试结果不影响本人要求按原合同标准履行的权利；</p><p>4. 本函即为本人对本次岗位/工作状态调整的书面异议，不存在&quot;到岗后一个月未提异议视为同意&quot;之适用情形。</p>
+      </div>
+      <div class="anno"><span class="nt">解读</span><b class="rv v1">第一版</b> 五项声明直接否认待岗，强硬但易被视为不配合；F 收窄为「报到只系履行出勤义务，不认可待岗定性」，法律上更准确。</div>
+      <div class="band">
+        <span class="bno">09</span><h3>第11.1.3条郑重声明</h3><span class="badge k-same">两版一致</span>
+      </div>
+      <div class="cell left"><p>本人上述报到、交接和配合行为，不表示本人认可本次待岗符合劳动合同第5.7条的适用条件，也不表示本人同意据此降低工资待遇、跨省市变更工作地点或放弃相关异议。</p>
+      </div>
+      <div class="cell right"><p>二、关于报到事宜的郑重声明</p>
+      </div>
+      <div class="anno"><span class="nt">解读</span><b class="rv v1">第一版</b> 有标题；F 取消标题直接接正文，结构更紧凑，内容保留。</div>
+      <div class="band">
+        <span class="bno">10</span><h3>弹性打卡申请</h3><span class="badge k-rewrite">整段改写</span>
+      </div>
+      <div class="cell left"><p>如公司在此期间安排实际工作，本人可申请每日前后一小时的弹性打卡；该申请以实际到岗工作为前提，与本人对待岗安排的异议无关。</p>
+      </div>
+      <div class="cell right"><p>5. 考虑到本人原派驻办公地址与本次通知载明的报到地址通勤距离较远、通勤时间与成本显著增加，在等候新项目安排期间，本人申请上下班打卡时间给予 1 小时弹性区间：上午可在 8:30—9:30 之间打卡上班，下午相应在 17:30—18:30 之间打卡下班，确保每日累计在岗满 8 小时标准工时，不影响日常工作对接与事务沟通。该通勤便利申请，不构成本人对本次单方待岗安排的认可。</p>
+      </div>
+      <div class="anno"><span class="nt">解读</span><b class="rv v1">第一版</b> 无条件申请弹性打卡，与「不认可待岗」有张力；F 加了「如公司安排实际工作」的前提，逻辑自洽。</div>
+      <div class="band">
+        <span class="bno">11</span><h3>第二章 第5.7条适用前提</h3><span class="badge k-rewrite">整段改写</span>
+      </div>
+      <div class="cell left"><p>二、本人对本次待岗是否符合合同约定条件提出异议</p>
+      </div>
+      <div class="cell right"><p>贵司援引劳动合同第5.7条安排待岗，本人认为该条款的适用前提不成立：</p><p>1. 贵司作为专业的信息技术服务外包公司，在北京地区仍有多项在执行业务和项目，并非&quot;无法安排乙方在业务、项目上工作&quot;，而是未积极履行用人单位的用工安排义务；</p><p>2. 仅因单个派驻项目结束即安排员工长期待岗，实质上是将贵司的经营风险转嫁给劳动者，违背了劳动合同法的立法本意；</p><p>3. 本次待岗仅针对百度项目外迁涉及的少数员工，具有明显的针对性，并非贵司整体经营困难导致的普遍性停工停产。</p><p>综上，贵司单方通知将本人纳入待岗管理，属于单方变更劳动合同履行方式，缺乏充分的法律依据和合同依据，本人明确不予同意。</p>
+      </div>
+      <div class="anno"><span class="nt">解读</span><b class="rv v1">第一版</b> 用三个论点直接否定，力度大但举证压力在自己；F 改为条文文义解释，稳健、HR 也难反驳。</div>
+      <div class="band">
+        <span class="bno">12</span><h3>原项目不再需要 ≠ 公司无法安排其他（新增）</h3><span class="badge k-add">仅最终版</span>
+      </div>
+      <div class="cell left"><p>劳动合同第5.7条将客观情况发生重大变化、公司无法安排本人在业务或项目上工作，作为安排待岗的条件。</p><p>现有通知说明了原项目不再需要本人继续服务，但尚未说明公司无法安排本人从事其他业务或项目工作的具体情况。原项目不再需要本人服务，与公司是否无法安排其他工作，仍需分别说明。</p>
+      </div>
+      <div class="cell right"><div class="empty"><span>此版无对应内容</span></div>
+      </div>
+      <div class="anno"><span class="nt">解读</span><b class="rv v1">第一版</b> 无此展开；F 明确区分了「原项目不再需要本人服务」和「公司是否无法安排其他工作」这两个前提，逻辑上堵死了公司的跳跃。</div>
+      <div class="band">
+        <span class="bno">13</span><h3>书面询问清单（新增）</h3><span class="badge k-add">仅最终版</span>
+      </div>
+      <div class="cell left"><p>本人对本次是否符合第5.7条的适用条件提出书面异议，请公司明确：</p><p>1. 本人被安排至百度项目工作的实际用工形式；如认定属于劳务派遣，请明确派遣单位、用工单位，以及本次退回的具体事实和依据。</p><p>2. 本次安排待岗的具体事实、法律及合同依据；如同时依据公司规章制度，请提供相关内容及制定、公示或告知情况。</p><p>3. 北京地区适合本人岗位的匹配情况、公司已经或计划采取的岗位匹配措施，以及目前暂不能安排本人工作的具体原因。</p><p>4. 待岗预计期限、复岗条件及后续岗位匹配的预计时间。</p><p>5. 自2026年12月1日起拟安排本人的具体工作、培训及管理内容，以及公司是否将该期间认定为无工作期间。</p><p>本人提出异议期间，仍将按通知报到、出勤，并配合合理工作安排。本函同时作为本人依据劳动合同第11.1.3条、第14.2条就本次安排提出的书面异议。</p>
+      </div>
+      <div class="cell right"><div class="empty"><span>此版无对应内容</span></div>
+      </div>
+      <div class="anno"><span class="nt">解读</span><b class="rv v1">第一版</b> 无；F 新增七项询问，把举证压力推回公司，是全文最实用的新增。</div>
+      <div class="band">
+        <span class="bno">14</span><h3>第三章：第三十五条论证（F 回补）</h3><span class="badge k-same">两版一致</span>
+      </div>
+      <div class="cell left"><p>三、关于工作地点及后续岗位安排</p>
+      </div>
+      <div class="cell right"><p>依据《中华人民共和国劳动合同法》第三十五条及双方劳动合同第三条约定，工作地点是劳动合同的核心条款，变更工作地点应当经双方协商一致。 跨城市调岗属于对劳动合同的重大变更，且会给本人造成实质性困难，贵司无权单方强制。</p>
+      </div>
+      <div class="anno"><span class="nt">解读</span><b class="rv v1">第一版</b> 有第三十五条论证；F 回补并加了第四十条第（三）项，论证更完整——这是两版合并的核心增益。</div>
+      <div class="band">
+        <span class="bno">15</span><h3>家庭与生活基础在北京</h3><span class="badge k-rewrite">整段改写</span>
+      </div>
+      <div class="cell left"><p>工作地点属于劳动合同约定的核心内容。根据《劳动合同法》第三十五条，变更劳动合同约定内容应当经双方协商一致并采用书面形式；即便公司主张客观情况发生重大变化，依据该法第四十条第（三）项，亦应先就变更劳动合同内容与本人协商，公司无权单方强制跨省市调岗。</p>
+      </div>
+      <div class="cell right"><p>据本人了解，本次调整的起因是百度项目外迁西安等地，贵司因此对派驻该项目的外包人员进行调配。本人因家庭及个人实际情况（家庭住址、生活基础均在北京），无法接受跨省市外迁，该情况已向贵司说明。</p>
+      </div>
+      <div class="anno"><span class="nt">解读</span><b class="rv v1">第一版</b> 只说跨城市外迁不同意；F 补充了「家庭及生活基础均在北京，跨城市迁移将造成实质性生活困难」，使异议有了事实依据。</div>
+      <div class="band">
+        <span class="bno">16</span><h3>优先北京岗位 + 岗位信息清单（新增）</h3><span class="badge k-add">仅最终版</span>
+      </div>
+      <div class="cell left"><p>对于此前会议中口头提出的跨城市外迁安排，本人因家庭及生活基础均在北京，跨城市迁移将造成实质性生活困难，明确不同意。</p>
+      </div>
+      <div class="cell right"><div class="empty"><span>此版无对应内容</span></div>
+      </div>
+      <div class="anno"><span class="nt">解读</span><b class="rv v1">第一版</b> 无此具体要求；F 新增，配合公司在北京匹配岗位、并要求公司提供岗位地点/职责/职级/薪酬，攻守兼备。</div>
+      <div class="band">
+        <span class="bno">17</span><h3>沟通/面试不构成同意（新增）</h3><span class="badge k-add">仅最终版</span>
+      </div>
+      <div class="cell left"><p>本人希望继续在北京履行劳动合同，愿意配合公司在北京地区提供的、符合劳动合同约定并与本人工作经历和能力合理匹配的岗位安排。</p><p>对于后续拟匹配的岗位，请公司提供具体工作地点、岗位职责、任职要求、职级及薪酬待遇等信息，以便充分沟通。</p><p>本人参与岗位沟通、简历更新和面试，不代表同意跨城市变更工作地点或降低劳动合同约定待遇；公司不应仅因本人参与上述流程而认定双方已经就相关变更达成一致。</p>
+      </div>
+      <div class="cell right"><div class="empty"><span>此版无对应内容</span></div>
+      </div>
+      <div class="anno"><span class="nt">解读</span><b class="rv v1">第一版</b> 无；F 明确声明参与岗位沟通、简历更新、面试不表示同意变更，避免默示同意。</div>
+      <div class="band">
+        <span class="bno">18</span><h3>第四章 劳动报酬立场（开篇）</h3><span class="badge k-mod">措辞不同</span>
+      </div>
+      <div class="cell left"><p>四、关于劳动报酬及社会保险、住房公积金</p>
+      </div>
+      <div class="cell right"><p>三、关于劳动报酬的明确主张</p>
+      </div>
+      <div class="anno"><span class="nt">解读</span>两版最大分歧。<b class="rv v1">第一版</b> 声明「不予认可降薪」并以第三十八条解除相威胁，姿态硬但主张可能落空；F 先点出第5.7条的适用前提争议。</div>
+      <div class="band">
+        <span class="bno">19</span><h3>从未确认第5.7条适用于本次（新增）</h3><span class="badge k-add">仅最终版</span>
+      </div>
+      <div class="cell left"><p>公司通知所援引的劳动合同第5.7条，本人从未确认其适用于本次情形。该条以「客观情况发生重大变化、公司无法安排本人在业务或项目上工作」为前提，本次待岗是否符合该前提，尚待公司举证说明。</p>
+      </div>
+      <div class="cell right"><p>贵司通知中提及的待岗期间薪酬安排，本人不予认可。在双方就劳动合同变更达成书面一致前，贵司应按原劳动合同约定的工资标准足额支付本人劳动报酬，不得单方降薪。</p>
+      </div>
+      <div class="anno"><span class="nt">解读</span><b class="rv v1">第一版</b> 无此段；F 把修改2 的不利自认翻转为正面主张——自己从未确认第5.7条的适用。</div>
+      <div class="band">
+        <span class="bno">20</span><h3>待岗未确定前应按原标准支付</h3><span class="badge k-rewrite">整段改写</span>
+      </div>
+      <div class="cell left"><p>在待岗是否依法成立确定之前，公司应按原劳动合同约定的正常工资标准支付劳动报酬。本人并非仅就支付金额提出异议，而是对本次待岗的成立条件本身提出异议。</p>
+      </div>
+      <div class="cell right"><p>若贵司自第二个月起单方按北京市最低工资标准发放报酬，本人将认为该行为构成未足额支付劳动报酬，并保留依据《劳动合同法》第三十八条解除劳动合同并要求经济补偿的权利。</p>
+      </div>
+      <div class="anno"><span class="nt">解读</span><b class="rv v1">第一版</b> 直接说「次月发最低工资即属未足额支付」；F 把焦点从金额转到「待岗是否合法」这一前提，逻辑上更稳。</div>
+      <div class="band">
+        <span class="bno">21</span><h3>社保与公积金（新增）</h3><span class="badge k-add">仅最终版</span>
+      </div>
+      <div class="cell left"><p>请公司书面明确本次是否拟适用第5.7条，以及适用的具体事实、各阶段起止日期、支付金额、工资组成和计算方式，并明确社会保险及住房公积金的缴纳地点、基数和扣缴安排；如拟调整，请说明依据。</p>
+      </div>
+      <div class="cell right"><div class="empty"><span>此版无对应内容</span></div>
+      </div>
+      <div class="anno"><span class="nt">解读</span><b class="rv v1">第一版</b> 无；F 新增，要求公司明确缴纳地点、基数、扣缴安排。</div>
+      <div class="band">
+        <span class="bno">22</span><h3>未提供劳动条件并列（新增）</h3><span class="badge k-add">仅最终版</span>
+      </div>
+      <div class="cell left"><p>如公司实际安排本人承担业务、项目工作，请按照合同关于恢复正常工作后薪资标准的约定执行。对于培训及其他工作安排，请结合实际履行情况依法支付相应劳动报酬。</p>
+      </div>
+      <div class="cell right"><div class="empty"><span>此版无对应内容</span></div>
+      </div>
+      <div class="anno"><span class="nt">解读</span><b class="rv v1">第一版</b> 只用第三十八条第（二）项；F 并列了第（一）项「未提供劳动条件」与第（二）项，扩大解除成立空间。</div>
+      <div class="band">
+        <span class="bno">23</span><h3>第五章 工作交接</h3><span class="badge k-rewrite">整段改写</span>
+      </div>
+      <div class="cell left"><p>如公司未按照劳动合同约定提供劳动条件，或未依法足额支付劳动报酬，本人保留依据《劳动合同法》第三十八条第（一）项、第（二）项解除劳动合同并主张经济补偿及其他劳动权益的权利。</p><p>五、关于项目交接</p>
+      </div>
+      <div class="cell right"><p>五、关于工作交接</p><p>本人将在2026年12月1日前完成百度项目对应工作的交接，完整移交工作资料、账号及相关资产。工作交接的履行，不视为对本次待岗安排或跨城市调岗的认可。</p>
+      </div>
+      <div class="anno"><span class="nt">解读</span><b class="rv v1">第一版</b> 只说「完成交接」；F 限定「职责范围内」「按授权流程」，并要求接收人签署清单、出具书面确认。</div>
+      <div class="band">
+        <span class="bno">24</span><h3>交接不代表离职/同意（新增）</h3><span class="badge k-add">仅最终版</span>
+      </div>
+      <div class="cell left"><p>本人将在2026年12月1日前，按照公司及客户明确的要求和授权流程，配合完成本人职责范围内的工作资料、工作账号权限及相关资产交接。</p>
+      </div>
+      <div class="cell right"><div class="empty"><span>此版无对应内容</span></div>
+      </div>
+      <div class="anno"><span class="nt">解读</span><b class="rv v1">第一版</b> 无；F 明确声明交接不代表离职、不认可待岗/跨市调岗/降薪。</div>
+      <div class="band">
+        <span class="bno">25</span><h3>第六章 诉求主体错位修正</h3><span class="badge k-rewrite">整段改写</span>
+      </div>
+      <div class="cell left"><p>请公司明确接收人员、交接清单及验收方式，并在交接完成后由接收人员签署交接清单、出具书面确认。</p>
+      </div>
+      <div class="cell right"><p>1. 请贵司于收到本函之日起3个工作日内，撤销本次单方待岗决定；</p><p>2. 请贵司自2026年12月1日起按原劳动合同约定标准足额支付本人劳动报酬，并在北京范围内为本人匹配与原岗位（                                   ）职级、薪酬标准、工作条件相当的工作岗位；</p><p>3. 若贵司客观上无法在北京提供同等条件岗位，请依据劳动合同第11.2.4条之规定，与本人协商解除劳动合同事宜，并依法支付经济补偿（按本人在贵司工作年限，每满一年支付一个月工资的标准计算，即 N 个月工资（N 按工作年限折算）。</p>
+      </div>
+      <div class="anno"><span class="nt">解读</span><b class="rv v1">第一版</b> 第3项「请公司协商解除」主体错位；F 改为「如公司拟协商解除，应由公司提出解除动议」。</div>
+      <div class="band">
+        <span class="bno">26</span><h3>回复期限 + 撤销待岗（F 新增撤销）</h3><span class="badge k-rewrite">整段改写</span>
+      </div>
+      <div class="cell left"><p>如交接需要其他人员配合或存在客观障碍，本人将及时反馈。</p>
+      </div>
+      <div class="cell right"><p>请贵司于收到本函之日起3个工作日内，就上述事项作出书面答复。逾期未答复或答复未能解决本人合理诉求的，本人将通过劳动仲裁等法律途径维护自身合法权益。</p>
+      </div>
+      <div class="anno"><span class="nt">解读</span><b class="rv v1">第一版</b> 要求3个工作日 + 仲裁威胁，但没提撤销待岗；F 改为5个工作日，并明确要求书面撤销待岗决定、恢复原岗位待遇。</div>
+      <div class="band">
+        <span class="bno">27</span><h3>不构成同意声明</h3><span class="badge k-rewrite">整段改写</span>
+      </div>
+      <div class="cell left"><p>本人办理的是项目工作交接，不代表本人申请离职、同意解除劳动合同，亦不代表本人认可待岗、跨城市调动或降低待遇。</p>
+      </div>
+      <div class="cell right"><p>四、本人诉求</p><p>双方未达成书面协议前，本人不接受任何单方变更，包括但不限于待岗安排、跨城市调岗、降薪等。</p>
+      </div>
+      <div class="anno"><span class="nt">解读</span><b class="rv v1">第一版</b> 短句版；F 扩为完整声明，加了「后续另行签署协议」的效力条款。</div>
+      <div class="band">
+        <span class="bno">28</span><h3>边履行边协商（以不降低条件为前提）</h3><span class="badge k-add">仅最终版</span>
+      </div>
+      <div class="cell left"><p>六、关于后续处理及书面回复</p>
+      </div>
+      <div class="cell right"><div class="empty"><span>此版无对应内容</span></div>
+      </div>
+      <div class="anno"><span class="nt">解读</span><b class="rv v1">第一版</b> 无；F 新增，留了台阶，同时限定「以不降低劳动合同约定条件为前提」。</div>
+      <div class="band">
+        <span class="bno">29</span><h3>落款</h3><span class="badge k-same">两版一致</span>
+      </div>
+      <div class="cell left"><p>本人希望公司优先提供符合劳动合同约定条件的北京岗位。如公司认为无法继续按照劳动合同约定安排工作，请书面说明原因及拟采取的处理方案。本人未提出解除劳动合同。</p><p>请公司于收到本函后五个工作日内，书面撤销本次待岗决定，恢复本人原岗位及原工资待遇，并就上述事项一并作出书面回复；逾期未回复或未撤销的，本人将依法主张相应权利。</p><p>如公司拟协商解除劳动合同，应由公司提出解除动议，双方协商一致后依法支付经济补偿；相关解除条件、经济补偿及其他应付款项，应另行协商并以明确的书面协议为准。</p>
+      </div>
+      <div class="cell right"><p>此致</p><p>上海微创软件股份有限公司北京分公司</p><p>回复人：_________________</p>
+      </div>
+      <div class="anno"><span class="nt">解读</span>一致。</div>
+    </div></div>
+  </section>
+
+  <section class="panel" id="s8" role="tabpanel" aria-labelledby="t8" hidden>
+    <div class="sec-head"><span class="sec-no">08</span><h2>最终版 vs 修改2</h2></div>
+    <p class="sec-desc">左栏为最终版，右栏为修改2；主题标题下一行底部「解读」说明最终版改了 B 的什么、为什么这么改。共 31 组，最终版独有的内容标记为「仅最终版」。</p>
+    <div class="desk"><div class="spread">
+      <div class="sheet-head"><span class="sname final">最终版</span><span class="smeta">综合稿</span></div>
+      <div class="sheet-head h2"><span class="sname v2">修改2</span><span class="smeta">45 段 · 6 章</span></div>
+      <div class="band">
+        <span class="bno">01</span><h3>标题</h3><span class="badge k-same">两版一致</span>
+      </div>
+      <div class="cell left"><p>关于项目调整、待岗安排及劳动合同履行的书面异议函</p>
+      </div>
+      <div class="cell right"><p>关于项目调整 待岗安排及劳动合同履行的书面异议函</p>
+      </div>
+      <div class="anno"><span class="nt">解读</span>B 标题已很完整；F 微调到标点与排版，内容一致。</div>
+      <div class="band">
+        <span class="bno">02</span><h3>致送对象</h3><span class="badge k-mod">措辞不同</span>
+      </div>
+      <div class="cell left"><p>致：上海微创软件股份有限公司北京分公司（人力资源部及相关部门）</p>
+      </div>
+      <div class="cell right"><p>致：上海微创软件股份有限公司北京分公司及相关管理部门</p>
+      </div>
+      <div class="anno"><span class="nt">解读</span>B 写「致：公司及相关管理部门」；F 改为「人力资源部及相关部门」，收件更明确。</div>
+      <div class="band">
+        <span class="bno">03</span><h3>身份信息</h3><span class="badge k-same">两版一致</span>
+      </div>
+      <div class="cell left"><p>本人________，系公司________岗位员工，劳动合同期限自________年____月____日起至________年____月____日止，劳动合同约定工作地点为________。</p>
+      </div>
+      <div class="cell right"><p>本人________，系公司________岗位员工，劳动合同期限自________年____月____日起至________年____月____日止，劳动合同约定工作地点为________。</p>
+      </div>
+      <div class="anno"><span class="nt">解读</span>两版完全一致。</div>
+      <div class="band">
+        <span class="bno">04</span><h3>待岗事实陈述</h3><span class="badge k-same">两版一致</span>
+      </div>
+      <div class="cell left"><p>本人于2026年11月6日收到公司发送的《待岗通知》。通知称，因客户方业务调整、岗位裁撤，百度项目自2026年12月1日起不再需要本人继续服务，要求本人此前完成项目交接，并自2026年12月1日起前往通知载明的北京办公地点报到、出勤打卡，等待后续工作安排。</p>
+      </div>
+      <div class="cell right"><p>本人于2026年11月6日收到公司发送的《待岗通知》。通知称，因客户方业务调整、岗位裁撤，百度项目自2026年12月1日起不再需要本人继续服务，要求本人此前完成项目交接，并自2026年12月1日起前往通知载明的北京办公地点报到、出勤打卡，等待后续工作安排。</p>
+      </div>
+      <div class="anno"><span class="nt">解读</span>两版完全一致。</div>
+      <div class="band">
+        <span class="bno">05</span><h3>诉求开场白</h3><span class="badge k-same">两版一致</span>
+      </div>
+      <div class="cell left"><p>现就有关事项提出书面异议，并请求公司确认如下。</p>
+      </div>
+      <div class="cell right"><p>现就有关事项提出书面异议，并请求公司确认如下。</p>
+      </div>
+      <div class="anno"><span class="nt">解读</span>两版完全一致。</div>
+      <div class="band">
+        <span class="bno">06</span><h3>第一章 立场定性</h3><span class="badge k-same">两版一致</span>
+      </div>
+      <div class="cell left"><p>一、本人愿意继续履行劳动合同，未申请待岗或离职</p>
+      </div>
+      <div class="cell right"><p>一、本人愿意继续履行劳动合同，未申请待岗或离职</p>
+      </div>
+      <div class="anno"><span class="nt">解读</span>两版完全一致。</div>
+      <div class="band">
+        <span class="bno">07</span><h3>通知未载明不能胜任或违纪</h3><span class="badge k-same">两版一致</span>
+      </div>
+      <div class="cell left"><p>通知所述调整原因为客户业务调整及岗位裁撤，未载明本人存在不能胜任工作或违反劳动纪律等情形。</p>
+      </div>
+      <div class="cell right"><p>通知所述调整原因为客户业务调整及岗位裁撤，未载明本人存在不能胜任工作或违反劳动纪律等情形。</p>
+      </div>
+      <div class="anno"><span class="nt">解读</span>两版完全一致。</div>
+      <div class="band">
+        <span class="bno">08</span><h3>第一章：报到与配合声明</h3><span class="badge k-same">两版一致</span>
+      </div>
+      <div class="cell left"><p>本人未提出辞职、解除劳动合同，亦未申请待岗或无薪休假，愿意继续履行劳动合同。本人将按通知要求配合完成原项目工作交接，并于2026年12月1日前往北京市海淀区海淀大街8号中钢国际广场A座5层C区报到、出勤打卡，遵守公司合法合理的考勤与管理要求。上述报到与配合仅系履行出勤义务，不表示本人认可本次待岗的定性。</p>
+      </div>
+      <div class="cell right"><p>本人未提出辞职、解除劳动合同，亦未申请待岗或无薪休假，愿意继续履行劳动合同。</p>
+      </div>
+      <div class="anno"><span class="nt">解读</span>两版完全一致。</div>
+      <div class="band">
+        <span class="bno">09</span><h3>报到声明：履行出勤义务，不认可第5.7条适用</h3><span class="badge k-same">两版一致</span>
+      </div>
+      <div class="cell left"><p>本人上述报到、交接和配合行为，不表示本人认可本次待岗符合劳动合同第5.7条的适用条件，也不表示本人同意据此降低工资待遇、跨省市变更工作地点或放弃相关异议。</p>
+      </div>
+      <div class="cell right"><p>本人将按照通知要求配合完成原项目工作交接，并于2026年12月1日前往北京市海淀区海淀大街8号中钢国际广场A座5层C区报到，遵守公司合法合理的考勤和管理要求，配合合理的工作、培训、岗位匹配及项目面试安排。</p>
+      </div>
+      <div class="anno"><span class="nt">解读</span>两版完全一致。</div>
+      <div class="band">
+        <span class="bno">10</span><h3>弹性打卡申请（F 新增）</h3><span class="badge k-add">仅最终版</span>
+      </div>
+      <div class="cell left"><p>如公司在此期间安排实际工作，本人可申请每日前后一小时的弹性打卡；该申请以实际到岗工作为前提，与本人对待岗安排的异议无关。</p>
+      </div>
+      <div class="cell right"><div class="empty"><span>此版无对应内容</span></div>
+      </div>
+      <div class="anno"><span class="nt">解读</span>B 删掉了 <b class="rv v1">第一版</b> 的弹性打卡申请；F 加回，但加了「如公司安排实际工作」的前提。</div>
+      <div class="band">
+        <span class="bno">11</span><h3>第二章 第5.7条将客观情况变化作为待岗条件</h3><span class="badge k-same">两版一致</span>
+      </div>
+      <div class="cell left"><p>二、本人对本次待岗是否符合合同约定条件提出异议</p>
+      </div>
+      <div class="cell right"><p>二、本人对本次待岗是否符合合同约定条件提出异议</p>
+      </div>
+      <div class="anno"><span class="nt">解读</span>两版完全一致。</div>
+      <div class="band">
+        <span class="bno">12</span><h3>原项目不再需要 ≠ 公司无法安排其他</h3><span class="badge k-same">两版一致</span>
+      </div>
+      <div class="cell left"><p>劳动合同第5.7条将客观情况发生重大变化、公司无法安排本人在业务或项目上工作，作为安排待岗的条件。</p>
+      </div>
+      <div class="cell right"><p>劳动合同第5.7条将客观情况发生重大变化、公司无法安排本人在业务或项目上工作，作为安排待岗的条件。</p>
+      </div>
+      <div class="anno"><span class="nt">解读</span>两版完全一致。</div>
+      <div class="band">
+        <span class="bno">13</span><h3>书面询问清单</h3><span class="badge k-same">两版一致</span>
+      </div>
+      <div class="cell left"><p>现有通知说明了原项目不再需要本人继续服务，但尚未说明公司无法安排本人从事其他业务或项目工作的具体情况。原项目不再需要本人服务，与公司是否无法安排其他工作，仍需分别说明。</p>
+      </div>
+      <div class="cell right"><p>现有通知说明了原项目不再需要本人继续服务，但尚未说明公司无法安排本人从事其他业务或项目工作的具体情况。原项目不再需要本人服务，与公司是否无法安排其他工作，仍需分别说明。</p><p>本人对本次是否符合第5.7条的适用条件提出书面异议，请公司明确：</p><p>本人被安排至百度项目工作的实际用工形式；如认定属于劳务派遣，请明确派遣单位、用工单位，以及本次退回的具体事实和依据。</p><p>本次安排待岗的具体事实、法律及合同依据；如同时依据公司规章制度，请提供相关内容及制定、公示或告知情况。</p><p>北京地区适合本人岗位的匹配情况、公司已经或计划采取的岗位匹配措施，以及目前暂不能安排本人工作的具体原因。</p><p>待岗预计期限、复岗条件及后续岗位匹配的预计时间。</p><p>自2026年12月1日起拟安排本人的具体工作、培训及管理内容，以及公司是将该期间认定为无工作期间。</p>
+      </div>
+      <div class="anno"><span class="nt">解读</span>两版完全一致。</div>
+      <div class="band">
+        <span class="bno">14</span><h3>异议期间继续按通知报到</h3><span class="badge k-same">两版一致</span>
+      </div>
+      <div class="cell left"><p>本人对本次是否符合第5.7条的适用条件提出书面异议，请公司明确：</p>
+      </div>
+      <div class="cell right"><p>本人提出异议期间，仍将按通知报到、出勤，并配合合理工作安排。本函同时作为本人依据劳动合同第11.1.3条、第14.2条就本次安排提出的书面异议。</p>
+      </div>
+      <div class="anno"><span class="nt">解读</span>两版完全一致。</div>
+      <div class="band">
+        <span class="bno">15</span><h3>第三章：第三十五条回补（F 加回）</h3><span class="badge k-add">仅最终版</span>
+      </div>
+      <div class="cell left"><p>1. 本人被安排至百度项目工作的实际用工形式；如认定属于劳务派遣，请明确派遣单位、用工单位，以及本次退回的具体事实和依据。</p>
+      </div>
+      <div class="cell right"><div class="empty"><span>此版无对应内容</span></div>
+      </div>
+      <div class="anno"><span class="nt">解读</span>B 删掉了 <b class="rv v1">第一版</b> 的第三十五条论证；F 回补并加了第四十条第（三）项，补强跨市调岗的法律抗辩。</div>
+      <div class="band">
+        <span class="bno">16</span><h3>家庭与生活基础在北京 + 优先北京岗位</h3><span class="badge k-same">两版一致</span>
+      </div>
+      <div class="cell left"><p>2. 本次安排待岗的具体事实、法律及合同依据；如同时依据公司规章制度，请提供相关内容及制定、公示或告知情况。</p>
+      </div>
+      <div class="cell right"><p>三、关于工作地点及后续岗位安排</p><p>对于此前会议中口头提出的跨城市外迁安排，本人因家庭及生活基础均在北京，跨城市迁移将造成实质性生活困难，明确不同意。</p><p>本人希望继续在北京履行劳动合同，愿意配合公司在北京地区提供的、符合劳动合同约定并与本人工作经历和能力合理匹配的岗位安排。</p>
+      </div>
+      <div class="anno"><span class="nt">解读</span>两版完全一致。</div>
+      <div class="band">
+        <span class="bno">17</span><h3>岗位信息清单</h3><span class="badge k-same">两版一致</span>
+      </div>
+      <div class="cell left"><p>3. 北京地区适合本人岗位的匹配情况、公司已经或计划采取的岗位匹配措施，以及目前暂不能安排本人工作的具体原因。</p>
+      </div>
+      <div class="cell right"><p>对于后续拟匹配的岗位，请公司提供具体工作地点、岗位职责、任职要求、职级及薪酬待遇等信息，以便充分沟通。</p>
+      </div>
+      <div class="anno"><span class="nt">解读</span>两版完全一致。</div>
+      <div class="band">
+        <span class="bno">18</span><h3>沟通/面试不构成同意</h3><span class="badge k-same">两版一致</span>
+      </div>
+      <div class="cell left"><p>4. 待岗预计期限、复岗条件及后续岗位匹配的预计时间。</p>
+      </div>
+      <div class="cell right"><p>本人参与岗位沟通、简历更新和面试，不代表同意跨城市变更工作地点或降低劳动合同约定待遇；公司不应仅因本人参与上述流程而认定双方已经就相关变更达成一致。</p>
+      </div>
+      <div class="anno"><span class="nt">解读</span>两版完全一致。</div>
+      <div class="band">
+        <span class="bno">19</span><h3>第四章：从未确认第5.7条适用于本次（F 修正）</h3><span class="badge k-rewrite">整段改写</span>
+      </div>
+      <div class="cell left"><p>5. 自2026年12月1日起拟安排本人的具体工作、培训及管理内容，以及公司是否将该期间认定为无工作期间。</p>
+      </div>
+      <div class="cell right"><div class="empty"><span>此版无对应内容</span></div>
+      </div>
+      <div class="anno"><span class="nt">解读</span>B 写「本人知悉第5.7条载有次月起最低工资」——这是不利自认；F 改为「从未确认该条适用于本次情形」，翻转为正面主张。</div>
+      <div class="band">
+        <span class="bno">20</span><h3>待岗成立前按原标准支付（F 修正）</h3><span class="badge k-rewrite">整段改写</span>
+      </div>
+      <div class="cell left"><p>本人提出异议期间，仍将按通知报到、出勤，并配合合理工作安排。本函同时作为本人依据劳动合同第11.1.3条、第14.2条就本次安排提出的书面异议。</p>
+      </div>
+      <div class="cell right"><p>四、关于劳动报酬及社会保险、住房公积金</p><p>本人知悉劳动合同第5.7条载有待岗首月按双方约定薪资标准支付、第二个月起按劳动合同履行地最低工资标准支付，以及恢复正常工作后恢复约定薪资标准的内容。</p>
+      </div>
+      <div class="anno"><span class="nt">解读</span>B 先承认第5.7条内容再提异议；F 直接说「在待岗是否依法成立确定前，公司应按原标准支付」，不承认条款有效。</div>
+      <div class="band">
+        <span class="bno">21</span><h3>社保与公积金询问</h3><span class="badge k-same">两版一致</span>
+      </div>
+      <div class="cell left"><p>三、关于工作地点及后续岗位安排</p>
+      </div>
+      <div class="cell right"><p>但本人对本次安排是否符合该条款的适用条件提出异议，并主张继续按照原劳动合同约定的正常工资标准支付劳动报酬。</p><p>请公司书面明确本次是否拟适用第5.7条，以及适用的具体事实、各阶段起止日期、支付金额、工资组成和计算方式，并明确社会保险及住房公积金的缴纳地点、基数和扣缴安排；如拟调整，请说明依据。</p>
+      </div>
+      <div class="anno"><span class="nt">解读</span>两版完全一致。</div>
+      <div class="band">
+        <span class="bno">22</span><h3>实际工作按合同执行 + 保留权利</h3><span class="badge k-rewrite">整段改写</span>
+      </div>
+      <div class="cell left"><p>工作地点属于劳动合同约定的核心内容。根据《劳动合同法》第三十五条，变更劳动合同约定内容应当经双方协商一致并采用书面形式；即便公司主张客观情况发生重大变化，依据该法第四十条第（三）项，亦应先就变更劳动合同内容与本人协商，公司无权单方强制跨省市调岗。</p>
+      </div>
+      <div class="cell right"><p>如公司实际安排本人承担业务、项目工作，请按照合同关于恢复正常工作后薪资标准的约定执行。对于培训及其他工作安排，请结合实际履行情况依法支付相应劳动报酬。</p><p>如实际发生未依法足额支付劳动报酬或其他侵害本人劳动权益的情形，本人保留根据届时事实依法主张工资差额、经济补偿及其他劳动权益的权利。</p>
+      </div>
+      <div class="anno"><span class="nt">解读</span>B 只提「未足额支付」；F 并列了「未提供劳动条件」，扩大解除成立空间。</div>
+      <div class="band">
+        <span class="bno">23</span><h3>第五章：按授权流程交接</h3><span class="badge k-same">两版一致</span>
+      </div>
+      <div class="cell left"><p>对于此前会议中口头提出的跨城市外迁安排，本人因家庭及生活基础均在北京，跨城市迁移将造成实质性生活困难，明确不同意。</p>
+      </div>
+      <div class="cell right"><p>五、关于项目交接</p><p>本人将在2026年12月1日前，按照公司及客户明确的要求和授权流程，配合完成本人职责范围内的工作资料、工作账号权限及相关资产交接。</p>
+      </div>
+      <div class="anno"><span class="nt">解读</span>两版完全一致。</div>
+      <div class="band">
+        <span class="bno">24</span><h3>交接清单 + 书面确认</h3><span class="badge k-same">两版一致</span>
+      </div>
+      <div class="cell left"><p>本人希望继续在北京履行劳动合同，愿意配合公司在北京地区提供的、符合劳动合同约定并与本人工作经历和能力合理匹配的岗位安排。</p>
+      </div>
+      <div class="cell right"><p>请公司明确接收人员、交接清单及验收方式，并在交接完成后给予书面确认。如交接需要其他人员配合或存在客观障碍，本人将及时反馈。</p><p>本人办理的是项目工作交接，不代表本人申请离职、同意解除劳动合同，亦不代表本人认可待岗、跨城市调动或降低待遇。</p>
+      </div>
+      <div class="anno"><span class="nt">解读</span>两版完全一致。</div>
+      <div class="band">
+        <span class="bno">25</span><h3>撤销待岗决定 + 恢复原待遇（F 明确）</h3><span class="badge k-rewrite">整段改写</span>
+      </div>
+      <div class="cell left"><p>对于后续拟匹配的岗位，请公司提供具体工作地点、岗位职责、任职要求、职级及薪酬待遇等信息，以便充分沟通。</p>
+      </div>
+      <div class="cell right"><div class="empty"><span>此版无对应内容</span></div>
+      </div>
+      <div class="anno"><span class="nt">解读</span>B 只要求「书面说明原因及方案」，没提撤销待岗；F 明确要求书面撤销待岗决定、恢复原岗位待遇，给仲裁留下「公司拒不改正」的请求基础。</div>
+      <div class="band">
+        <span class="bno">26</span><h3>优先北京岗位</h3><span class="badge k-same">两版一致</span>
+      </div>
+      <div class="cell left"><p>本人参与岗位沟通、简历更新和面试，不代表同意跨城市变更工作地点或降低劳动合同约定待遇；公司不应仅因本人参与上述流程而认定双方已经就相关变更达成一致。</p>
+      </div>
+      <div class="cell right"><p>六、关于后续处理及书面回复</p>
+      </div>
+      <div class="anno"><span class="nt">解读</span>B 写「优先提供北京岗位」；F 保留此句，并接撤销请求。</div>
+      <div class="band">
+        <span class="bno">27</span><h3>协商解除：应由公司提出（F 修正）</h3><span class="badge k-rewrite">整段改写</span>
+      </div>
+      <div class="cell left"><p>四、关于劳动报酬及社会保险、住房公积金</p>
+      </div>
+      <div class="cell right"><p>本人希望公司优先提供符合劳动合同约定条件的北京岗位。如公司认为无法继续按照劳动合同约定安排工作，请书面说明原因及拟采取的处理方案。本人未提出解除劳动合同。</p><p>如公司后续提出协商解除，相关解除条件、经济补偿及其他应付款项，应另行协商并以明确协议为准。依法应支付的工资、奖金、未休年休假工资及其他款项，应分别列明项目及金额，不应在未明确明细的情况下笼统包含在经济补偿中。</p>
+      </div>
+      <div class="anno"><span class="nt">解读</span>B 写「如公司后续提出协商解除」；F 改为「如公司拟协商解除，应由公司提出解除动议，协商一致后支付补偿」，堵死了 <b class="rv v1">第一版</b> 的主体错位。</div>
+      <div class="band">
+        <span class="bno">28</span><h3>回复期限：5 个工作日</h3><span class="badge k-same">两版一致</span>
+      </div>
+      <div class="cell left"><p>公司通知所援引的劳动合同第5.7条，本人从未确认其适用于本次情形。该条以「客观情况发生重大变化、公司无法安排本人在业务或项目上工作」为前提，本次待岗是否符合该前提，尚待公司举证说明。</p>
+      </div>
+      <div class="cell right"><p>请公司于收到本函后五个工作日内，就上述事项作出书面回复。</p>
+      </div>
+      <div class="anno"><span class="nt">解读</span>两版一致，F 保留 B 的 5 个工作日并加了逾期后果。</div>
+      <div class="band">
+        <span class="bno">29</span><h3>不构成同意声明</h3><span class="badge k-same">两版一致</span>
+      </div>
+      <div class="cell left"><p>在待岗是否依法成立确定之前，公司应按原劳动合同约定的正常工资标准支付劳动报酬。本人并非仅就支付金额提出异议，而是对本次待岗的成立条件本身提出异议。</p>
+      </div>
+      <div class="cell right"><p>本函仅用于提出异议、确认履约意愿及请求公司说明，不构成本人的辞职申请、解除劳动合同通知，亦不构成对降薪、跨城市调动或放弃劳动权益的同意。后续如另行签署协议，其效力及履行按协议约定和法律规定处理。</p>
+      </div>
+      <div class="anno"><span class="nt">解读</span>两版完全一致。</div>
+      <div class="band">
+        <span class="bno">30</span><h3>边履行边协商</h3><span class="badge k-rewrite">整段改写</span>
+      </div>
+      <div class="cell left"><p>请公司书面明确本次是否拟适用第5.7条，以及适用的具体事实、各阶段起止日期、支付金额、工资组成和计算方式，并明确社会保险及住房公积金的缴纳地点、基数和扣缴安排；如拟调整，请说明依据。</p>
+      </div>
+      <div class="cell right"><p>本人愿意在继续正常履行劳动合同的同时，与公司就妥善解决本次项目调整问题进行沟通。</p>
+      </div>
+      <div class="anno"><span class="nt">解读</span>B 只说「愿意沟通」；F 加了「以不降低劳动合同约定条件为前提」，避免被解读为接受协商解除。</div>
+      <div class="band">
+        <span class="bno">31</span><h3>落款</h3><span class="badge k-same">两版一致</span>
+      </div>
+      <div class="cell left"><p>如公司实际安排本人承担业务、项目工作，请按照合同关于恢复正常工作后薪资标准的约定执行。对于培训及其他工作安排，请结合实际履行情况依法支付相应劳动报酬。</p><p>如公司未按照劳动合同约定提供劳动条件，或未依法足额支付劳动报酬，本人保留依据《劳动合同法》第三十八条第（一）项、第（二）项解除劳动合同并主张经济补偿及其他劳动权益的权利。</p><p>五、关于项目交接</p>
+      </div>
+      <div class="cell right"><p>此致</p><p>上海微创软件股份有限公司北京分公司</p><p>回复人：_________________</p>
+      </div>
+      <div class="anno"><span class="nt">解读</span>两版一致。</div>
+    </div></div>
+  </section>
+</footer>
 </main>
 
 <script>
