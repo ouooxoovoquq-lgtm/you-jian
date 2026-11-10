@@ -3,17 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>两版异议函对照 · 逐段解读 · 必要修改 · 法律依据</title>
+<title>两版异议函对照 · 缺陷定位 · 最终版</title>
 <style>
 :root{
   --paper:#FAFAF7;--card:#FFFFFF;
-  --ink:#1A1A18;--ink-2:#4A4A45;--ink-3:#8A8A82;
+  --ink:#1A1A18;--ink-2:#3E3E39;--ink-3:#7B7B73;
   --line:rgba(26,26,24,.14);--line-soft:rgba(26,26,24,.08);
   --seal:#B03A2E;--seal-soft:rgba(176,58,46,.10);--seal-deep:#8C2B21;
   --amber:#9A6A1A;--amber-soft:rgba(154,106,26,.11);--amber-deep:#8A5D14;
   --v1:#3D5A80;--v1-soft:rgba(61,90,128,.09);
   --v2:#2D6A4F;--v2-soft:rgba(45,106,79,.09);
-  --r:6px;--r-lg:10px;
   --serif:"Songti SC","STSong","Noto Serif SC",Georgia,serif;
   --sans:"SF Pro Text","PingFang SC",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
@@ -23,28 +22,26 @@ html{scroll-behavior:smooth}
 html,body{margin:0;padding:0}
 body{background:var(--paper);color:var(--ink);font:400 14px/24px var(--sans);-webkit-font-smoothing:antialiased}
 ::selection{background:var(--seal-soft)}
-.page{max-width:1120px;margin:0 auto;padding:64px 32px 96px}
+.page{max-width:1120px;margin:0 auto;padding:60px 32px 96px}
 
-/* 头部 */
-.hd{padding-bottom:28px;border-bottom:2px solid var(--ink)}
+.hd{padding-bottom:26px;border-bottom:2px solid var(--ink)}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font:500 11px/18px var(--mono);letter-spacing:.14em;color:var(--seal);text-transform:uppercase}
 .eyebrow::before{content:"";width:24px;height:2px;background:var(--seal)}
-h1{margin:16px 0 12px;font:700 31px/44px var(--serif);letter-spacing:.02em}
-.sub{margin:0;font-size:13px;line-height:22px;color:var(--ink-2);max-width:720px}
-.meta{display:flex;flex-wrap:wrap;gap:8px 32px;margin-top:20px;font-size:12px;line-height:20px;color:var(--ink-3)}
+h1{margin:14px 0 10px;font:700 30px/42px var(--serif);letter-spacing:.02em}
+.sub{margin:0;font-size:13px;line-height:22px;color:var(--ink-2);max-width:760px}
+.meta{display:flex;flex-wrap:wrap;gap:8px 30px;margin-top:18px;font-size:12px;line-height:20px;color:var(--ink-3)}
 .meta b{color:var(--ink-2);font-weight:500}
-.legend{display:flex;flex-wrap:wrap;gap:10px 26px;margin:22px 0 0;font-size:12px;line-height:20px;color:var(--ink-2)}
-.legend span{display:inline-flex;align-items:center;gap:7px}
-.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;font-style:normal}
+.legend{display:flex;flex-wrap:wrap;gap:8px 22px;margin:18px 0 0;font-size:12px;line-height:20px;color:var(--ink-2)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend .df,.legend .fx{border-radius:2px;padding:0 4px}
 
-/* 顶部 tab */
 .tabbar{position:sticky;top:0;z-index:30;margin:0 -32px;padding:8px 32px 0;
   background:rgba(250,250,247,.93);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
   border-bottom:1px solid var(--line-soft)}
 .tabs{position:relative;display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
 .tabs::-webkit-scrollbar{display:none}
-.tab{flex:none;display:inline-flex;align-items:center;gap:7px;padding:9px 14px 11px;border:0;background:none;
-  border-radius:var(--r);color:var(--ink-3);font:500 13px/20px var(--sans);cursor:pointer;white-space:nowrap;
+.tab{flex:none;display:inline-flex;align-items:center;gap:7px;padding:9px 15px 11px;border:0;background:none;
+  border-radius:6px;color:var(--ink-3);font:500 13px/20px var(--sans);cursor:pointer;white-space:nowrap;
   transition:color .16s ease,background .16s ease}
 .tab .no{font:500 11px/20px var(--mono);letter-spacing:.04em}
 .tab:hover{color:var(--seal);background:var(--seal-soft)}
@@ -53,224 +50,199 @@ h1{margin:16px 0 12px;font:700 31px/44px var(--serif);letter-spacing:.02em}
 .tab:focus-visible{outline:2px solid var(--seal);outline-offset:-2px}
 .tab-ink{position:absolute;left:0;bottom:0;height:2px;background:var(--seal);
   transition:transform .26s cubic-bezier(.4,0,.2,1),width .26s cubic-bezier(.4,0,.2,1)}
-.panel{padding-top:40px}
+.tabs.noanim .tab-ink{transition:none}
+.panel{padding-top:38px}
 .panel[hidden]{display:none!important}
-.panel:focus{outline:none}
-.panel:focus-visible{outline:2px solid var(--seal);outline-offset:10px;border-radius:4px}
-.panel:not([hidden]){animation:panelIn .26s ease both}
-@keyframes panelIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.panel:not([hidden]){animation:panelIn .24s ease both}
+@keyframes panelIn{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.panel:not([hidden]){animation:none}.tab-ink{transition:none}}
 
-.sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:6px}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:6px}
 .sec-no{font:600 13px/22px var(--mono);color:var(--seal);letter-spacing:.06em}
 .sec-head h2{margin:0;font:700 21px/32px var(--serif)}
-.sec-desc{margin:0 0 26px;font-size:13px;line-height:22px;color:var(--ink-3)}
+.sec-desc{margin:0 0 24px;font-size:13px;line-height:22px;color:var(--ink-3);max-width:900px}
+.sec-desc b{color:var(--ink-2);font-weight:600}
 
-/* 统计 */
-.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:26px}
-.stat{border:1px solid var(--line);border-radius:var(--r-lg);background:var(--card);padding:16px 18px}
-.stat .n{font:700 27px/34px var(--serif)}
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:26px}
+.stat{border:1px solid var(--line);border-radius:10px;background:var(--card);padding:15px 17px}
+.stat .n{font:700 26px/34px var(--serif)}
 .stat .l{margin-top:2px;font-size:12px;line-height:18px;color:var(--ink-3)}
-.stat.add .n{color:var(--v2)}
-.stat.del .n{color:var(--seal)}
-.stat.mod .n{color:var(--ink)}
-.stat.miss .n{color:var(--amber)}
+.stat.a .n{color:var(--v2)} .stat.b .n{color:var(--seal)} .stat.c .n{color:var(--ink)} .stat.d .n{color:var(--amber)}
 
-/* 结构表 */
-.struct{width:100%;border-collapse:collapse;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:var(--card)}
-.struct th,.struct td{padding:13px 18px;text-align:left;vertical-align:top;font-size:13px;line-height:22px;border-bottom:1px solid var(--line-soft)}
+.struct{width:100%;border-collapse:collapse;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--card);margin-bottom:26px}
+.struct th,.struct td{padding:12px 17px;text-align:left;vertical-align:top;font-size:13px;line-height:22px;border-bottom:1px solid var(--line-soft)}
 .struct th{font:600 12px/18px var(--sans);color:var(--ink-3);letter-spacing:.04em;border-bottom:2px solid var(--ink)}
 .struct tr:last-child td{border-bottom:0}
-.struct td:first-child{font-weight:600;white-space:nowrap;width:96px}
-.struct .ch{font:500 12px/20px var(--mono);color:var(--ink-3)}
+.struct td:first-child{font-weight:600;white-space:nowrap;width:92px}
+.struct .ch{color:var(--ink-3)}
 
-/* 双页对照 */
-.desk{background:#EDEBE5;border-radius:12px;padding:30px 26px;box-shadow:inset 0 1px 0 rgba(255,255,255,.65)}
-.paper{max-width:820px;margin:0 auto;padding:40px 48px 44px;background:#FDFCF9;border:1px solid rgba(26,26,24,.10);
-  border-radius:4px;box-shadow:0 2px 12px rgba(26,26,24,.08)}
-.paper p{margin:0 0 12px;font:400 14.5px/27px var(--sans);text-align:justify;color:#232320;white-space:pre-wrap;word-break:break-word;overflow-wrap:anywhere}
-.fin-t{margin:0 0 28px;text-align:center;font:700 20px/34px var(--serif);letter-spacing:.04em}
-.fin-h{margin:26px 0 12px;font:700 15.5px/26px var(--serif);letter-spacing:.02em}
-.fin-r{text-align:right}
-mark.fx,.fx-demo{background:#F7E3B8;color:#201F1B;border-radius:2px;padding:0 2px;
-  -webkit-box-decoration-break:clone;box-decoration-break:clone;box-shadow:inset 0 -1.5px 0 rgba(171,116,20,.45)}
-mark.fx sup,.fx-demo sup{margin-left:2px;font:600 9px/1 var(--mono);color:var(--amber-deep);vertical-align:super}
-.spread{background:#FDFCF9;border:1px solid rgba(26,26,24,.10);border-radius:4px;box-shadow:0 2px 12px rgba(26,26,24,.08);display:grid;grid-template-columns:1fr 1fr;overflow:hidden}
-.sheet-head{display:flex;align-items:baseline;gap:10px;padding:16px 26px 13px;background:rgba(26,26,24,.03);border-bottom:1px solid rgba(26,26,24,.10)}
-.sheet-head .sname{font:600 12px/18px var(--sans);padding:2px 9px;border-radius:4px}
-.sheet-head .sname.v1{background:var(--v1-soft);color:var(--v1)}
-.sheet-head .sname.v2{background:var(--v2-soft);color:var(--v2)}
-.sname.final{background:var(--amber-soft);color:var(--amber-deep)}
-.sheet-head .smeta{font:400 11px/18px var(--mono);color:var(--ink-3)}
-.band{grid-column:1/-1;display:flex;align-items:center;gap:10px;padding:9px 26px;background:rgba(26,26,24,.045);border-bottom:1px solid rgba(26,26,24,.07)}
-.band .bno{font:600 11px/18px var(--mono);color:var(--ink-3)}
-.band h3{margin:0;font:600 14px/22px var(--sans);flex:1;letter-spacing:.01em}
-.cell{padding:19px 26px 17px;min-width:0}
-.cell.left{border-right:1px dashed rgba(26,26,24,.18)}
-.cell p{margin:0 0 10px;font:400 14px/26px var(--sans);text-align:justify;white-space:pre-wrap;word-break:break-word;overflow-wrap:anywhere;color:#232320}
-.cell p:last-child{margin-bottom:0}
-.cell.doc-title p{text-align:center;font:700 19px/32px var(--serif);letter-spacing:.04em;color:var(--ink)}
-.cell.doc-sign p{text-align:right}
-.badge{font:600 11px/18px var(--sans);padding:2px 9px;border-radius:4px;flex:none}
-.k-add{background:var(--v2-soft);color:var(--v2)}
-.k-del{background:var(--seal-soft);color:var(--seal)}
-.k-mod{background:var(--v1-soft);color:var(--v1)}
-.k-same{background:rgba(26,26,24,.06);color:var(--ink-3)}
-.k-rewrite{background:var(--amber-soft);color:var(--amber-deep)}
-.has-issue{font:600 10px/18px var(--sans);padding:1px 8px;border-radius:3px;background:var(--amber-soft);color:var(--amber-deep);letter-spacing:.02em;flex:none}
-.empty{display:flex;align-items:center;justify-content:center;min-height:52px;border:1px dashed rgba(26,26,24,.18);border-radius:4px;font-size:12px;color:var(--ink-3);background:rgba(26,26,24,.015)}
-.empty.small{min-height:34px;font-size:11.5px}
-.sub{margin-bottom:14px;padding:11px 13px;border:1px solid rgba(26,26,24,.10);border-radius:4px;background:rgba(26,26,24,.018)}
-.sub:last-of-type{margin-bottom:14px}
-.sub-h{display:inline-block;font:600 11.5px/18px var(--sans);padding:1px 9px;border-radius:3px;margin-bottom:8px;letter-spacing:.02em}
-.sub-h.v1{background:var(--v1-soft);color:var(--v1)}
-.sub-h.v2{background:var(--v2-soft);color:var(--v2)}
-.sub p{font-size:13px;line-height:24px;margin:0 0 7px}
-.sub p:last-child{margin-bottom:0}
-.plan{margin-top:4px;padding:12px 14px;border:1px solid rgba(176,58,46,.22);border-left:3px solid var(--seal);border-radius:0 4px 4px 0;background:rgba(176,58,46,.04)}
-.plan-row{display:flex;gap:9px;font-size:12.5px;line-height:20px;margin-bottom:6px}
-.plan-row:last-child{margin-bottom:0}
-.plan-k{flex:none;width:54px;font:600 11.5px/20px var(--sans);color:var(--seal);letter-spacing:.02em;padding-top:1px}
-.plan-k.benefit{color:#1a6b3a}
-.plan-row span:last-child{flex:1;color:var(--ink-2)}
-.spread.wide .cell.right{display:flex;flex-direction:column;gap:0}
-.anno{grid-column:1/-1;padding:9px 26px;border-top:1px dashed rgba(26,26,24,.10);background:rgba(255,255,255,.55);font-size:12.5px;line-height:20px;color:var(--ink-2)}
-.anno .rv{font-weight:600}
-.anno .rv.v1{color:var(--v1)}
-.anno .rv.v2{color:var(--v2)}
-.anno .nt{display:inline-block;margin-right:9px;font:600 11px/18px var(--mono);letter-spacing:.06em;color:var(--seal)}
+.sum{border:1px solid var(--line);border-radius:10px;background:var(--card);padding:26px 28px;position:relative;overflow:hidden}
+.sum::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--seal)}
+.sum h3{margin:0 0 8px;font:700 18px/28px var(--serif)}
+.sum .lead{margin:0 0 20px;font-size:13px;line-height:22px;color:var(--ink-2);max-width:800px}
+.sum-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.sum-col h4{margin:0 0 9px;font:600 13.5px/22px var(--sans)}
+.sum-col.a h4{color:var(--seal)} .sum-col.b h4{color:var(--v2)}
+.sum-col ul{margin:0;padding-left:17px;font-size:13px;line-height:22px}
+.sum-col li{margin-bottom:6px}
 
-/* 行内问题 */
-.iss-wrap{grid-column:1/-1;background:rgba(255,255,255,.6)}
-.iss{display:flex;gap:10px;align-items:flex-start;padding:9px 26px;font-size:12.5px;line-height:20px;border-bottom:1px solid var(--line-soft)}
-.iss:last-child{border-bottom:0}
-.iss .sv{flex:none;margin-top:2px}
-.iss .who{flex:none;font:600 11px/18px var(--sans);color:var(--ink-3);margin-top:2px}
-.iss p{margin:0;color:var(--ink-2)}
-.lawref{display:inline-block;margin-left:8px;padding:0 6px;border-radius:3px;background:rgba(26,26,24,.05);color:var(--ink-3);font:400 11px/18px var(--sans);white-space:nowrap}
-.sv{display:inline-block;white-space:nowrap;font:600 10px/18px var(--sans);padding:0 7px;border-radius:3px;letter-spacing:.02em}
+/* 差异卡片 */
+.dcard{display:grid;grid-template-columns:56px 1fr;border:1px solid var(--line);border-radius:10px;background:var(--card);margin-bottom:13px;overflow:hidden}
+.dn{padding:16px 0;text-align:center;font:600 12px/20px var(--mono);color:var(--ink-3);border-right:1px solid var(--line-soft);background:rgba(26,26,24,.018)}
+.dbody{padding:15px 19px 16px;min-width:0}
+.dtop{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:11px}
+.dtop h3{margin:0;font:600 14.5px/23px var(--sans);flex:1;min-width:180px}
+.lv{flex:none;font:600 10px/18px var(--sans);padding:1px 8px;border-radius:3px;letter-spacing:.02em}
+.lv.l1{background:var(--seal-soft);color:var(--seal-deep)}
+.lv.l2{background:var(--amber-soft);color:var(--amber-deep)}
+.lv.l3{background:var(--v2-soft);color:var(--v2)}
+.sides{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-bottom:11px}
+.side{border:1px solid var(--line-soft);border-radius:6px;padding:10px 12px;background:rgba(26,26,24,.014);min-width:0}
+.side.empty{display:flex;align-items:center;justify-content:center;min-height:56px;color:var(--ink-3);font-size:12px;border-style:dashed}
+.sh{display:inline-block;font:600 10.5px/17px var(--sans);padding:1px 7px;border-radius:3px;margin-bottom:7px}
+.sh.v1{background:var(--v1-soft);color:var(--v1)}
+.sh.v2{background:var(--v2-soft);color:var(--v2)}
+.side p{margin:0 0 6px;font-size:12.8px;line-height:22px;color:#232320;text-align:justify;word-break:break-word;overflow-wrap:anywhere}
+.side p:last-child{margin-bottom:0}
+.none{font-size:12px;color:var(--ink-3)}
+.why{margin:0 0 10px;font-size:12.5px;line-height:21px;color:var(--ink-2)}
+.best{border-left:3px solid var(--amber);background:var(--amber-soft);border-radius:0 6px 6px 0;padding:10px 13px}
+.best .bl{display:inline-block;margin-right:8px;font:600 10px/17px var(--sans);padding:0 6px;border-radius:3px;background:var(--amber-deep);color:#FDF8EC}
+.best p{margin:0;font-size:12.8px;line-height:21px;color:var(--ink)}
+.best p.gain{margin-top:6px;color:var(--ink-2)}
+.best p.gain b{font-weight:600;color:#1a6b3a;margin-right:6px}
+
+.same{margin-top:20px;padding:13px 17px;border:1px dashed var(--line);border-radius:8px;background:rgba(26,26,24,.015)}
+.same .st{font:600 11px/18px var(--mono);letter-spacing:.06em;color:var(--ink-3)}
+.same ul{margin:6px 0 0;padding-left:17px;font-size:12.5px;line-height:21px;color:var(--ink-2)}
+.same li b{font-weight:600;color:var(--ink);margin-right:8px}
+.samebody{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:10px;padding-top:10px;border-top:1px dashed var(--line-soft)}
+.samepair{min-width:0}
+.sametxt p{margin:0;font-size:12.6px;line-height:21px;color:var(--ink-2)}
+.sametxt p:last-child{margin-bottom:0}
+
+/* 缺陷标记 */
+mark.df{background:rgba(176,58,46,.09);color:inherit;border-radius:2px;padding:0 1px;cursor:pointer;
+  box-shadow:inset 0 -1.5px 0 rgba(176,58,46,.45);-webkit-box-decoration-break:clone;box-decoration-break:clone}
+mark.df:hover{background:rgba(176,58,46,.17)}
+mark.df sup{margin-left:1px;font:600 8.5px/1 var(--mono);color:var(--seal)}
+mark.fx{background:#F7E3B8;color:#201F1B;border-radius:2px;padding:0 2px;cursor:pointer;
+  box-shadow:inset 0 -1.5px 0 rgba(171,116,20,.45);-webkit-box-decoration-break:clone;box-decoration-break:clone}
+mark.fx:hover{background:#F2D89E}
+mark.fx sup{margin-left:2px;font:600 9px/1 var(--mono);color:var(--amber-deep);vertical-align:super}
+
+/* 缺陷卡片 */
+.dgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.dcard2{border:1px solid var(--line-soft);border-radius:8px;background:var(--card);padding:14px 16px 13px}
+.dcard2.lead{border-left:3px solid var(--seal)}
+.dcard2 .dtop{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+.dcard2 .ver{font:500 11px/18px var(--mono);color:var(--ink-3);flex:1}
+.dgrow{font:600 10px/18px var(--mono);color:var(--ink-3);padding:0 6px;border-radius:3px;background:rgba(26,26,24,.05)}
+.dquote{margin:0 0 8px;padding:7px 10px;background:#F4F3EE;border-radius:4px;font-size:12.3px;line-height:20px;color:var(--ink-2)}
+.dprob{margin:0 0 9px;font-size:12.6px;line-height:21px;color:var(--ink-2)}
+.dadv{margin:0;padding-top:8px;border-top:1px dashed var(--line-soft);font-size:12.6px;line-height:21px}
+.dadv .lb,.rhow .lb{display:inline-block;margin-right:7px;padding:0 6px;border-radius:3px;font:600 10px/17px var(--sans);background:var(--v2-soft);color:var(--v2)}
+.dlaw{margin:7px 0 0;font-size:11.5px;line-height:19px;color:var(--ink-3)}
+.djump{margin-top:9px;display:flex;gap:6px;flex-wrap:wrap}
+.chip{display:inline-block;padding:1px 8px;border-radius:3px;background:rgba(26,26,24,.055);color:var(--ink-2);
+  font:500 11px/19px var(--sans);text-decoration:none;transition:background .15s,color .15s}
+.chip:hover{background:var(--seal);color:#fff}
+.chip.dim{background:var(--seal-soft);color:var(--seal-deep)}
+.chip.dim:hover{background:var(--seal);color:#fff}
+.sv{display:inline-block;white-space:nowrap;font:600 10px/18px var(--sans);padding:0 7px;border-radius:3px}
 .sv.hi{background:rgba(176,58,46,.13);color:var(--seal-deep)}
 .sv.mid{background:var(--amber-soft);color:var(--amber-deep)}
 .sv.low{background:rgba(26,26,24,.07);color:var(--ink-3)}
-
-/* 必要修改：分屏 */
-.split{display:grid;grid-template-columns:236px 1fr;border:1px solid var(--line);border-radius:var(--r-lg);
-  background:var(--card);overflow:hidden;align-items:stretch}
-.rail{padding:14px 12px;border-right:1px solid var(--line-soft);background:rgba(26,26,24,.02)}
-.rail-label{padding:0 10px 7px;font:600 10px/16px var(--mono);letter-spacing:.1em;color:var(--ink-3);text-transform:uppercase}
-.rail-sep{height:1px;margin:13px 10px 13px;background:var(--line-soft)}
-.rail button{display:flex;width:100%;align-items:center;justify-content:space-between;gap:8px;
-  padding:8px 10px;border:0;border-radius:var(--r);background:none;cursor:pointer;text-align:left;
-  font:500 13px/20px var(--sans);color:var(--ink-2);transition:background .15s,color .15s,box-shadow .15s}
-.rail button:hover{background:rgba(26,26,24,.045);color:var(--ink)}
-.rail button[aria-pressed="true"]{background:var(--card);color:var(--ink);font-weight:600;
-  box-shadow:0 1px 3px rgba(26,26,24,.10),inset 0 0 0 1px rgba(26,26,24,.06)}
-.rail button:focus-visible{outline:2px solid var(--seal);outline-offset:-2px}
-.rail .cnt{font:500 11px/18px var(--mono);color:var(--ink-3)}
-.rail button[aria-pressed="true"] .cnt{color:var(--seal)}
-.pane{padding:20px 22px 24px;min-width:0}
-.pane-head{display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap;
-  padding-bottom:12px;margin-bottom:16px;border-bottom:1px solid var(--line-soft)}
-.pane-head h3{margin:0;font:700 15px/24px var(--serif);letter-spacing:.01em}
-.pane-head .hint{font-size:12px;line-height:18px;color:var(--ink-3)}
-.d-card{border:1px solid var(--line-soft);border-radius:8px;background:var(--card);padding:14px 16px 13px;margin-bottom:12px;
-  animation:cardIn .22s ease both}
-.d-card:last-child{margin-bottom:0}
-@keyframes cardIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
-.d-card.lead-hi{border-left:3px solid var(--seal)}
-.d-top{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:9px}
-.d-loc{font:500 11px/18px var(--mono);color:var(--ink-3)}
-.d-quote{margin:0 0 9px;padding:8px 11px;background:#F6F5F1;border-radius:4px;
-  font-size:12.5px;line-height:20px;color:var(--ink-3)}
-.d-prob{margin:0 0 10px;font-size:12.8px;line-height:21px;color:var(--ink-2)}
-.d-adv{margin:0;padding-top:9px;border-top:1px dashed var(--line-soft);font-size:12.8px;line-height:21px;color:var(--ink)}
-.d-adv .lb{display:inline-block;margin-right:7px;padding:0 6px;border-radius:3px;
-  font:600 10px/17px var(--sans);background:var(--v2-soft);color:var(--v2)}
-.d-law{margin:8px 0 0;font-size:11.5px;line-height:19px;color:var(--ink-3)}
-.d-empty{padding:48px 0;text-align:center;font-size:13px;color:var(--ink-3)}
-@media (prefers-reduced-motion:reduce){.d-card{animation:none}}
+.pills{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:16px}
+.pill{border:1px solid var(--line-soft);background:var(--card);border-radius:99px;padding:4px 13px;cursor:pointer;
+  font:500 12px/18px var(--sans);color:var(--ink-2);transition:all .15s}
+.pill:hover{border-color:var(--seal);color:var(--seal)}
+.pill[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.pill .cn{font:500 11px/18px var(--mono);opacity:.65;margin-left:4px}
 
 /* 法律依据 */
-.law-group{margin-bottom:34px}
-.group-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;padding-bottom:10px;margin-bottom:16px;border-bottom:1px solid var(--line)}
+.law-group{margin-bottom:30px}
+.group-head{display:flex;align-items:baseline;gap:11px;flex-wrap:wrap;padding-bottom:9px;margin-bottom:14px;border-bottom:1px solid var(--line)}
 .gid{font:600 11px/20px var(--mono);color:var(--paper);background:var(--ink);width:20px;height:20px;text-align:center;border-radius:3px;flex:none}
-.group-head h3{margin:0;font:700 16px/26px var(--serif)}
+.group-head h3{margin:0;font:700 15.5px/26px var(--serif)}
 .gdesc{font-size:12px;line-height:18px;color:var(--ink-3)}
-.law-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.law{border:1px solid var(--line);border-radius:var(--r-lg);background:var(--card);padding:16px 18px 15px;
-  display:flex;flex-direction:column}
+.law-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.law{border:1px solid var(--line);border-radius:10px;background:var(--card);padding:15px 17px 14px;display:flex;flex-direction:column}
 .law.key{border-color:rgba(176,58,46,.26);background:linear-gradient(180deg,rgba(176,58,46,.022),transparent 42%)}
-.law-src{display:flex;align-items:center;gap:7px;margin-bottom:10px;font:500 11.5px/18px var(--sans);color:var(--ink-3)}
-.law-src .ic{flex:none;display:inline-flex;align-items:center;justify-content:center;color:var(--ink-3)}
-.law.key .law-src .ic{color:var(--seal);font-size:11px;line-height:1}
-.law-src .srcname{color:var(--ink-2);letter-spacing:.01em}
-.law-src .issuer{color:var(--ink-3)}
+.law-src{display:flex;align-items:center;gap:7px;margin-bottom:9px;font:500 11.5px/18px var(--sans);color:var(--ink-3)}
+.law-src .ic{color:var(--ink-3)}
+.law.key .law-src .ic{color:var(--seal)}
+.law-src .srcname{color:var(--ink-2)}
 .law-src .verdict{margin-left:auto;flex:none}
-.law h4{margin:0 0 10px;font:700 14px/22px var(--serif);letter-spacing:.01em}
+.law h4{margin:0 0 9px;font:700 13.5px/22px var(--serif)}
 .law.key h4{color:var(--seal-deep)}
-.law-text{margin:0 0 11px;padding:10px 12px;background:#F6F5F1;border-radius:4px;
-  font-size:12px;line-height:20px;color:#5E5E57;text-align:justify}
-.law-apply{margin:auto 0 0;font-size:12.5px;line-height:21px;color:var(--ink-2)}
-.law-apply .ap{display:inline-block;margin-right:7px;font:600 10px/17px var(--sans);padding:0 6px;border-radius:3px;
-  background:rgba(26,26,24,.06);color:var(--ink-3)}
-.law-apply em{font-style:normal;font-weight:600;color:var(--ink)}
+.law-text{margin:0 0 10px;padding:9px 11px;background:#F6F5F1;border-radius:4px;font-size:11.8px;line-height:20px;color:#5E5E57;text-align:justify}
+.law-apply{margin:auto 0 0;font-size:12.3px;line-height:21px;color:var(--ink-2)}
+.law-apply .ap{display:inline-block;margin-right:6px;font:600 10px/17px var(--sans);padding:0 6px;border-radius:3px;background:rgba(26,26,24,.06);color:var(--ink-3)}
 .verdict{font:600 10px/18px var(--sans);padding:1px 8px;border-radius:3px;white-space:nowrap}
 .verdict.sup-v1{background:var(--v1-soft);color:var(--v1)}
 .verdict.sup-v2{background:var(--v2-soft);color:var(--v2)}
 .verdict.sup-both{background:rgba(26,26,24,.06);color:var(--ink-2)}
 .verdict.sup-none{background:var(--amber-soft);color:var(--amber-deep)}
 .verdict.defect{background:var(--seal-soft);color:var(--seal-deep)}
+.law.concl{border-color:rgba(26,107,58,.25);background:linear-gradient(180deg,rgba(26,107,58,.035),transparent 46%)}
+.law.concl .law-src .ic{color:#1a6b3a;font:600 13px/18px var(--mono)}
+.law.concl h4{color:#185c33}
+.steps{margin:0 0 10px;padding-left:19px;font-size:12.3px;line-height:21px;color:var(--ink-2)}
+.steps li{margin-bottom:5px}
+.steps b{display:inline-block;margin-right:7px;font-weight:600;color:var(--ink)}
+.steps b::after{content:"·";margin-left:6px;color:var(--ink-3)}
 
-/* 结论 */
-.sum{border:1px solid var(--line);border-radius:var(--r-lg);background:var(--card);padding:30px;position:relative;overflow:hidden}
-.sum::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--seal)}
-.sum h3{margin:0 0 8px;font:700 18px/28px var(--serif)}
-.sum .lead{margin:0 0 22px;font-size:13px;line-height:22px;color:var(--ink-2);max-width:760px}
-.sum-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-.sum-col h4{margin:0 0 10px;font:600 13.5px/22px var(--sans)}
-.sum-col.a h4{color:var(--seal)}
-.sum-col.b h4{color:var(--v2)}
-.sum-col ul{margin:0;padding-left:18px;font-size:13px;line-height:22px}
-.sum-col li{margin-bottom:7px}
-.sum-col li b{font-weight:600}
+/* 最终版 */
+.desk{background:#EDEBE5;border-radius:12px;padding:28px 24px;box-shadow:inset 0 1px 0 rgba(255,255,255,.65)}
+.paper{max-width:820px;margin:0 auto;padding:38px 46px 42px;background:#FDFCF9;border:1px solid rgba(26,26,24,.10);
+  border-radius:4px;box-shadow:0 2px 12px rgba(26,26,24,.08)}
+.paper p{margin:0 0 11px;font:400 14.5px/27px var(--sans);text-align:justify;color:#232320;word-break:break-word;overflow-wrap:anywhere}
+.fin-t{margin:0 0 26px;text-align:center;font:700 20px/34px var(--serif);letter-spacing:.04em}
+.fin-h{margin:24px 0 11px;font:700 15.5px/26px var(--serif);letter-spacing:.02em}
+.fin-r{text-align:right}
+.rgrid{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:34px}
+.rcard{border:1px solid var(--line-soft);border-radius:8px;background:var(--card);padding:13px 15px 12px}
+.rtop{display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap}
+.rn{font:600 11px/18px var(--mono);color:#FDF8EC;background:var(--amber-deep);padding:1px 7px;border-radius:3px}
+.rtop h4{margin:0;font:600 13.5px/21px var(--sans);flex:1;min-width:120px}
+.rmk{font:600 9.5px/17px var(--sans);padding:0 6px;border-radius:3px;background:var(--amber-soft);color:var(--amber-deep);flex:none}
+.rmk.off{background:rgba(26,26,24,.055);color:var(--ink-3)}
+.rhow,.rlaw,.rgain{margin:0 0 5px;font-size:12.3px;line-height:20px;color:var(--ink-2)}
+.rhow{color:var(--ink)}
+.rhow .lb{display:inline-block;margin-right:6px;padding:0 6px;border-radius:3px;font:600 9.5px/17px var(--sans);background:var(--v2-soft);color:var(--v2)}
+.rlaw .lb,.rgain .lb{display:inline-block;margin-right:6px;padding:0 6px;border-radius:3px;font:600 9.5px/17px var(--sans)}
+.rlaw .lb{background:rgba(26,26,24,.055);color:var(--ink-3)}
+.rgain .lb{background:rgba(26,107,58,.10);color:#1a6b3a}
+.rjump{margin-top:8px;display:flex;gap:5px;flex-wrap:wrap}
 
-.ft{margin-top:60px;padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:12px;line-height:20px;color:var(--ink-3)}
+.flash{animation:flash 1.5s ease}
+@keyframes flash{0%{box-shadow:0 0 0 0 rgba(176,58,46,.55)}25%{box-shadow:0 0 0 3px rgba(176,58,46,.30)}100%{box-shadow:0 0 0 0 rgba(176,58,46,0)}}
+mark.flash{animation:flash2 1.5s ease}
+@keyframes flash2{0%{background:#F6C9C0}100%{background:rgba(176,58,46,.09)}}
+
+.ft{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:12px;line-height:20px;color:var(--ink-3)}
 .ft a{color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--line)}
-.ft a:hover{color:var(--seal);border-color:var(--seal)}
 
-@media (max-width:880px){
-  .page{padding:40px 18px 64px}
-  h1{font-size:24px;line-height:34px}
-  .tabbar{margin:0 -18px;padding:6px 18px 0}
-  .tab{padding:9px 11px 11px}
-  .panel{padding-top:28px}
-  .stat-grid{grid-template-columns:repeat(2,1fr)}
-  .desk{padding:16px 12px;border-radius:10px}
-  .paper{padding:24px 18px 28px}
-  .spread{grid-template-columns:1fr}
-  .sheet-head{padding:12px 16px 10px}
-  .sheet-head:nth-of-type(2),.sheet-head.h2{display:none}
-  .band,.anno{padding-left:16px;padding-right:16px}
-  .cell{padding:15px 16px 13px}
-  .cell.left{border-right:0;border-bottom:1px dashed rgba(26,26,24,.18)}
-  .cell.left::before,.cell.right::before{display:inline-block;margin-bottom:8px;padding:1px 7px;border-radius:3px;font:600 10px/16px var(--sans)}
-  .cell.left::before{content:"第一版";background:var(--v1-soft);color:var(--v1)}
-  .cell.right::before{content:"修改2";background:var(--v2-soft);color:var(--v2)}
-  .iss{padding-left:16px;padding-right:16px}
-  .law-grid,.sum-grid{grid-template-columns:1fr}
-  .split{grid-template-columns:1fr}
-  .rail{border-right:0;border-bottom:1px solid var(--line-soft);display:flex;gap:6px;flex-wrap:wrap;padding:12px}
-  .rail-label,.rail-sep{display:none}
-  .rail button{width:auto;padding:6px 10px;border:1px solid var(--line-soft)}
-  .pane{padding:16px 14px 20px}
+@media (max-width:900px){
+  .page{padding:36px 16px 60px}
+  h1{font-size:23px;line-height:33px}
+  .tabbar{margin:0 -16px;padding:6px 16px 0}
+  .stat-grid,.dgrid,.law-grid,.rgrid,.sum-grid{grid-template-columns:1fr}
+  .stat-grid{grid-template-columns:1fr 1fr}
+  .sides{grid-template-columns:1fr}
+  .desk{padding:14px 10px}
+  .paper{padding:22px 16px 26px}
+  .dcard{grid-template-columns:40px 1fr}
+  .dbody{padding:13px 14px}
 }
 @media print{
-  .tabbar{display:none}
+  .tabbar,.pills{display:none}
   .panel[hidden]{display:block!important}
-  .panel{padding-top:24px;animation:none}
-  .law,.sum,.d-card{page-break-inside:avoid}
+  .panel{padding-top:22px;animation:none}
+  .law,.sum,.dcard,.dcard2,.rcard{page-break-inside:avoid}
   body{background:#fff}
-  .sv{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .sv,mark.fx,mark.df{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
 </style>
 <noscript><style>.panel[hidden]{display:block!important}.tabbar{display:none}</style></noscript>
@@ -281,45 +253,44 @@ mark.fx sup,.fx-demo sup{margin-left:2px;font:600 9px/1 var(--mono);color:var(--
   <header class="hd">
     <span class="eyebrow">Legal Review</span>
     <h1>两版异议函对照审阅</h1>
-    <p class="sub">两份文档原文完整保留、不作改写、正文不标色。同一主题左右对齐，横题给出关系徽章，下方「解读」一句话说清两版各自的做法与利弊；另按法律依据核查两版各自的不合理之处。顶部可按「差异概览 / 逐段对照 / 必要修改 / 法律依据 / 结论 / 最终版」切换；最终版在正文中标出需要修改的句子，必要修改一栏分屏展示、按程度与版本归类。</p>
+    <p class="sub">两版原文一字未改。差异按层级归并，只标有分歧处，一致的不再罗列；每处差异给出可直接落笔的最优方案。第 03 节把 13 项必要修改标回两版原文，标记与卡片可互相跳转；第 05 节是合并后的最终版正文，21 处修订逐条对应。</p>
     <div class="meta">
       <span>第一版 <b>34 段 · 5 章</b></span>
       <span>修改2 <b>45 段 · 6 章</b></span>
-      <span>对照行 <b>23 组</b></span>
-      <span>法律条文 <b>12 条</b></span>
-      <span>核对日期 <b>2026-11-09</b></span>
+      <span>差异分组 <b>18 组</b></span>
+      <span>必要修改 <b>13 项</b></span>
+      <span>法律条文 <b>15 条</b></span>
+      <span>最终版修订 <b>21 处</b></span>
     </div>
     <div class="legend">
-      <span><span class="badge k-add">仅修改2</span>只有修改2 才有的段落</span>
-      <span><span class="badge k-del">仅第一版</span>只有第一版才有的段落</span>
-      <span><span class="sv hi">高风险</span>可能直接削弱主张</span>
-      <span><span class="sv mid">需修正</span>表述或依据不足</span>
-      <span><span class="sv low">提示</span>可优化项</span>
+      <span><span class="lv l1">实质分歧</span>立场或法律路径不同</span>
+      <span><span class="lv l2">表述差异</span>意思接近，可选更优写法</span>
+      <span><span class="lv l3">单方增补</span>只有一版具备</span>
+      <span><span class="df">原文标记<sup>3</sup></span>两版中的问题句，点击看修改</span>
+      <span><span class="fx">最终版<sup>15</sup></span>合并后改动处，点击看依据</span>
     </div>
   </header>
 
   <div class="tabbar">
     <div class="tabs" role="tablist" aria-label="文档栏目">
-      <button class="tab" id="t1" role="tab" aria-selected="true" aria-controls="s1" data-panel="s1"><span class="no">01</span>差异概览</button>
-      <button class="tab" id="t2" role="tab" aria-selected="false" aria-controls="s2" data-panel="s2" tabindex="-1"><span class="no">02</span>逐段对照</button>
+      <button class="tab" id="t1" role="tab" aria-selected="true" aria-controls="s1" data-panel="s1"><span class="no">01</span>概览</button>
+      <button class="tab" id="t2" role="tab" aria-selected="false" aria-controls="s2" data-panel="s2" tabindex="-1"><span class="no">02</span>分层差异</button>
       <button class="tab" id="t3" role="tab" aria-selected="false" aria-controls="s3" data-panel="s3" tabindex="-1"><span class="no">03</span>必要修改</button>
       <button class="tab" id="t4" role="tab" aria-selected="false" aria-controls="s4" data-panel="s4" tabindex="-1"><span class="no">04</span>法律依据</button>
-      <button class="tab" id="t5" role="tab" aria-selected="false" aria-controls="s5" data-panel="s5" tabindex="-1"><span class="no">05</span>结论</button>
-      <button class="tab" id="t6" role="tab" aria-selected="false" aria-controls="s6" data-panel="s6" tabindex="-1"><span class="no">06</span>最终版正文</button>
-      <button class="tab" id="t7" role="tab" aria-selected="false" aria-controls="s7" data-panel="s7" tabindex="-1"><span class="no">07</span>最终版 vs 两版</button>
+      <button class="tab" id="t5" role="tab" aria-selected="false" aria-controls="s5" data-panel="s5" tabindex="-1"><span class="no">05</span>最终版</button>
       <span class="tab-ink" aria-hidden="true"></span>
     </div>
   </div>
 
   <section class="panel" id="s1" role="tabpanel" aria-labelledby="t1">
-    <div class="sec-head"><span class="sec-no">01</span><h2>差异概览</h2></div>
-    <p class="sec-desc">文字层面的差异性质，与两版章节骨架。问题数量见第三部分。</p>
+    <div class="sec-head"><span class="sec-no">01</span><h2>概览</h2></div>
+    <p class="sec-desc">文字层面的差异性质、两版章节骨架与审阅结论。</p>
 
     <div class="stat-grid">
-      <div class="stat add"><div class="n">6</div><div class="l">修改2 新增内容</div></div>
-      <div class="stat del"><div class="n">2</div><div class="l">修改2 删除内容</div></div>
-      <div class="stat mod"><div class="n">14</div><div class="l">文字改动</div></div>
-      <div class="stat miss"><div class="n">4</div><div class="l">高风险问题</div></div>
+      <div class="stat a"><div class="n">12</div><div class="l">两版都有、写法不同</div></div>
+      <div class="stat b"><div class="n">1</div><div class="l">仅第一版具备</div></div>
+      <div class="stat c"><div class="n">5</div><div class="l">仅修改2 具备</div></div>
+      <div class="stat d"><div class="n">4</div><div class="l">高风险缺陷</div></div>
     </div>
 
     <table class="struct">
@@ -333,424 +304,381 @@ mark.fx sup,.fx-demo sup{margin-left:2px;font:600 9px/1 var(--mono);color:var(--
         <tr><td>第六章</td><td class="ch">无</td><td>关于后续处理及书面回复</td></tr>
       </tbody>
     </table>
+
+    <div class="sum">
+      <h3>修改2 的结构更稳，但删掉了最有力的条文；第一版压力更足，却踩了两处实体风险</h3>
+      <p class="lead">两版不是「谁对谁错」，而是取舍不同。第一版把筹码摆在明面上（法条、诉求、期限、仲裁），但「待岗应发全额工资」与「由本人提出协商解除」两处存在实体法风险；修改2 通过追问用工形式、制度依据、岗位匹配，把举证责任推回公司，结构更扎实，却删掉了第三十五条、第三十八条与明确的撤销请求。</p>
+
+      <div class="sum-grid">
+        <div class="sum-col a">
+          <h4>第一版必须改的三处</h4>
+          <ul>
+            <li><b>补偿主体错位</b>：诉求 3 写成「与本人协商解除」，被认定由劳动者提出时公司可不付补偿。须改为「请公司提出解除动议」。</li>
+            <li><b>工资主张过强</b>：北京规则允许待岗期按不低于最低工资 70% 支付基本生活费，主张全额工资缺乏依据；打法是攻「待岗是否成立」。</li>
+            <li><b>第三十八条威胁未设前提</b>：按最低工资本身未必构成未足额支付，威胁须以「待岗不成立」为前提，否则易被回函反制。</li>
+          </ul>
+        </div>
+        <div class="sum-col b">
+          <h4>修改2 必须补的三处</h4>
+          <ul>
+            <li><b>回补第三十五条</b>：跨市调岗的抗辩核心是「变更须协商一致并书面」，删除后只剩事实陈述。</li>
+            <li><b>删除不利自认</b>：「知悉第5.7条载有次月起最低工资」可能被当成合意证据，应改为「从未确认该条适用于本次情形」。</li>
+            <li><b>补回明确请求</b>：必须提出「撤销待岗、恢复原岗位待遇」并设定期限后果，否则无法证明公司「拒不改正」。</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="lead" style="margin-top:20px;margin-bottom:0"><b>两版共同缺的两块：</b>其一，都只用了第三十八条的「未足额支付」，漏掉第（一）项「未按照劳动合同约定提供劳动条件」；其二，都没有正面主张「公司经营与项目仍在存续、不属于停工停产，应按原岗位提供工作」——这一层缺失，会让「恢复原岗位」的请求失去法律落点。最终版第 13 处已补入，依据见第 04 节 D 组。</p>
+    </div>
   </section>
 
   <section class="panel" id="s2" role="tabpanel" aria-labelledby="t2" hidden>
-    <div class="sec-head"><span class="sec-no">02</span><h2>逐段对照</h2></div>
-    <p class="sec-desc">双页并排，左为第一版、右为修改2，正文按原文段落排布、不作改写、也不在正文里标色。每组的灰色横题给出主题与关系徽章（仅第一版 / 仅修改2 / 措辞不同 / 整段改写 / 两版一致）；横题下方的「解读」用一句话说清两版各自的做法与利弊，需要细看原文时再对照左右两栏。</p>
-
-    <div class="desk">
-      <div class="spread">
-        <div class="sheet-head">
-          <span class="sname v1">第一版</span><span class="smeta">34 段 · 5 章</span>
+    <div class="sec-head"><span class="sec-no">02</span><h2>分层差异</h2></div>
+    <p class="sec-desc">只列有分歧的 <b>18 组</b>，按 <b>实质分歧 → 表述差异 → 单方增补</b> 三级排列；两版逐字一致的段落不展开，统一收在末尾。每组下方给出<b>可直接落笔的最优方案</b>与该方案的收益。红色上标为第 03 节的缺陷编号，点击可跳转。</p>
+      <article class="dcard">
+        <div class="dn">01</div>
+        <div class="dbody">
+          <div class="dtop"><span class="lv l1">实质分歧</span><h3>第一章：开篇先定性，还是先表履约</h3></div>
+          <div class="sides"><div class="side"><div class="sh v1">第一版</div><p id="pv1-4">一、本人不同意贵司单方作出的待岗安排</p><p id="pv1-5">据本人了解，本次调整的起因是百度项目外迁西安等地，贵司因此对派驻该项目的外包人员进行调配。本人因家庭及个人实际情况（家庭住址、生活基础均在北京），无法接受跨省市外迁，该情况已向贵司说明。</p><p id="pv1-11">综上，贵司单方通知将本人纳入待岗管理，属于单方变更劳动合同履行方式，缺乏充分的法律依据和合同依据，本人明确不予同意。</p></div><div class="side"><div class="sh v2">修改2</div><p id="pv2-5">一、本人愿意继续履行劳动合同，未申请待岗或离职</p><p id="pv2-6">通知所述调整原因为客户业务调整及岗位裁撤，未载明本人存在不能胜任工作或违反劳动纪律等情形。</p><p id="pv2-7">本人未提出辞职、解除劳动合同，亦未申请待岗或无薪休假，愿意继续履行劳动合同。</p></div></div>
+          <p class="why">第一版开门即「不同意单方安排」，态度清楚但易被评价为不配合；修改2 先立「愿意继续履行、未申请待岗」的事实，把定性后置。</p>
+          <div class="best"><span class="bl">最优方案</span><p>采用修改2 的顺序：先表履约意愿，再点出通知未载明不能胜任或违纪；把「明确不同意」的定性移入第二章异议段。</p><p class="gain"><b>收益</b>公司难以主张本人拒不到岗或旷工，同时不放弃异议。</p></div>
         </div>
-        <div class="sheet-head h2">
-          <span class="sname v2">修改2</span><span class="smeta">45 段 · 6 章</span>
+      </article>
+      <article class="dcard">
+        <div class="dn">02</div>
+        <div class="dbody">
+          <div class="dtop"><span class="lv l1">实质分歧</span><h3>第5.7条：三点否定，还是文义解释</h3><a class="chip" href="#" data-jump="d5">缺 5</a><a class="chip" href="#" data-jump="d13">缺 13</a></div>
+          <div class="sides"><div class="side"><div class="sh v1">第一版</div><p id="pv1-7">贵司援引劳动合同第5.7条安排待岗，本人认为该条款的适用前提不成立：</p><p id="pv1-8">1. 贵司作为专业的信息技术服务外包公司，<mark class="df" data-jump="d13">在北京地区仍有多项在执行业务和项目<sup>13</sup></mark>，并非&quot;无法安排乙方在业务、项目上工作&quot;，<mark class="df" data-jump="d5">而是未积极履行用人单位的用工安排义务<sup>5</sup></mark>；</p><p id="pv1-9">2. 仅因单个派驻项目结束即安排员工长期待岗，实质上是将贵司的经营风险转嫁给劳动者，违背了劳动合同法的立法本意；</p><p id="pv1-10">3. 本次待岗仅针对百度项目外迁涉及的少数员工，具有明显的针对性，并非贵司整体经营困难导致的普遍性停工停产。</p></div><div class="side"><div class="sh v2">修改2</div><p id="pv2-10">二、本人对本次待岗是否符合合同约定条件提出异议</p><p id="pv2-11">劳动合同第5.7条将客观情况发生重大变化、公司无法安排本人在业务或项目上工作，作为安排待岗的条件。</p><p id="pv2-12">现有通知说明了原项目不再需要本人继续服务，<mark class="df" data-jump="d13">但尚未说明公司无法安排本人从事其他业务或项目工作的具体情况<sup>13</sup></mark>。原项目不再需要本人服务，与公司是否无法安排其他工作，仍需分别说明。</p></div></div>
+          <p class="why">第一版用「仍有在执行业务」「经营风险转嫁」「仅针对少数员工」三点直接否定，力度大但三点均属事实主张；修改2 只做条文文义拆解，稳但少一层压迫。</p>
+          <div class="best"><span class="bl">最优方案</span><p>以修改2 的文义解释为主攻（「原项目不再需要」≠「公司无法安排其他工作」），把第一版的三个论点降为补强附在其后，并声明持有相应证据。</p><p class="gain"><b>收益</b>主攻点把举证责任推给公司，补强点保留压力，两者不冲突。</p></div>
         </div>
-      <div class="band">
-        <span class="bno">01</span><h3>标题</h3><span class="badge k-rewrite">整段改写</span>
-      </div>
-      <div class="cell left doc-title">
-<p>对《待岗通知》的异议函</p>
-      </div>
-      <div class="cell right doc-title">
-<p>关于项目调整 待岗安排及劳动合同履行的书面异议函</p>
-      </div>
-      <div class="anno"><span class="nt">解读</span><b class="rv v1">第一版</b> 只指向通知本身，边界清楚、争议面小；<b class="rv v2">修改2</b> 扩为覆盖项目调整与合同履行的总标题，涵盖更全，但也把「合同履行」一并拉进战场。</div>
-      <div class="band">
-        <span class="bno">02</span><h3>致送对象</h3><span class="badge k-mod">措辞不同</span>
-      </div>
-      <div class="cell left ">
-<p>致：上海微创软件股份有限公司北京分公司</p>
-      </div>
-      <div class="cell right ">
-<p>致：上海微创软件股份有限公司北京分公司及相关管理部门</p>
-      </div>
-      <div class="anno"><span class="nt">解读</span><b class="rv v2">修改2</b> 加「及相关管理部门」扩大了抄送面，便于留痕；代价是多部门收件，内部流转反而不如单一收件人确定。</div>
-      <div class="band">
-        <span class="bno">03</span><h3>身份信息</h3><span class="badge k-rewrite">整段改写</span>
-      </div>
-      <div class="cell left ">
-<p>本人:             (身份证号:                                         )  ，系贵公司                   岗位员工，劳动合同期限自            年      月      日起至            年     月      日止，工作地点为            。</p>
-      </div>
-      <div class="cell right ">
-<p>本人________，系公司________岗位员工，劳动合同期限自________年____月____日起至________年____月____日止，劳动合同约定工作地点为________。</p>
-      </div>
-      <div class="anno"><span class="nt">解读</span><b class="rv v1">第一版</b> 留空可套用、通用性强，但签约主体与工作地点不明确；<b class="rv v2">修改2</b> 填实岗位与期限，指向清楚，代价是把合同细节自认下来。</div>
-      <div class="band">
-        <span class="bno">04</span><h3>待岗事实陈述</h3><span class="has-issue">存疑 1</span><span class="badge k-mod">措辞不同</span>
-      </div>
-      <div class="cell left ">
-<p>本人于2026年11月06日收到贵司出具的《待岗通知》，通知称因百度项目业务调整，自2026年12月1日起安排本人待岗，并要求前往北京市海淀区海淀大街8号中钢国际广场A座5层C区报到。现就该通知及相关事宜，正式提出书面异议如下：</p>
-      </div>
-      <div class="cell right ">
-<p>本人于2026年11月6日收到公司发送的《待岗通知》。通知称，因客户方业务调整、岗位裁撤，百度项目自2026年12月1日起不再需要本人继续服务，要求本人此前完成项目交接，并自2026年12月1日起前往通知载明的北京办公地点报到、出勤打卡，等待后续工作安排。</p><p>现就有关事项提出书面异议，并请求公司确认如下。</p>
-      </div>
-      <div class="anno"><span class="nt">解读</span><b class="rv v1">第一版</b> 只转述通知，事实基础偏薄；<b class="rv v2">修改2</b> 补足原因并把报到范围收窄为「通知载明的办公地点」，更完整，但「客户方业务调整」等于接受了公司口径。</div><div class="iss-wrap"><div class="iss"><span class="sv low">提示</span><span class="who">修改2</span><p>报到地址由具体门牌改为「通知载明的北京办公地点」，确定性下降；若日后争议「是否按要求报到」，不如第一版清晰。</p></div></div>
-      <div class="band">
-        <span class="bno">05</span><h3>第一章 立场定性</h3><span class="badge k-rewrite">整段改写</span>
-      </div>
-      <div class="cell left ">
-<p>一、本人不同意贵司单方作出的待岗安排</p>
-      </div>
-      <div class="cell right ">
-<p>一、本人愿意继续履行劳动合同，未申请待岗或离职</p><p>通知所述调整原因为客户业务调整及岗位裁撤，未载明本人存在不能胜任工作或违反劳动纪律等情形。</p><p>本人未提出辞职、解除劳动合同，亦未申请待岗或无薪休假，愿意继续履行劳动合同。</p>
-      </div>
-      <div class="anno"><span class="nt">解读</span><b class="rv v1">第一版</b> 开篇即「不同意单方待岗」，立场鲜明、易激化；<b class="rv v2">修改2</b> 先表履约意愿再点出通知缺项，语气缓和，但首段就少了定性，读到后面才见主张。</div>
-      <div class="band">
-        <span class="bno">06</span><h3>背景与外迁困难</h3><span class="has-issue">存疑 1</span><span class="badge k-rewrite">整段改写</span>
-      </div>
-      <div class="cell left ">
-<p>据本人了解，本次调整的起因是百度项目外迁西安等地，贵司因此对派驻该项目的外包人员进行调配。本人因家庭及个人实际情况（家庭住址、生活基础均在北京），无法接受跨省市外迁，该情况已向贵司说明。</p>
-      </div>
-      <div class="cell right ">
-<p>三、关于工作地点及后续岗位安排</p><p>对于此前会议中口头提出的跨城市外迁安排，本人因家庭及生活基础均在北京，跨城市迁移将造成实质性生活困难，明确不同意。</p>
-      </div>
-      <div class="anno"><span class="nt">解读</span>同一内容 <b class="rv v2">修改2</b> 后置到第三章，先事实后法律、叙事更顺；代价是开头信息密度下降，亟需一句概括把读者接住。</div><div class="iss-wrap"><div class="iss"><span class="sv mid">需修正</span><span class="who">第一版</span><p>「北京地区仍有多项在执行业务和项目」属需举证的事实主张，建议在函中举例并声明「详见本人另行提交的证据」，否则易被否认。<span class="lawref">《劳动争议调解仲裁法》第6条</span></p></div></div>
-      <div class="band">
-        <span class="bno">07</span><h3>法律依据论证</h3><span class="badge k-del">仅第一版</span>
-      </div>
-      <div class="cell left ">
-<p>依据《中华人民共和国劳动合同法》第三十五条及双方劳动合同第三条约定，工作地点是劳动合同的核心条款，变更工作地点应当经双方协商一致。 跨城市调岗属于对劳动合同的重大变更，且会给本人造成实质性困难，贵司无权单方强制。</p>
-      </div>
-      <div class="cell right ">
-<div class="empty"><span>此版无对应内容</span></div>
-      </div>
-      <div class="anno"><span class="nt">解读</span><b class="rv v2">修改2</b> 删掉第三十五条论证，少了最硬的一条攻击线，却也避开了被逐条驳回的风险；此为必需内容，建议保留。</div>
-      <div class="band">
-        <span class="bno">08</span><h3>第5.7条适用前提</h3><span class="has-issue">存疑 2</span><span class="badge k-rewrite">整段改写</span>
-      </div>
-      <div class="cell left ">
-<p>贵司援引劳动合同第5.7条安排待岗，本人认为该条款的适用前提不成立：</p><p>1. 贵司作为专业的信息技术服务外包公司，在北京地区仍有多项在执行业务和项目，并非&quot;无法安排乙方在业务、项目上工作&quot;，而是未积极履行用人单位的用工安排义务；</p><p>2. 仅因单个派驻项目结束即安排员工长期待岗，实质上是将贵司的经营风险转嫁给劳动者，违背了劳动合同法的立法本意；</p><p>3. 本次待岗仅针对百度项目外迁涉及的少数员工，具有明显的针对性，并非贵司整体经营困难导致的普遍性停工停产。</p><p>综上，贵司单方通知将本人纳入待岗管理，属于单方变更劳动合同履行方式，缺乏充分的法律依据和合同依据，本人明确不予同意。</p>
-      </div>
-      <div class="cell right ">
-<p>二、本人对本次待岗是否符合合同约定条件提出异议</p><p>劳动合同第5.7条将客观情况发生重大变化、公司无法安排本人在业务或项目上工作，作为安排待岗的条件。</p><p>现有通知说明了原项目不再需要本人继续服务，但尚未说明公司无法安排本人从事其他业务或项目工作的具体情况。原项目不再需要本人服务，与公司是否无法安排其他工作，仍需分别说明。</p><p>本人对本次是否符合第5.7条的适用条件提出书面异议，请公司明确：</p>
-      </div>
-      <div class="anno"><span class="nt">解读</span><b class="rv v1">第一版</b> 用三个论点直接否定，力度大但举证压力在自己；<b class="rv v2">修改2</b> 改为条文文义解释，稳健、HR 也难反驳，说服力略弱一档。</div><div class="iss-wrap"><div class="iss"><span class="sv mid">需修正</span><span class="who">第一版</span><p>三个论点方向正确，但均属事实主张，需招聘信息、项目公示、内部通告等书面证据支撑。<span class="lawref">《劳动合同法》第41条</span></p></div><div class="iss"><span class="sv low">提示</span><span class="who">修改2</span><p>仅作文义解释，未指出公司应走的法定路径（先协商变更、协商不成才能解除），论证力度偏弱。<span class="lawref">《劳动合同法》第40条第(三)项</span></p></div></div>
-      <div class="band">
-        <span class="bno">09</span><h3>用工形式追问</h3><span class="badge k-add">仅修改2</span>
-      </div>
-      <div class="cell left ">
-<div class="empty"><span>此版无对应内容</span></div>
-      </div>
-      <div class="cell right ">
-<p>本人被安排至百度项目工作的实际用工形式；如认定属于劳务派遣，请明确派遣单位、用工单位，以及本次退回的具体事实和依据。</p>
-      </div>
-      <div class="anno"><span class="nt">解读</span><b class="rv v2">修改2</b> 追问是否属劳务派遣，一旦成立即可换一套规则（退回后按最低工资支付合法）；若并无派遣事实，此问会显得试探。</div>
-      <div class="band">
-        <span class="bno">10</span><h3>书面询问清单</h3><span class="badge k-add">仅修改2</span>
-      </div>
-      <div class="cell left ">
-<div class="empty"><span>此版无对应内容</span></div>
-      </div>
-      <div class="cell right ">
-<p>本次安排待岗的具体事实、法律及合同依据；如同时依据公司规章制度，请提供相关内容及制定、公示或告知情况。</p><p>北京地区适合本人岗位的匹配情况、公司已经或计划采取的岗位匹配措施，以及目前暂不能安排本人工作的具体原因。</p><p>待岗预计期限、复岗条件及后续岗位匹配的预计时间。</p><p>自2026年12月1日起拟安排本人的具体工作、培训及管理内容，以及公司是将该期间认定为无工作期间。</p>
-      </div>
-      <div class="anno"><span class="nt">解读</span><b class="rv v2">修改2</b> 四项询问把举证压力推回公司，是全文最实用的新增；篇幅变长，对方也可能只答其中一两项。</div>
-      <div class="band">
-        <span class="bno">11</span><h3>报到声明 · 依据条款</h3><span class="has-issue">存疑 1</span><span class="badge k-rewrite">整段改写</span>
-      </div>
-      <div class="cell left ">
-<p>二、关于报到事宜的郑重声明</p><p>依据劳动合同第11.1.3条约定，本人在此郑重声明：</p>
-      </div>
-      <div class="cell right ">
-<p>本人提出异议期间，仍将按通知报到、出勤，并配合合理工作安排。本函同时作为本人依据劳动合同第11.1.3条、第14.2条就本次安排提出的书面异议。</p>
-      </div>
-      <div class="anno"><span class="nt">解读</span><b class="rv v2">修改2</b> 取消小标题、改引第14.2条，结构更紧凑；但少了「郑重声明」的语气标记，留痕的仪式感下降。</div><div class="iss-wrap"><div class="iss"><span class="sv mid">需修正</span><span class="who">第一版</span><p>全文未追问用工形式（劳务派遣／业务外包／直接用工），导致后续「工资该怎么发」的法律基础不明。<span class="lawref">《劳务派遣暂行规定》第12条</span></p></div></div>
-      <div class="band">
-        <span class="bno">12</span><h3>报到与配合声明</h3><span class="has-issue">存疑 1</span><span class="badge k-rewrite">整段改写</span>
-      </div>
-      <div class="cell left ">
-<p>1. 本人将于2026年12月1日按通知地址报到，但本人到场仅为等候贵司在北京地区安排同等条件新项目，不认可本人处于&quot;待岗&quot;状态；</p><p>2. 报到、打卡行为不视为对本次单方待岗安排的同意或追认；</p><p>3. 贵司安排的面试等对接事宜，本人将积极配合，但面试结果不影响本人要求按原合同标准履行的权利；</p><p>4. 本函即为本人对本次岗位/工作状态调整的书面异议，不存在&quot;到岗后一个月未提异议视为同意&quot;之适用情形。</p>
-      </div>
-      <div class="cell right ">
-<p>本人将按照通知要求配合完成原项目工作交接，并于2026年12月1日前往北京市海淀区海淀大街8号中钢国际广场A座5层C区报到，遵守公司合法合理的考勤和管理要求，配合合理的工作、培训、岗位匹配及项目面试安排。</p><p>本人上述报到、交接和配合行为，不表示本人认可本次待岗符合劳动合同第5.7条的适用条件，也不表示本人同意据此降低工资待遇、跨省市变更工作地点或放弃相关异议。</p>
-      </div>
-      <div class="anno"><span class="nt">解读</span><b class="rv v1">第一版</b> 声明「不认可待岗状态」，否认彻底、易被视为不配合；<b class="rv v2">修改2</b> 收窄为「不认可符合第5.7条条件」，法律上更准确，也默认了待岗这一状态。</div><div class="iss-wrap"><div class="iss"><span class="sv mid">需修正</span><span class="who">第一版</span><p>明确「12月1日按通知地址报到」并打卡，虽附异议声明，客观上仍形成到岗事实；V2 的表述更为严谨。<span class="lawref">《劳动合同法》第35条</span></p></div></div>
-      <div class="band">
-        <span class="bno">13</span><h3>岗位匹配配合与权利保留</h3><span class="badge k-add">仅修改2</span>
-      </div>
-      <div class="cell left ">
-<div class="empty"><span>此版无对应内容</span></div>
-      </div>
-      <div class="cell right ">
-<p>本人希望继续在北京履行劳动合同，愿意配合公司在北京地区提供的、符合劳动合同约定并与本人工作经历和能力合理匹配的岗位安排。</p><p>对于后续拟匹配的岗位，请公司提供具体工作地点、岗位职责、任职要求、职级及薪酬待遇等信息，以便充分沟通。</p><p>本人参与岗位沟通、简历更新和面试，不代表同意跨城市变更工作地点或降低劳动合同约定待遇；公司不应仅因本人参与上述流程而认定双方已经就相关变更达成一致。</p>
-      </div>
-      <div class="anno"><span class="nt">解读</span><b class="rv v2">修改2</b> 要求列出岗位地点、职责、职级、薪酬，并声明面试不构成同意，攻守兼备，是新增中收益最高的一段。</div>
-      <div class="band">
-        <span class="bno">14</span><h3>通勤弹性申请</h3><span class="has-issue">存疑 1</span><span class="badge k-del">仅第一版</span>
-      </div>
-      <div class="cell left ">
-<p>5. 考虑到本人原派驻办公地址与本次通知载明的报到地址通勤距离较远、通勤时间与成本显著增加，在等候新项目安排期间，本人申请上下班打卡时间给予 1 小时弹性区间：上午可在 8:30—9:30 之间打卡上班，下午相应在 17:30—18:30 之间打卡下班，确保每日累计在岗满 8 小时标准工时，不影响日常工作对接与事务沟通。该通勤便利申请，不构成本人对本次单方待岗安排的认可。</p>
-      </div>
-      <div class="cell right ">
-<div class="empty"><span>此版无对应内容</span></div>
-      </div>
-      <div class="anno"><span class="nt">解读</span><b class="rv v2">修改2</b> 删掉弹性打卡申请，少了一个可执行的合作姿态；保留它更有利于证明己方善意。</div><div class="iss-wrap"><div class="iss"><span class="sv low">提示</span><span class="who">第一版</span><p>申请弹性打卡以「本人在岗工作」为前提，与「不认可待岗」存在逻辑张力；且公司并无批准义务。建议改为条件句。</p></div></div>
-      <div class="band">
-        <span class="bno">15</span><h3>劳动报酬立场</h3><span class="has-issue">存疑 4</span><span class="badge k-rewrite">整段改写</span>
-      </div>
-      <div class="cell left ">
-<p>三、关于劳动报酬的明确主张</p><p>贵司通知中提及的待岗期间薪酬安排，本人不予认可。在双方就劳动合同变更达成书面一致前，贵司应按原劳动合同约定的工资标准足额支付本人劳动报酬，不得单方降薪。</p><p>若贵司自第二个月起单方按北京市最低工资标准发放报酬，本人将认为该行为构成未足额支付劳动报酬，并保留依据《劳动合同法》第三十八条解除劳动合同并要求经济补偿的权利。</p>
-      </div>
-      <div class="cell right ">
-<p>四、关于劳动报酬及社会保险、住房公积金</p><p>本人知悉劳动合同第5.7条载有待岗首月按双方约定薪资标准支付、第二个月起按劳动合同履行地最低工资标准支付，以及恢复正常工作后恢复约定薪资标准的内容。</p><p>但本人对本次安排是否符合该条款的适用条件提出异议，并主张继续按照原劳动合同约定的正常工资标准支付劳动报酬。</p>
-      </div>
-      <div class="anno"><span class="nt">解读</span>两版最大分歧。<b class="rv v1">第一版</b> 否认降薪并以第三十八条解除相威胁，姿态硬但主张可能落空；<b class="rv v2">修改2</b> 承认条款存在、只打适用条件，稳，但构成不利自认。</div><div class="iss-wrap"><div class="iss"><span class="sv hi">高风险</span><span class="who">第一版</span><p>「待岗期间应按原工资标准足额支付」缺乏法律依据：北京规则允许停工停业超过一个工资支付周期后按不低于最低工资70%支付基本生活费。公司支付最低工资本身并不违法，能否追差额取决于「待岗是否成立」，而非金额高低。<span class="lawref">《北京市工资支付规定》第27条</span></p></div><div class="iss"><span class="sv hi">高风险</span><span class="who">第一版</span><p>「第二个月发最低工资＝未足额支付→第三十八条解除」的威胁可能落空：若属劳务派遣，按最低工资支付是法定允许；若属直接用工，亦高于法定70%底线。<span class="lawref">《劳务派遣暂行规定》第12条</span></p></div><div class="iss"><span class="sv hi">高风险</span><span class="who">修改2</span><p>自认「知悉第5.7条载有待岗首月按约定薪资、第二个月起按最低工资」，属对己方不利的事实陈述，可能被作为双方对待岗薪酬已达成合意的证据。<span class="lawref">《劳动合同法》第35条</span></p></div><div class="iss"><span class="sv mid">需修正</span><span class="who">修改2</span><p>删除第三十八条与「未提供劳动条件」的抗辩，仅「保留主张差额的权利」，对公司的压力明显减弱。<span class="lawref">《劳动合同法》第38条</span></p></div></div>
-      <div class="band">
-        <span class="bno">16</span><h3>社保与住房公积金</h3><span class="badge k-add">仅修改2</span>
-      </div>
-      <div class="cell left ">
-<div class="empty"><span>此版无对应内容</span></div>
-      </div>
-      <div class="cell right ">
-<p>请公司书面明确本次是否拟适用第5.7条，以及适用的具体事实、各阶段起止日期、支付金额、工资组成和计算方式，并明确社会保险及住房公积金的缴纳地点、基数和扣缴安排；如拟调整，请说明依据。</p>
-      </div>
-      <div class="anno"><span class="nt">解读</span><b class="rv v2">修改2</b> 补问缴纳地点、基数与扣缴安排，无风险；写清楚后，日后核差额有据可依。</div>
-      <div class="band">
-        <span class="bno">17</span><h3>实际工作与不足额支付</h3><span class="badge k-add">仅修改2</span>
-      </div>
-      <div class="cell left ">
-<div class="empty"><span>此版无对应内容</span></div>
-      </div>
-      <div class="cell right ">
-<p>如公司实际安排本人承担业务、项目工作，请按照合同关于恢复正常工作后薪资标准的约定执行。对于培训及其他工作安排，请结合实际履行情况依法支付相应劳动报酬。</p><p>如实际发生未依法足额支付劳动报酬或其他侵害本人劳动权益的情形，本人保留根据届时事实依法主张工资差额、经济补偿及其他劳动权益的权利。</p>
-      </div>
-      <div class="anno"><span class="nt">解读</span><b class="rv v2">修改2</b> 以「安排工作即按合同付酬」替代解除威胁，进可主张差额、退可守；代价是失去了第三十八条的压迫感。</div>
-      <div class="band">
-        <span class="bno">18</span><h3>诉求与后续方案</h3><span class="has-issue">存疑 4</span><span class="badge k-rewrite">整段改写</span>
-      </div>
-      <div class="cell left ">
-<p>四、本人诉求</p><p>1. 请贵司于收到本函之日起3个工作日内，撤销本次单方待岗决定；</p><p>2. 请贵司自2026年12月1日起按原劳动合同约定标准足额支付本人劳动报酬，并在北京范围内为本人匹配与原岗位（                                   ）职级、薪酬标准、工作条件相当的工作岗位；</p><p>3. 若贵司客观上无法在北京提供同等条件岗位，请依据劳动合同第11.2.4条之规定，与本人协商解除劳动合同事宜，并依法支付经济补偿（按本人在贵司工作年限，每满一年支付一个月工资的标准计算，即 N 个月工资（N 按工作年限折算）。</p>
-      </div>
-      <div class="cell right ">
-<p>六、关于后续处理及书面回复</p><p>本人希望公司优先提供符合劳动合同约定条件的北京岗位。如公司认为无法继续按照劳动合同约定安排工作，请书面说明原因及拟采取的处理方案。本人未提出解除劳动合同。</p><p>如公司后续提出协商解除，相关解除条件、经济补偿及其他应付款项，应另行协商并以明确协议为准。依法应支付的工资、奖金、未休年休假工资及其他款项，应分别列明项目及金额，不应在未明确明细的情况下笼统包含在经济补偿中。</p>
-      </div>
-      <div class="anno"><span class="nt">解读</span><b class="rv v1">第一版</b> 三项诉求具体可执行，但第3项存在主体错位（须单位提出解除才有补偿）；<b class="rv v2">修改2</b> 改为「优先提供北京岗位」，语气软，却缺可落地的抓手。</div><div class="iss-wrap"><div class="iss"><span class="sv hi">高风险</span><span class="who">第一版</span><p>诉求第3项「与本人协商解除劳动合同事宜，并依法支付经济补偿」存在主体错位：依第46条第(二)项，须「用人单位提出」协商解除才负补偿义务；若被认定为劳动者提出，公司可不付。应改为「请公司提出解除动议」。<span class="lawref">《劳动合同法》第36、46条</span></p></div><div class="iss"><span class="sv hi">高风险</span><span class="who">修改2</span><p>未提出「撤销待岗」的明确请求，也未设定逾期后果，公司拖延无成本，后续难以主张其「拒不改正」。<span class="lawref">《劳动合同法》第38条</span></p></div><div class="iss"><span class="sv mid">需修正</span><span class="who">修改2</span><p>「本人愿在合法合规前提下协商其他处理方案」表述过于开放，可能被解读为接受协商解除或长期待岗。建议限定为「不降低劳动合同约定条件」。<span class="lawref">《劳动合同法》第35条</span></p></div><div class="iss"><span class="sv low">提示</span><span class="who">第一版</span><p>3个工作日答复期无法律强制力，期限过短易被评价为不合理要求。</p></div></div>
-      <div class="band">
-        <span class="bno">19</span><h3>不构成同意声明</h3><span class="badge k-rewrite">整段改写</span>
-      </div>
-      <div class="cell left ">
-<p>双方未达成书面协议前，本人不接受任何单方变更，包括但不限于待岗安排、跨城市调岗、降薪等。</p>
-      </div>
-      <div class="cell right ">
-<p>本函仅用于提出异议、确认履约意愿及请求公司说明，不构成本人的辞职申请、解除劳动合同通知，亦不构成对降薪、跨城市调动或放弃劳动权益的同意。后续如另行签署协议，其效力及履行按协议约定和法律规定处理。</p>
-      </div>
-      <div class="anno"><span class="nt">解读</span><b class="rv v2">修改2</b> 扩写并加入「后续另行签署协议」，防默示同意更严密；篇幅略冗，可压成两句。</div>
-      <div class="band">
-        <span class="bno">20</span><h3>工作交接</h3><span class="has-issue">存疑 1</span><span class="badge k-mod">措辞不同</span>
-      </div>
-      <div class="cell left ">
-<p>五、关于工作交接</p><p>本人将在2026年12月1日前完成百度项目对应工作的交接，完整移交工作资料、账号及相关资产。工作交接的履行，不视为对本次待岗安排或跨城市调岗的认可。</p>
-      </div>
-      <div class="cell right ">
-<p>五、关于项目交接</p><p>本人将在2026年12月1日前，按照公司及客户明确的要求和授权流程，配合完成本人职责范围内的工作资料、工作账号权限及相关资产交接。</p><p>请公司明确接收人员、交接清单及验收方式，并在交接完成后给予书面确认。如交接需要其他人员配合或存在客观障碍，本人将及时反馈。</p><p>本人办理的是项目工作交接，不代表本人申请离职、同意解除劳动合同，亦不代表本人认可待岗、跨城市调动或降低待遇。</p>
-      </div>
-      <div class="anno"><span class="nt">解读</span><b class="rv v2">修改2</b> 限定「职责范围内」「按授权流程」，并写明接收人、清单与验收，既防被指拒不交接，也把责任边界划清。</div><div class="iss-wrap"><div class="iss"><span class="sv low">提示</span><span class="who">两版</span><p>均要求「完整移交工作资料、账号及相关资产」，但未约定交接完成的书面确认。若公司事后主张未完成交接，员工举证困难。</p></div></div>
-      <div class="band">
-        <span class="bno">21</span><h3>回复期限</h3><span class="has-issue">存疑 2</span><span class="badge k-mod">措辞不同</span>
-      </div>
-      <div class="cell left ">
-<p>请贵司于收到本函之日起3个工作日内，就上述事项作出书面答复。逾期未答复或答复未能解决本人合理诉求的，本人将通过劳动仲裁等法律途径维护自身合法权益。</p>
-      </div>
-      <div class="cell right ">
-<p>请公司于收到本函后五个工作日内，就上述事项作出书面回复。</p>
-      </div>
-      <div class="anno"><span class="nt">解读</span>3 个工作日改成 5 个，给对方更多时间，也削弱了紧迫感；<b class="rv v2">修改2</b> 同时删去仲裁威胁，对抗性降但少了时限压力。</div><div class="iss-wrap"><div class="iss"><span class="sv low">提示</span><span class="who">修改2</span><p>5个工作日系自行设定，无法律强制力，仅为协商期限。</p></div><div class="iss"><span class="sv low">提示</span><span class="who">第一版</span><p>逾期仲裁的表述合法，但需注意仲裁时效为一年，自知道或应当知道权利被侵害之日起算。<span class="lawref">《劳动争议调解仲裁法》第27条</span></p></div></div>
-      <div class="band">
-        <span class="bno">22</span><h3>结尾表达</h3><span class="badge k-add">仅修改2</span>
-      </div>
-      <div class="cell left ">
-<div class="empty"><span>此版无对应内容</span></div>
-      </div>
-      <div class="cell right ">
-<p>本人愿意在继续正常履行劳动合同的同时，与公司就妥善解决本次项目调整问题进行沟通。</p>
-      </div>
-      <div class="anno"><span class="nt">解读</span><b class="rv v2">修改2</b> 加「边履行边协商」，留了台阶，对核心主张无实质影响。</div>
-      <div class="band">
-        <span class="bno">23</span><h3>落款</h3><span class="badge k-same">两版一致</span>
-      </div>
-      <div class="cell left doc-sign">
-<p>此致</p><p>上海微创软件股份有限公司北京分公司</p><p>回复人：_________________</p><p>日期：2026年___月___日</p>
-      </div>
-      <div class="cell right doc-sign">
-<p>此致</p><p>上海微创软件股份有限公司北京分公司</p><p>回复人：_________________</p><p>日期：2026年___月___日</p>
-      </div>
-      <div class="anno"><span class="nt">解读</span>两版逐字一致，无需处理。</div>
-      </div>
+      </article>
+      <article class="dcard">
+        <div class="dn">03</div>
+        <div class="dbody">
+          <div class="dtop"><span class="lv l1">实质分歧</span><h3>跨市调岗：法律支点被删掉了</h3></div>
+          <div class="sides"><div class="side"><div class="sh v1">第一版</div><p id="pv1-5">据本人了解，本次调整的起因是百度项目外迁西安等地，贵司因此对派驻该项目的外包人员进行调配。本人因家庭及个人实际情况（家庭住址、生活基础均在北京），无法接受跨省市外迁，该情况已向贵司说明。</p><p id="pv1-6">依据《中华人民共和国劳动合同法》第三十五条及双方劳动合同第三条约定，工作地点是劳动合同的核心条款，变更工作地点应当经双方协商一致。 跨城市调岗属于对劳动合同的重大变更，且会给本人造成实质性困难，贵司无权单方强制。</p></div><div class="side"><div class="sh v2">修改2</div><p id="pv2-20">三、关于工作地点及后续岗位安排</p><p id="pv2-21">对于此前会议中口头提出的跨城市外迁安排，本人因家庭及生活基础均在北京，跨城市迁移将造成实质性生活困难，明确不同意。</p><p id="pv2-22">本人希望继续在北京履行劳动合同，愿意配合公司在北京地区提供的、符合劳动合同约定并与本人工作经历和能力合理匹配的岗位安排。</p><p id="pv2-23">对于后续拟匹配的岗位，请公司提供具体工作地点、岗位职责、任职要求、职级及薪酬待遇等信息，以便充分沟通。</p><p id="pv2-24">本人参与岗位沟通、简历更新和面试，不代表同意跨城市变更工作地点或降低劳动合同约定待遇；公司不应仅因本人参与上述流程而认定双方已经就相关变更达成一致。</p></div></div>
+          <p class="why">第一版引第三十五条＋合同第三条，法律支点最硬，但只到「不同意」为止；修改2 保留了事实与岗位清单，却删掉第三十五条，全章无一处法律依据。</p>
+          <div class="best"><span class="bl">最优方案</span><p>回补第三十五条论证并加第四十条第（三）项「客观情况重大变化应先协商变更」；保留修改2 的岗位信息清单与「参与≠同意」声明。</p><p class="gain"><b>收益</b>既有条文支撑，又有可执行的抓手——公司不协商即构成单方变更。</p></div>
+        </div>
+      </article>
+      <article class="dcard">
+        <div class="dn">04</div>
+        <div class="dbody">
+          <div class="dtop"><span class="lv l1">实质分歧</span><h3>劳动报酬：打「金额」还是打「成立」</h3><a class="chip" href="#" data-jump="d2">缺 2</a><a class="chip" href="#" data-jump="d3">缺 3</a><a class="chip" href="#" data-jump="d12">缺 12</a></div>
+          <div class="sides"><div class="side"><div class="sh v1">第一版</div><p id="pv1-19">三、关于劳动报酬的明确主张</p><p id="pv1-20">贵司通知中提及的待岗期间薪酬安排，本人不予认可。在双方就劳动合同变更达成书面一致前，<mark class="df" data-jump="d2">贵司应按原劳动合同约定的工资标准足额支付本人劳动报酬，不得单方降薪<sup>2</sup></mark>。</p><p id="pv1-21">若贵司自第二个月起单方按北京市最低工资标准发放报酬，<mark class="df" data-jump="d2">本人将认为该行为构成未足额支付劳动报酬<sup>2</sup></mark>，并<mark class="df" data-jump="d12">保留依据《劳动合同法》第三十八条解除劳动合同并要求经济补偿的权利<sup>12</sup></mark>。</p></div><div class="side"><div class="sh v2">修改2</div><p id="pv2-25">四、关于劳动报酬及社会保险、住房公积金</p><p id="pv2-26"><mark class="df" data-jump="d3">本人知悉劳动合同第5.7条载有待岗首月按双方约定薪资标准支付、第二个月起按劳动合同履行地最低工资标准支付，以及恢复正常工作后恢复约定薪资标准的内容。<sup>3</sup></mark></p><p id="pv2-27">但本人对本次安排是否符合该条款的适用条件提出异议，并主张继续按照原劳动合同约定的正常工资标准支付劳动报酬。</p><p id="pv2-29">如公司实际安排本人承担业务、项目工作，请按照合同关于恢复正常工作后薪资标准的约定执行。对于培训及其他工作安排，请结合实际履行情况依法支付相应劳动报酬。</p><p id="pv2-30">如实际发生未依法足额支付劳动报酬或其他侵害本人劳动权益的情形，<mark class="df" data-jump="d12">本人保留根据届时事实依法主张工资差额、经济补偿及其他劳动权益的权利<sup>12</sup></mark>。</p></div></div>
+          <p class="why">第一版主张「必须按原标准全额支付，否则即未足额支付」，姿态硬，但最低工资本身可能合法；修改2 先自认「知悉第5.7条」再提异议，等于给对方递了合意证据。</p>
+          <div class="best"><span class="bl">最优方案</span><p>删掉修改2 的自认；不主张「必须全额」，改为「待岗是否成立尚未确定，故应先按原标准支付」；并列援引第三十八条第（一）（二）项。</p><p class="gain"><b>收益</b>争点落在公司最难证明的「待岗前提」上；并列「未提供劳动条件」，扩大被迫解除的成立面。</p></div>
+        </div>
+      </article>
+      <article class="dcard">
+        <div class="dn">05</div>
+        <div class="dbody">
+          <div class="dtop"><span class="lv l1">实质分歧</span><h3>诉求：要不要明确提出「撤销待岗」</h3><a class="chip" href="#" data-jump="d1">缺 1</a><a class="chip" href="#" data-jump="d4">缺 4</a><a class="chip" href="#" data-jump="d10">缺 10</a></div>
+          <div class="sides"><div class="side"><div class="sh v1">第一版</div><p id="pv1-22">四、本人诉求</p><p id="pv1-23">1. 请贵司于收到本函之日起<mark class="df" data-jump="d10">3个工作日内<sup>10</sup></mark>，撤销本次单方待岗决定；</p><p id="pv1-24">2. 请贵司自2026年12月1日起按原劳动合同约定标准足额支付本人劳动报酬，并在北京范围内为本人匹配与原岗位（                                   ）职级、薪酬标准、工作条件相当的工作岗位；</p><p id="pv1-25">3. 若贵司客观上无法在北京提供同等条件岗位，请依据劳动合同第11.2.4条之规定，<mark class="df" data-jump="d1">与本人协商解除劳动合同事宜，并依法支付经济补偿<sup>1</sup></mark>（按本人在贵司工作年限，每满一年支付一个月工资的标准计算，即 N 个月工资（N 按工作年限折算）。</p><p id="pv1-26">双方未达成书面协议前，本人不接受任何单方变更，包括但不限于待岗安排、跨城市调岗、降薪等。</p></div><div class="side"><div class="sh v2">修改2</div><p id="pv2-35">六、关于后续处理及书面回复</p><p id="pv2-36">本人希望公司优先提供符合劳动合同约定条件的北京岗位。如公司认为无法继续按照劳动合同约定安排工作，<mark class="df" data-jump="d4">请书面说明原因及拟采取的处理方案<sup>4</sup></mark>。本人未提出解除劳动合同。</p><p id="pv2-37">如公司后续提出协商解除，相关解除条件、经济补偿及其他应付款项，应另行协商并以明确协议为准。依法应支付的工资、奖金、未休年休假工资及其他款项，应分别列明项目及金额，不应在未明确明细的情况下笼统包含在经济补偿中。</p><p id="pv2-38">请公司于收到本函后五个工作日内，就上述事项作出书面回复。</p></div></div>
+          <p class="why">第一版三项诉求具体可执行，但第3项主体错位（须单位提出解除才有补偿）；修改2 改为「优先提供北京岗位」，语气软，却没有可落地的请求。</p>
+          <div class="best"><span class="bl">最优方案</span><p>保留第一版三项结构，但：3个工作日→5个工作日；「与本人协商解除」→「由公司提出解除动议」；补入「书面撤销待岗、恢复原岗位及原工资待遇」。</p><p class="gain"><b>收益</b>有明确请求才能证明公司「拒不改正」，这是后续被迫解除并主张 N 的请求基础。</p></div>
+        </div>
+      </article>
+      <article class="dcard">
+        <div class="dn">06</div>
+        <div class="dbody">
+          <div class="dtop"><span class="lv l2">表述差异</span><h3>标题与致送对象</h3></div>
+          <div class="sides"><div class="side"><div class="sh v1">第一版</div><p id="pv1-0">对《待岗通知》的异议函</p><p id="pv1-1">致：上海微创软件股份有限公司北京分公司</p></div><div class="side"><div class="sh v2">修改2</div><p id="pv2-0">关于项目调整 待岗安排及劳动合同履行的书面异议函</p><p id="pv2-1">致：上海微创软件股份有限公司北京分公司及相关管理部门</p></div></div>
+          <p class="why">第一版标题只指《待岗通知》，边界清楚、争议面小；修改2 把「合同履行」一并拉进来，涵盖更全。致送对象一个只写公司，一个写「及相关管理部门」。</p>
+          <div class="best"><span class="bl">最优方案</span><p>采用修改2 的总标题；致送改为「人力资源部及相关部门」。</p><p class="gain"><b>收益</b>后续主张劳动条件、报酬、解除补偿时，不会被回复「超出函件范围」；收件落到部门，减少被前台签收后搁置。</p></div>
+        </div>
+      </article>
+      <article class="dcard">
+        <div class="dn">07</div>
+        <div class="dbody">
+          <div class="dtop"><span class="lv l2">表述差异</span><h3>身份信息</h3></div>
+          <div class="sides"><div class="side"><div class="sh v1">第一版</div><p id="pv1-2">本人:             (身份证号:                                         )  ，系贵公司                   岗位员工，劳动合同期限自            年      月      日起至            年     月      日止，工作地点为            。</p></div><div class="side"><div class="sh v2">修改2</div><p id="pv2-2">本人________，系公司________岗位员工，劳动合同期限自________年____月____日起至________年____月____日止，劳动合同约定工作地点为________。</p></div></div>
+          <p class="why">第一版留身份证号栏、称「贵公司」、只写「工作地点」；修改2 去号、改称「公司」、写「劳动合同约定工作地点」。</p>
+          <div class="best"><span class="bl">最优方案</span><p>采用修改2 的写法。</p><p class="gain"><b>收益</b>身份证号在内部流转中无必要；「劳动合同约定工作地点」写入后，即成为跨市调岗抗辩的合同依据。</p></div>
+        </div>
+      </article>
+      <article class="dcard">
+        <div class="dn">08</div>
+        <div class="dbody">
+          <div class="dtop"><span class="lv l2">表述差异</span><h3>待岗事实陈述</h3></div>
+          <div class="sides"><div class="side"><div class="sh v1">第一版</div><p id="pv1-3">本人于2026年11月06日收到贵司出具的《待岗通知》，通知称因百度项目业务调整，自2026年12月1日起安排本人待岗，并要求前往北京市海淀区海淀大街8号中钢国际广场A座5层C区报到。现就该通知及相关事宜，正式提出书面异议如下：</p></div><div class="side"><div class="sh v2">修改2</div><p id="pv2-3">本人于2026年11月6日收到公司发送的《待岗通知》。通知称，因客户方业务调整、岗位裁撤，百度项目自2026年12月1日起不再需要本人继续服务，要求本人此前完成项目交接，并自2026年12月1日起前往通知载明的北京办公地点报到、出勤打卡，等待后续工作安排。</p></div></div>
+          <p class="why">第一版只转述「安排待岗、要求报到」，事实基础偏薄；修改2 补足原因、项目、交接、报到与「等待后续安排」，更完整。</p>
+          <div class="best"><span class="bl">最优方案</span><p>采用修改2 的完整转述，报到地址锚定为「通知载明的北京办公地点」，事实段只作转述、不作评价。</p><p class="gain"><b>收益</b>保留「等待后续安排」这一关键表述——它本身就是「未提供工作」的事实基础。</p></div>
+        </div>
+      </article>
+      <article class="dcard">
+        <div class="dn">09</div>
+        <div class="dbody">
+          <div class="dtop"><span class="lv l2">表述差异</span><h3>报到与配合：否认到哪一层</h3><a class="chip" href="#" data-jump="d6">缺 6</a></div>
+          <div class="sides"><div class="side"><div class="sh v1">第一版</div><p id="pv1-12">二、关于报到事宜的郑重声明</p><p id="pv1-13">依据劳动合同第11.1.3条约定，本人在此郑重声明：</p><p id="pv1-14">1. <mark class="df" data-jump="d6">本人将于2026年12月1日按通知地址报到<sup>6</sup></mark>，但本人到场仅为等候贵司在北京地区安排同等条件新项目，不认可本人处于&quot;待岗&quot;状态；</p><p id="pv1-15">2. 报到、打卡行为不视为对本次单方待岗安排的同意或追认；</p><p id="pv1-16">3. 贵司安排的面试等对接事宜，本人将积极配合，但面试结果不影响本人要求按原合同标准履行的权利；</p><p id="pv1-17">4. 本函即为本人对本次岗位/工作状态调整的书面异议，不存在&quot;到岗后一个月未提异议视为同意&quot;之适用情形。</p></div><div class="side"><div class="sh v2">修改2</div><p id="pv2-8">本人将按照通知要求配合完成原项目工作交接，并于2026年12月1日前往北京市海淀区海淀大街8号中钢国际广场A座5层C区报到，遵守公司合法合理的考勤和管理要求，配合合理的工作、培训、岗位匹配及项目面试安排。</p><p id="pv2-9">本人上述报到、交接和配合行为，不表示本人认可本次待岗符合劳动合同第5.7条的适用条件，也不表示本人同意据此降低工资待遇、跨省市变更工作地点或放弃相关异议。</p></div></div>
+          <p class="why">第一版五项声明直接否认「待岗状态」，否认彻底、易被视为不配合；修改2 收窄为「不认可符合第5.7条适用条件」，法律上更准确，也默认了待岗这一状态。</p>
+          <div class="best"><span class="bl">最优方案</span><p>采用修改2 的收窄表述（报到只系履行出勤义务），保留第一版第4点「不存在到岗后一个月视为同意」的说法。</p><p class="gain"><b>收益</b>既不构成默示同意变更，又堵住公司「已过异议期」的抗辩。</p></div>
+        </div>
+      </article>
+      <article class="dcard">
+        <div class="dn">10</div>
+        <div class="dbody">
+          <div class="dtop"><span class="lv l2">表述差异</span><h3>岗位匹配与「参与≠同意」</h3></div>
+          <div class="sides"><div class="side empty"><span>第一版无对应内容</span></div><div class="side"><div class="sh v2">修改2</div><p id="pv2-22">本人希望继续在北京履行劳动合同，愿意配合公司在北京地区提供的、符合劳动合同约定并与本人工作经历和能力合理匹配的岗位安排。</p><p id="pv2-23">对于后续拟匹配的岗位，请公司提供具体工作地点、岗位职责、任职要求、职级及薪酬待遇等信息，以便充分沟通。</p><p id="pv2-24">本人参与岗位沟通、简历更新和面试，不代表同意跨城市变更工作地点或降低劳动合同约定待遇；公司不应仅因本人参与上述流程而认定双方已经就相关变更达成一致。</p></div></div>
+          <p class="why">第一版只有「不同意外迁」，没有向前的动作；修改2 要求公司提供岗位地点、职责、职级、薪酬，并声明面试不构成同意。</p>
+          <div class="best"><span class="bl">最优方案</span><p>全采修改2。</p><p class="gain"><b>收益</b>既推动公司实际匹配岗位，又堵住「已参加面试＝已同意调岗」的推定。</p></div>
+        </div>
+      </article>
+      <article class="dcard">
+        <div class="dn">11</div>
+        <div class="dbody">
+          <div class="dtop"><span class="lv l2">表述差异</span><h3>不构成同意声明</h3></div>
+          <div class="sides"><div class="side"><div class="sh v1">第一版</div><p id="pv1-26">双方未达成书面协议前，本人不接受任何单方变更，包括但不限于待岗安排、跨城市调岗、降薪等。</p></div><div class="side"><div class="sh v2">修改2</div><p id="pv2-39">本函仅用于提出异议、确认履约意愿及请求公司说明，不构成本人的辞职申请、解除劳动合同通知，亦不构成对降薪、跨城市调动或放弃劳动权益的同意。后续如另行签署协议，其效力及履行按协议约定和法律规定处理。</p></div></div>
+          <p class="why">第一版一句短声明；修改2 扩为完整声明，并加「后续另行签署协议按协议处理」。</p>
+          <div class="best"><span class="bl">最优方案</span><p>采用修改2 的完整版，可压缩为两句以避免冗长。</p><p class="gain"><b>收益</b>到岗、打卡、交接都会形成客观事实，声明越完整，越难被推定默示同意。</p></div>
+        </div>
+      </article>
+      <article class="dcard">
+        <div class="dn">12</div>
+        <div class="dbody">
+          <div class="dtop"><span class="lv l2">表述差异</span><h3>工作交接的边界</h3><a class="chip" href="#" data-jump="d10">缺 10</a><a class="chip" href="#" data-jump="d11">缺 11</a></div>
+          <div class="sides"><div class="side"><div class="sh v1">第一版</div><p id="pv1-27">五、关于工作交接</p><p id="pv1-28">本人将在2026年12月1日前完成百度项目对应工作的交接，<mark class="df" data-jump="d11">完整移交工作资料、账号及相关资产<sup>11</sup></mark>。工作交接的履行，不视为对本次待岗安排或跨城市调岗的认可。</p><p id="pv1-29">请贵司于收到本函之日起<mark class="df" data-jump="d10">3个工作日内<sup>10</sup></mark>，就上述事项作出书面答复。逾期未答复或答复未能解决本人合理诉求的，本人将通过劳动仲裁等法律途径维护自身合法权益。</p></div><div class="side"><div class="sh v2">修改2</div><p id="pv2-31">五、关于项目交接</p><p id="pv2-32">本人将在2026年12月1日前，按照公司及客户明确的要求和授权流程，配合完成本人职责范围内的工作资料、工作账号权限及相关资产交接。</p><p id="pv2-33">请公司明确接收人员、交接清单及验收方式，<mark class="df" data-jump="d11">并在交接完成后给予书面确认<sup>11</sup></mark>。如交接需要其他人员配合或存在客观障碍，本人将及时反馈。</p><p id="pv2-34">本人办理的是项目工作交接，不代表本人申请离职、同意解除劳动合同，亦不代表本人认可待岗、跨城市调动或降低待遇。</p></div></div>
+          <p class="why">第一版只说「完成交接、完整移交」，无范围限制；修改2 限定「职责范围内」「按授权流程」，并要求书面确认。</p>
+          <div class="best"><span class="bl">最优方案</span><p>采用修改2 的限定，保留第一版「完整移交工作资料、账号及资产」作为范围说明，并补「交接不代表离职」。</p><p class="gain"><b>收益</b>既防被指拒不交接，又把责任边界划清；书面确认可作为抗辩「未完成交接」的证据。</p></div>
+        </div>
+      </article>
+      <article class="dcard">
+        <div class="dn">13</div>
+        <div class="dbody">
+          <div class="dtop"><span class="lv l2">表述差异</span><h3>回复期限与救济提示</h3><a class="chip" href="#" data-jump="d10">缺 10</a></div>
+          <div class="sides"><div class="side"><div class="sh v1">第一版</div><p id="pv1-29">请贵司于收到本函之日起<mark class="df" data-jump="d10">3个工作日内<sup>10</sup></mark>，就上述事项作出书面答复。逾期未答复或答复未能解决本人合理诉求的，本人将通过劳动仲裁等法律途径维护自身合法权益。</p></div><div class="side"><div class="sh v2">修改2</div><p id="pv2-38">请公司于收到本函后五个工作日内，就上述事项作出书面回复。</p></div></div>
+          <p class="why">第一版 3 个工作日＋「逾期申请仲裁」，紧迫感足但期限过短、对抗性强；修改2 改为 5 个工作日、删去仲裁字样，压力也随之减弱。</p>
+          <div class="best"><span class="bl">最优方案</span><p>5 个工作日，并写明「逾期未回复或未撤销的，本人将依法主张相应权利」。</p><p class="gain"><b>收益</b>期限合理不易被驳，同时保留后续主张的落点，比直接写「申请仲裁」更难被抓话柄。</p></div>
+        </div>
+      </article>
+      <article class="dcard">
+        <div class="dn">14</div>
+        <div class="dbody">
+          <div class="dtop"><span class="lv l3">单方增补</span><h3>通知未载明不能胜任或违纪</h3></div>
+          <div class="sides"><div class="side empty"><span>第一版无对应内容</span></div><div class="side"><div class="sh v2">修改2</div><p id="pv2-6">通知所述调整原因为客户业务调整及岗位裁撤，未载明本人存在不能胜任工作或违反劳动纪律等情形。</p></div></div>
+          <p class="why">第一版无此句，直接把「待岗」当作既定事实来反对；修改2 先点出通知没有给出任何不利事实依据。</p>
+          <div class="best"><span class="bl">最优方案</span><p>全采修改2。</p><p class="gain"><b>收益</b>提前固定「公司未以不能胜任或违纪为由」这一事实；公司日后改口即自相矛盾。</p></div>
+        </div>
+      </article>
+      <article class="dcard">
+        <div class="dn">15</div>
+        <div class="dbody">
+          <div class="dtop"><span class="lv l3">单方增补</span><h3>书面询问清单</h3></div>
+          <div class="sides"><div class="side empty"><span>第一版无对应内容</span></div><div class="side"><div class="sh v2">修改2</div><p id="pv2-13">本人对本次是否符合第5.7条的适用条件提出书面异议，请公司明确：</p><p id="pv2-14">本人被安排至百度项目工作的实际用工形式；如认定属于劳务派遣，请明确派遣单位、用工单位，以及本次退回的具体事实和依据。</p><p id="pv2-15">本次安排待岗的具体事实、法律及合同依据；如同时依据公司规章制度，请提供相关内容及制定、公示或告知情况。</p><p id="pv2-16">北京地区适合本人岗位的匹配情况、公司已经或计划采取的岗位匹配措施，以及目前暂不能安排本人工作的具体原因。</p><p id="pv2-17">待岗预计期限、复岗条件及后续岗位匹配的预计时间。</p><p id="pv2-18">自2026年12月1日起拟安排本人的具体工作、培训及管理内容，以及公司是将该期间认定为无工作期间。</p><p id="pv2-19">本人提出异议期间，仍将按通知报到、出勤，并配合合理工作安排。本函同时作为本人依据劳动合同第11.1.3条、第14.2条就本次安排提出的书面异议。</p></div></div>
+          <p class="why">第一版通篇没有追问，全篇都是我方主张；修改2 用五项询问把举证压力推回公司。</p>
+          <div class="best"><span class="bl">最优方案</span><p>全采五项；建议在末尾加一句「请于书面回复中逐项对应答复」。</p><p class="gain"><b>收益</b>逐项答复的要求使公司难以笼统回避；不答复时，可主张由其承担不利后果。</p></div>
+        </div>
+      </article>
+      <article class="dcard">
+        <div class="dn">16</div>
+        <div class="dbody">
+          <div class="dtop"><span class="lv l3">单方增补</span><h3>弹性打卡申请</h3><a class="chip" href="#" data-jump="d9">缺 9</a></div>
+          <div class="sides"><div class="side"><div class="sh v1">第一版</div><p id="pv1-18">5. 考虑到本人原派驻办公地址与本次通知载明的报到地址通勤距离较远、通勤时间与成本显著增加，在等候新项目安排期间，<mark class="df" data-jump="d9">本人申请上下班打卡时间给予 1 小时弹性区间<sup>9</sup></mark>：上午可在 8:30—9:30 之间打卡上班，下午相应在 17:30—18:30 之间打卡下班，确保每日累计在岗满 8 小时标准工时，不影响日常工作对接与事务沟通。该通勤便利申请，不构成本人对本次单方待岗安排的认可。</p></div><div class="side empty"><span>修改2 已删除</span></div></div>
+          <p class="why">第一版申请弹性打卡，姿态合作，但以「本人在岗工作」为前提，与「不认可待岗」存在逻辑张力；修改2 直接删掉，少了一个可执行的善意动作。</p>
+          <div class="best"><span class="bl">最优方案</span><p>保留，但改为条件句「如公司安排实际工作，可申请每日前后一小时弹性打卡」。</p><p class="gain"><b>收益</b>保留合作姿态，又不构成对待岗安排的接受。</p></div>
+        </div>
+      </article>
+      <article class="dcard">
+        <div class="dn">17</div>
+        <div class="dbody">
+          <div class="dtop"><span class="lv l3">单方增补</span><h3>社保与住房公积金</h3></div>
+          <div class="sides"><div class="side empty"><span>第一版无对应内容</span></div><div class="side"><div class="sh v2">修改2</div><p id="pv2-28">请公司书面明确本次是否拟适用第5.7条，以及适用的具体事实、各阶段起止日期、支付金额、工资组成和计算方式，并明确社会保险及住房公积金的缴纳地点、基数和扣缴安排；如拟调整，请说明依据。</p></div></div>
+          <p class="why">第一版未提；修改2 在工资条款后一并追问缴纳地点、基数与扣缴安排。</p>
+          <div class="best"><span class="bl">最优方案</span><p>全采，与工资条款并列。</p><p class="gain"><b>收益</b>日后核算差额有据；跨市缴纳还会影响社保待遇与购房、落户资格。</p></div>
+        </div>
+      </article>
+      <article class="dcard">
+        <div class="dn">18</div>
+        <div class="dbody">
+          <div class="dtop"><span class="lv l3">单方增补</span><h3>边履行边协商</h3><a class="chip" href="#" data-jump="d8">缺 8</a></div>
+          <div class="sides"><div class="side empty"><span>第一版无对应内容</span></div><div class="side"><div class="sh v2">修改2</div><p id="pv2-40">本人愿意在继续正常履行劳动合同的同时，<mark class="df" data-jump="d8">与公司就妥善解决本次项目调整问题进行沟通<sup>8</sup></mark>。</p></div></div>
+          <p class="why">第一版无此句，通篇对抗；修改2 加了「愿意继续沟通」，留了台阶。</p>
+          <div class="best"><span class="bl">最优方案</span><p>保留，但加限定「以不降低劳动合同约定条件为前提」。</p><p class="gain"><b>收益</b>原句「愿意沟通」范围过宽，可能被解读为接受协商解除或长期待岗；加限定即锁住底线。</p></div>
+        </div>
+      </article>
+    <div class="same">
+      <span class="st">两版一致 · 未展开</span>
+      <ul><li><b>落款</b>此致 / 公司名称 / 回复人 / 日期</li></ul>
+      <div class="samebody"><div class="samepair"><div class="sh v1">第一版</div><div class="sametxt"><p id="pv1-30">此致</p><p id="pv1-31">上海微创软件股份有限公司北京分公司</p><p id="pv1-32">回复人：_________________</p><p id="pv1-33">日期：2026年___月___日</p></div></div><div class="samepair"><div class="sh v2">修改2</div><div class="sametxt"><p id="pv2-41">此致</p><p id="pv2-42">上海微创软件股份有限公司北京分公司</p><p id="pv2-43">回复人：_________________</p><p id="pv2-44">日期：2026年___月___日</p></div></div></div>
     </div>
   </section>
 
   <section class="panel" id="s3" role="tabpanel" aria-labelledby="t3" hidden>
     <div class="sec-head"><span class="sec-no">03</span><h2>必要修改</h2></div>
-    <p class="sec-desc">共 12 项。左侧按严重程度与所属版本分类，右侧逐条列出原表述、问题与建议改法；同一份清单只呈现一次，不会因分类而重复。</p>
-
-    <div class="split">
-      <div class="rail" role="group" aria-label="必要修改分类">
-        <div class="rail-label">严重程度</div>
-        <button aria-pressed="true" data-filter="all">全部<span class="cnt">12</span></button>
-        <button aria-pressed="false" data-filter="hi">高风险<span class="cnt">4</span></button>
-        <button aria-pressed="false" data-filter="mid">需修正<span class="cnt">4</span></button>
-        <button aria-pressed="false" data-filter="low">提示<span class="cnt">4</span></button>
-        <div class="rail-sep"></div>
-        <div class="rail-label">所属版本</div>
-        <button aria-pressed="false" data-filter="v1">第一版<span class="cnt">6</span></button>
-        <button aria-pressed="false" data-filter="v2">修改2<span class="cnt">4</span></button>
-        <button aria-pressed="false" data-filter="both">两版共有<span class="cnt">2</span></button>
-      </div>
-      <div class="pane">
-        <div class="pane-head">
-          <h3 id="paneTitle">全部修改 12 项</h3>
-          <span class="hint" id="paneHint">按严重程度排序，高风险在前</span>
-        </div>
-        <div id="dCards">
-          <article class="d-card lead-hi" data-lvl="hi" data-ver="v1">
-            <div class="d-top"><span class="sv hi">高风险</span><span class="d-loc">第一版 · 四、诉求 第3项</span></div>
-            <p class="d-quote">请公司协商解除并支付经济补偿（N）</p>
-            <p class="d-prob">主体错位：第46条第(二)项要求「用人单位提出」协商解除才付补偿。若被认定由劳动者提出，公司可拒绝支付。</p>
-            <p class="d-adv"><span class="lb">建议改法</span>改为「请公司提出解除动议，双方协商一致后依法支付经济补偿」</p>
-            <p class="d-law">依据：《劳动合同法》第36、46条</p>
-          </article>
-          <article class="d-card lead-hi" data-lvl="hi" data-ver="v1">
-            <div class="d-top"><span class="sv hi">高风险</span><span class="d-loc">第一版 · 三、劳动报酬</span></div>
-            <p class="d-quote">待岗期间应按原工资标准足额支付；次月起发最低工资即属未足额支付</p>
-            <p class="d-prob">北京规则允许停工停业超过一个工资支付周期后按不低于最低工资70%支付基本生活费。按最低工资本身不违法，主张差额的前提是「待岗不成立」，而非金额不足。</p>
-            <p class="d-adv"><span class="lb">建议改法</span>改为「本人对本次待岗的成立条件提出异议；在待岗是否合法确定前，公司应按原标准支付」</p>
-            <p class="d-law">依据：《北京市工资支付规定》第27条、《劳务派遣暂行规定》第12条</p>
-          </article>
-          <article class="d-card lead-hi" data-lvl="hi" data-ver="v2">
-            <div class="d-top"><span class="sv hi">高风险</span><span class="d-loc">修改2 · 四、劳动报酬</span></div>
-            <p class="d-quote">本人知悉第5.7条载有待岗首月按约定薪资、第二个月起按最低工资支付</p>
-            <p class="d-prob">对己方不利的自认：可能被作为劳动者已知悉并接受该薪酬安排的证据，直接削弱后续主张差额的空间。</p>
-            <p class="d-adv"><span class="lb">建议改法</span>改为「公司通知所援引的第5.7条，本人从未确认其适用于本次情形」</p>
-            <p class="d-law">依据：《劳动合同法》第35条</p>
-          </article>
-          <article class="d-card lead-hi" data-lvl="hi" data-ver="v2">
-            <div class="d-top"><span class="sv hi">高风险</span><span class="d-loc">修改2 · 五、六部分</span></div>
-            <p class="d-quote">仅要求公司书面说明，未提出撤销待岗的请求</p>
-            <p class="d-prob">缺少可被认定「公司拒不改正」的请求基础，仲裁时难以证明公司违约在先。</p>
-            <p class="d-adv"><span class="lb">建议改法</span>补入「请于X个工作日内撤销待岗决定并恢复原岗位待遇」及逾期后果</p>
-            <p class="d-law">依据：《劳动合同法》第38条</p>
-          </article>
-          <article class="d-card " data-lvl="mid" data-ver="v1">
-            <div class="d-top"><span class="sv mid">需修正</span><span class="d-loc">第一版 · 一、第一部分</span></div>
-            <p class="d-quote">北京地区仍有多项在执行业务和项目</p>
-            <p class="d-prob">纯事实主张，无证据支撑时公司一句否认即可推翻。</p>
-            <p class="d-adv"><span class="lb">建议改法</span>补充举例并声明持有证据，或申请公司披露在执项目清单</p>
-            <p class="d-law">依据：《劳动争议调解仲裁法》第6条</p>
-          </article>
-          <article class="d-card " data-lvl="mid" data-ver="v1">
-            <div class="d-top"><span class="sv mid">需修正</span><span class="d-loc">第一版 · 二、报到声明</span></div>
-            <p class="d-quote">本人将于12月1日按通知地址报到</p>
-            <p class="d-prob">到岗打卡会形成事实履行状态，虽有异议声明，仍可能被主张已接受安排。</p>
-            <p class="d-adv"><span class="lb">建议改法</span>参照修改2表述：明确报到系履行出勤义务，不表示认可待岗定性</p>
-            <p class="d-law">依据：《劳动合同法》第35条</p>
-          </article>
-          <article class="d-card " data-lvl="mid" data-ver="v2">
-            <div class="d-top"><span class="sv mid">需修正</span><span class="d-loc">修改2 · 三、工作地点</span></div>
-            <p class="d-quote">删除《劳动合同法》第35条引用及「重大变更、实质性困难」定性</p>
-            <p class="d-prob">跨市调岗抗辩只剩事实陈述，失去最有力的法律支点。</p>
-            <p class="d-adv"><span class="lb">建议改法</span>回补第35条，并援引第40条第(三)项「应协商变更」的法定路径</p>
-            <p class="d-law">依据：《劳动合同法》第35、40条</p>
-          </article>
-          <article class="d-card " data-lvl="mid" data-ver="v2">
-            <div class="d-top"><span class="sv mid">需修正</span><span class="d-loc">修改2 · 六、后续处理</span></div>
-            <p class="d-quote">本人愿在合法合规前提下协商其他处理方案</p>
-            <p class="d-prob">表述过宽，可能被解读为接受协商解除或长期待岗。</p>
-            <p class="d-adv"><span class="lb">建议改法</span>加限定语：以不降低劳动合同约定条件为前提</p>
-            <p class="d-law">依据：《劳动合同法》第35条</p>
-          </article>
-          <article class="d-card " data-lvl="low" data-ver="v1">
-            <div class="d-top"><span class="sv low">提示</span><span class="d-loc">第一版 · 二、声明第5点</span></div>
-            <p class="d-quote">申请每日前后1小时弹性打卡</p>
-            <p class="d-prob">以「本人在岗工作」为前提，与「不认可待岗」存在张力；公司无批准义务。</p>
-            <p class="d-adv"><span class="lb">建议改法</span>改为条件句：若公司安排实际工作，申请弹性工时</p>
-            <p class="d-law">依据：—</p>
-          </article>
-          <article class="d-card " data-lvl="low" data-ver="v1">
-            <div class="d-top"><span class="sv low">提示</span><span class="d-loc">第一版 · 四、诉求</span></div>
-            <p class="d-quote">3个工作日内答复</p>
-            <p class="d-prob">无法律强制力，期限过短易被认为不合理，反削弱函件说服力。</p>
-            <p class="d-adv"><span class="lb">建议改法</span>改为5个工作日，并注明「以便公司核实相关情况」</p>
-            <p class="d-law">依据：—</p>
-          </article>
-          <article class="d-card " data-lvl="low" data-ver="both">
-            <div class="d-top"><span class="sv low">提示</span><span class="d-loc">两版 · 五、交接</span></div>
-            <p class="d-quote">完成工作交接，完整移交资料、账号及资产</p>
-            <p class="d-prob">未约定交接完成的书面确认，日后易生「未完成交接」争议。</p>
-            <p class="d-adv"><span class="lb">建议改法</span>要求接收人签署交接清单并出具书面确认</p>
-            <p class="d-law">依据：—</p>
-          </article>
-          <article class="d-card " data-lvl="low" data-ver="both">
-            <div class="d-top"><span class="sv low">提示</span><span class="d-loc">两版 · 全文</span></div>
-            <p class="d-quote">仅主张「未足额支付劳动报酬」</p>
-            <p class="d-prob">遗漏第38条第(一)项「未按照劳动合同约定提供劳动条件」——长期不安排工作同样构成被迫解除事由。</p>
-            <p class="d-adv"><span class="lb">建议改法</span>两项并列主张，扩大解除与索偿的成立空间</p>
-            <p class="d-law">依据：《劳动合同法》第38条</p>
-          </article>
-        </div>
-      </div>
+    <p class="sec-desc">共 <b>13 项</b>。每一项都已标回两版原文：原文中<span class="df">浅红底纹<sup>n</sup></span>即为问题句，点击跳到本项；本项下方的「原文 · 第一版／修改2」则跳回原句。</p>
+    <div class="pills" role="group" aria-label="按严重程度筛选">
+      <button class="pill" aria-pressed="true" data-filter="all">全部<span class="cn">13</span></button>
+      <button class="pill" aria-pressed="false" data-filter="hi">高风险<span class="cn">4</span></button>
+      <button class="pill" aria-pressed="false" data-filter="mid">需修正<span class="cn">5</span></button>
+      <button class="pill" aria-pressed="false" data-filter="low">提示<span class="cn">4</span></button>
+    </div>
+    <div class="dgrid">
+      <article class="dcard2 lead" data-lvl="hi" id="d1">
+        <div class="dtop"><span class="sv hi">高风险</span><span class="ver">第一版 · 四、诉求 第3项</span><span class="dgrow">缺 01</span></div>
+        <p class="dquote">请依据劳动合同第11.2.4条之规定，与本人协商解除劳动合同事宜，并依法支付经济补偿</p>
+        <p class="dprob">主体错位：第46条第(二)项要求「用人单位提出」协商解除才付补偿。若被认定由劳动者提出，公司可拒绝支付。</p>
+        <p class="dadv"><span class="lb">建议改法</span>改为「如公司拟协商解除，应由公司提出解除动议，协商一致后依法支付经济补偿」</p>
+        <p class="dlaw">依据：《劳动合同法》第36、46条</p>
+        <div class="djump"><a class="chip" href="#" data-jump="pv1-25">原文 · 第一版</a></div>
+      </article>
+      <article class="dcard2 lead" data-lvl="hi" id="d2">
+        <div class="dtop"><span class="sv hi">高风险</span><span class="ver">第一版 · 三、劳动报酬</span><span class="dgrow">缺 02</span></div>
+        <p class="dquote">待岗期间应按原工资标准足额支付；次月起发最低工资即属未足额支付</p>
+        <p class="dprob">北京规则允许停工停业超过一个工资支付周期后，按不低于最低工资70%支付基本生活费。按最低工资本身不违法，能否追差额取决于「待岗是否成立」，而非金额高低。</p>
+        <p class="dadv"><span class="lb">建议改法</span>改为「待岗是否成立尚未确定，在确定前公司应按原标准支付」，把争点从金额移到前提</p>
+        <p class="dlaw">依据：《北京市工资支付规定》第27条</p>
+        <div class="djump"><a class="chip" href="#" data-jump="pv1-20">原文 · 第一版</a></div>
+      </article>
+      <article class="dcard2 lead" data-lvl="hi" id="d3">
+        <div class="dtop"><span class="sv hi">高风险</span><span class="ver">修改2 · 四、劳动报酬</span><span class="dgrow">缺 03</span></div>
+        <p class="dquote">本人知悉劳动合同第5.7条载有待岗首月按约定薪资、第二个月起按最低工资支付</p>
+        <p class="dprob">对己方不利的自认：可能被作为劳动者已知悉并接受该薪酬安排的证据，直接削弱后续主张差额的空间。</p>
+        <p class="dadv"><span class="lb">建议改法</span>改为「公司通知所援引的第5.7条，本人从未确认其适用于本次情形」</p>
+        <p class="dlaw">依据：《劳动合同法》第35条</p>
+        <div class="djump"><a class="chip" href="#" data-jump="pv2-26">原文 · 修改2</a></div>
+      </article>
+      <article class="dcard2 lead" data-lvl="hi" id="d4">
+        <div class="dtop"><span class="sv hi">高风险</span><span class="ver">修改2 · 六、后续处理</span><span class="dgrow">缺 04</span></div>
+        <p class="dquote">仅要求公司书面说明原因及方案，未提出撤销待岗的请求</p>
+        <p class="dprob">缺少可被认定「公司拒不改正」的请求基础，仲裁时难以证明公司违约在先。</p>
+        <p class="dadv"><span class="lb">建议改法</span>补入「请于5个工作日内书面撤销待岗决定、恢复原岗位及原工资待遇」及逾期后果</p>
+        <p class="dlaw">依据：《劳动合同法》第38条</p>
+        <div class="djump"><a class="chip" href="#" data-jump="pv2-36">原文 · 修改2</a></div>
+      </article>
+      <article class="dcard2 " data-lvl="mid" id="d5">
+        <div class="dtop"><span class="sv mid">需修正</span><span class="ver">第一版 · 一、第1点</span><span class="dgrow">缺 05</span></div>
+        <p class="dquote">北京地区仍有多项在执行业务和项目</p>
+        <p class="dprob">纯事实主张，无证据支撑时公司一句否认即可推翻；该点本身是攻击「非停工停产」的关键。</p>
+        <p class="dadv"><span class="lb">建议改法</span>补充举例并声明持有证据，或申请公司披露在执项目清单</p>
+        <p class="dlaw">依据：《劳动争议调解仲裁法》第6条</p>
+        <div class="djump"><a class="chip" href="#" data-jump="pv1-8">原文 · 第一版</a></div>
+      </article>
+      <article class="dcard2 " data-lvl="mid" id="d6">
+        <div class="dtop"><span class="sv mid">需修正</span><span class="ver">第一版 · 二、声明第1点</span><span class="dgrow">缺 06</span></div>
+        <p class="dquote">本人将于12月1日按通知地址报到，但不认可处于待岗状态</p>
+        <p class="dprob">到岗打卡会形成事实履行状态，虽有异议声明，仍可能被主张已接受安排；且「不认可待岗状态」是否认全部状态，易被指不配合。</p>
+        <p class="dadv"><span class="lb">建议改法</span>参照修改2：报到只系履行出勤义务，不认可本次待岗符合第5.7条适用条件</p>
+        <p class="dlaw">依据：《劳动合同法》第35条</p>
+        <div class="djump"><a class="chip" href="#" data-jump="pv1-14">原文 · 第一版</a></div>
+      </article>
+      <article class="dcard2 " data-lvl="mid" id="d7">
+        <div class="dtop"><span class="sv mid">需修正</span><span class="ver">修改2 · 三、工作地点</span><span class="dgrow">缺 07</span></div>
+        <p class="dquote">删除《劳动合同法》第35条引用及「重大变更、实质性困难」定性</p>
+        <p class="dprob">跨市调岗抗辩只剩事实陈述，失去最有力的法律支点；本章通篇未出现「变更须协商一致」。</p>
+        <p class="dadv"><span class="lb">建议改法</span>回补第35条，并援引第40条第(三)项「客观情况重大变化应先协商变更」</p>
+        <p class="dlaw">依据：《劳动合同法》第35、40条</p>
+        <div class="djump"><a class="chip" href="#" data-jump="pv2-20">原文 · 修改2 第三章</a></div>
+      </article>
+      <article class="dcard2 " data-lvl="mid" id="d8">
+        <div class="dtop"><span class="sv mid">需修正</span><span class="ver">修改2 · 六、后续处理</span><span class="dgrow">缺 08</span></div>
+        <p class="dquote">本人愿在合法合规前提下协商其他处理方案</p>
+        <p class="dprob">表述过宽，可能被解读为接受协商解除或长期待岗。</p>
+        <p class="dadv"><span class="lb">建议改法</span>加限定语：以不降低劳动合同约定条件为前提</p>
+        <p class="dlaw">依据：《劳动合同法》第35条</p>
+        <div class="djump"><a class="chip" href="#" data-jump="pv2-40">原文 · 修改2</a></div>
+      </article>
+      <article class="dcard2 " data-lvl="low" id="d9">
+        <div class="dtop"><span class="sv low">提示</span><span class="ver">第一版 · 二、声明第5点</span><span class="dgrow">缺 09</span></div>
+        <p class="dquote">申请每日前后1小时弹性打卡</p>
+        <p class="dprob">以「本人在岗工作」为前提，与「不认可待岗」存在张力；公司亦无批准义务。</p>
+        <p class="dadv"><span class="lb">建议改法</span>改为条件句：如公司安排实际工作，可申请弹性工时</p>
+        <p class="dlaw">依据：—</p>
+        <div class="djump"><a class="chip" href="#" data-jump="pv1-18">原文 · 第一版</a></div>
+      </article>
+      <article class="dcard2 " data-lvl="low" id="d10">
+        <div class="dtop"><span class="sv low">提示</span><span class="ver">第一版 · 四、诉求 第1项 / 五、答复</span><span class="dgrow">缺 10</span></div>
+        <p class="dquote">3个工作日内答复</p>
+        <p class="dprob">无法律强制力，期限过短易被认为不合理，反削弱函件说服力。</p>
+        <p class="dadv"><span class="lb">建议改法</span>改为5个工作日，并注明「以便公司核实相关情况」</p>
+        <p class="dlaw">依据：—</p>
+        <div class="djump"><a class="chip" href="#" data-jump="pv1-23">原文 · 第一版</a></div>
+      </article>
+      <article class="dcard2 " data-lvl="low" id="d11">
+        <div class="dtop"><span class="sv low">提示</span><span class="ver">两版 · 五、交接</span><span class="dgrow">缺 11</span></div>
+        <p class="dquote">完成工作交接，完整移交资料、账号及资产</p>
+        <p class="dprob">未约定交接完成的书面确认，日后易生「未完成交接」争议。修改2 仅写「给予书面确认」，未要求接收人签署清单。</p>
+        <p class="dadv"><span class="lb">建议改法</span>要求接收人签署交接清单并出具书面确认</p>
+        <p class="dlaw">依据：《劳动合同法》第50条</p>
+        <div class="djump"><a class="chip" href="#" data-jump="pv1-28">原文 · 第一版</a><a class="chip" href="#" data-jump="pv2-33">原文 · 修改2</a></div>
+      </article>
+      <article class="dcard2 " data-lvl="low" id="d12">
+        <div class="dtop"><span class="sv low">提示</span><span class="ver">两版 · 全文</span><span class="dgrow">缺 12</span></div>
+        <p class="dquote">仅主张「未足额支付劳动报酬」</p>
+        <p class="dprob">遗漏第38条第(一)项「未按照劳动合同约定提供劳动条件」——长期不安排工作同样构成被迫解除事由。</p>
+        <p class="dadv"><span class="lb">建议改法</span>两项并列主张，扩大解除与索偿的成立空间</p>
+        <p class="dlaw">依据：《劳动合同法》第38条</p>
+        <div class="djump"><a class="chip" href="#" data-jump="pv1-21">原文 · 第一版</a><a class="chip" href="#" data-jump="pv2-30">原文 · 修改2</a></div>
+      </article>
+      <article class="dcard2 " data-lvl="mid" id="d13">
+        <div class="dtop"><span class="sv mid">需修正</span><span class="ver">两版 · 全文</span><span class="dgrow">缺 13</span></div>
+        <p class="dquote">两版都只在「待岗是否成立」上做文章，未正面主张按原岗位提供工作</p>
+        <p class="dprob">公司经营与项目仍在存续、不属于停工停产，本可直接要求继续履行原岗位；缺这一层，恢复原岗位的请求没有法律落点。</p>
+        <p class="dadv"><span class="lb">建议改法</span>补一段：项目仍在存续、公司未停工停产，依第17、29、30条应按原岗位提供工作并支付报酬</p>
+        <p class="dlaw">依据：《劳动合同法》第17、29、30条；《工资支付暂行规定》第12条</p>
+        <div class="djump"><a class="chip" href="#" data-jump="pv1-8">原文 · 第一版</a><a class="chip" href="#" data-jump="pv2-12">原文 · 修改2</a></div>
+      </article>
     </div>
   </section>
 
   <section class="panel" id="s4" role="tabpanel" aria-labelledby="t4" hidden>
     <div class="sec-head"><span class="sec-no">04</span><h2>法律依据</h2></div>
-    <p class="sec-desc">共 12 条，分三组。每条注明条文出处、是否被两版引用，以及对本函的实际影响；带朱砂色标记的是直接改变判断的关键条文。</p>
+    <p class="sec-desc">共 <b>15 条</b>，分四组。D 组为新增：项目仍在存续时，公司应当按原岗位提供工作的直接依据。带朱砂标记的是直接改变判断的关键条文。</p>
       <div class="law-group">
-        <div class="group-head"><span class="gid">A</span><h3>待岗与调岗的合法性基础</h3><span class="gdesc">决定「公司能不能单方安排待岗」的规范依据</span></div>
+        <div class="group-head"><span class="gid">A</span><h3>待岗与调岗的合法性基础</h3><span class="gdesc">决定「公司能不能单方安排待岗」</span></div>
         <div class="law-grid">
         <article class="law sup-none">
-          <div class="law-src"><svg class="ic" viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path d="M3.4 2h9.2v12.2L8 10.9l-4.6 3.3z" fill="currentColor" opacity=".55"/></svg><span class="srcname">劳动合同法第三十五条</span><span class="issuer">· 全国人大常委会</span><span class="verdict sup-none">两版均未引用（V1 曾引用、V2 删除）</span></div>
-          <h4>变更劳动合同须协商一致并书面形式</h4>
+          <div class="law-src"><span class="ic" aria-hidden="true">§</span><span class="srcname">劳动合同法第三十五条</span><span class="issuer">· 全国人大常委会</span><span class="verdict sup-none">两版均未完整引用（第一版曾引、修改2 删除）</span></div>
+          <h4>变更劳动合同须协商一致并采用书面形式</h4>
           <p class="law-text">用人单位与劳动者协商一致，可以变更劳动合同约定的内容。变更劳动合同，应当采用书面形式。</p>
-          <p class="law-apply"><span class="ap">对两版的影响</span>单方发出的《待岗通知》不是「协商一致的书面变更」，不产生变更效力。这是全案最核心的条文，修改2 删除后失去最直接的法律支点。</p>
+          <p class="law-apply"><span class="ap">对本函的影响</span>单方发出的《待岗通知》不是「协商一致的书面变更」，不产生变更效力。这是全案最核心的条文。</p>
         </article>
         <article class="law sup-none">
-          <div class="law-src"><svg class="ic" viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path d="M3.4 2h9.2v12.2L8 10.9l-4.6 3.3z" fill="currentColor" opacity=".55"/></svg><span class="srcname">劳动合同法第四十条 第(三)项</span><span class="issuer">· 全国人大常委会</span><span class="verdict sup-none">两版均未引用</span></div>
+          <div class="law-src"><span class="ic" aria-hidden="true">§</span><span class="srcname">劳动合同法第四十条 第(三)项</span><span class="issuer">· 全国人大常委会</span><span class="verdict sup-none">两版均未引用</span></div>
           <h4>客观情况重大变化应先协商变更，协商不成才能解除</h4>
           <p class="law-text">劳动合同订立时所依据的客观情况发生重大变化，致使劳动合同无法履行，经用人单位与劳动者协商，未能就变更劳动合同内容达成协议的，用人单位提前三十日书面通知或额外支付一个月工资后，可以解除劳动合同。</p>
-          <p class="law-apply"><span class="ap">对两版的影响</span>公司若主张项目外迁属「客观情况重大变化」，法定路径是先行协商变更；协商不成也须解除并付补偿，而非单方待岗降薪。此条可直接反制「待岗」安排。</p>
-        </article>
-        <article class="law sup-none">
-          <div class="law-src"><svg class="ic" viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path d="M3.4 2h9.2v12.2L8 10.9l-4.6 3.3z" fill="currentColor" opacity=".55"/></svg><span class="srcname">工资支付暂行规定第十二条</span><span class="issuer">· 原劳动部</span><span class="verdict sup-none">两版均未引用</span></div>
-          <h4>「待岗」的事实前提是停工停产</h4>
-          <p class="law-text">非因劳动者原因造成单位停工、停产，在一个工资支付周期内，用人单位应按劳动合同规定的标准支付工资；超过一个工资支付周期的，按国家有关规定办理。</p>
-          <p class="law-apply"><span class="ap">对两版的影响</span>待岗的合法性以「停工停产」为前提。仅单个项目结束、公司其他项目仍在运行，不构成停工停产，第一版的三个论点正是围绕这一点。</p>
+          <p class="law-apply"><span class="ap">对本函的影响</span>公司若主张项目外迁属「客观情况重大变化」，法定路径是先行协商变更；协商不成也须解除并付补偿，而非单方待岗降薪。</p>
         </article>
         <article class="law sup-v1">
-          <div class="law-src"><svg class="ic" viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path d="M3.4 2h9.2v12.2L8 10.9l-4.6 3.3z" fill="currentColor" opacity=".55"/></svg><span class="srcname">劳动合同法第四十一条</span><span class="issuer">· 全国人大常委会</span><span class="verdict sup-v1">支持第一版的第三个论点</span></div>
+          <div class="law-src"><span class="ic" aria-hidden="true">§</span><span class="srcname">工资支付暂行规定第十二条</span><span class="issuer">· 原劳动部</span><span class="verdict sup-v1">支持第一版的三个论点</span></div>
+          <h4>「待岗」的事实前提是停工停产</h4>
+          <p class="law-text">非因劳动者原因造成单位停工、停产，在一个工资支付周期内，用人单位应按劳动合同规定的标准支付工资；超过一个工资支付周期的，按国家有关规定办理。</p>
+          <p class="law-apply"><span class="ap">对本函的影响</span>待岗的合法性以「停工停产」为前提。仅单个项目结束、公司其他项目仍在运行，不构成停工停产。</p>
+        </article>
+        <article class="law sup-v1">
+          <div class="law-src"><span class="ic" aria-hidden="true">§</span><span class="srcname">劳动合同法第四十一条</span><span class="issuer">· 全国人大常委会</span><span class="verdict sup-v1">支持第一版的第三个论点</span></div>
           <h4>经济性裁员须达法定规模</h4>
           <p class="law-text">裁减人员二十人以上，或者裁减不足二十人但占企业职工总数百分之十以上的，适用经济性裁员程序。</p>
-          <p class="law-apply"><span class="ap">对两版的影响</span>本次仅针对百度项目外迁涉及的少数员工，未达裁员规模，不能以「经营困难」为由抗辩，支持第一版「具有明显针对性」的论点。</p>
+          <p class="law-apply"><span class="ap">对本函的影响</span>本次仅针对百度项目外迁涉及的少数员工，未达裁员规模，不能以「经营困难」为由抗辩。</p>
         </article>
         </div>
       </div>
       <div class="law-group">
-        <div class="group-head"><span class="gid">B</span><h3>工资支付规则：决定「最低工资」是否合法</h3><span class="gdesc">这是两版分歧最大之处，也是最容易判断失误的地方</span></div>
+        <div class="group-head"><span class="gid">B</span><h3>工资支付规则：决定「最低工资」是否合法</h3><span class="gdesc">两版分歧最大、也最容易判断失误之处</span></div>
         <div class="law-grid">
         <article class="law sup-v2 key">
           <div class="law-src"><span class="ic" aria-hidden="true">✳</span><span class="srcname">劳务派遣暂行规定第十二条</span><span class="issuer">· 人社部</span><span class="verdict sup-v2">对修改2 有利</span></div>
           <h4>派遣退回后无工作期间，按最低工资支付即属合法</h4>
           <p class="law-text">被派遣劳动者退回后在无工作期间，劳务派遣单位应当按照不低于所在地人民政府规定的最低工资标准，向其按月支付报酬。</p>
-          <p class="law-apply"><span class="ap">对两版的影响</span>若本人属劳务派遣，公司自第二个月起按最低工资支付完全合法。此时第一版「未足额支付→第三十八条解除」的威胁直接落空，这也是修改2 追问用工形式的价值所在。</p>
+          <p class="law-apply"><span class="ap">对本函的影响</span>若本人属劳务派遣，公司自第二个月起按最低工资支付完全合法。第一版「未足额支付→第三十八条解除」的威胁会落空，这也是修改2 追问用工形式的价值。</p>
         </article>
         <article class="law sup-v2 key">
           <div class="law-src"><span class="ic" aria-hidden="true">✳</span><span class="srcname">北京市工资支付规定第二十七条</span><span class="issuer">· 北京市人民政府</span><span class="verdict sup-v2">对修改2 有利</span></div>
           <h4>直接用工停工停业：首月正常工资，之后不低于最低工资70%</h4>
           <p class="law-text">停工、停业在一个工资支付周期内按正常劳动支付工资；超过一个工资支付周期的，按双方新约定标准支付但不得低于本市最低工资标准；用人单位没有安排劳动者工作的，应当按照不低于本市最低工资标准的70%支付劳动者基本生活费。</p>
-          <p class="law-apply"><span class="ap">对两版的影响</span>即便是直接用工，按最低工资支付也高于70%的法定底线，并不构成「未足额支付」。因此能否追回差额，关键在「待岗是否成立」，而非「发了多少钱」——这正是修改2 策略更稳妥的原因。</p>
+          <p class="law-apply"><span class="ap">对本函的影响</span>即便是直接用工，按最低工资支付也高于70%的法定底线，并不构成「未足额支付」。能否追差额，关键在「待岗是否成立」，而非「发了多少钱」。</p>
         </article>
         <article class="law sup-none">
-          <div class="law-src"><svg class="ic" viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path d="M3.4 2h9.2v12.2L8 10.9l-4.6 3.3z" fill="currentColor" opacity=".55"/></svg><span class="srcname">劳动合同法第四条</span><span class="issuer">· 全国人大常委会</span><span class="verdict sup-none">两版均未引用</span></div>
+          <div class="law-src"><span class="ic" aria-hidden="true">§</span><span class="srcname">劳动合同法第四条</span><span class="issuer">· 全国人大常委会</span><span class="verdict sup-none">两版均未引用</span></div>
           <h4>涉劳动报酬的规章制度须经民主程序并公示告知</h4>
           <p class="law-text">用人单位在制定、修改直接涉及劳动者切身利益的规章制度时，应当经职工代表大会或者全体职工讨论，与工会或者职工代表平等协商确定，并公示或者告知劳动者。</p>
-          <p class="law-apply"><span class="ap">对两版的影响</span>公司援引待岗制度时，须证明其制定程序合法且已向本人公示告知。修改2 已就此发问，可直接要求公司举证。</p>
+          <p class="law-apply"><span class="ap">对本函的影响</span>公司援引待岗制度时，须证明其制定程序合法且已向本人公示告知。修改2 已就此发问，可直接要求公司举证。</p>
         </article>
         <article class="law sup-none">
-          <div class="law-src"><svg class="ic" viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path d="M3.4 2h9.2v12.2L8 10.9l-4.6 3.3z" fill="currentColor" opacity=".55"/></svg><span class="srcname">民法典第四百九十六条、第四百九十七条</span><span class="issuer">· 全国人民代表大会</span><span class="verdict sup-none">两版均未引用</span></div>
+          <div class="law-src"><span class="ic" aria-hidden="true">§</span><span class="srcname">民法典第四百九十六条、第四百九十七条</span><span class="issuer">· 全国人民代表大会</span><span class="verdict sup-none">两版均未引用</span></div>
           <h4>格式条款的提示说明义务与无效情形</h4>
           <p class="law-text">采用格式条款订立合同的，提供方应当提示对方注意免除或者减轻其责任等与对方有重大利害关系的条款；不合理地免除或者减轻其责任、加重对方责任、限制对方主要权利的格式条款无效。</p>
-          <p class="law-apply"><span class="ap">对两版的影响</span>劳动合同第5.7条若系公司单方提供的格式条款，且未作提示说明，可主张其不成为合同内容或属无效。这是挑战该条款效力的民事一般法依据。</p>
+          <p class="law-apply"><span class="ap">对本函的影响</span>劳动合同第5.7条若系公司单方提供的格式条款且未作提示说明，可主张其不成为合同内容或属无效。</p>
         </article>
         </div>
       </div>
@@ -758,285 +686,279 @@ mark.fx sup,.fx-demo sup{margin-left:2px;font:600 9px/1 var(--mono);color:var(--
         <div class="group-head"><span class="gid">C</span><h3>程序、举证与经济补偿</h3><span class="gdesc">决定仲裁中由谁举证、能拿到多少</span></div>
         <div class="law-grid">
         <article class="law sup-v2">
-          <div class="law-src"><svg class="ic" viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path d="M3.4 2h9.2v12.2L8 10.9l-4.6 3.3z" fill="currentColor" opacity=".55"/></svg><span class="srcname">劳动争议调解仲裁法第六条</span><span class="issuer">· 全国人大常委会</span><span class="verdict sup-v2">支持修改2 的追问策略</span></div>
+          <div class="law-src"><span class="ic" aria-hidden="true">§</span><span class="srcname">劳动争议调解仲裁法第六条</span><span class="issuer">· 全国人大常委会</span><span class="verdict sup-v2">支持修改2 的追问策略</span></div>
           <h4>减少劳动报酬等争议由用人单位负举证责任</h4>
           <p class="law-text">与争议事项有关的证据属于用人单位掌握管理的，用人单位应当提供；用人单位不提供的，应当承担不利后果。</p>
-          <p class="law-apply"><span class="ap">对两版的影响</span>修改2 以书面清单要求公司说明制度依据、岗位匹配、待岗期限，实质是把举证责任固定到公司一侧；第一版缺少这一层铺垫。</p>
+          <p class="law-apply"><span class="ap">对本函的影响</span>修改2 以书面清单要求公司说明制度依据、岗位匹配、待岗期限，实质是把举证责任固定到公司一侧。</p>
         </article>
         <article class="law defect key">
           <div class="law-src"><span class="ic" aria-hidden="true">✳</span><span class="srcname">劳动合同法第四十六条</span><span class="issuer">· 全国人大常委会</span><span class="verdict defect">第一版诉求3 存在风险</span></div>
           <h4>协商解除须「用人单位提出」才付补偿</h4>
           <p class="law-text">用人单位依照本法第三十六条规定向劳动者提出解除劳动合同并与劳动者协商一致解除劳动合同的，应当向劳动者支付经济补偿。</p>
-          <p class="law-apply"><span class="ap">对两版的影响</span>若函件被理解为「劳动者主动提出协商解除」，公司可主张不负补偿义务。第一版应改为「请公司提出解除动议」，修改2 未提补偿方案，反而避开了这一陷阱但也没有锁定利益。</p>
+          <p class="law-apply"><span class="ap">对本函的影响</span>若函件被理解为「劳动者主动提出协商解除」，公司可主张不负补偿义务。应改为「请公司提出解除动议」。</p>
         </article>
         <article class="law sup-both key">
           <div class="law-src"><span class="ic" aria-hidden="true">✳</span><span class="srcname">劳动合同法第三十八条</span><span class="issuer">· 全国人大常委会</span><span class="verdict sup-both">两版各有取舍</span></div>
           <h4>未足额支付报酬、未提供劳动条件均可被迫解除</h4>
           <p class="law-text">用人单位未按照劳动合同约定提供劳动保护或者劳动条件的，或未及时足额支付劳动报酬的，劳动者可以解除劳动合同。</p>
-          <p class="law-apply"><span class="ap">对两版的影响</span>第一版只用了「未足额支付」，未用「未提供劳动条件」。长期不安排工作岗位，同样构成未提供劳动条件，两项并列主张可显著提高解除与索偿的成立概率。</p>
+          <p class="law-apply"><span class="ap">对本函的影响</span>第一版只用「未足额支付」，修改2 只保留「保留权利」。长期不安排工作岗位同样构成未提供劳动条件，两项并列可显著提高成立概率。</p>
         </article>
         <article class="law sup-v1">
-          <div class="law-src"><svg class="ic" viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path d="M3.4 2h9.2v12.2L8 10.9l-4.6 3.3z" fill="currentColor" opacity=".55"/></svg><span class="srcname">劳动合同法第四十七条</span><span class="issuer">· 全国人大常委会</span><span class="verdict sup-v1">支持第一版的核算口径</span></div>
+          <div class="law-src"><span class="ic" aria-hidden="true">§</span><span class="srcname">劳动合同法第四十七条</span><span class="issuer">· 全国人大常委会</span><span class="verdict sup-v1">支持第一版的核算口径</span></div>
           <h4>经济补偿按工作年限计，基数为解除前十二个月平均工资</h4>
           <p class="law-text">经济补偿按劳动者在本单位工作的年限，每满一年支付一个月工资的标准向劳动者支付；月工资是指劳动者在劳动合同解除或者终止前十二个月的平均工资。</p>
-          <p class="law-apply"><span class="ap">对两版的影响</span>第一版「按解除前十二个月应得平均工资核算，奖金、年休假工资单独核算」的表述准确；修改2 仅笼统提及，未锁定计算基数。</p>
+          <p class="law-apply"><span class="ap">对本函的影响</span>第一版「按解除前十二个月应得平均工资核算，奖金、年休假工资单独核算」的表述准确；修改2 仅笼统提及。</p>
+        </article>
+        </div>
+      </div>
+      <div class="law-group">
+        <div class="group-head"><span class="gid">D</span><h3>项目存续期间的用工义务：公司应按原岗位提供工作</h3><span class="gdesc">这是两版共同的缺口，也是「要求恢复原岗位」最直接的法律落点</span></div>
+        <div class="law-grid">
+        <article class="law sup-none key">
+          <div class="law-src"><span class="ic" aria-hidden="true">✳</span><span class="srcname">劳动合同法第二十九条</span><span class="issuer">· 全国人大常委会</span><span class="verdict sup-none">两版均未引用</span></div>
+          <h4>双方应当按照劳动合同约定全面履行各自义务</h4>
+          <p class="law-text">用人单位与劳动者应当按照劳动合同的约定，全面履行各自的义务。</p>
+          <p class="law-apply"><span class="ap">对本函的影响</span>合同有效存续期间，公司不仅有支付报酬的义务，也有按约定提供岗位与劳动条件的义务。「没有合适项目」不是免除该义务的理由，不能以待岗替代用工安排。</p>
+        </article>
+        <article class="law sup-none">
+          <div class="law-src"><span class="ic" aria-hidden="true">§</span><span class="srcname">劳动合同法第十七条</span><span class="issuer">· 全国人大常委会</span><span class="verdict sup-none">两版均未引用</span></div>
+          <h4>工作内容与工作地点是劳动合同必备条款</h4>
+          <p class="law-text">劳动合同应当具备以下条款：（一）用人单位的名称、住所和法定代表人或者主要负责人；……（四）工作内容和工作地点；……</p>
+          <p class="law-apply"><span class="ap">对本函的影响</span>原岗位与原工作地点均属约定必备条款，非经协商一致不得变更。项目仍在存续、岗位并未消灭，公司无权以「项目调整」为由长期不安排工作。</p>
+        </article>
+        <article class="law sup-none key">
+          <div class="law-src"><span class="ic" aria-hidden="true">✳</span><span class="srcname">劳动合同法第三十条</span><span class="issuer">· 全国人大常委会</span><span class="verdict sup-none">两版均未引用</span></div>
+          <h4>用人单位应按约定及时足额支付劳动报酬</h4>
+          <p class="law-text">用人单位应当按照劳动合同约定和国家规定，向劳动者及时足额支付劳动报酬。</p>
+          <p class="law-apply"><span class="ap">对本函的影响</span>只要能证明公司仍有业务、仍在经营，则「停工停产」不成立，按最低工资支付即失去依据，差额部分可全额主张。</p>
+        </article>
+        <article class="law concl">
+          <div class="law-src"><span class="ic">&#8594;</span><span class="srcname">适用路径</span></div>
+          <h4>从「项目存续」到「补发工资差额」的四步</h4>
+          <ol class="steps">
+            <li><b>项目存续</b>公司仍在承接业务，百度项目未终止，岗位没有消灭。</li>
+            <li><b>非停工停产</b>《工资支付暂行规定》第12条的待岗前提不成立，待岗缺乏事实基础。</li>
+            <li><b>应按原岗位提供工作</b>第29条全面履行＋第17条必备条款，公司不得以待岗替代用工安排。</li>
+            <li><b>未提供即违约</b>构成第38条第（一）项「未提供劳动条件」，可被迫解除并主张经济补偿，同时按第30条追索工资差额。</li>
+          </ol>
+          <p class="law-apply"><span class="ap">举证要点</span>需固定公司仍在经营与项目存续的证据：在执项目清单、招聘信息、客户公告、同事在职情况、社保与工资发放记录。函件第 13 处已要求公司披露在执项目清单，公司不提供时可主张由其承担不利后果。</p>
         </article>
         </div>
       </div>
   </section>
 
   <section class="panel" id="s5" role="tabpanel" aria-labelledby="t5" hidden>
-    <div class="sec-head"><span class="sec-no">05</span><h2>结论</h2></div>
+    <div class="sec-head"><span class="sec-no">05</span><h2>最终版</h2></div>
+    <p class="sec-desc">以修改2 为底稿，吸收第一版的第三十五条论证与撤销诉求，修掉不利自认与诉求主体错位，并补入「项目存续应按原岗位提供工作」。正文中<span class="fx">琥珀底纹<sup>n</sup></span>为相对修改2 实际改动处，点击跳到下方第 n 条修订说明；共 <b>21 条</b>修订，其中标「沿用修改2」的条目为原文未动。</p>
 
-    <div class="sum">
-      <h3>修改2 的法律结构更稳，但删掉了最有力的条文；第一版压力更足，却踩了两个实体风险</h3>
-      <p class="lead">两版不是「谁对谁错」，而是取舍不同。第一版把筹码摆在明面上（法条、诉求、期限、仲裁），但主张「待岗应发全额工资」和「由本人提出协商解除」两处存在实体法风险；修改2 通过追问用工形式、制度依据、岗位匹配，把举证责任推回公司，结构更扎实，但删掉了第三十五条、第三十八条与明确的撤销请求，失去了压力与请求基础。</p>
-
-      <div class="sum-grid">
-        <div class="sum-col a">
-          <h4>第一版必须改的三处</h4>
-          <ul>
-            <li><b>补偿主体错位</b>：诉求 3 写成「与本人协商解除」，被认定由劳动者提出时公司可不付补偿。须改为「请公司提出解除动议」。</li>
-            <li><b>工资主张过强</b>：北京规则允许待岗期按不低于最低工资 70% 支付基本生活费，主张全额工资缺乏依据；正确打法是攻「待岗是否成立」，而非「发了多少钱」。</li>
-            <li><b>第三十八条威胁条件化</b>：按最低工资本身未必构成未足额支付，威胁需以「待岗不成立」为前提，否则容易被回函反制。</li>
-          </ul>
-        </div>
-        <div class="sum-col b">
-          <h4>修改2 必须补的三处</h4>
-          <ul>
-            <li><b>回补第三十五条</b>：跨市调岗的抗辩核心是「变更须协商一致并书面」，删除后只剩事实陈述，力度大减。</li>
-            <li><b>删除不利自认</b>：「知悉第5.7条载有次月起最低工资」可能被当成合意的证据，应改为「从未确认该条适用于本次情形」。</li>
-            <li><b>补回明确请求</b>：必须提出「撤销待岗、恢复原岗位待遇」并设定期限后果，否则无法证明公司「拒不改正」。</li>
-          </ul>
-        </div>
-      </div>
-
-      <p class="lead" style="margin-top:22px;margin-bottom:0"><b>可直接合并的两处增益：</b>其一，两版都只用了第三十八条的「未足额支付」，漏掉第(一)项「未按照劳动合同约定提供劳动条件」——长期不安排工作同样构成被迫解除事由，两项并列可显著提高成立概率。其二，劳动合同第 5.7 条若属公司单方提供的格式条款，可依《民法典》第四百九十六条主张未尽提示说明义务，或依第四百九十七条主张其不合理限制劳动者主要权利而无效。</p>
-    </div>
-  </section>
-
-  <section class="panel" id="s6" role="tabpanel" aria-labelledby="t6" hidden>
-    <div class="sec-head"><span class="sec-no">06</span><h2>最终版</h2></div>
-    <p class="sec-desc">以修改2 为底稿，吸收第一版的第三十五条论证与撤销诉求，并修掉不利自认、诉求主体错位两处硬伤。正文中<span class="fx-demo">黄色底纹<sup>n</sup></span>＝相对两版新增或改动的句子，角标数字对应第 03 节「必要修改」的同号条目，共 10 处；其余文字与两版一致，未作改写。第 5 条（北京在执行业务）因缺乏证据未写入本文，第 10 条（回复期限改为 5 个工作日）已并入第 4 处。</p>
-
-    <div class="desk">
-      <div class="paper">
-        <h2 class="fin-t">关于项目调整、待岗安排及劳动合同履行的书面异议函</h2>
-        <p>致：上海微创软件股份有限公司北京分公司（人力资源部及相关部门）</p>
-        <p>本人________，系公司________岗位员工，劳动合同期限自________年____月____日起至________年____月____日止，劳动合同约定工作地点为________。</p>
-        <p>本人于2026年11月6日收到公司发送的《待岗通知》。通知称，因客户方业务调整、岗位裁撤，百度项目自2026年12月1日起不再需要本人继续服务，要求本人此前完成项目交接，并自2026年12月1日起前往通知载明的北京办公地点报到、出勤打卡，等待后续工作安排。</p>
-        <p>现就有关事项提出书面异议，并请求公司确认如下。</p>
-        <h3 class="fin-h">一、本人愿意继续履行劳动合同，未申请待岗或离职</h3>
-        <p>通知所述调整原因为客户业务调整及岗位裁撤，未载明本人存在不能胜任工作或违反劳动纪律等情形。</p>
-        <p>本人未提出辞职、解除劳动合同，亦未申请待岗或无薪休假，愿意继续履行劳动合同。<mark class="fx" data-n="6" title="对应第 03 节必要修改第 6 条">本人将按通知要求配合完成原项目工作交接，并于2026年12月1日前往北京市海淀区海淀大街8号中钢国际广场A座5层C区报到、出勤打卡，遵守公司合法合理的考勤与管理要求。上述报到与配合仅系履行出勤义务，不表示本人认可本次待岗的定性。<sup>6</sup></mark></p>
-        <p>本人上述报到、交接和配合行为，不表示本人认可本次待岗符合劳动合同第5.7条的适用条件，也不表示本人同意据此降低工资待遇、跨省市变更工作地点或放弃相关异议。</p>
-        <p><mark class="fx" data-n="9" title="对应第 03 节必要修改第 9 条">如公司在此期间安排实际工作，本人可申请每日前后一小时的弹性打卡；该申请以实际到岗工作为前提，与本人对待岗安排的异议无关。<sup>9</sup></mark></p>
-        <h3 class="fin-h">二、本人对本次待岗是否符合合同约定条件提出异议</h3>
-        <p>劳动合同第5.7条将客观情况发生重大变化、公司无法安排本人在业务或项目上工作，作为安排待岗的条件。</p>
-        <p>现有通知说明了原项目不再需要本人继续服务，但尚未说明公司无法安排本人从事其他业务或项目工作的具体情况。原项目不再需要本人服务，与公司是否无法安排其他工作，仍需分别说明。</p>
-        <p>本人对本次是否符合第5.7条的适用条件提出书面异议，请公司明确：</p>
-        <p>1. 本人被安排至百度项目工作的实际用工形式；如认定属于劳务派遣，请明确派遣单位、用工单位，以及本次退回的具体事实和依据。</p>
-        <p>2. 本次安排待岗的具体事实、法律及合同依据；如同时依据公司规章制度，请提供相关内容及制定、公示或告知情况。</p>
-        <p>3. 北京地区适合本人岗位的匹配情况、公司已经或计划采取的岗位匹配措施，以及目前暂不能安排本人工作的具体原因。</p>
-        <p>4. 待岗预计期限、复岗条件及后续岗位匹配的预计时间。</p>
-        <p>5. 自2026年12月1日起拟安排本人的具体工作、培训及管理内容，以及公司是否将该期间认定为无工作期间。</p>
-        <p>本人提出异议期间，仍将按通知报到、出勤，并配合合理工作安排。本函同时作为本人依据劳动合同第11.1.3条、第14.2条就本次安排提出的书面异议。</p>
-        <h3 class="fin-h">三、关于工作地点及后续岗位安排</h3>
-        <p><mark class="fx" data-n="7" title="对应第 03 节必要修改第 7 条">工作地点属于劳动合同约定的核心内容。根据《劳动合同法》第三十五条，变更劳动合同约定内容应当经双方协商一致并采用书面形式；即便公司主张客观情况发生重大变化，依据该法第四十条第（三）项，亦应先就变更劳动合同内容与本人协商，公司无权单方强制跨省市调岗。<sup>7</sup></mark></p>
-        <p>对于此前会议中口头提出的跨城市外迁安排，本人因家庭及生活基础均在北京，跨城市迁移将造成实质性生活困难，明确不同意。</p>
-        <p>本人希望继续在北京履行劳动合同，愿意配合公司在北京地区提供的、符合劳动合同约定并与本人工作经历和能力合理匹配的岗位安排。</p>
-        <p>对于后续拟匹配的岗位，请公司提供具体工作地点、岗位职责、任职要求、职级及薪酬待遇等信息，以便充分沟通。</p>
-        <p>本人参与岗位沟通、简历更新和面试，不代表同意跨城市变更工作地点或降低劳动合同约定待遇；公司不应仅因本人参与上述流程而认定双方已经就相关变更达成一致。</p>
-        <h3 class="fin-h">四、关于劳动报酬及社会保险、住房公积金</h3>
-        <p><mark class="fx" data-n="3" title="对应第 03 节必要修改第 3 条">公司通知所援引的劳动合同第5.7条，本人从未确认其适用于本次情形。该条以「客观情况发生重大变化、公司无法安排本人在业务或项目上工作」为前提，本次待岗是否符合该前提，尚待公司举证说明。<sup>3</sup></mark></p>
-        <p><mark class="fx" data-n="2" title="对应第 03 节必要修改第 2 条">在待岗是否依法成立确定之前，公司应按原劳动合同约定的正常工资标准支付劳动报酬。本人并非仅就支付金额提出异议，而是对本次待岗的成立条件本身提出异议。<sup>2</sup></mark></p>
-        <p>请公司书面明确本次是否拟适用第5.7条，以及适用的具体事实、各阶段起止日期、支付金额、工资组成和计算方式，并明确社会保险及住房公积金的缴纳地点、基数和扣缴安排；如拟调整，请说明依据。</p>
-        <p>如公司实际安排本人承担业务、项目工作，请按照合同关于恢复正常工作后薪资标准的约定执行。对于培训及其他工作安排，请结合实际履行情况依法支付相应劳动报酬。</p>
-        <p><mark class="fx" data-n="12" title="对应第 03 节必要修改第 12 条">如公司未按照劳动合同约定提供劳动条件，或未依法足额支付劳动报酬，本人保留依据《劳动合同法》第三十八条第（一）项、第（二）项解除劳动合同并主张经济补偿及其他劳动权益的权利。<sup>12</sup></mark></p>
-        <h3 class="fin-h">五、关于项目交接</h3>
-        <p>本人将在2026年12月1日前，按照公司及客户明确的要求和授权流程，配合完成本人职责范围内的工作资料、工作账号权限及相关资产交接。</p>
-        <p><mark class="fx" data-n="11" title="对应第 03 节必要修改第 11 条">请公司明确接收人员、交接清单及验收方式，并在交接完成后由接收人员签署交接清单、出具书面确认。<sup>11</sup></mark></p>
-        <p>如交接需要其他人员配合或存在客观障碍，本人将及时反馈。</p>
-        <p>本人办理的是项目工作交接，不代表本人申请离职、同意解除劳动合同，亦不代表本人认可待岗、跨城市调动或降低待遇。</p>
-        <h3 class="fin-h">六、关于后续处理及书面回复</h3>
-        <p>本人希望公司优先提供符合劳动合同约定条件的北京岗位。如公司认为无法继续按照劳动合同约定安排工作，请书面说明原因及拟采取的处理方案。本人未提出解除劳动合同。</p>
-        <p><mark class="fx" data-n="4" title="对应第 03 节必要修改第 4 条">请公司于收到本函后五个工作日内，书面撤销本次待岗决定，恢复本人原岗位及原工资待遇，并就上述事项一并作出书面回复；逾期未回复或未撤销的，本人将依法主张相应权利。<sup>4</sup></mark></p>
-        <p><mark class="fx" data-n="1" title="对应第 03 节必要修改第 1 条">如公司拟协商解除劳动合同，应由公司提出解除动议，双方协商一致后依法支付经济补偿；<sup>1</sup></mark>相关解除条件、经济补偿及其他应付款项，应另行协商并以明确的书面协议为准。</p>
-        <p>依法应支付的工资、奖金、未休年休假工资及其他款项，应分别列明项目及金额，不应在未明确明细的情况下笼统包含在经济补偿中。</p>
-        <p>本函仅用于提出异议、确认履约意愿及请求公司说明，不构成本人的辞职申请、解除劳动合同通知，亦不构成对降薪、跨城市调动或放弃劳动权益的同意。后续如另行签署协议，其效力及履行按协议约定和法律规定处理。</p>
-        <p><mark class="fx" data-n="8" title="对应第 03 节必要修改第 8 条">本人愿意在继续正常履行劳动合同的同时，以不降低劳动合同约定条件为前提，与公司就本次项目调整问题进行沟通。<sup>8</sup></mark></p>
-        <p class="fin-r">此致</p>
-        <p class="fin-r">上海微创软件股份有限公司北京分公司</p>
-        <p class="fin-r">回复人：_________________</p>
-        <p class="fin-r">日期：2026年___月___日</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="panel" id="s7" role="tabpanel" aria-labelledby="t7" hidden>
-    <div class="sec-head"><span class="sec-no">07</span><h2>最终版 vs 两版 · 修改方案</h2></div>
-    <p class="sec-desc">左栏为最终版正文；右栏分三块：<b>第一版</b>、<b>修改2</b> 各自对应段落，以及<b>修改方案</b>——逐项说明最终版的改法、法律依据，以及该改法如何最大化我方的赔偿利益。共 19 个修改点。</p>
-    <div class="desk"><div class="spread wide">
-      <div class="sheet-head"><span class="sname final">最终版</span><span class="smeta">综合稿</span></div>
-      <div class="sheet-head h2"><span class="sname v2">两版原文 + 修改方案</span><span class="smeta">第一版 / 修改2 / 方案</span></div>
-      <div class="band">
-        <span class="bno">01</span><h3>标题</h3><span class="badge k-mod">措辞不同</span>
-      </div>
-      <div class="cell left"><p>关于项目调整、待岗安排及劳动合同履行的书面异议函</p>
-      </div>
-      <div class="cell right"><div class="sub"><div class="sub-h v1">第一版</div><p>对《待岗通知》的异议函</p></div><div class="sub"><div class="sub-h v2">修改2</div><p>关于项目调整 待岗安排及劳动合同履行的书面异议函</p></div><div class="plan"><div class="plan-row"><span class="plan-k">改法</span><span>采用修改2 的总标题，覆盖项目调整、待岗、合同履行三个议题。</span></div><div class="plan-row"><span class="plan-k">法律依据</span><span>—</span></div><div class="plan-row"><span class="plan-k benefit">赔偿利益</span><span>把争议面框在「合同履行」框架内，为后续主张劳动条件、报酬、解除补偿预留空间。</span></div></div>
-      </div>
-
-      <div class="band">
-        <span class="bno">02</span><h3>致送对象</h3><span class="badge k-mod">措辞不同</span>
-      </div>
-      <div class="cell left"><p>致：上海微创软件股份有限公司北京分公司（人力资源部及相关部门）</p>
-      </div>
-      <div class="cell right"><div class="sub"><div class="sub-h v1">第一版</div><p>致：上海微创软件股份有限公司北京分公司</p></div><div class="sub"><div class="sub-h v2">修改2</div><p>致：上海微创软件股份有限公司北京分公司及相关管理部门</p></div><div class="plan"><div class="plan-row"><span class="plan-k">改法</span><span>收件人写「人力资源部及相关部门」，比「及相关管理部门」更具体。</span></div><div class="plan-row"><span class="plan-k">法律依据</span><span>—</span></div><div class="plan-row"><span class="plan-k benefit">赔偿利益</span><span>确保函件到达实际决策部门，避免被前台或无关部门签收后拖延。</span></div></div>
-      </div>
-
-      <div class="band">
-        <span class="bno">03</span><h3>身份信息</h3><span class="badge k-mod">措辞不同</span>
-      </div>
-      <div class="cell left"><p>本人________，系公司________岗位员工，劳动合同期限自________年____月____日起至________年____月____日止，劳动合同约定工作地点为________。</p>
-      </div>
-      <div class="cell right"><div class="sub"><div class="sub-h v1">第一版</div><p>本人:             (身份证号:                                         )  ，系贵公司                   岗位员工，劳动合同期限自            年      月      日起至            年     月      日止，工作地点为            。</p></div><div class="sub"><div class="sub-h v2">修改2</div><p>本人________，系公司________岗位员工，劳动合同期限自________年____月____日起至________年____月____日止，劳动合同约定工作地点为________。</p></div><div class="plan"><div class="plan-row"><span class="plan-k">改法</span><span>去掉身份证号栏，改「贵公司」为「公司」，加「劳动合同约定工作地点」。</span></div><div class="plan-row"><span class="plan-k">法律依据</span><span>《劳动合同法》第17条</span></div><div class="plan-row"><span class="plan-k benefit">赔偿利益</span><span>工作地点一旦写入合同即为约定核心条款，公司单方变更需协商一致，是跨市调岗抗辩的支点。</span></div></div>
-      </div>
-
-      <div class="band">
-        <span class="bno">04</span><h3>待岗事实陈述</h3><span class="badge k-mod">措辞不同</span>
-      </div>
-      <div class="cell left"><p>本人于2026年11月6日收到公司发送的《待岗通知》。通知称，因客户方业务调整、岗位裁撤，百度项目自2026年12月1日起不再需要本人继续服务，要求本人此前完成项目交接，并自2026年12月1日起前往通知载明的北京办公地点报到、出勤打卡，等待后续工作安排。</p>
-      </div>
-      <div class="cell right"><div class="sub"><div class="sub-h v1">第一版</div><p>本人于2026年11月06日收到贵司出具的《待岗通知》，通知称因百度项目业务调整，自2026年12月1日起安排本人待岗，并要求前往北京市海淀区海淀大街8号中钢国际广场A座5层C区报到。现就该通知及相关事宜，正式提出书面异议如下：</p></div><div class="sub"><div class="sub-h v2">修改2</div><p>本人于2026年11月6日收到公司发送的《待岗通知》。通知称，因客户方业务调整、岗位裁撤，百度项目自2026年12月1日起不再需要本人继续服务，要求本人此前完成项目交接，并自2026年12月1日起前往通知载明的北京办公地点报到、出勤打卡，等待后续工作安排。</p></div><div class="plan"><div class="plan-row"><span class="plan-k">改法</span><span>引用通知原文转述事实，不否认也不扩大，报到地址收窄为通知载明地点。</span></div><div class="plan-row"><span class="plan-k">法律依据</span><span>《民事诉讼法》第67条（自认规则）</span></div><div class="plan-row"><span class="plan-k benefit">赔偿利益</span><span>避免在事实陈述中作出不利自认（如承认「客户方业务调整」等于接受公司理由）。</span></div></div>
-      </div>
-
-      <div class="band">
-        <span class="bno">05</span><h3>诉求开场白</h3><span class="badge k-add">最终版新增</span>
-      </div>
-      <div class="cell left"><p>现就有关事项提出书面异议，并请求公司确认如下。</p>
-      </div>
-      <div class="cell right"><div class="sub"><div class="sub-h v2">修改2</div><p>现就有关事项提出书面异议，并请求公司确认如下。</p></div><div class="plan"><div class="plan-row"><span class="plan-k">改法</span><span>新增「现就有关事项提出书面异议，并请求公司确认如下」作为承上启下。</span></div><div class="plan-row"><span class="plan-k">法律依据</span><span>—</span></div><div class="plan-row"><span class="plan-k benefit">赔偿利益</span><span>把后续所有问题统一界定为「异议+请求」，为仲裁时证明「已提出异议、公司拒不改正」埋下伏笔。</span></div></div>
-      </div>
-
-      <div class="band">
-        <span class="bno">06</span><h3>第一章 立场定性</h3><span class="badge k-mod">措辞不同</span>
-      </div>
-      <div class="cell left"><p>一、本人愿意继续履行劳动合同，未申请待岗或离职</p>
-      </div>
-      <div class="cell right"><div class="sub"><div class="sub-h v1">第一版</div><p>一、本人不同意贵司单方作出的待岗安排</p></div><div class="sub"><div class="sub-h v2">修改2</div><p>一、本人愿意继续履行劳动合同，未申请待岗或离职</p></div><div class="plan"><div class="plan-row"><span class="plan-k">改法</span><span>先表履约意愿，再点出通知未载明不能胜任或违纪，语气从对抗改为理性。</span></div><div class="plan-row"><span class="plan-k">法律依据</span><span>《劳动合同法》第40条</span></div><div class="plan-row"><span class="plan-k benefit">赔偿利益</span><span>先立「愿意履约」的善意姿态，再指出通知缺乏事实依据，比直接否认更难被公司反驳。</span></div></div>
-      </div>
-
-      <div class="band">
-        <span class="bno">07</span><h3>通知未载明不能胜任或违纪</h3><span class="badge k-add">最终版新增</span>
-      </div>
-      <div class="cell left"><p>通知所述调整原因为客户业务调整及岗位裁撤，未载明本人存在不能胜任工作或违反劳动纪律等情形。</p>
-      </div>
-      <div class="cell right"><div class="sub"><div class="sub-h v2">修改2</div><p>通知所述调整原因为客户业务调整及岗位裁撤，未载明本人存在不能胜任工作或违反劳动纪律等情形。</p></div><div class="plan"><div class="plan-row"><span class="plan-k">改法</span><span>新增此段，明确点出通知没有给出本人不能胜任或违纪的理由。</span></div><div class="plan-row"><span class="plan-k">法律依据</span><span>《劳动合同法》第40条第(二)项</span></div><div class="plan-row"><span class="plan-k benefit">赔偿利益</span><span>若公司以「不能胜任」为由调岗待岗，须举证证明；我方提前指出其未举证，可在仲裁中占据「举证责任在公司」的有利位置。</span></div></div>
-      </div>
-
-      <div class="band">
-        <span class="bno">08</span><h3>报到与配合声明</h3><span class="badge k-mod">措辞不同</span>
-      </div>
-      <div class="cell left"><p>本人未提出辞职、解除劳动合同，亦未申请待岗或无薪休假，愿意继续履行劳动合同。本人将按通知要求配合完成原项目工作交接，并于2026年12月1日前往北京市海淀区海淀大街8号中钢国际广场A座5层C区报到、出勤打卡，遵守公司合法合理的考勤与管理要求。上述报到与配合仅系履行出勤义务，不表示本人认可本次待岗的定性。</p><p>本人上述报到、交接和配合行为，不表示本人认可本次待岗符合劳动合同第5.7条的适用条件，也不表示本人同意据此降低工资待遇、跨省市变更工作地点或放弃相关异议。</p>
-      </div>
-      <div class="cell right"><div class="sub"><div class="sub-h v1">第一版</div><p>依据劳动合同第11.1.3条约定，本人在此郑重声明：</p><p>1. 本人将于2026年12月1日按通知地址报到，但本人到场仅为等候贵司在北京地区安排同等条件新项目，不认可本人处于&quot;待岗&quot;状态；</p><p>2. 报到、打卡行为不视为对本次单方待岗安排的同意或追认；</p><p>3. 贵司安排的面试等对接事宜，本人将积极配合，但面试结果不影响本人要求按原合同标准履行的权利；</p><p>4. 本函即为本人对本次岗位/工作状态调整的书面异议，不存在&quot;到岗后一个月未提异议视为同意&quot;之适用情形。</p></div><div class="sub"><div class="sub-h v2">修改2</div><p>本人将按照通知要求配合完成原项目工作交接，并于2026年12月1日前往北京市海淀区海淀大街8号中钢国际广场A座5层C区报到，遵守公司合法合理的考勤和管理要求，配合合理的工作、培训、岗位匹配及项目面试安排。</p><p>本人上述报到、交接和配合行为，不表示本人认可本次待岗符合劳动合同第5.7条的适用条件，也不表示本人同意据此降低工资待遇、跨省市变更工作地点或放弃相关异议。</p></div><div class="plan"><div class="plan-row"><span class="plan-k">改法</span><span>把「不认可待岗状态」收窄为「不表示认可符合第5.7条适用条件」，报到只系履行出勤义务。</span></div><div class="plan-row"><span class="plan-k">法律依据</span><span>《劳动合同法》第35条</span></div><div class="plan-row"><span class="plan-k benefit">赔偿利益</span><span>既保留出勤事实（防止被认定旷工），又不构成对待岗安排的默示同意——这是保留解除权的关键。</span></div></div>
-      </div>
-
-      <div class="band">
-        <span class="bno">09</span><h3>弹性打卡申请</h3><span class="badge k-rewrite">整段改写</span>
-      </div>
-      <div class="cell left"><p>如公司在此期间安排实际工作，本人可申请每日前后一小时的弹性打卡；该申请以实际到岗工作为前提，与本人对待岗安排的异议无关。</p>
-      </div>
-      <div class="cell right"><div class="sub"><div class="sub-h v1">第一版</div><p>5. 考虑到本人原派驻办公地址与本次通知载明的报到地址通勤距离较远、通勤时间与成本显著增加，在等候新项目安排期间，本人申请上下班打卡时间给予 1 小时弹性区间：上午可在 8:30—9:30 之间打卡上班，下午相应在 17:30—18:30 之间打卡下班，确保每日累计在岗满 8 小时标准工时，不影响日常工作对接与事务沟通。该通勤便利申请，不构成本人对本次单方待岗安排的认可。</p></div><div class="plan"><div class="plan-row"><span class="plan-k">改法</span><span>加回 V1 的弹性打卡申请，但加「如公司安排实际工作」的前提。</span></div><div class="plan-row"><span class="plan-k">法律依据</span><span>—</span></div><div class="plan-row"><span class="plan-k benefit">赔偿利益</span><span>保留合作姿态，同时避免「申请弹性打卡」被解读为已接受待岗安排。</span></div></div>
-      </div>
-
-      <div class="band">
-        <span class="bno">10</span><h3>第二章 第5.7条适用前提</h3><span class="badge k-mod">措辞不同</span>
-      </div>
-      <div class="cell left"><p>二、本人对本次待岗是否符合合同约定条件提出异议</p><p>劳动合同第5.7条将客观情况发生重大变化、公司无法安排本人在业务或项目上工作，作为安排待岗的条件。</p>
-      </div>
-      <div class="cell right"><div class="sub"><div class="sub-h v1">第一版</div><p>贵司援引劳动合同第5.7条安排待岗，本人认为该条款的适用前提不成立：</p><p>1. 贵司作为专业的信息技术服务外包公司，在北京地区仍有多项在执行业务和项目，并非&quot;无法安排乙方在业务、项目上工作&quot;，而是未积极履行用人单位的用工安排义务；</p><p>2. 仅因单个派驻项目结束即安排员工长期待岗，实质上是将贵司的经营风险转嫁给劳动者，违背了劳动合同法的立法本意；</p><p>3. 本次待岗仅针对百度项目外迁涉及的少数员工，具有明显的针对性，并非贵司整体经营困难导致的普遍性停工停产。</p><p>综上，贵司单方通知将本人纳入待岗管理，属于单方变更劳动合同履行方式，缺乏充分的法律依据和合同依据，本人明确不予同意。</p></div><div class="sub"><div class="sub-h v2">修改2</div><p>二、本人对本次待岗是否符合合同约定条件提出异议</p><p>劳动合同第5.7条将客观情况发生重大变化、公司无法安排本人在业务或项目上工作，作为安排待岗的条件。</p></div><div class="plan"><div class="plan-row"><span class="plan-k">改法</span><span>把 V1 的三论点直接否定改为条文文义解释：原项目不再需要≠公司无法安排其他工作。</span></div><div class="plan-row"><span class="plan-k">法律依据</span><span>《劳动合同法》第35条；劳动合同第5.7条</span></div><div class="plan-row"><span class="plan-k benefit">赔偿利益</span><span>把举证责任推给公司——公司须证明「无法安排其他工作」而非「单个项目结束」，否则待岗前提不成立。</span></div></div>
-      </div>
-
-      <div class="band">
-        <span class="bno">11</span><h3>书面询问清单</h3><span class="badge k-add">最终版新增</span>
-      </div>
-      <div class="cell left"><p>现有通知说明了原项目不再需要本人继续服务，但尚未说明公司无法安排本人从事其他业务或项目工作的具体情况。原项目不再需要本人服务，与公司是否无法安排其他工作，仍需分别说明。</p><p>本人对本次是否符合第5.7条的适用条件提出书面异议，请公司明确：</p><p>1. 本人被安排至百度项目工作的实际用工形式；如认定属于劳务派遣，请明确派遣单位、用工单位，以及本次退回的具体事实和依据。</p><p>2. 本次安排待岗的具体事实、法律及合同依据；如同时依据公司规章制度，请提供相关内容及制定、公示或告知情况。</p><p>3. 北京地区适合本人岗位的匹配情况、公司已经或计划采取的岗位匹配措施，以及目前暂不能安排本人工作的具体原因。</p><p>4. 待岗预计期限、复岗条件及后续岗位匹配的预计时间。</p><p>5. 自2026年12月1日起拟安排本人的具体工作、培训及管理内容，以及公司是否将该期间认定为无工作期间。</p><p>本人提出异议期间，仍将按通知报到、出勤，并配合合理工作安排。本函同时作为本人依据劳动合同第11.1.3条、第14.2条就本次安排提出的书面异议。</p>
-      </div>
-      <div class="cell right"><div class="sub"><div class="sub-h v2">修改2</div><p>现有通知说明了原项目不再需要本人继续服务，但尚未说明公司无法安排本人从事其他业务或项目工作的具体情况。原项目不再需要本人服务，与公司是否无法安排其他工作，仍需分别说明。</p><p>本人对本次是否符合第5.7条的适用条件提出书面异议，请公司明确：</p><p>本人被安排至百度项目工作的实际用工形式；如认定属于劳务派遣，请明确派遣单位、用工单位，以及本次退回的具体事实和依据。</p><p>本次安排待岗的具体事实、法律及合同依据；如同时依据公司规章制度，请提供相关内容及制定、公示或告知情况。</p><p>北京地区适合本人岗位的匹配情况、公司已经或计划采取的岗位匹配措施，以及目前暂不能安排本人工作的具体原因。</p><p>待岗预计期限、复岗条件及后续岗位匹配的预计时间。</p><p>自2026年12月1日起拟安排本人的具体工作、培训及管理内容，以及公司是将该期间认定为无工作期间。</p></div><div class="plan"><div class="plan-row"><span class="plan-k">改法</span><span>保留修改2 的五项询问（用工形式、待岗依据、北京岗位匹配、待岗期限、12月起工作内容）。</span></div><div class="plan-row"><span class="plan-k">法律依据</span><span>《劳动争议调解仲裁法》第6条</span></div><div class="plan-row"><span class="plan-k benefit">赔偿利益</span><span>通过书面询问把举证义务推回公司；公司若不答复，仲裁时可作不利推定。</span></div></div>
-      </div>
-
-      <div class="band">
-        <span class="bno">12</span><h3>第三章 工作地点与岗位安排</h3><span class="badge k-mod">措辞不同</span>
-      </div>
-      <div class="cell left"><p>三、关于工作地点及后续岗位安排</p><p>工作地点属于劳动合同约定的核心内容。根据《劳动合同法》第三十五条，变更劳动合同约定内容应当经双方协商一致并采用书面形式；即便公司主张客观情况发生重大变化，依据该法第四十条第（三）项，亦应先就变更劳动合同内容与本人协商，公司无权单方强制跨省市调岗。</p><p>对于此前会议中口头提出的跨城市外迁安排，本人因家庭及生活基础均在北京，跨城市迁移将造成实质性生活困难，明确不同意。</p><p>本人希望继续在北京履行劳动合同，愿意配合公司在北京地区提供的、符合劳动合同约定并与本人工作经历和能力合理匹配的岗位安排。</p><p>对于后续拟匹配的岗位，请公司提供具体工作地点、岗位职责、任职要求、职级及薪酬待遇等信息，以便充分沟通。</p><p>本人参与岗位沟通、简历更新和面试，不代表同意跨城市变更工作地点或降低劳动合同约定待遇；公司不应仅因本人参与上述流程而认定双方已经就相关变更达成一致。</p>
-      </div>
-      <div class="cell right"><div class="sub"><div class="sub-h v1">第一版</div><p>据本人了解，本次调整的起因是百度项目外迁西安等地，贵司因此对派驻该项目的外包人员进行调配。本人因家庭及个人实际情况（家庭住址、生活基础均在北京），无法接受跨省市外迁，该情况已向贵司说明。</p><p>依据《中华人民共和国劳动合同法》第三十五条及双方劳动合同第三条约定，工作地点是劳动合同的核心条款，变更工作地点应当经双方协商一致。 跨城市调岗属于对劳动合同的重大变更，且会给本人造成实质性困难，贵司无权单方强制。</p></div><div class="sub"><div class="sub-h v2">修改2</div><p>三、关于工作地点及后续岗位安排</p><p>对于此前会议中口头提出的跨城市外迁安排，本人因家庭及生活基础均在北京，跨城市迁移将造成实质性生活困难，明确不同意。</p><p>本人希望继续在北京履行劳动合同，愿意配合公司在北京地区提供的、符合劳动合同约定并与本人工作经历和能力合理匹配的岗位安排。</p><p>对于后续拟匹配的岗位，请公司提供具体工作地点、岗位职责、任职要求、职级及薪酬待遇等信息，以便充分沟通。</p><p>本人参与岗位沟通、简历更新和面试，不代表同意跨城市变更工作地点或降低劳动合同约定待遇；公司不应仅因本人参与上述流程而认定双方已经就相关变更达成一致。</p></div><div class="plan"><div class="plan-row"><span class="plan-k">改法</span><span>回补 V1 的第三十五条论证，并加第四十条第(三)项；保留修改2 的岗位信息清单与不构成同意声明。</span></div><div class="plan-row"><span class="plan-k">法律依据</span><span>《劳动合同法》第35条、第40条第(三)项</span></div><div class="plan-row"><span class="plan-k benefit">赔偿利益</span><span>工作地点是合同核心条款，跨市调岗须协商一致；明确主张「在北京履行」，为后续以「未提供劳动条件」解除并索赔奠定事实基础。</span></div></div>
-      </div>
-
-      <div class="band">
-        <span class="bno">13</span><h3>第四章 劳动报酬</h3><span class="badge k-mod">措辞不同</span>
-      </div>
-      <div class="cell left"><p>四、关于劳动报酬及社会保险、住房公积金</p><p>公司通知所援引的劳动合同第5.7条，本人从未确认其适用于本次情形。该条以「客观情况发生重大变化、公司无法安排本人在业务或项目上工作」为前提，本次待岗是否符合该前提，尚待公司举证说明。</p><p>在待岗是否依法成立确定之前，公司应按原劳动合同约定的正常工资标准支付劳动报酬。本人并非仅就支付金额提出异议，而是对本次待岗的成立条件本身提出异议。</p><p>请公司书面明确本次是否拟适用第5.7条，以及适用的具体事实、各阶段起止日期、支付金额、工资组成和计算方式，并明确社会保险及住房公积金的缴纳地点、基数和扣缴安排；如拟调整，请说明依据。</p><p>如公司实际安排本人承担业务、项目工作，请按照合同关于恢复正常工作后薪资标准的约定执行。对于培训及其他工作安排，请结合实际履行情况依法支付相应劳动报酬。</p><p>如公司未按照劳动合同约定提供劳动条件，或未依法足额支付劳动报酬，本人保留依据《劳动合同法》第三十八条第（一）项、第（二）项解除劳动合同并主张经济补偿及其他劳动权益的权利。</p>
-      </div>
-      <div class="cell right"><div class="sub"><div class="sub-h v1">第一版</div><p>三、关于劳动报酬的明确主张</p><p>贵司通知中提及的待岗期间薪酬安排，本人不予认可。在双方就劳动合同变更达成书面一致前，贵司应按原劳动合同约定的工资标准足额支付本人劳动报酬，不得单方降薪。</p><p>若贵司自第二个月起单方按北京市最低工资标准发放报酬，本人将认为该行为构成未足额支付劳动报酬，并保留依据《劳动合同法》第三十八条解除劳动合同并要求经济补偿的权利。</p></div><div class="sub"><div class="sub-h v2">修改2</div><p>四、关于劳动报酬及社会保险、住房公积金</p><p>本人知悉劳动合同第5.7条载有待岗首月按双方约定薪资标准支付、第二个月起按劳动合同履行地最低工资标准支付，以及恢复正常工作后恢复约定薪资标准的内容。</p><p>但本人对本次安排是否符合该条款的适用条件提出异议，并主张继续按照原劳动合同约定的正常工资标准支付劳动报酬。</p><p>请公司书面明确本次是否拟适用第5.7条，以及适用的具体事实、各阶段起止日期、支付金额、工资组成和计算方式，并明确社会保险及住房公积金的缴纳地点、基数和扣缴安排；如拟调整，请说明依据。</p><p>如公司实际安排本人承担业务、项目工作，请按照合同关于恢复正常工作后薪资标准的约定执行。对于培训及其他工作安排，请结合实际履行情况依法支付相应劳动报酬。</p><p>如实际发生未依法足额支付劳动报酬或其他侵害本人劳动权益的情形，本人保留根据届时事实依法主张工资差额、经济补偿及其他劳动权益的权利。</p></div><div class="plan"><div class="plan-row"><span class="plan-k">改法</span><span>删除对「知悉第5.7条」的自认；主张待岗未确定前按原标准支付；并列第38条第(一)(二)项。</span></div><div class="plan-row"><span class="plan-k">法律依据</span><span>《劳动合同法》第38条第(一)(二)项；《北京市工资支付规定》第27条</span></div><div class="plan-row"><span class="plan-k benefit">赔偿利益</span><span>核心：不在「金额」上纠缠（最低工资本身可能合法），而在「待岗是否成立」上发力；同时保留「未提供劳动条件」这一更易成立的解除事由，最大化经济补偿（N 或 2N）的主张空间。</span></div></div>
-      </div>
-
-      <div class="band">
-        <span class="bno">14</span><h3>第五章 工作交接</h3><span class="badge k-mod">措辞不同</span>
-      </div>
-      <div class="cell left"><p>五、关于项目交接</p><p>本人将在2026年12月1日前，按照公司及客户明确的要求和授权流程，配合完成本人职责范围内的工作资料、工作账号权限及相关资产交接。</p><p>请公司明确接收人员、交接清单及验收方式，并在交接完成后由接收人员签署交接清单、出具书面确认。</p><p>如交接需要其他人员配合或存在客观障碍，本人将及时反馈。</p><p>本人办理的是项目工作交接，不代表本人申请离职、同意解除劳动合同，亦不代表本人认可待岗、跨城市调动或降低待遇。</p>
-      </div>
-      <div class="cell right"><div class="sub"><div class="sub-h v1">第一版</div><p>五、关于工作交接</p><p>本人将在2026年12月1日前完成百度项目对应工作的交接，完整移交工作资料、账号及相关资产。工作交接的履行，不视为对本次待岗安排或跨城市调岗的认可。</p></div><div class="sub"><div class="sub-h v2">修改2</div><p>五、关于项目交接</p><p>本人将在2026年12月1日前，按照公司及客户明确的要求和授权流程，配合完成本人职责范围内的工作资料、工作账号权限及相关资产交接。</p><p>请公司明确接收人员、交接清单及验收方式，并在交接完成后给予书面确认。如交接需要其他人员配合或存在客观障碍，本人将及时反馈。</p><p>本人办理的是项目工作交接，不代表本人申请离职、同意解除劳动合同，亦不代表本人认可待岗、跨城市调动或降低待遇。</p></div><div class="plan"><div class="plan-row"><span class="plan-k">改法</span><span>限定「职责范围内」「按授权流程」，要求接收人签署清单并出具书面确认；声明交接不代表离职。</span></div><div class="plan-row"><span class="plan-k">法律依据</span><span>《劳动合同法》第50条</span></div><div class="plan-row"><span class="plan-k benefit">赔偿利益</span><span>既履行交接义务（防被指拒不配合），又保留「交接≠离职」的定性，且书面确认可作为日后抗辩「未完成交接」的证据。</span></div></div>
-      </div>
-
-      <div class="band">
-        <span class="bno">15</span><h3>第六章 诉求与撤销待岗</h3><span class="badge k-mod">措辞不同</span>
-      </div>
-      <div class="cell left"><p>六、关于后续处理及书面回复</p><p>本人希望公司优先提供符合劳动合同约定条件的北京岗位。如公司认为无法继续按照劳动合同约定安排工作，请书面说明原因及拟采取的处理方案。本人未提出解除劳动合同。</p><p>请公司于收到本函后五个工作日内，书面撤销本次待岗决定，恢复本人原岗位及原工资待遇，并就上述事项一并作出书面回复；逾期未回复或未撤销的，本人将依法主张相应权利。</p>
-      </div>
-      <div class="cell right"><div class="sub"><div class="sub-h v1">第一版</div><p>四、本人诉求</p><p>1. 请贵司于收到本函之日起3个工作日内，撤销本次单方待岗决定；</p><p>2. 请贵司自2026年12月1日起按原劳动合同约定标准足额支付本人劳动报酬，并在北京范围内为本人匹配与原岗位（                                   ）职级、薪酬标准、工作条件相当的工作岗位；</p><p>3. 若贵司客观上无法在北京提供同等条件岗位，请依据劳动合同第11.2.4条之规定，与本人协商解除劳动合同事宜，并依法支付经济补偿（按本人在贵司工作年限，每满一年支付一个月工资的标准计算，即 N 个月工资（N 按工作年限折算）。</p><p>请贵司于收到本函之日起3个工作日内，就上述事项作出书面答复。逾期未答复或答复未能解决本人合理诉求的，本人将通过劳动仲裁等法律途径维护自身合法权益。</p></div><div class="sub"><div class="sub-h v2">修改2</div><p>六、关于后续处理及书面回复</p><p>本人希望公司优先提供符合劳动合同约定条件的北京岗位。如公司认为无法继续按照劳动合同约定安排工作，请书面说明原因及拟采取的处理方案。本人未提出解除劳动合同。</p><p>如公司后续提出协商解除，相关解除条件、经济补偿及其他应付款项，应另行协商并以明确协议为准。依法应支付的工资、奖金、未休年休假工资及其他款项，应分别列明项目及金额，不应在未明确明细的情况下笼统包含在经济补偿中。</p><p>请公司于收到本函后五个工作日内，就上述事项作出书面回复。</p></div><div class="plan"><div class="plan-row"><span class="plan-k">改法</span><span>明确要求5个工作日内书面撤销待岗、恢复原岗位待遇；逾期则依法主张权利。</span></div><div class="plan-row"><span class="plan-k">法律依据</span><span>《劳动合同法》第38条</span></div><div class="plan-row"><span class="plan-k benefit">赔偿利益</span><span>必须提出「撤销待岗」的明确请求，否则仲裁时难以证明公司「拒不改正」；设定期限后果，为被迫解除并主张经济补偿铺路。</span></div></div>
-      </div>
-
-      <div class="band">
-        <span class="bno">16</span><h3>协商解除：由公司提出动议</h3><span class="badge k-mod">措辞不同</span>
-      </div>
-      <div class="cell left"><p>如公司拟协商解除劳动合同，应由公司提出解除动议，双方协商一致后依法支付经济补偿；相关解除条件、经济补偿及其他应付款项，应另行协商并以明确的书面协议为准。</p>
-      </div>
-      <div class="cell right"><div class="sub"><div class="sub-h v1">第一版</div><p>3. 若贵司客观上无法在北京提供同等条件岗位，请依据劳动合同第11.2.4条之规定，与本人协商解除劳动合同事宜，并依法支付经济补偿（按本人在贵司工作年限，每满一年支付一个月工资的标准计算，即 N 个月工资（N 按工作年限折算）。</p></div><div class="sub"><div class="sub-h v2">修改2</div><p>本人希望公司优先提供符合劳动合同约定条件的北京岗位。如公司认为无法继续按照劳动合同约定安排工作，请书面说明原因及拟采取的处理方案。本人未提出解除劳动合同。</p><p>如公司后续提出协商解除，相关解除条件、经济补偿及其他应付款项，应另行协商并以明确协议为准。依法应支付的工资、奖金、未休年休假工资及其他款项，应分别列明项目及金额，不应在未明确明细的情况下笼统包含在经济补偿中。</p></div><div class="plan"><div class="plan-row"><span class="plan-k">改法</span><span>把「请公司协商解除」改为「如公司拟协商解除，应由公司提出解除动议」。</span></div><div class="plan-row"><span class="plan-k">法律依据</span><span>《劳动合同法》第36条、第46条第(二)项</span></div><div class="plan-row"><span class="plan-k benefit">赔偿利益</span><span>经济补偿（N）的支付前提是「用人单位提出」协商解除；若由劳动者提出，公司可拒付。明确主体是拿到 N 的关键。</span></div></div>
-      </div>
-
-      <div class="band">
-        <span class="bno">17</span><h3>不构成同意声明</h3><span class="badge k-rewrite">整段改写</span>
-      </div>
-      <div class="cell left"><p>依法应支付的工资、奖金、未休年休假工资及其他款项，应分别列明项目及金额，不应在未明确明细的情况下笼统包含在经济补偿中。</p>
-      </div>
-      <div class="cell right"><div class="sub"><div class="sub-h v1">第一版</div><p>双方未达成书面协议前，本人不接受任何单方变更，包括但不限于待岗安排、跨城市调岗、降薪等。</p></div><div class="sub"><div class="sub-h v2">修改2</div><p>本函仅用于提出异议、确认履约意愿及请求公司说明，不构成本人的辞职申请、解除劳动合同通知，亦不构成对降薪、跨城市调动或放弃劳动权益的同意。后续如另行签署协议，其效力及履行按协议约定和法律规定处理。</p></div><div class="plan"><div class="plan-row"><span class="plan-k">改法</span><span>扩写为完整声明，加「后续另行签署协议」的效力条款。</span></div><div class="plan-row"><span class="plan-k">法律依据</span><span>《民法典》第136条、第496条</span></div><div class="plan-row"><span class="plan-k benefit">赔偿利益</span><span>防止公司以「已到岗/已交接」主张默示同意变更；明确「未签署书面协议前不接受任何单方变更」。</span></div></div>
-      </div>
-
-      <div class="band">
-        <span class="bno">18</span><h3>边履行边协商</h3><span class="badge k-add">最终版新增</span>
-      </div>
-      <div class="cell left"><p>本函仅用于提出异议、确认履约意愿及请求公司说明，不构成本人的辞职申请、解除劳动合同通知，亦不构成对降薪、跨城市调动或放弃劳动权益的同意。后续如另行签署协议，其效力及履行按协议约定和法律规定处理。</p>
-      </div>
-      <div class="cell right"><div class="sub"><div class="sub-h v2">修改2</div><p>本人愿意在继续正常履行劳动合同的同时，与公司就妥善解决本次项目调整问题进行沟通。</p></div><div class="plan"><div class="plan-row"><span class="plan-k">改法</span><span>加「以不降低劳动合同约定条件为前提」。</span></div><div class="plan-row"><span class="plan-k">法律依据</span><span>《劳动合同法》第35条</span></div><div class="plan-row"><span class="plan-k benefit">赔偿利益</span><span>留协商台阶的同时，避免被解读为接受降薪、调岗或协商解除，守住补偿主张的底线。</span></div></div>
-      </div>
-
-      <div class="band">
-        <span class="bno">19</span><h3>落款</h3><span class="badge k-same">两版一致</span>
-      </div>
-      <div class="cell left"><p>本人愿意在继续正常履行劳动合同的同时，以不降低劳动合同约定条件为前提，与公司就本次项目调整问题进行沟通。</p><p>此致</p><p>上海微创软件股份有限公司北京分公司</p><p>回复人：_________________</p><p>日期：2026年___月___日</p>
-      </div>
-      <div class="cell right"><div class="sub"><div class="sub-h v1">第一版</div><p>此致</p><p>上海微创软件股份有限公司北京分公司</p><p>回复人：_________________</p><p>日期：2026年___月___日</p></div><div class="sub"><div class="sub-h v2">修改2</div><p>此致</p><p>上海微创软件股份有限公司北京分公司</p><p>回复人：_________________</p><p>日期：2026年___月___日</p></div><div class="plan"><div class="plan-row"><span class="plan-k">改法</span><span>与两版一致，保留回复人和日期。</span></div><div class="plan-row"><span class="plan-k">法律依据</span><span>—</span></div><div class="plan-row"><span class="plan-k benefit">赔偿利益</span><span>无需修改。</span></div></div>
-      </div>
-
+    <div class="desk"><div class="paper">
+        <h2 class="fin-t" id="f0">关于项目调整、待岗安排及劳动合同履行的书面异议函</h2>
+        <p id="f1">致：上海微创软件股份有限公司北京分公司<mark class="fx" data-jump="r2">（人力资源部及相关部门）<sup>2</sup></mark></p>
+        <p id="f2">本人________，系公司________岗位员工，劳动合同期限自________年____月____日起至________年____月____日止，劳动合同约定工作地点为________。</p>
+        <p id="f3">本人于2026年11月6日收到公司发送的《待岗通知》。通知称，因客户方业务调整、岗位裁撤，百度项目自2026年12月1日起不再需要本人继续服务，要求本人此前完成项目交接，并自2026年12月1日起前往通知载明的北京办公地点报到、出勤打卡，等待后续工作安排。</p>
+        <p id="f4">现就有关事项提出书面异议，并请求公司确认如下。</p>
+        <h3 class="fin-h" id="f5">一、本人愿意继续履行劳动合同，未申请待岗或离职</h3>
+        <p id="f6">通知所述调整原因为客户业务调整及岗位裁撤，未载明本人存在不能胜任工作或违反劳动纪律等情形。</p>
+        <p id="f7">本人未提出辞职、解除劳动合同，亦未申请待岗或无薪休假，愿意继续履行劳动合同。<mark class="fx" data-jump="r8">本人将按通知要求配合完成原项目工作交接，并于2026年12月1日前往北京市海淀区海淀大街8号中钢国际广场A座5层C区报到、出勤打卡，遵守公司合法合理的考勤与管理要求。上述报到与配合仅系履行出勤义务，不表示本人认可本次待岗的定性。<sup>8</sup></mark></p>
+        <p id="f8">本人上述报到、交接和配合行为，不表示本人认可本次待岗符合劳动合同第5.7条的适用条件，也不表示本人同意据此降低工资待遇、跨省市变更工作地点或放弃相关异议。</p>
+        <p id="f9"><mark class="fx" data-jump="r9">如公司在此期间安排实际工作，本人可申请每日前后一小时的弹性打卡；该申请以实际到岗工作为前提，与本人对待岗安排的异议无关。<sup>9</sup></mark></p>
+        <h3 class="fin-h" id="f10">二、本人对本次待岗是否符合合同约定条件提出异议</h3>
+        <p id="f11">劳动合同第5.7条将客观情况发生重大变化、公司无法安排本人在业务或项目上工作，作为安排待岗的条件。</p>
+        <p id="f12">现有通知说明了原项目不再需要本人继续服务，但尚未说明公司无法安排本人从事其他业务或项目工作的具体情况。原项目不再需要本人服务，与公司是否无法安排其他工作，仍需分别说明。</p>
+        <p id="f13">本人对本次是否符合第5.7条的适用条件提出书面异议，请公司明确：</p>
+        <p id="f14">1. 本人被安排至百度项目工作的实际用工形式；如认定属于劳务派遣，请明确派遣单位、用工单位，以及本次退回的具体事实和依据。</p>
+        <p id="f15">2. 本次安排待岗的具体事实、法律及合同依据；如同时依据公司规章制度，请提供相关内容及制定、公示或告知情况。</p>
+        <p id="f16">3. 北京地区适合本人岗位的匹配情况、公司已经或计划采取的岗位匹配措施，以及目前暂不能安排本人工作的具体原因。</p>
+        <p id="f17">4. 待岗预计期限、复岗条件及后续岗位匹配的预计时间。</p>
+        <p id="f18">5. 自2026年12月1日起拟安排本人的具体工作、培训及管理内容，以及公司是否将该期间认定为无工作期间。</p>
+        <p id="f19">本人提出异议期间，仍将按通知报到、出勤，并配合合理工作安排。本函同时作为本人依据劳动合同第11.1.3条、第14.2条就本次安排提出的书面异议。</p>
+        <h3 class="fin-h" id="f20">三、关于工作地点及后续岗位安排</h3>
+        <p id="f21"><mark class="fx" data-jump="r12">工作地点属于劳动合同约定的核心内容。根据《劳动合同法》第三十五条，变更劳动合同约定内容应当经双方协商一致并采用书面形式；即便公司主张客观情况发生重大变化，依据该法第四十条第（三）项，亦应先就变更劳动合同内容与本人协商，公司无权单方强制跨省市调岗。<sup>12</sup></mark></p>
+        <p id="f22"><mark class="fx" data-jump="r13">公司目前仍在正常承接并执行业务，百度项目亦在存续期内，除该项目外公司在北京仍有其他在执行业务，不属于停工、停产情形。依据《劳动合同法》第十七条、第二十九条、第三十条，公司应当继续按劳动合同约定为本人提供原岗位工作并及时足额支付劳动报酬，不得以待岗安排替代其用工安排义务。为便于核对，请公司一并披露当前在执项目清单及北京地区适合本人的岗位清单。<sup>13</sup></mark></p>
+        <p id="f23">对于此前会议中口头提出的跨城市外迁安排，本人因家庭及生活基础均在北京，跨城市迁移将造成实质性生活困难，明确不同意。</p>
+        <p id="f24">本人希望继续在北京履行劳动合同，愿意配合公司在北京地区提供的、符合劳动合同约定并与本人工作经历和能力合理匹配的岗位安排。</p>
+        <p id="f25">对于后续拟匹配的岗位，请公司提供具体工作地点、岗位职责、任职要求、职级及薪酬待遇等信息，以便充分沟通。</p>
+        <p id="f26">本人参与岗位沟通、简历更新和面试，不代表同意跨城市变更工作地点或降低劳动合同约定待遇；公司不应仅因本人参与上述流程而认定双方已经就相关变更达成一致。</p>
+        <h3 class="fin-h" id="f27">四、关于劳动报酬及社会保险、住房公积金</h3>
+        <p id="f28"><mark class="fx" data-jump="r15">公司通知所援引的劳动合同第5.7条，本人从未确认其适用于本次情形。该条以「客观情况发生重大变化、公司无法安排本人在业务或项目上工作」为前提，本次待岗是否符合该前提，尚待公司举证说明。<sup>15</sup></mark></p>
+        <p id="f29"><mark class="fx" data-jump="r15">在待岗是否依法成立确定之前，公司应按原劳动合同约定的正常工资标准支付劳动报酬。本人并非仅就支付金额提出异议，而是对本次待岗的成立条件本身提出异议。<sup>15</sup></mark></p>
+        <p id="f30">请公司书面明确本次是否拟适用第5.7条，以及适用的具体事实、各阶段起止日期、支付金额、工资组成和计算方式，并明确社会保险及住房公积金的缴纳地点、基数和扣缴安排；如拟调整，请说明依据。</p>
+        <p id="f31">如公司实际安排本人承担业务、项目工作，请按照合同关于恢复正常工作后薪资标准的约定执行。对于培训及其他工作安排，请结合实际履行情况依法支付相应劳动报酬。</p>
+        <p id="f32"><mark class="fx" data-jump="r15">如公司未按照劳动合同约定提供劳动条件，或未依法足额支付劳动报酬，本人保留依据《劳动合同法》第三十八条第（一）项、第（二）项解除劳动合同并主张经济补偿及其他劳动权益的权利。<sup>15</sup></mark></p>
+        <h3 class="fin-h" id="f33">五、关于项目交接</h3>
+        <p id="f34">本人将在2026年12月1日前，按照公司及客户明确的要求和授权流程，配合完成本人职责范围内的工作资料、工作账号权限及相关资产交接。</p>
+        <p id="f35"><mark class="fx" data-jump="r16">请公司明确接收人员、交接清单及验收方式，并在交接完成后由接收人员签署交接清单、出具书面确认。<sup>16</sup></mark></p>
+        <p id="f36">如交接需要其他人员配合或存在客观障碍，本人将及时反馈。</p>
+        <p id="f37">本人办理的是项目工作交接，不代表本人申请离职、同意解除劳动合同，亦不代表本人认可待岗、跨城市调动或降低待遇。</p>
+        <h3 class="fin-h" id="f38">六、关于后续处理及书面回复</h3>
+        <p id="f39">本人希望公司优先提供符合劳动合同约定条件的北京岗位。如公司认为无法继续按照劳动合同约定安排工作，请书面说明原因及拟采取的处理方案。本人未提出解除劳动合同。</p>
+        <p id="f40"><mark class="fx" data-jump="r17">请公司于收到本函后五个工作日内，书面撤销本次待岗决定，恢复本人原岗位及原工资待遇，并就上述事项一并作出书面回复；逾期未回复或未撤销的，本人将依法主张相应权利。<sup>17</sup></mark></p>
+        <p id="f41"><mark class="fx" data-jump="r18">如公司拟协商解除劳动合同，应由公司提出解除动议，双方协商一致后依法支付经济补偿；<sup>18</sup></mark>相关解除条件、经济补偿及其他应付款项，应另行协商并以明确的书面协议为准。</p>
+        <p id="f42">依法应支付的工资、奖金、未休年休假工资及其他款项，应分别列明项目及金额，不应在未明确明细的情况下笼统包含在经济补偿中。</p>
+        <p id="f43">本函仅用于提出异议、确认履约意愿及请求公司说明，不构成本人的辞职申请、解除劳动合同通知，亦不构成对降薪、跨城市调动或放弃劳动权益的同意。后续如另行签署协议，其效力及履行按协议约定和法律规定处理。</p>
+        <p id="f44"><mark class="fx" data-jump="r20">本人愿意在继续正常履行劳动合同的同时，以不降低劳动合同约定条件为前提，与公司就本次项目调整问题进行沟通。<sup>20</sup></mark></p>
+        <p class="fin-r" id="f45">此致</p>
+        <p class="fin-r" id="f46">上海微创软件股份有限公司北京分公司</p>
+        <p class="fin-r" id="f47">回复人：_________________</p>
+        <p class="fin-r" id="f48">日期：2026年___月___日</p>
     </div></div>
+
+    <div class="sec-head" style="margin-top:38px"><span class="sec-no">05</span><h2>修订清单</h2></div>
+    <p class="sec-desc">按正文出现顺序编号。「正文」「第一版」「修改2」为原文定位，「缺 n」为第 03 节对应缺陷。</p>
+    <div class="rgrid">
+      <article class="rcard" id="r1">
+        <div class="rtop"><span class="rn">01</span><h4>标题</h4><span class="rmk off">沿用修改2</span></div>
+        <p class="rhow"><span class="lb">改法</span>采用修改2 的总标题，覆盖「项目调整、待岗安排、合同履行」三个议题。</p>
+        <p class="rlaw"><span class="lb law">依据</span>—</p>
+        <p class="rgain"><span class="lb gain">赔偿利益</span>把后续关于劳动条件、报酬、解除补偿的主张一并纳入函件射程，避免被回复「超出函件范围」。</p>
+        <div class="rjump"><a class="chip" href="#" data-jump="f0">正文</a><a class="chip" href="#" data-jump="pv1-0">第一版</a><a class="chip" href="#" data-jump="pv2-0">修改2</a></div>
+      </article>
+      <article class="rcard" id="r2">
+        <div class="rtop"><span class="rn">02</span><h4>致送对象</h4><span class="rmk">正文已标</span></div>
+        <p class="rhow"><span class="lb">改法</span>收件人写「人力资源部及相关部门」，比「及相关管理部门」更具体。</p>
+        <p class="rlaw"><span class="lb law">依据</span>—</p>
+        <p class="rgain"><span class="lb gain">赔偿利益</span>送达实际决策部门，减少被前台或无关部门签收后搁置。</p>
+        <div class="rjump"><a class="chip" href="#" data-jump="f1">正文</a><a class="chip" href="#" data-jump="pv1-1">第一版</a><a class="chip" href="#" data-jump="pv2-1">修改2</a></div>
+      </article>
+      <article class="rcard" id="r3">
+        <div class="rtop"><span class="rn">03</span><h4>身份信息</h4><span class="rmk off">沿用修改2</span></div>
+        <p class="rhow"><span class="lb">改法</span>采用修改2：删身份证号栏、把「贵公司」改为「公司」、补「劳动合同约定工作地点」。</p>
+        <p class="rlaw"><span class="lb law">依据</span>《劳动合同法》第17条</p>
+        <p class="rgain"><span class="lb gain">赔偿利益</span>工作地点写入后成为约定核心条款，单方变更须协商一致，是跨市调岗抗辩的合同支点。</p>
+        <div class="rjump"><a class="chip" href="#" data-jump="f2">正文</a><a class="chip" href="#" data-jump="pv1-2">第一版</a><a class="chip" href="#" data-jump="pv2-2">修改2</a></div>
+      </article>
+      <article class="rcard" id="r4">
+        <div class="rtop"><span class="rn">04</span><h4>待岗事实陈述</h4><span class="rmk off">沿用修改2</span></div>
+        <p class="rhow"><span class="lb">改法</span>只作转述、不作评价；报到地址锚定为「通知载明的北京办公地点」。</p>
+        <p class="rlaw"><span class="lb law">依据</span>—</p>
+        <p class="rgain"><span class="lb gain">赔偿利益</span>避免在事实段作出「客户方业务调整成立」之类的自认；保留「等待后续安排」这一未提供工作的事实。</p>
+        <div class="rjump"><a class="chip" href="#" data-jump="f3">正文</a><a class="chip" href="#" data-jump="pv1-3">第一版</a><a class="chip" href="#" data-jump="pv2-3">修改2</a></div>
+      </article>
+      <article class="rcard" id="r5">
+        <div class="rtop"><span class="rn">05</span><h4>诉求开场白</h4><span class="rmk off">沿用修改2</span></div>
+        <p class="rhow"><span class="lb">改法</span>沿用修改2 的过渡句「现就有关事项提出书面异议，并请求公司确认如下」。</p>
+        <p class="rlaw"><span class="lb law">依据</span>—</p>
+        <p class="rgain"><span class="lb gain">赔偿利益</span>把后文统一界定为「异议＋请求」，为证明已提出异议、公司拒不改正留痕。</p>
+        <div class="rjump"><a class="chip" href="#" data-jump="f4">正文</a></div>
+      </article>
+      <article class="rcard" id="r6">
+        <div class="rtop"><span class="rn">06</span><h4>第一章 立场定性</h4><span class="rmk off">沿用修改2</span></div>
+        <p class="rhow"><span class="lb">改法</span>先表履约意愿、声明未申请待岗或离职，再点明报到与配合不构成对第5.7条的认可；把「明确不同意」后置。</p>
+        <p class="rlaw"><span class="lb law">依据</span>《劳动合同法》第38条</p>
+        <p class="rgain"><span class="lb gain">赔偿利益</span>公司难以主张本人拒不到岗或旷工，同时不放弃异议。</p>
+        <div class="rjump"><a class="chip" href="#" data-jump="f5">正文</a><a class="chip" href="#" data-jump="pv1-4">第一版</a><a class="chip" href="#" data-jump="pv2-5">修改2</a></div>
+      </article>
+      <article class="rcard" id="r7">
+        <div class="rtop"><span class="rn">07</span><h4>通知未载明不能胜任或违纪</h4><span class="rmk off">沿用修改2</span></div>
+        <p class="rhow"><span class="lb">改法</span>新增此句，明确点出通知未给出任何不利事实依据。</p>
+        <p class="rlaw"><span class="lb law">依据</span>《劳动合同法》第40条第(二)项</p>
+        <p class="rgain"><span class="lb gain">赔偿利益</span>提前固定「公司未以不能胜任为由」的事实；公司日后改口即自相矛盾。</p>
+        <div class="rjump"><a class="chip" href="#" data-jump="f6">正文</a><a class="chip" href="#" data-jump="pv2-6">修改2</a></div>
+      </article>
+      <article class="rcard" id="r8">
+        <div class="rtop"><span class="rn">08</span><h4>报到与配合声明</h4><span class="rmk">正文已标</span></div>
+        <p class="rhow"><span class="lb">改法</span>收窄为「报到只系履行出勤义务，不表示认可本次待岗的定性／符合第5.7条适用条件」。</p>
+        <p class="rlaw"><span class="lb law">依据</span>《劳动合同法》第35条</p>
+        <p class="rgain"><span class="lb gain">赔偿利益</span>既保留出勤事实（防止被认定旷工），又不构成默示同意变更——这是保留解除权的关键。</p>
+        <div class="rjump"><a class="chip" href="#" data-jump="f7">正文</a><a class="chip" href="#" data-jump="pv1-14">第一版</a><a class="chip" href="#" data-jump="pv2-8">修改2</a><a class="chip dim" href="#" data-jump="d6">缺 6</a></div>
+      </article>
+      <article class="rcard" id="r9">
+        <div class="rtop"><span class="rn">09</span><h4>弹性打卡申请</h4><span class="rmk">正文已标</span></div>
+        <p class="rhow"><span class="lb">改法</span>加回第一版的弹性打卡申请，但把前提改为「如公司在此期间安排实际工作」。</p>
+        <p class="rlaw"><span class="lb law">依据</span>—</p>
+        <p class="rgain"><span class="lb gain">赔偿利益</span>保留合作姿态，又避免「申请弹性打卡」被解读为已接受待岗安排。</p>
+        <div class="rjump"><a class="chip" href="#" data-jump="f9">正文</a><a class="chip" href="#" data-jump="pv1-18">第一版</a><a class="chip dim" href="#" data-jump="d9">缺 9</a></div>
+      </article>
+      <article class="rcard" id="r10">
+        <div class="rtop"><span class="rn">10</span><h4>第二章 第5.7条适用前提</h4><span class="rmk off">沿用修改2</span></div>
+        <p class="rhow"><span class="lb">改法</span>以条文文义解释为主攻：原项目不再需要 ≠ 公司无法安排其他工作，两者须分别说明。</p>
+        <p class="rlaw"><span class="lb law">依据</span>劳动合同第5.7条；《劳动合同法》第35条</p>
+        <p class="rgain"><span class="lb gain">赔偿利益</span>把「无法安排其他工作」的举证责任推给公司；待岗前提不成立，降薪即失去基础。</p>
+        <div class="rjump"><a class="chip" href="#" data-jump="f11">正文</a><a class="chip" href="#" data-jump="pv1-7">第一版</a><a class="chip" href="#" data-jump="pv2-11">修改2</a></div>
+      </article>
+      <article class="rcard" id="r11">
+        <div class="rtop"><span class="rn">11</span><h4>书面询问清单</h4><span class="rmk off">沿用修改2</span></div>
+        <p class="rhow"><span class="lb">改法</span>保留修改2 的五项询问（用工形式、待岗依据、北京岗位匹配、待岗期限、12月起工作内容）。</p>
+        <p class="rlaw"><span class="lb law">依据</span>《劳动争议调解仲裁法》第6条</p>
+        <p class="rgain"><span class="lb gain">赔偿利益</span>公司不答复或答非所问，仲裁中可主张由其承担不利后果。</p>
+        <div class="rjump"><a class="chip" href="#" data-jump="f14">正文</a><a class="chip" href="#" data-jump="pv2-14">修改2</a></div>
+      </article>
+      <article class="rcard" id="r12">
+        <div class="rtop"><span class="rn">12</span><h4>第三章 第三十五条论证</h4><span class="rmk">正文已标</span></div>
+        <p class="rhow"><span class="lb">改法</span>回补第一版的第三十五条论证，并加第四十条第（三）项「应先协商变更」。</p>
+        <p class="rlaw"><span class="lb law">依据</span>《劳动合同法》第35条、第40条第(三)项</p>
+        <p class="rgain"><span class="lb gain">赔偿利益</span>跨市调岗无协商一致即不生效；公司强行外迁构成未按约定提供劳动条件。</p>
+        <div class="rjump"><a class="chip" href="#" data-jump="f21">正文</a><a class="chip" href="#" data-jump="pv1-5">第一版</a><a class="chip dim" href="#" data-jump="d7">缺 7</a></div>
+      </article>
+      <article class="rcard" id="r13">
+        <div class="rtop"><span class="rn">13</span><h4>项目存续：应按原岗位提供工作</h4><span class="rmk">正文已标</span></div>
+        <p class="rhow"><span class="lb">改法</span>新增：公司经营与百度项目仍在存续、不属于停工停产，应按原岗位提供工作并支付报酬；同时请公司披露在执项目与北京岗位清单。</p>
+        <p class="rlaw"><span class="lb law">依据</span>《劳动合同法》第17、29、30条；《工资支付暂行规定》第12条</p>
+        <p class="rgain"><span class="lb gain">赔偿利益</span>待岗的法定前提是停工停产，项目存续即前提不成立；直接支撑恢复原岗位与补发工资差额的主张。</p>
+        <div class="rjump"><a class="chip" href="#" data-jump="f22">正文</a><a class="chip dim" href="#" data-jump="d13">缺 13</a></div>
+      </article>
+      <article class="rcard" id="r14">
+        <div class="rtop"><span class="rn">14</span><h4>岗位匹配与「参与≠同意」</h4><span class="rmk off">沿用修改2</span></div>
+        <p class="rhow"><span class="lb">改法</span>要求公司提供工作地点、职责、任职要求、职级、薪酬；声明参与沟通、更新简历、面试不构成同意。</p>
+        <p class="rlaw"><span class="lb law">依据</span>《劳动合同法》第35条</p>
+        <p class="rgain"><span class="lb gain">赔偿利益</span>推动公司实际匹配岗位，同时堵住「已参加面试＝已同意调岗」的推定。</p>
+        <div class="rjump"><a class="chip" href="#" data-jump="f23">正文</a><a class="chip" href="#" data-jump="pv1-5">第一版</a><a class="chip" href="#" data-jump="pv2-21">修改2</a></div>
+      </article>
+      <article class="rcard" id="r15">
+        <div class="rtop"><span class="rn">15</span><h4>第四章 劳动报酬</h4><span class="rmk">正文已标</span></div>
+        <p class="rhow"><span class="lb">改法</span>删除「知悉第5.7条」的自认；改为「待岗是否成立未定，应先按原标准支付」；并列第38条第（一）（二）项。</p>
+        <p class="rlaw"><span class="lb law">依据</span>《劳动合同法》第38条第(一)(二)项；《北京市工资支付规定》第27条</p>
+        <p class="rgain"><span class="lb gain">赔偿利益</span>不在金额上纠缠（最低工资本身可能合法），而在「待岗是否成立」上发力；并列「未提供劳动条件」，扩大被迫解除与 N 的主张空间。</p>
+        <div class="rjump"><a class="chip" href="#" data-jump="f28">正文</a><a class="chip" href="#" data-jump="pv1-19">第一版</a><a class="chip" href="#" data-jump="pv2-25">修改2</a><a class="chip dim" href="#" data-jump="d2">缺 2</a><a class="chip dim" href="#" data-jump="d3">缺 3</a><a class="chip dim" href="#" data-jump="d12">缺 12</a></div>
+      </article>
+      <article class="rcard" id="r16">
+        <div class="rtop"><span class="rn">16</span><h4>第五章 工作交接</h4><span class="rmk">正文已标</span></div>
+        <p class="rhow"><span class="lb">改法</span>限定「职责范围内」「按授权流程」，要求接收人签署交接清单并出具书面确认；补「交接不代表离职」。</p>
+        <p class="rlaw"><span class="lb law">依据</span>《劳动合同法》第50条</p>
+        <p class="rgain"><span class="lb gain">赔偿利益</span>履行交接义务防被指拒不配合；书面确认可作为抗辩「未完成交接」的证据。</p>
+        <div class="rjump"><a class="chip" href="#" data-jump="f34">正文</a><a class="chip" href="#" data-jump="pv1-27">第一版</a><a class="chip" href="#" data-jump="pv2-31">修改2</a><a class="chip dim" href="#" data-jump="d11">缺 11</a></div>
+      </article>
+      <article class="rcard" id="r17">
+        <div class="rtop"><span class="rn">17</span><h4>第六章 明确请求撤销待岗</h4><span class="rmk">正文已标</span></div>
+        <p class="rhow"><span class="lb">改法</span>明确要求 5 个工作日内书面撤销待岗、恢复原岗位及原工资待遇，并写明逾期后果。</p>
+        <p class="rlaw"><span class="lb law">依据</span>《劳动合同法》第38条</p>
+        <p class="rgain"><span class="lb gain">赔偿利益</span>没有撤销请求，就无法证明公司「拒不改正」；这是后续被迫解除并主张经济补偿的请求基础。</p>
+        <div class="rjump"><a class="chip" href="#" data-jump="f39">正文</a><a class="chip" href="#" data-jump="pv1-22">第一版</a><a class="chip" href="#" data-jump="pv2-35">修改2</a><a class="chip dim" href="#" data-jump="d4">缺 4</a><a class="chip dim" href="#" data-jump="d10">缺 10</a></div>
+      </article>
+      <article class="rcard" id="r18">
+        <div class="rtop"><span class="rn">18</span><h4>协商解除：由公司提出动议</h4><span class="rmk">正文已标</span></div>
+        <p class="rhow"><span class="lb">改法</span>改为「如公司拟协商解除，应由公司提出解除动议，协商一致后依法支付经济补偿」。</p>
+        <p class="rlaw"><span class="lb law">依据</span>《劳动合同法》第36条、第46条第(二)项</p>
+        <p class="rgain"><span class="lb gain">赔偿利益</span>N 的支付前提是「用人单位提出」；若由劳动者提出，公司可拒付。</p>
+        <div class="rjump"><a class="chip" href="#" data-jump="f41">正文</a><a class="chip" href="#" data-jump="pv1-25">第一版</a><a class="chip" href="#" data-jump="pv2-37">修改2</a><a class="chip dim" href="#" data-jump="d1">缺 1</a></div>
+      </article>
+      <article class="rcard" id="r19">
+        <div class="rtop"><span class="rn">19</span><h4>不构成同意声明</h4><span class="rmk off">沿用修改2</span></div>
+        <p class="rhow"><span class="lb">改法</span>采用修改2 的完整声明，保留「后续另行签署协议按协议约定处理」。</p>
+        <p class="rlaw"><span class="lb law">依据</span>《民法典》第136条、第496条</p>
+        <p class="rgain"><span class="lb gain">赔偿利益</span>到岗、打卡、交接都会形成客观事实；声明越完整，越难被推定默示同意。</p>
+        <div class="rjump"><a class="chip" href="#" data-jump="f43">正文</a><a class="chip" href="#" data-jump="pv1-26">第一版</a><a class="chip" href="#" data-jump="pv2-39">修改2</a></div>
+      </article>
+      <article class="rcard" id="r20">
+        <div class="rtop"><span class="rn">20</span><h4>边履行边协商</h4><span class="rmk">正文已标</span></div>
+        <p class="rhow"><span class="lb">改法</span>保留该句，加限定「以不降低劳动合同约定条件为前提」。</p>
+        <p class="rlaw"><span class="lb law">依据</span>《劳动合同法》第35条</p>
+        <p class="rgain"><span class="lb gain">赔偿利益</span>留协商台阶，同时锁住底线，避免被解读为接受降薪或协商解除。</p>
+        <div class="rjump"><a class="chip" href="#" data-jump="f44">正文</a><a class="chip" href="#" data-jump="pv2-40">修改2</a><a class="chip dim" href="#" data-jump="d8">缺 8</a></div>
+      </article>
+      <article class="rcard" id="r21">
+        <div class="rtop"><span class="rn">21</span><h4>落款</h4><span class="rmk off">沿用修改2</span></div>
+        <p class="rhow"><span class="lb">改法</span>与两版一致，保留回复人与日期。</p>
+        <p class="rlaw"><span class="lb law">依据</span>—</p>
+        <p class="rgain"><span class="lb gain">赔偿利益</span>无需修改。</p>
+        <div class="rjump"><a class="chip" href="#" data-jump="f45">正文</a><a class="chip" href="#" data-jump="pv1-30">第一版</a><a class="chip" href="#" data-jump="pv2-41">修改2</a></div>
+      </article>
+    </div>
   </section>
 
   <footer class="ft">
     <span>原文一字未改 · 问题判断与条文引用仅供参考，正式仲裁前请交由执业劳动法律师复核</span>
-    <a href="./">返回入口</a>
+    <span>核对日期 2026-11-10</span>
   </footer>
 </main>
 
@@ -1052,8 +974,7 @@ mark.fx sup,.fx-demo sup{margin-left:2px;font:600 9px/1 var(--mono);color:var(--
     ink.style.width = t.offsetWidth + 'px';
     ink.style.transform = 'translateX(' + t.offsetLeft + 'px)';
   }
-  function select(id, opts){
-    opts = opts || {};
+  function select(id){
     var active = null;
     tabs.forEach(function(t){
       var on = t.getAttribute('data-panel') === id;
@@ -1068,21 +989,52 @@ mark.fx sup,.fx-demo sup{margin-left:2px;font:600 9px/1 var(--mono);color:var(--
       if(l < box.scrollLeft + 8) box.scrollLeft = Math.max(0, l - 12);
       else if(r > box.scrollLeft + box.clientWidth - 8) box.scrollLeft = r - box.clientWidth + 12;
     }
-    if(active && opts.scroll && bar){
-      var top = bar.getBoundingClientRect().top + window.pageYOffset;
-      if(window.pageYOffset > top + 4) window.scrollTo({ top: top, behavior: 'smooth' });
-    }
-    if(opts.hash) history.replaceState(null, '', '#' + id);
   }
+  function panelOf(id){
+    var el = document.getElementById(id);
+    if(!el) return null;
+    var p = el.closest('.panel');
+    return p ? p.id : null;
+  }
+
+  function jumpTo(id){
+    var el = document.getElementById(id);
+    if(!el) return;
+    var pid = panelOf(id);
+    if(pid) select(pid);
+    requestAnimationFrame(function(){
+      var y = el.getBoundingClientRect().top + window.pageYOffset - 78;
+      window.scrollTo({top: y, behavior: 'smooth'});
+      el.classList.remove('flash');
+      void el.offsetWidth;
+      el.classList.add('flash');
+      setTimeout(function(){ el.classList.remove('flash'); }, 1600);
+    });
+  }
+
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('[data-jump]');
+    if(!a) return;
+    e.preventDefault();
+    jumpTo(a.getAttribute('data-jump'));
+  });
+
   tabs.forEach(function(t){
-    t.addEventListener('click', function(){ select(t.getAttribute('data-panel'), {scroll:true, hash:true}); });
+    t.addEventListener('click', function(){
+      select(t.getAttribute('data-panel'));
+      history.replaceState(null, '', '#' + t.getAttribute('data-panel'));
+      if(bar){
+        var top = bar.getBoundingClientRect().top + window.pageYOffset;
+        if(window.pageYOffset > top + 4) window.scrollTo({top: top, behavior: 'smooth'});
+      }
+    });
     t.addEventListener('keydown', function(e){
       var i = tabs.indexOf(t), n = null;
       if(e.key === 'ArrowRight') n = tabs[(i + 1) % tabs.length];
       else if(e.key === 'ArrowLeft') n = tabs[(i - 1 + tabs.length) % tabs.length];
       else if(e.key === 'Home') n = tabs[0];
       else if(e.key === 'End') n = tabs[tabs.length - 1];
-      if(n){ e.preventDefault(); select(n.getAttribute('data-panel'), {scroll:true, hash:true}); n.focus(); }
+      if(n){ e.preventDefault(); select(n.getAttribute('data-panel')); n.focus(); }
     });
   });
 
@@ -1091,49 +1043,34 @@ mark.fx sup,.fx-demo sup{margin-left:2px;font:600 9px/1 var(--mono);color:var(--
     var el = h ? document.getElementById(h) : null;
     return (el && el.classList.contains('panel')) ? h : 's1';
   }
-  window.addEventListener('hashchange', function(){ select(fromHash()); });
   var initial = fromHash();
+  var tabsBox = document.querySelector('.tabs');
+  if(tabsBox) tabsBox.classList.add('noanim');
   select(initial);
+  requestAnimationFrame(function(){
+    if(tabsBox) tabsBox.classList.remove('noanim');
+  });
   if(initial !== 's1' && bar){
     requestAnimationFrame(function(){
-      window.scrollTo({ top: bar.getBoundingClientRect().top + window.pageYOffset });
+      window.scrollTo({top: bar.getBoundingClientRect().top + window.pageYOffset});
     });
   }
+  window.addEventListener('hashchange', function(){
+    var h = (location.hash || '').replace('#', '');
+    if(h && panelOf(h)) select(panelOf(h));
+    else if(document.getElementById(h)) jumpTo(h);
+  });
   window.addEventListener('resize', function(){ moveInk(document.querySelector('.tab[aria-selected="true"]')); });
 
-  /* 分屏筛选 */
-  var rail = [].slice.call(document.querySelectorAll('.rail button'));
-  var cards = [].slice.call(document.querySelectorAll('#dCards .d-card'));
-  var title = document.getElementById('paneTitle');
-  var hint = document.getElementById('paneHint');
-  var NAME = {all:'全部修改', hi:'高风险', mid:'需修正', low:'提示', v1:'第一版', v2:'修改2', both:'两版共有'};
-  var HINT = {
-    all:'按严重程度排序，高风险在前',
-    hi:'可能直接削弱主张，建议改后再发',
-    mid:'表述或依据不足，建议补强',
-    low:'不影响主线，可择机优化',
-    v1:'只出现在第一版的问题',
-    v2:'只出现在修改2 的问题',
-    both:'两版都存在的共性缺口'
-  };
-  function filter(f){
-    var shown = 0;
-    cards.forEach(function(c){
-      var hit = (f === 'all') || c.getAttribute('data-lvl') === f || c.getAttribute('data-ver') === f;
-      c.hidden = !hit;
-      if(hit){
-        shown++;
-        c.style.animation = 'none';
-        void c.offsetWidth;
-        c.style.animation = '';
-      }
+  /* 严重程度筛选 */
+  var pills = [].slice.call(document.querySelectorAll('.pill'));
+  var cards = [].slice.call(document.querySelectorAll('.dcard2'));
+  pills.forEach(function(b){
+    b.addEventListener('click', function(){
+      var f = b.getAttribute('data-filter');
+      pills.forEach(function(x){ x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      cards.forEach(function(c){ c.hidden = !(f === 'all' || c.getAttribute('data-lvl') === f); });
     });
-    rail.forEach(function(b){ b.setAttribute('aria-pressed', b.getAttribute('data-filter') === f ? 'true' : 'false'); });
-    if(title) title.textContent = NAME[f] + ' ' + shown + ' 项';
-    if(hint) hint.textContent = HINT[f] || '';
-  }
-  rail.forEach(function(b){
-    b.addEventListener('click', function(){ filter(b.getAttribute('data-filter')); });
   });
 })();
 </script>
