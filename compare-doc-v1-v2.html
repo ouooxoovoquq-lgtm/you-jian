@@ -137,7 +137,8 @@ mark.fx sup{margin-left:2px;font:600 9px/1 var(--mono);color:var(--amber-deep);v
 .dcard2.lead{border-left:3px solid var(--seal)}
 .dcard2 .dtop{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px}
 .dcard2 .ver{font:500 11px/18px var(--mono);color:var(--ink-3);flex:1}
-.dgrow{font:600 10px/18px var(--mono);color:var(--ink-3);padding:0 6px;border-radius:3px;background:rgba(26,26,24,.05)}
+.dno{font:600 10px/18px var(--mono);color:var(--seal-deep);background:var(--seal-soft);
+  padding:1px 7px;border-radius:3px;letter-spacing:.02em;white-space:nowrap;flex:none}
 .dquote{margin:0 0 8px;padding:7px 10px;background:#F4F3EE;border-radius:4px;font-size:12.3px;line-height:20px;color:var(--ink-2)}
 .dprob{margin:0 0 9px;font-size:12.6px;line-height:21px;color:var(--ink-2)}
 .dadv{margin:0;padding-top:8px;border-top:1px dashed var(--line-soft);font-size:12.6px;line-height:21px}
@@ -345,7 +346,7 @@ mark.flash{animation:flash2 1.5s ease}
 
   <section class="panel" id="s2" role="tabpanel" aria-labelledby="t2" hidden>
     <div class="sec-head"><span class="sec-no">02</span><h2>分层差异</h2></div>
-    <p class="sec-desc">只列有分歧的 <b>18 组</b>，按 <b>实质分歧 → 表述差异 → 单方增补</b> 三级排列；两版逐字一致的段落不展开，统一收在末尾。每组下方给出<b>可直接落笔的最优方案</b>与该方案的收益。红色上标为第 03 节的缺陷编号，点击可跳转。</p>
+    <p class="sec-desc">只列有分歧的 <b>18 组</b>，按 <b>实质分歧 → 表述差异 → 单方增补</b> 三级排列；两版逐字一致的段落不展开，统一收在末尾。每组下方给出<b>可直接落笔的最优方案</b>与该方案的收益。组标题后的「修改项 n」标签指向第 03 节同号卡片，点击可跳转。</p>
       <article class="dcard">
         <div class="dn">01</div>
         <div class="dbody">
@@ -358,7 +359,7 @@ mark.flash{animation:flash2 1.5s ease}
       <article class="dcard">
         <div class="dn">02</div>
         <div class="dbody">
-          <div class="dtop"><span class="lv l1">实质分歧</span><h3>第5.7条：三点否定，还是文义解释</h3><a class="chip" href="#" data-jump="d5">缺 5</a><a class="chip" href="#" data-jump="d13">缺 13</a></div>
+          <div class="dtop"><span class="lv l1">实质分歧</span><h3>第5.7条：三点否定，还是文义解释</h3><a class="chip" href="#" data-jump="d5">修改项 5</a><a class="chip" href="#" data-jump="d13">修改项 13</a></div>
           <div class="sides"><div class="side"><div class="sh v1">第一版</div><p id="pv1-7">贵司援引劳动合同第5.7条安排待岗，本人认为该条款的适用前提不成立：</p><p id="pv1-8">1. 贵司作为专业的信息技术服务外包公司，<mark class="df" data-jump="d13">在北京地区仍有多项在执行业务和项目<sup>13</sup></mark>，并非&quot;无法安排乙方在业务、项目上工作&quot;，<mark class="df" data-jump="d5">而是未积极履行用人单位的用工安排义务<sup>5</sup></mark>；</p><p id="pv1-9">2. 仅因单个派驻项目结束即安排员工长期待岗，实质上是将贵司的经营风险转嫁给劳动者，违背了劳动合同法的立法本意；</p><p id="pv1-10">3. 本次待岗仅针对百度项目外迁涉及的少数员工，具有明显的针对性，并非贵司整体经营困难导致的普遍性停工停产。</p></div><div class="side"><div class="sh v2">修改2</div><p id="pv2-10">二、本人对本次待岗是否符合合同约定条件提出异议</p><p id="pv2-11">劳动合同第5.7条将客观情况发生重大变化、公司无法安排本人在业务或项目上工作，作为安排待岗的条件。</p><p id="pv2-12">现有通知说明了原项目不再需要本人继续服务，<mark class="df" data-jump="d13">但尚未说明公司无法安排本人从事其他业务或项目工作的具体情况<sup>13</sup></mark>。原项目不再需要本人服务，与公司是否无法安排其他工作，仍需分别说明。</p></div></div>
           <p class="why">第一版用「仍有在执行业务」「经营风险转嫁」「仅针对少数员工」三点直接否定，力度大但三点均属事实主张；修改2 只做条文文义拆解，稳但少一层压迫。</p>
           <div class="best"><span class="bl">最优方案</span><p>以修改2 的文义解释为主攻（「原项目不再需要」≠「公司无法安排其他工作」），把第一版的三个论点降为补强附在其后，并声明持有相应证据。</p><p class="gain"><b>收益</b>主攻点把举证责任推给公司，补强点保留压力，两者不冲突。</p></div>
@@ -376,7 +377,7 @@ mark.flash{animation:flash2 1.5s ease}
       <article class="dcard">
         <div class="dn">04</div>
         <div class="dbody">
-          <div class="dtop"><span class="lv l1">实质分歧</span><h3>劳动报酬：打「金额」还是打「成立」</h3><a class="chip" href="#" data-jump="d2">缺 2</a><a class="chip" href="#" data-jump="d3">缺 3</a><a class="chip" href="#" data-jump="d12">缺 12</a></div>
+          <div class="dtop"><span class="lv l1">实质分歧</span><h3>劳动报酬：打「金额」还是打「成立」</h3><a class="chip" href="#" data-jump="d2">修改项 2</a><a class="chip" href="#" data-jump="d3">修改项 3</a><a class="chip" href="#" data-jump="d12">修改项 12</a></div>
           <div class="sides"><div class="side"><div class="sh v1">第一版</div><p id="pv1-19">三、关于劳动报酬的明确主张</p><p id="pv1-20">贵司通知中提及的待岗期间薪酬安排，本人不予认可。在双方就劳动合同变更达成书面一致前，<mark class="df" data-jump="d2">贵司应按原劳动合同约定的工资标准足额支付本人劳动报酬，不得单方降薪<sup>2</sup></mark>。</p><p id="pv1-21">若贵司自第二个月起单方按北京市最低工资标准发放报酬，<mark class="df" data-jump="d2">本人将认为该行为构成未足额支付劳动报酬<sup>2</sup></mark>，并<mark class="df" data-jump="d12">保留依据《劳动合同法》第三十八条解除劳动合同并要求经济补偿的权利<sup>12</sup></mark>。</p></div><div class="side"><div class="sh v2">修改2</div><p id="pv2-25">四、关于劳动报酬及社会保险、住房公积金</p><p id="pv2-26"><mark class="df" data-jump="d3">本人知悉劳动合同第5.7条载有待岗首月按双方约定薪资标准支付、第二个月起按劳动合同履行地最低工资标准支付，以及恢复正常工作后恢复约定薪资标准的内容。<sup>3</sup></mark></p><p id="pv2-27">但本人对本次安排是否符合该条款的适用条件提出异议，并主张继续按照原劳动合同约定的正常工资标准支付劳动报酬。</p><p id="pv2-29">如公司实际安排本人承担业务、项目工作，请按照合同关于恢复正常工作后薪资标准的约定执行。对于培训及其他工作安排，请结合实际履行情况依法支付相应劳动报酬。</p><p id="pv2-30">如实际发生未依法足额支付劳动报酬或其他侵害本人劳动权益的情形，<mark class="df" data-jump="d12">本人保留根据届时事实依法主张工资差额、经济补偿及其他劳动权益的权利<sup>12</sup></mark>。</p></div></div>
           <p class="why">第一版主张「必须按原标准全额支付，否则即未足额支付」，姿态硬，但最低工资本身可能合法；修改2 先自认「知悉第5.7条」再提异议，等于给对方递了合意证据。</p>
           <div class="best"><span class="bl">最优方案</span><p>删掉修改2 的自认；不主张「必须全额」，改为「待岗是否成立尚未确定，故应先按原标准支付」；并列援引第三十八条第（一）（二）项。</p><p class="gain"><b>收益</b>争点落在公司最难证明的「待岗前提」上；并列「未提供劳动条件」，扩大被迫解除的成立面。</p></div>
@@ -385,7 +386,7 @@ mark.flash{animation:flash2 1.5s ease}
       <article class="dcard">
         <div class="dn">05</div>
         <div class="dbody">
-          <div class="dtop"><span class="lv l1">实质分歧</span><h3>诉求：要不要明确提出「撤销待岗」</h3><a class="chip" href="#" data-jump="d1">缺 1</a><a class="chip" href="#" data-jump="d4">缺 4</a><a class="chip" href="#" data-jump="d10">缺 10</a></div>
+          <div class="dtop"><span class="lv l1">实质分歧</span><h3>诉求：要不要明确提出「撤销待岗」</h3><a class="chip" href="#" data-jump="d1">修改项 1</a><a class="chip" href="#" data-jump="d4">修改项 4</a><a class="chip" href="#" data-jump="d10">修改项 10</a></div>
           <div class="sides"><div class="side"><div class="sh v1">第一版</div><p id="pv1-22">四、本人诉求</p><p id="pv1-23">1. 请贵司于收到本函之日起<mark class="df" data-jump="d10">3个工作日内<sup>10</sup></mark>，撤销本次单方待岗决定；</p><p id="pv1-24">2. 请贵司自2026年12月1日起按原劳动合同约定标准足额支付本人劳动报酬，并在北京范围内为本人匹配与原岗位（                                   ）职级、薪酬标准、工作条件相当的工作岗位；</p><p id="pv1-25">3. 若贵司客观上无法在北京提供同等条件岗位，请依据劳动合同第11.2.4条之规定，<mark class="df" data-jump="d1">与本人协商解除劳动合同事宜，并依法支付经济补偿<sup>1</sup></mark>（按本人在贵司工作年限，每满一年支付一个月工资的标准计算，即 N 个月工资（N 按工作年限折算）。</p><p id="pv1-26">双方未达成书面协议前，本人不接受任何单方变更，包括但不限于待岗安排、跨城市调岗、降薪等。</p></div><div class="side"><div class="sh v2">修改2</div><p id="pv2-35">六、关于后续处理及书面回复</p><p id="pv2-36">本人希望公司优先提供符合劳动合同约定条件的北京岗位。如公司认为无法继续按照劳动合同约定安排工作，<mark class="df" data-jump="d4">请书面说明原因及拟采取的处理方案<sup>4</sup></mark>。本人未提出解除劳动合同。</p><p id="pv2-37">如公司后续提出协商解除，相关解除条件、经济补偿及其他应付款项，应另行协商并以明确协议为准。依法应支付的工资、奖金、未休年休假工资及其他款项，应分别列明项目及金额，不应在未明确明细的情况下笼统包含在经济补偿中。</p><p id="pv2-38">请公司于收到本函后五个工作日内，就上述事项作出书面回复。</p></div></div>
           <p class="why">第一版三项诉求具体可执行，但第3项主体错位（须单位提出解除才有补偿）；修改2 改为「优先提供北京岗位」，语气软，却没有可落地的请求。</p>
           <div class="best"><span class="bl">最优方案</span><p>保留第一版三项结构，但：3个工作日→5个工作日；「与本人协商解除」→「由公司提出解除动议」；补入「书面撤销待岗、恢复原岗位及原工资待遇」。</p><p class="gain"><b>收益</b>有明确请求才能证明公司「拒不改正」，这是后续被迫解除并主张 N 的请求基础。</p></div>
@@ -421,7 +422,7 @@ mark.flash{animation:flash2 1.5s ease}
       <article class="dcard">
         <div class="dn">09</div>
         <div class="dbody">
-          <div class="dtop"><span class="lv l2">表述差异</span><h3>报到与配合：否认到哪一层</h3><a class="chip" href="#" data-jump="d6">缺 6</a></div>
+          <div class="dtop"><span class="lv l2">表述差异</span><h3>报到与配合：否认到哪一层</h3><a class="chip" href="#" data-jump="d6">修改项 6</a></div>
           <div class="sides"><div class="side"><div class="sh v1">第一版</div><p id="pv1-12">二、关于报到事宜的郑重声明</p><p id="pv1-13">依据劳动合同第11.1.3条约定，本人在此郑重声明：</p><p id="pv1-14">1. <mark class="df" data-jump="d6">本人将于2026年12月1日按通知地址报到<sup>6</sup></mark>，但本人到场仅为等候贵司在北京地区安排同等条件新项目，不认可本人处于&quot;待岗&quot;状态；</p><p id="pv1-15">2. 报到、打卡行为不视为对本次单方待岗安排的同意或追认；</p><p id="pv1-16">3. 贵司安排的面试等对接事宜，本人将积极配合，但面试结果不影响本人要求按原合同标准履行的权利；</p><p id="pv1-17">4. 本函即为本人对本次岗位/工作状态调整的书面异议，不存在&quot;到岗后一个月未提异议视为同意&quot;之适用情形。</p></div><div class="side"><div class="sh v2">修改2</div><p id="pv2-8">本人将按照通知要求配合完成原项目工作交接，并于2026年12月1日前往北京市海淀区海淀大街8号中钢国际广场A座5层C区报到，遵守公司合法合理的考勤和管理要求，配合合理的工作、培训、岗位匹配及项目面试安排。</p><p id="pv2-9">本人上述报到、交接和配合行为，不表示本人认可本次待岗符合劳动合同第5.7条的适用条件，也不表示本人同意据此降低工资待遇、跨省市变更工作地点或放弃相关异议。</p></div></div>
           <p class="why">第一版五项声明直接否认「待岗状态」，否认彻底、易被视为不配合；修改2 收窄为「不认可符合第5.7条适用条件」，法律上更准确，也默认了待岗这一状态。</p>
           <div class="best"><span class="bl">最优方案</span><p>采用修改2 的收窄表述（报到只系履行出勤义务），保留第一版第4点「不存在到岗后一个月视为同意」的说法。</p><p class="gain"><b>收益</b>既不构成默示同意变更，又堵住公司「已过异议期」的抗辩。</p></div>
@@ -448,7 +449,7 @@ mark.flash{animation:flash2 1.5s ease}
       <article class="dcard">
         <div class="dn">12</div>
         <div class="dbody">
-          <div class="dtop"><span class="lv l2">表述差异</span><h3>工作交接的边界</h3><a class="chip" href="#" data-jump="d10">缺 10</a><a class="chip" href="#" data-jump="d11">缺 11</a></div>
+          <div class="dtop"><span class="lv l2">表述差异</span><h3>工作交接的边界</h3><a class="chip" href="#" data-jump="d10">修改项 10</a><a class="chip" href="#" data-jump="d11">修改项 11</a></div>
           <div class="sides"><div class="side"><div class="sh v1">第一版</div><p id="pv1-27">五、关于工作交接</p><p id="pv1-28">本人将在2026年12月1日前完成百度项目对应工作的交接，<mark class="df" data-jump="d11">完整移交工作资料、账号及相关资产<sup>11</sup></mark>。工作交接的履行，不视为对本次待岗安排或跨城市调岗的认可。</p><p id="pv1-29">请贵司于收到本函之日起<mark class="df" data-jump="d10">3个工作日内<sup>10</sup></mark>，就上述事项作出书面答复。逾期未答复或答复未能解决本人合理诉求的，本人将通过劳动仲裁等法律途径维护自身合法权益。</p></div><div class="side"><div class="sh v2">修改2</div><p id="pv2-31">五、关于项目交接</p><p id="pv2-32">本人将在2026年12月1日前，按照公司及客户明确的要求和授权流程，配合完成本人职责范围内的工作资料、工作账号权限及相关资产交接。</p><p id="pv2-33">请公司明确接收人员、交接清单及验收方式，<mark class="df" data-jump="d11">并在交接完成后给予书面确认<sup>11</sup></mark>。如交接需要其他人员配合或存在客观障碍，本人将及时反馈。</p><p id="pv2-34">本人办理的是项目工作交接，不代表本人申请离职、同意解除劳动合同，亦不代表本人认可待岗、跨城市调动或降低待遇。</p></div></div>
           <p class="why">第一版只说「完成交接、完整移交」，无范围限制；修改2 限定「职责范围内」「按授权流程」，并要求书面确认。</p>
           <div class="best"><span class="bl">最优方案</span><p>采用修改2 的限定，保留第一版「完整移交工作资料、账号及资产」作为范围说明，并补「交接不代表离职」。</p><p class="gain"><b>收益</b>既防被指拒不交接，又把责任边界划清；书面确认可作为抗辩「未完成交接」的证据。</p></div>
@@ -457,7 +458,7 @@ mark.flash{animation:flash2 1.5s ease}
       <article class="dcard">
         <div class="dn">13</div>
         <div class="dbody">
-          <div class="dtop"><span class="lv l2">表述差异</span><h3>回复期限与救济提示</h3><a class="chip" href="#" data-jump="d10">缺 10</a></div>
+          <div class="dtop"><span class="lv l2">表述差异</span><h3>回复期限与救济提示</h3><a class="chip" href="#" data-jump="d10">修改项 10</a></div>
           <div class="sides"><div class="side"><div class="sh v1">第一版</div><p id="pv1-29">请贵司于收到本函之日起<mark class="df" data-jump="d10">3个工作日内<sup>10</sup></mark>，就上述事项作出书面答复。逾期未答复或答复未能解决本人合理诉求的，本人将通过劳动仲裁等法律途径维护自身合法权益。</p></div><div class="side"><div class="sh v2">修改2</div><p id="pv2-38">请公司于收到本函后五个工作日内，就上述事项作出书面回复。</p></div></div>
           <p class="why">第一版 3 个工作日＋「逾期申请仲裁」，紧迫感足但期限过短、对抗性强；修改2 改为 5 个工作日、删去仲裁字样，压力也随之减弱。</p>
           <div class="best"><span class="bl">最优方案</span><p>5 个工作日，并写明「逾期未回复或未撤销的，本人将依法主张相应权利」。</p><p class="gain"><b>收益</b>期限合理不易被驳，同时保留后续主张的落点，比直接写「申请仲裁」更难被抓话柄。</p></div>
@@ -484,7 +485,7 @@ mark.flash{animation:flash2 1.5s ease}
       <article class="dcard">
         <div class="dn">16</div>
         <div class="dbody">
-          <div class="dtop"><span class="lv l3">单方增补</span><h3>弹性打卡申请</h3><a class="chip" href="#" data-jump="d9">缺 9</a></div>
+          <div class="dtop"><span class="lv l3">单方增补</span><h3>弹性打卡申请</h3><a class="chip" href="#" data-jump="d9">修改项 9</a></div>
           <div class="sides"><div class="side"><div class="sh v1">第一版</div><p id="pv1-18">5. 考虑到本人原派驻办公地址与本次通知载明的报到地址通勤距离较远、通勤时间与成本显著增加，在等候新项目安排期间，<mark class="df" data-jump="d9">本人申请上下班打卡时间给予 1 小时弹性区间<sup>9</sup></mark>：上午可在 8:30—9:30 之间打卡上班，下午相应在 17:30—18:30 之间打卡下班，确保每日累计在岗满 8 小时标准工时，不影响日常工作对接与事务沟通。该通勤便利申请，不构成本人对本次单方待岗安排的认可。</p></div><div class="side empty"><span>修改2 已删除</span></div></div>
           <p class="why">第一版申请弹性打卡，姿态合作，但以「本人在岗工作」为前提，与「不认可待岗」存在逻辑张力；修改2 直接删掉，少了一个可执行的善意动作。</p>
           <div class="best"><span class="bl">最优方案</span><p>保留，但改为条件句「如公司安排实际工作，可申请每日前后一小时弹性打卡」。</p><p class="gain"><b>收益</b>保留合作姿态，又不构成对待岗安排的接受。</p></div>
@@ -502,7 +503,7 @@ mark.flash{animation:flash2 1.5s ease}
       <article class="dcard">
         <div class="dn">18</div>
         <div class="dbody">
-          <div class="dtop"><span class="lv l3">单方增补</span><h3>边履行边协商</h3><a class="chip" href="#" data-jump="d8">缺 8</a></div>
+          <div class="dtop"><span class="lv l3">单方增补</span><h3>边履行边协商</h3><a class="chip" href="#" data-jump="d8">修改项 8</a></div>
           <div class="sides"><div class="side empty"><span>第一版无对应内容</span></div><div class="side"><div class="sh v2">修改2</div><p id="pv2-40">本人愿意在继续正常履行劳动合同的同时，<mark class="df" data-jump="d8">与公司就妥善解决本次项目调整问题进行沟通<sup>8</sup></mark>。</p></div></div>
           <p class="why">第一版无此句，通篇对抗；修改2 加了「愿意继续沟通」，留了台阶。</p>
           <div class="best"><span class="bl">最优方案</span><p>保留，但加限定「以不降低劳动合同约定条件为前提」。</p><p class="gain"><b>收益</b>原句「愿意沟通」范围过宽，可能被解读为接受协商解除或长期待岗；加限定即锁住底线。</p></div>
@@ -517,16 +518,16 @@ mark.flash{animation:flash2 1.5s ease}
 
   <section class="panel" id="s3" role="tabpanel" aria-labelledby="t3" hidden>
     <div class="sec-head"><span class="sec-no">03</span><h2>必要修改</h2></div>
-    <p class="sec-desc">共 <b>13 项</b>。每一项都已标回两版原文：原文中<span class="df">浅红底纹<sup>n</sup></span>即为问题句，点击跳到本项；本项下方的「原文 · 第一版／修改2」则跳回原句。</p>
+    <p class="sec-desc">共 <b>13 项</b>，卡片左上角的「修改项 01／02…」即编号。两版原文中带同号上标的<span class="df">浅红底纹<sup>3</sup></span>就是该处问题句：点原文的标记可跳到对应卡片，点卡片下方的「原文 · 第一版／修改2」则跳回原句。</p>
     <div class="pills" role="group" aria-label="按严重程度筛选">
-      <button class="pill" aria-pressed="true" data-filter="all">全部<span class="cn">13</span></button>
-      <button class="pill" aria-pressed="false" data-filter="hi">高风险<span class="cn">4</span></button>
-      <button class="pill" aria-pressed="false" data-filter="mid">需修正<span class="cn">5</span></button>
-      <button class="pill" aria-pressed="false" data-filter="low">提示<span class="cn">4</span></button>
+      <button class="pill" aria-pressed="true" data-filter="all" title="显示全部修改项">全部<span class="cn">13</span></button>
+      <button class="pill" aria-pressed="false" data-filter="hi" title="直接影响经济补偿或权利成立，必须修改">高风险<span class="cn">4</span></button>
+      <button class="pill" aria-pressed="false" data-filter="mid" title="表述或策略存在漏洞，建议修改">需修正<span class="cn">5</span></button>
+      <button class="pill" aria-pressed="false" data-filter="low" title="细节瑕疵，可改可不改">提示<span class="cn">4</span></button>
     </div>
     <div class="dgrid">
       <article class="dcard2 lead" data-lvl="hi" id="d1">
-        <div class="dtop"><span class="sv hi">高风险</span><span class="ver">第一版 · 四、诉求 第3项</span><span class="dgrow">缺 01</span></div>
+        <div class="dtop"><span class="dno">修改项 01</span><span class="sv hi">高风险</span><span class="ver">第一版 · 四、诉求 第3项</span></div>
         <p class="dquote">请依据劳动合同第11.2.4条之规定，与本人协商解除劳动合同事宜，并依法支付经济补偿</p>
         <p class="dprob">主体错位：第46条第(二)项要求「用人单位提出」协商解除才付补偿。若被认定由劳动者提出，公司可拒绝支付。</p>
         <p class="dadv"><span class="lb">建议改法</span>改为「如公司拟协商解除，应由公司提出解除动议，协商一致后依法支付经济补偿」</p>
@@ -534,7 +535,7 @@ mark.flash{animation:flash2 1.5s ease}
         <div class="djump"><a class="chip" href="#" data-jump="pv1-25">原文 · 第一版</a></div>
       </article>
       <article class="dcard2 lead" data-lvl="hi" id="d2">
-        <div class="dtop"><span class="sv hi">高风险</span><span class="ver">第一版 · 三、劳动报酬</span><span class="dgrow">缺 02</span></div>
+        <div class="dtop"><span class="dno">修改项 02</span><span class="sv hi">高风险</span><span class="ver">第一版 · 三、劳动报酬</span></div>
         <p class="dquote">待岗期间应按原工资标准足额支付；次月起发最低工资即属未足额支付</p>
         <p class="dprob">北京规则允许停工停业超过一个工资支付周期后，按不低于最低工资70%支付基本生活费。按最低工资本身不违法，能否追差额取决于「待岗是否成立」，而非金额高低。</p>
         <p class="dadv"><span class="lb">建议改法</span>改为「待岗是否成立尚未确定，在确定前公司应按原标准支付」，把争点从金额移到前提</p>
@@ -542,7 +543,7 @@ mark.flash{animation:flash2 1.5s ease}
         <div class="djump"><a class="chip" href="#" data-jump="pv1-20">原文 · 第一版</a></div>
       </article>
       <article class="dcard2 lead" data-lvl="hi" id="d3">
-        <div class="dtop"><span class="sv hi">高风险</span><span class="ver">修改2 · 四、劳动报酬</span><span class="dgrow">缺 03</span></div>
+        <div class="dtop"><span class="dno">修改项 03</span><span class="sv hi">高风险</span><span class="ver">修改2 · 四、劳动报酬</span></div>
         <p class="dquote">本人知悉劳动合同第5.7条载有待岗首月按约定薪资、第二个月起按最低工资支付</p>
         <p class="dprob">对己方不利的自认：可能被作为劳动者已知悉并接受该薪酬安排的证据，直接削弱后续主张差额的空间。</p>
         <p class="dadv"><span class="lb">建议改法</span>改为「公司通知所援引的第5.7条，本人从未确认其适用于本次情形」</p>
@@ -550,7 +551,7 @@ mark.flash{animation:flash2 1.5s ease}
         <div class="djump"><a class="chip" href="#" data-jump="pv2-26">原文 · 修改2</a></div>
       </article>
       <article class="dcard2 lead" data-lvl="hi" id="d4">
-        <div class="dtop"><span class="sv hi">高风险</span><span class="ver">修改2 · 六、后续处理</span><span class="dgrow">缺 04</span></div>
+        <div class="dtop"><span class="dno">修改项 04</span><span class="sv hi">高风险</span><span class="ver">修改2 · 六、后续处理</span></div>
         <p class="dquote">仅要求公司书面说明原因及方案，未提出撤销待岗的请求</p>
         <p class="dprob">缺少可被认定「公司拒不改正」的请求基础，仲裁时难以证明公司违约在先。</p>
         <p class="dadv"><span class="lb">建议改法</span>补入「请于5个工作日内书面撤销待岗决定、恢复原岗位及原工资待遇」及逾期后果</p>
@@ -558,7 +559,7 @@ mark.flash{animation:flash2 1.5s ease}
         <div class="djump"><a class="chip" href="#" data-jump="pv2-36">原文 · 修改2</a></div>
       </article>
       <article class="dcard2 " data-lvl="mid" id="d5">
-        <div class="dtop"><span class="sv mid">需修正</span><span class="ver">第一版 · 一、第1点</span><span class="dgrow">缺 05</span></div>
+        <div class="dtop"><span class="dno">修改项 05</span><span class="sv mid">需修正</span><span class="ver">第一版 · 一、第1点</span></div>
         <p class="dquote">北京地区仍有多项在执行业务和项目</p>
         <p class="dprob">纯事实主张，无证据支撑时公司一句否认即可推翻；该点本身是攻击「非停工停产」的关键。</p>
         <p class="dadv"><span class="lb">建议改法</span>补充举例并声明持有证据，或申请公司披露在执项目清单</p>
@@ -566,7 +567,7 @@ mark.flash{animation:flash2 1.5s ease}
         <div class="djump"><a class="chip" href="#" data-jump="pv1-8">原文 · 第一版</a></div>
       </article>
       <article class="dcard2 " data-lvl="mid" id="d6">
-        <div class="dtop"><span class="sv mid">需修正</span><span class="ver">第一版 · 二、声明第1点</span><span class="dgrow">缺 06</span></div>
+        <div class="dtop"><span class="dno">修改项 06</span><span class="sv mid">需修正</span><span class="ver">第一版 · 二、声明第1点</span></div>
         <p class="dquote">本人将于12月1日按通知地址报到，但不认可处于待岗状态</p>
         <p class="dprob">到岗打卡会形成事实履行状态，虽有异议声明，仍可能被主张已接受安排；且「不认可待岗状态」是否认全部状态，易被指不配合。</p>
         <p class="dadv"><span class="lb">建议改法</span>参照修改2：报到只系履行出勤义务，不认可本次待岗符合第5.7条适用条件</p>
@@ -574,7 +575,7 @@ mark.flash{animation:flash2 1.5s ease}
         <div class="djump"><a class="chip" href="#" data-jump="pv1-14">原文 · 第一版</a></div>
       </article>
       <article class="dcard2 " data-lvl="mid" id="d7">
-        <div class="dtop"><span class="sv mid">需修正</span><span class="ver">修改2 · 三、工作地点</span><span class="dgrow">缺 07</span></div>
+        <div class="dtop"><span class="dno">修改项 07</span><span class="sv mid">需修正</span><span class="ver">修改2 · 三、工作地点</span></div>
         <p class="dquote">删除《劳动合同法》第35条引用及「重大变更、实质性困难」定性</p>
         <p class="dprob">跨市调岗抗辩只剩事实陈述，失去最有力的法律支点；本章通篇未出现「变更须协商一致」。</p>
         <p class="dadv"><span class="lb">建议改法</span>回补第35条，并援引第40条第(三)项「客观情况重大变化应先协商变更」</p>
@@ -582,7 +583,7 @@ mark.flash{animation:flash2 1.5s ease}
         <div class="djump"><a class="chip" href="#" data-jump="pv2-20">原文 · 修改2 第三章</a></div>
       </article>
       <article class="dcard2 " data-lvl="mid" id="d8">
-        <div class="dtop"><span class="sv mid">需修正</span><span class="ver">修改2 · 六、后续处理</span><span class="dgrow">缺 08</span></div>
+        <div class="dtop"><span class="dno">修改项 08</span><span class="sv mid">需修正</span><span class="ver">修改2 · 六、后续处理</span></div>
         <p class="dquote">本人愿在合法合规前提下协商其他处理方案</p>
         <p class="dprob">表述过宽，可能被解读为接受协商解除或长期待岗。</p>
         <p class="dadv"><span class="lb">建议改法</span>加限定语：以不降低劳动合同约定条件为前提</p>
@@ -590,7 +591,7 @@ mark.flash{animation:flash2 1.5s ease}
         <div class="djump"><a class="chip" href="#" data-jump="pv2-40">原文 · 修改2</a></div>
       </article>
       <article class="dcard2 " data-lvl="low" id="d9">
-        <div class="dtop"><span class="sv low">提示</span><span class="ver">第一版 · 二、声明第5点</span><span class="dgrow">缺 09</span></div>
+        <div class="dtop"><span class="dno">修改项 09</span><span class="sv low">提示</span><span class="ver">第一版 · 二、声明第5点</span></div>
         <p class="dquote">申请每日前后1小时弹性打卡</p>
         <p class="dprob">以「本人在岗工作」为前提，与「不认可待岗」存在张力；公司亦无批准义务。</p>
         <p class="dadv"><span class="lb">建议改法</span>改为条件句：如公司安排实际工作，可申请弹性工时</p>
@@ -598,7 +599,7 @@ mark.flash{animation:flash2 1.5s ease}
         <div class="djump"><a class="chip" href="#" data-jump="pv1-18">原文 · 第一版</a></div>
       </article>
       <article class="dcard2 " data-lvl="low" id="d10">
-        <div class="dtop"><span class="sv low">提示</span><span class="ver">第一版 · 四、诉求 第1项 / 五、答复</span><span class="dgrow">缺 10</span></div>
+        <div class="dtop"><span class="dno">修改项 10</span><span class="sv low">提示</span><span class="ver">第一版 · 四、诉求 第1项 / 五、答复</span></div>
         <p class="dquote">3个工作日内答复</p>
         <p class="dprob">无法律强制力，期限过短易被认为不合理，反削弱函件说服力。</p>
         <p class="dadv"><span class="lb">建议改法</span>改为5个工作日，并注明「以便公司核实相关情况」</p>
@@ -606,7 +607,7 @@ mark.flash{animation:flash2 1.5s ease}
         <div class="djump"><a class="chip" href="#" data-jump="pv1-23">原文 · 第一版</a></div>
       </article>
       <article class="dcard2 " data-lvl="low" id="d11">
-        <div class="dtop"><span class="sv low">提示</span><span class="ver">两版 · 五、交接</span><span class="dgrow">缺 11</span></div>
+        <div class="dtop"><span class="dno">修改项 11</span><span class="sv low">提示</span><span class="ver">两版 · 五、交接</span></div>
         <p class="dquote">完成工作交接，完整移交资料、账号及资产</p>
         <p class="dprob">未约定交接完成的书面确认，日后易生「未完成交接」争议。修改2 仅写「给予书面确认」，未要求接收人签署清单。</p>
         <p class="dadv"><span class="lb">建议改法</span>要求接收人签署交接清单并出具书面确认</p>
@@ -614,7 +615,7 @@ mark.flash{animation:flash2 1.5s ease}
         <div class="djump"><a class="chip" href="#" data-jump="pv1-28">原文 · 第一版</a><a class="chip" href="#" data-jump="pv2-33">原文 · 修改2</a></div>
       </article>
       <article class="dcard2 " data-lvl="low" id="d12">
-        <div class="dtop"><span class="sv low">提示</span><span class="ver">两版 · 全文</span><span class="dgrow">缺 12</span></div>
+        <div class="dtop"><span class="dno">修改项 12</span><span class="sv low">提示</span><span class="ver">两版 · 全文</span></div>
         <p class="dquote">仅主张「未足额支付劳动报酬」</p>
         <p class="dprob">遗漏第38条第(一)项「未按照劳动合同约定提供劳动条件」——长期不安排工作同样构成被迫解除事由。</p>
         <p class="dadv"><span class="lb">建议改法</span>两项并列主张，扩大解除与索偿的成立空间</p>
@@ -622,7 +623,7 @@ mark.flash{animation:flash2 1.5s ease}
         <div class="djump"><a class="chip" href="#" data-jump="pv1-21">原文 · 第一版</a><a class="chip" href="#" data-jump="pv2-30">原文 · 修改2</a></div>
       </article>
       <article class="dcard2 " data-lvl="mid" id="d13">
-        <div class="dtop"><span class="sv mid">需修正</span><span class="ver">两版 · 全文</span><span class="dgrow">缺 13</span></div>
+        <div class="dtop"><span class="dno">修改项 13</span><span class="sv mid">需修正</span><span class="ver">两版 · 全文</span></div>
         <p class="dquote">两版都只在「待岗是否成立」上做文章，未正面主张按原岗位提供工作</p>
         <p class="dprob">公司经营与项目仍在存续、不属于停工停产，本可直接要求继续履行原岗位；缺这一层，恢复原岗位的请求没有法律落点。</p>
         <p class="dadv"><span class="lb">建议改法</span>补一段：项目仍在存续、公司未停工停产，依第17、29、30条应按原岗位提供工作并支付报酬</p>
@@ -817,7 +818,7 @@ mark.flash{animation:flash2 1.5s ease}
     </div></div>
 
     <div class="sec-head" style="margin-top:38px"><span class="sec-no">05</span><h2>修订清单</h2></div>
-    <p class="sec-desc">按正文出现顺序编号。「正文」「第一版」「修改2」为原文定位，「缺 n」为第 03 节对应缺陷。</p>
+    <p class="sec-desc">按正文出现顺序编号。「正文」「第一版」「修改2」为原文定位；「修改项 n」为第 03 节同号条目。</p>
     <div class="rgrid">
       <article class="rcard" id="r1">
         <div class="rtop"><span class="rn">01</span><h4>标题</h4><span class="src v2">修改2</span><span class="rmk off">沿用修改2</span></div>
@@ -873,14 +874,14 @@ mark.flash{animation:flash2 1.5s ease}
         <p class="rhow"><span class="lb">改法</span>收窄为「报到只系履行出勤义务，不表示认可本次待岗的定性／符合第5.7条适用条件」。</p>
         <p class="rlaw"><span class="lb law">依据</span>《劳动合同法》第35条</p>
         <p class="rgain"><span class="lb gain">赔偿利益</span>既保留出勤事实（防止被认定旷工），又不构成默示同意变更——这是保留解除权的关键。</p>
-        <div class="rjump"><a class="chip" href="#" data-jump="f7">正文</a><a class="chip" href="#" data-jump="pv1-14">第一版</a><a class="chip" href="#" data-jump="pv2-8">修改2</a><a class="chip dim" href="#" data-jump="d6">缺 6</a></div>
+        <div class="rjump"><a class="chip" href="#" data-jump="f7">正文</a><a class="chip" href="#" data-jump="pv1-14">第一版</a><a class="chip" href="#" data-jump="pv2-8">修改2</a><a class="chip dim" href="#" data-jump="d6">修改项 6</a></div>
       </article>
       <article class="rcard" id="r9">
         <div class="rtop"><span class="rn">09</span><h4>弹性打卡申请</h4><span class="src v1">第一版</span><span class="rmk">正文已标</span></div>
         <p class="rhow"><span class="lb">改法</span>加回第一版的弹性打卡申请，但把前提改为「如公司在此期间安排实际工作」。</p>
         <p class="rlaw"><span class="lb law">依据</span>—</p>
         <p class="rgain"><span class="lb gain">赔偿利益</span>保留合作姿态，又避免「申请弹性打卡」被解读为已接受待岗安排。</p>
-        <div class="rjump"><a class="chip" href="#" data-jump="f9">正文</a><a class="chip" href="#" data-jump="pv1-18">第一版</a><a class="chip dim" href="#" data-jump="d9">缺 9</a></div>
+        <div class="rjump"><a class="chip" href="#" data-jump="f9">正文</a><a class="chip" href="#" data-jump="pv1-18">第一版</a><a class="chip dim" href="#" data-jump="d9">修改项 9</a></div>
       </article>
       <article class="rcard" id="r10">
         <div class="rtop"><span class="rn">10</span><h4>第二章 第5.7条适用前提</h4><span class="src v2">修改2</span><span class="rmk off">沿用修改2</span></div>
@@ -901,14 +902,14 @@ mark.flash{animation:flash2 1.5s ease}
         <p class="rhow"><span class="lb">改法</span>回补第一版的第三十五条论证，并加第四十条第（三）项「应先协商变更」。</p>
         <p class="rlaw"><span class="lb law">依据</span>《劳动合同法》第35条、第40条第(三)项</p>
         <p class="rgain"><span class="lb gain">赔偿利益</span>跨市调岗无协商一致即不生效；公司强行外迁构成未按约定提供劳动条件。</p>
-        <div class="rjump"><a class="chip" href="#" data-jump="f21">正文</a><a class="chip" href="#" data-jump="pv1-5">第一版</a><a class="chip dim" href="#" data-jump="d7">缺 7</a></div>
+        <div class="rjump"><a class="chip" href="#" data-jump="f21">正文</a><a class="chip" href="#" data-jump="pv1-5">第一版</a><a class="chip dim" href="#" data-jump="d7">修改项 7</a></div>
       </article>
       <article class="rcard" id="r13">
         <div class="rtop"><span class="rn">13</span><h4>项目存续：应按原岗位提供工作</h4><span class="src new">新增</span><span class="rmk">正文已标</span></div>
         <p class="rhow"><span class="lb">改法</span>新增：公司经营与百度项目仍在存续、不属于停工停产，应按原岗位提供工作并支付报酬；同时请公司披露在执项目与北京岗位清单。</p>
         <p class="rlaw"><span class="lb law">依据</span>《劳动合同法》第17、29、30条；《工资支付暂行规定》第12条</p>
         <p class="rgain"><span class="lb gain">赔偿利益</span>待岗的法定前提是停工停产，项目存续即前提不成立；直接支撑恢复原岗位与补发工资差额的主张。</p>
-        <div class="rjump"><a class="chip" href="#" data-jump="f22">正文</a><a class="chip dim" href="#" data-jump="d13">缺 13</a></div>
+        <div class="rjump"><a class="chip" href="#" data-jump="f22">正文</a><a class="chip dim" href="#" data-jump="d13">修改项 13</a></div>
       </article>
       <article class="rcard" id="r14">
         <div class="rtop"><span class="rn">14</span><h4>岗位匹配与「参与≠同意」</h4><span class="src v2">修改2</span><span class="rmk off">沿用修改2</span></div>
@@ -922,28 +923,28 @@ mark.flash{animation:flash2 1.5s ease}
         <p class="rhow"><span class="lb">改法</span>删除「知悉第5.7条」的自认；改为「待岗是否成立未定，应先按原标准支付」；并列第38条第（一）（二）项。</p>
         <p class="rlaw"><span class="lb law">依据</span>《劳动合同法》第38条第(一)(二)项；《北京市工资支付规定》第27条</p>
         <p class="rgain"><span class="lb gain">赔偿利益</span>不在金额上纠缠（最低工资本身可能合法），而在「待岗是否成立」上发力；并列「未提供劳动条件」，扩大被迫解除与 N 的主张空间。</p>
-        <div class="rjump"><a class="chip" href="#" data-jump="f28">正文</a><a class="chip" href="#" data-jump="pv1-19">第一版</a><a class="chip" href="#" data-jump="pv2-25">修改2</a><a class="chip dim" href="#" data-jump="d2">缺 2</a><a class="chip dim" href="#" data-jump="d3">缺 3</a><a class="chip dim" href="#" data-jump="d12">缺 12</a></div>
+        <div class="rjump"><a class="chip" href="#" data-jump="f28">正文</a><a class="chip" href="#" data-jump="pv1-19">第一版</a><a class="chip" href="#" data-jump="pv2-25">修改2</a><a class="chip dim" href="#" data-jump="d2">修改项 2</a><a class="chip dim" href="#" data-jump="d3">修改项 3</a><a class="chip dim" href="#" data-jump="d12">修改项 12</a></div>
       </article>
       <article class="rcard" id="r16">
         <div class="rtop"><span class="rn">16</span><h4>第五章 工作交接</h4><span class="src v2">修改2</span><span class="rmk">正文已标</span></div>
         <p class="rhow"><span class="lb">改法</span>限定「职责范围内」「按授权流程」，要求接收人签署交接清单并出具书面确认；补「交接不代表离职」。</p>
         <p class="rlaw"><span class="lb law">依据</span>《劳动合同法》第50条</p>
         <p class="rgain"><span class="lb gain">赔偿利益</span>履行交接义务防被指拒不配合；书面确认可作为抗辩「未完成交接」的证据。</p>
-        <div class="rjump"><a class="chip" href="#" data-jump="f34">正文</a><a class="chip" href="#" data-jump="pv1-27">第一版</a><a class="chip" href="#" data-jump="pv2-31">修改2</a><a class="chip dim" href="#" data-jump="d11">缺 11</a></div>
+        <div class="rjump"><a class="chip" href="#" data-jump="f34">正文</a><a class="chip" href="#" data-jump="pv1-27">第一版</a><a class="chip" href="#" data-jump="pv2-31">修改2</a><a class="chip dim" href="#" data-jump="d11">修改项 11</a></div>
       </article>
       <article class="rcard" id="r17">
         <div class="rtop"><span class="rn">17</span><h4>第六章 明确请求撤销待岗</h4><span class="src v2">修改2</span><span class="rmk">正文已标</span></div>
         <p class="rhow"><span class="lb">改法</span>明确要求 5 个工作日内书面撤销待岗、恢复原岗位及原工资待遇，并写明逾期后果。</p>
         <p class="rlaw"><span class="lb law">依据</span>《劳动合同法》第38条</p>
         <p class="rgain"><span class="lb gain">赔偿利益</span>没有撤销请求，就无法证明公司「拒不改正」；这是后续被迫解除并主张经济补偿的请求基础。</p>
-        <div class="rjump"><a class="chip" href="#" data-jump="f39">正文</a><a class="chip" href="#" data-jump="pv1-22">第一版</a><a class="chip" href="#" data-jump="pv2-35">修改2</a><a class="chip dim" href="#" data-jump="d4">缺 4</a><a class="chip dim" href="#" data-jump="d10">缺 10</a></div>
+        <div class="rjump"><a class="chip" href="#" data-jump="f39">正文</a><a class="chip" href="#" data-jump="pv1-22">第一版</a><a class="chip" href="#" data-jump="pv2-35">修改2</a><a class="chip dim" href="#" data-jump="d4">修改项 4</a><a class="chip dim" href="#" data-jump="d10">修改项 10</a></div>
       </article>
       <article class="rcard" id="r18">
         <div class="rtop"><span class="rn">18</span><h4>协商解除：由公司提出动议</h4><span class="src v1">第一版</span><span class="rmk">正文已标</span></div>
         <p class="rhow"><span class="lb">改法</span>改为「如公司拟协商解除，应由公司提出解除动议，协商一致后依法支付经济补偿」。</p>
         <p class="rlaw"><span class="lb law">依据</span>《劳动合同法》第36条、第46条第(二)项</p>
         <p class="rgain"><span class="lb gain">赔偿利益</span>N 的支付前提是「用人单位提出」；若由劳动者提出，公司可拒付。</p>
-        <div class="rjump"><a class="chip" href="#" data-jump="f41">正文</a><a class="chip" href="#" data-jump="pv1-25">第一版</a><a class="chip" href="#" data-jump="pv2-37">修改2</a><a class="chip dim" href="#" data-jump="d1">缺 1</a></div>
+        <div class="rjump"><a class="chip" href="#" data-jump="f41">正文</a><a class="chip" href="#" data-jump="pv1-25">第一版</a><a class="chip" href="#" data-jump="pv2-37">修改2</a><a class="chip dim" href="#" data-jump="d1">修改项 1</a></div>
       </article>
       <article class="rcard" id="r19">
         <div class="rtop"><span class="rn">19</span><h4>不构成同意声明</h4><span class="src v2">修改2</span><span class="rmk off">沿用修改2</span></div>
@@ -957,7 +958,7 @@ mark.flash{animation:flash2 1.5s ease}
         <p class="rhow"><span class="lb">改法</span>保留该句，加限定「以不降低劳动合同约定条件为前提」。</p>
         <p class="rlaw"><span class="lb law">依据</span>《劳动合同法》第35条</p>
         <p class="rgain"><span class="lb gain">赔偿利益</span>留协商台阶，同时锁住底线，避免被解读为接受降薪或协商解除。</p>
-        <div class="rjump"><a class="chip" href="#" data-jump="f44">正文</a><a class="chip" href="#" data-jump="pv2-40">修改2</a><a class="chip dim" href="#" data-jump="d8">缺 8</a></div>
+        <div class="rjump"><a class="chip" href="#" data-jump="f44">正文</a><a class="chip" href="#" data-jump="pv2-40">修改2</a><a class="chip dim" href="#" data-jump="d8">修改项 8</a></div>
       </article>
       <article class="rcard" id="r21">
         <div class="rtop"><span class="rn">21</span><h4>落款</h4><span class="src both">两版合并</span><span class="rmk off">沿用修改2</span></div>
