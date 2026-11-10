@@ -198,6 +198,17 @@ mark.fx sup{margin-left:2px;font:600 9px/1 var(--mono);color:var(--amber-deep);v
 .paper{max-width:820px;margin:0 auto;padding:38px 46px 42px;background:#FDFCF9;border:1px solid rgba(26,26,24,.10);
   border-radius:4px;box-shadow:0 2px 12px rgba(26,26,24,.08)}
 .paper p{margin:0 0 11px;font:400 14.5px/27px var(--sans);text-align:justify;color:#232320;word-break:break-word;overflow-wrap:anywhere}
+.src{display:inline-block;margin-right:7px;padding:0 5px;border-radius:2px;white-space:nowrap;
+  font:600 9.5px/16px var(--sans);letter-spacing:.02em;vertical-align:1.5px;text-indent:0}
+.src.v1{background:var(--v1-soft);color:var(--v1)}
+.src.v2{background:var(--v2-soft);color:var(--v2)}
+.src.both{background:var(--amber-soft);color:var(--amber-deep)}
+.src.new{background:var(--seal-soft);color:var(--seal-deep)}
+.srclegend{display:flex;flex-wrap:wrap;gap:7px 20px;margin:0 auto 14px;max-width:820px;
+  padding:10px 14px;background:rgba(255,255,255,.72);border:1px solid var(--line-soft);border-radius:7px;
+  font-size:11.5px;line-height:19px;color:var(--ink-3)}
+.srclegend span{display:inline-flex;align-items:center;gap:6px}
+.srclegend b{font-weight:600;color:var(--ink-2)}
 .fin-t{margin:0 0 26px;text-align:center;font:700 20px/34px var(--serif);letter-spacing:.04em}
 .fin-h{margin:24px 0 11px;font:700 15.5px/26px var(--serif);letter-spacing:.02em}
 .fin-r{text-align:right}
@@ -749,54 +760,56 @@ mark.flash{animation:flash2 1.5s ease}
 
   <section class="panel" id="s5" role="tabpanel" aria-labelledby="t5" hidden>
     <div class="sec-head"><span class="sec-no">05</span><h2>最终版</h2></div>
-    <p class="sec-desc">以修改2 为底稿，吸收第一版的第三十五条论证与撤销诉求，修掉不利自认与诉求主体错位，并补入「项目存续应按原岗位提供工作」。正文中<span class="fx">琥珀底纹<sup>n</sup></span>为相对修改2 实际改动处，点击跳到下方第 n 条修订说明；共 <b>21 条</b>修订，其中标「沿用修改2」的条目为原文未动。</p>
+    <p class="sec-desc">以修改2 为底稿，吸收第一版的第三十五条论证与撤销诉求，修掉不利自认与诉求主体错位，并补入「项目存续应按原岗位提供工作」。每段前的<span class="src v1">第一版</span><span class="src v2">修改2</span><span class="src both">两版合并</span><span class="src new">新增</span>为来源标签；正文中<span class="fx">琥珀底纹<sup>n</sup></span>为相对修改2 实际改动处，点击跳到下方第 n 条修订说明；共 <b>21 条</b>修订。</p>
+
+    <div class="srclegend"><span><span class="src v1">第一版</span>直接引自第一版原文 · 6 段</span><span><span class="src v2">修改2</span>直接引自修改2 原文 · 36 段</span><span><span class="src both">两版合并</span>两版内容合并并改写 · 2 段</span><span><span class="src new">新增</span>两版均无，本次新增 · 1 段</span></div>
 
     <div class="desk"><div class="paper">
         <h2 class="fin-t" id="f0">关于项目调整、待岗安排及劳动合同履行的书面异议函</h2>
-        <p id="f1">致：上海微创软件股份有限公司北京分公司<mark class="fx" data-jump="r2">（人力资源部及相关部门）<sup>2</sup></mark></p>
-        <p id="f2">本人________，系公司________岗位员工，劳动合同期限自________年____月____日起至________年____月____日止，劳动合同约定工作地点为________。</p>
-        <p id="f3">本人于2026年11月6日收到公司发送的《待岗通知》。通知称，因客户方业务调整、岗位裁撤，百度项目自2026年12月1日起不再需要本人继续服务，要求本人此前完成项目交接，并自2026年12月1日起前往通知载明的北京办公地点报到、出勤打卡，等待后续工作安排。</p>
-        <p id="f4">现就有关事项提出书面异议，并请求公司确认如下。</p>
-        <h3 class="fin-h" id="f5">一、本人愿意继续履行劳动合同，未申请待岗或离职</h3>
-        <p id="f6">通知所述调整原因为客户业务调整及岗位裁撤，未载明本人存在不能胜任工作或违反劳动纪律等情形。</p>
-        <p id="f7">本人未提出辞职、解除劳动合同，亦未申请待岗或无薪休假，愿意继续履行劳动合同。<mark class="fx" data-jump="r8">本人将按通知要求配合完成原项目工作交接，并于2026年12月1日前往北京市海淀区海淀大街8号中钢国际广场A座5层C区报到、出勤打卡，遵守公司合法合理的考勤与管理要求。上述报到与配合仅系履行出勤义务，不表示本人认可本次待岗的定性。<sup>8</sup></mark></p>
-        <p id="f8">本人上述报到、交接和配合行为，不表示本人认可本次待岗符合劳动合同第5.7条的适用条件，也不表示本人同意据此降低工资待遇、跨省市变更工作地点或放弃相关异议。</p>
-        <p id="f9"><mark class="fx" data-jump="r9">如公司在此期间安排实际工作，本人可申请每日前后一小时的弹性打卡；该申请以实际到岗工作为前提，与本人对待岗安排的异议无关。<sup>9</sup></mark></p>
-        <h3 class="fin-h" id="f10">二、本人对本次待岗是否符合合同约定条件提出异议</h3>
-        <p id="f11">劳动合同第5.7条将客观情况发生重大变化、公司无法安排本人在业务或项目上工作，作为安排待岗的条件。</p>
-        <p id="f12">现有通知说明了原项目不再需要本人继续服务，但尚未说明公司无法安排本人从事其他业务或项目工作的具体情况。原项目不再需要本人服务，与公司是否无法安排其他工作，仍需分别说明。</p>
-        <p id="f13">本人对本次是否符合第5.7条的适用条件提出书面异议，请公司明确：</p>
-        <p id="f14">1. 本人被安排至百度项目工作的实际用工形式；如认定属于劳务派遣，请明确派遣单位、用工单位，以及本次退回的具体事实和依据。</p>
-        <p id="f15">2. 本次安排待岗的具体事实、法律及合同依据；如同时依据公司规章制度，请提供相关内容及制定、公示或告知情况。</p>
-        <p id="f16">3. 北京地区适合本人岗位的匹配情况、公司已经或计划采取的岗位匹配措施，以及目前暂不能安排本人工作的具体原因。</p>
-        <p id="f17">4. 待岗预计期限、复岗条件及后续岗位匹配的预计时间。</p>
-        <p id="f18">5. 自2026年12月1日起拟安排本人的具体工作、培训及管理内容，以及公司是否将该期间认定为无工作期间。</p>
-        <p id="f19">本人提出异议期间，仍将按通知报到、出勤，并配合合理工作安排。本函同时作为本人依据劳动合同第11.1.3条、第14.2条就本次安排提出的书面异议。</p>
-        <h3 class="fin-h" id="f20">三、关于工作地点及后续岗位安排</h3>
-        <p id="f21"><mark class="fx" data-jump="r12">工作地点属于劳动合同约定的核心内容。根据《劳动合同法》第三十五条，变更劳动合同约定内容应当经双方协商一致并采用书面形式；即便公司主张客观情况发生重大变化，依据该法第四十条第（三）项，亦应先就变更劳动合同内容与本人协商，公司无权单方强制跨省市调岗。<sup>12</sup></mark></p>
-        <p id="f22"><mark class="fx" data-jump="r13">公司目前仍在正常承接并执行业务，百度项目亦在存续期内，除该项目外公司在北京仍有其他在执行业务，不属于停工、停产情形。依据《劳动合同法》第十七条、第二十九条、第三十条，公司应当继续按劳动合同约定为本人提供原岗位工作并及时足额支付劳动报酬，不得以待岗安排替代其用工安排义务。为便于核对，请公司一并披露当前在执项目清单及北京地区适合本人的岗位清单。<sup>13</sup></mark></p>
-        <p id="f23">对于此前会议中口头提出的跨城市外迁安排，本人因家庭及生活基础均在北京，跨城市迁移将造成实质性生活困难，明确不同意。</p>
-        <p id="f24">本人希望继续在北京履行劳动合同，愿意配合公司在北京地区提供的、符合劳动合同约定并与本人工作经历和能力合理匹配的岗位安排。</p>
-        <p id="f25">对于后续拟匹配的岗位，请公司提供具体工作地点、岗位职责、任职要求、职级及薪酬待遇等信息，以便充分沟通。</p>
-        <p id="f26">本人参与岗位沟通、简历更新和面试，不代表同意跨城市变更工作地点或降低劳动合同约定待遇；公司不应仅因本人参与上述流程而认定双方已经就相关变更达成一致。</p>
-        <h3 class="fin-h" id="f27">四、关于劳动报酬及社会保险、住房公积金</h3>
-        <p id="f28"><mark class="fx" data-jump="r15">公司通知所援引的劳动合同第5.7条，本人从未确认其适用于本次情形。该条以「客观情况发生重大变化、公司无法安排本人在业务或项目上工作」为前提，本次待岗是否符合该前提，尚待公司举证说明。<sup>15</sup></mark></p>
-        <p id="f29"><mark class="fx" data-jump="r15">在待岗是否依法成立确定之前，公司应按原劳动合同约定的正常工资标准支付劳动报酬。本人并非仅就支付金额提出异议，而是对本次待岗的成立条件本身提出异议。<sup>15</sup></mark></p>
-        <p id="f30">请公司书面明确本次是否拟适用第5.7条，以及适用的具体事实、各阶段起止日期、支付金额、工资组成和计算方式，并明确社会保险及住房公积金的缴纳地点、基数和扣缴安排；如拟调整，请说明依据。</p>
-        <p id="f31">如公司实际安排本人承担业务、项目工作，请按照合同关于恢复正常工作后薪资标准的约定执行。对于培训及其他工作安排，请结合实际履行情况依法支付相应劳动报酬。</p>
-        <p id="f32"><mark class="fx" data-jump="r15">如公司未按照劳动合同约定提供劳动条件，或未依法足额支付劳动报酬，本人保留依据《劳动合同法》第三十八条第（一）项、第（二）项解除劳动合同并主张经济补偿及其他劳动权益的权利。<sup>15</sup></mark></p>
-        <h3 class="fin-h" id="f33">五、关于项目交接</h3>
-        <p id="f34">本人将在2026年12月1日前，按照公司及客户明确的要求和授权流程，配合完成本人职责范围内的工作资料、工作账号权限及相关资产交接。</p>
-        <p id="f35"><mark class="fx" data-jump="r16">请公司明确接收人员、交接清单及验收方式，并在交接完成后由接收人员签署交接清单、出具书面确认。<sup>16</sup></mark></p>
-        <p id="f36">如交接需要其他人员配合或存在客观障碍，本人将及时反馈。</p>
-        <p id="f37">本人办理的是项目工作交接，不代表本人申请离职、同意解除劳动合同，亦不代表本人认可待岗、跨城市调动或降低待遇。</p>
-        <h3 class="fin-h" id="f38">六、关于后续处理及书面回复</h3>
-        <p id="f39">本人希望公司优先提供符合劳动合同约定条件的北京岗位。如公司认为无法继续按照劳动合同约定安排工作，请书面说明原因及拟采取的处理方案。本人未提出解除劳动合同。</p>
-        <p id="f40"><mark class="fx" data-jump="r17">请公司于收到本函后五个工作日内，书面撤销本次待岗决定，恢复本人原岗位及原工资待遇，并就上述事项一并作出书面回复；逾期未回复或未撤销的，本人将依法主张相应权利。<sup>17</sup></mark></p>
-        <p id="f41"><mark class="fx" data-jump="r18">如公司拟协商解除劳动合同，应由公司提出解除动议，双方协商一致后依法支付经济补偿；<sup>18</sup></mark>相关解除条件、经济补偿及其他应付款项，应另行协商并以明确的书面协议为准。</p>
-        <p id="f42">依法应支付的工资、奖金、未休年休假工资及其他款项，应分别列明项目及金额，不应在未明确明细的情况下笼统包含在经济补偿中。</p>
-        <p id="f43">本函仅用于提出异议、确认履约意愿及请求公司说明，不构成本人的辞职申请、解除劳动合同通知，亦不构成对降薪、跨城市调动或放弃劳动权益的同意。后续如另行签署协议，其效力及履行按协议约定和法律规定处理。</p>
-        <p id="f44"><mark class="fx" data-jump="r20">本人愿意在继续正常履行劳动合同的同时，以不降低劳动合同约定条件为前提，与公司就本次项目调整问题进行沟通。<sup>20</sup></mark></p>
+        <p id="f1"><span class="src v2" title="直接引自修改2 原文">修改2</span>致：上海微创软件股份有限公司北京分公司<mark class="fx" data-jump="r2">（人力资源部及相关部门）<sup>2</sup></mark></p>
+        <p id="f2"><span class="src v2" title="直接引自修改2 原文">修改2</span>本人________，系公司________岗位员工，劳动合同期限自________年____月____日起至________年____月____日止，劳动合同约定工作地点为________。</p>
+        <p id="f3"><span class="src v2" title="直接引自修改2 原文">修改2</span>本人于2026年11月6日收到公司发送的《待岗通知》。通知称，因客户方业务调整、岗位裁撤，百度项目自2026年12月1日起不再需要本人继续服务，要求本人此前完成项目交接，并自2026年12月1日起前往通知载明的北京办公地点报到、出勤打卡，等待后续工作安排。</p>
+        <p id="f4"><span class="src v2" title="直接引自修改2 原文">修改2</span>现就有关事项提出书面异议，并请求公司确认如下。</p>
+        <h3 class="fin-h" id="f5"><span class="src v2" title="直接引自修改2 原文">修改2</span>一、本人愿意继续履行劳动合同，未申请待岗或离职</h3>
+        <p id="f6"><span class="src v2" title="直接引自修改2 原文">修改2</span>通知所述调整原因为客户业务调整及岗位裁撤，未载明本人存在不能胜任工作或违反劳动纪律等情形。</p>
+        <p id="f7"><span class="src v2" title="直接引自修改2 原文">修改2</span>本人未提出辞职、解除劳动合同，亦未申请待岗或无薪休假，愿意继续履行劳动合同。<mark class="fx" data-jump="r8">本人将按通知要求配合完成原项目工作交接，并于2026年12月1日前往北京市海淀区海淀大街8号中钢国际广场A座5层C区报到、出勤打卡，遵守公司合法合理的考勤与管理要求。上述报到与配合仅系履行出勤义务，不表示本人认可本次待岗的定性。<sup>8</sup></mark></p>
+        <p id="f8"><span class="src v2" title="直接引自修改2 原文">修改2</span>本人上述报到、交接和配合行为，不表示本人认可本次待岗符合劳动合同第5.7条的适用条件，也不表示本人同意据此降低工资待遇、跨省市变更工作地点或放弃相关异议。</p>
+        <p id="f9"><span class="src v1" title="直接引自第一版原文">第一版</span><mark class="fx" data-jump="r9">如公司在此期间安排实际工作，本人可申请每日前后一小时的弹性打卡；该申请以实际到岗工作为前提，与本人对待岗安排的异议无关。<sup>9</sup></mark></p>
+        <h3 class="fin-h" id="f10"><span class="src v2" title="直接引自修改2 原文">修改2</span>二、本人对本次待岗是否符合合同约定条件提出异议</h3>
+        <p id="f11"><span class="src v2" title="直接引自修改2 原文">修改2</span>劳动合同第5.7条将客观情况发生重大变化、公司无法安排本人在业务或项目上工作，作为安排待岗的条件。</p>
+        <p id="f12"><span class="src v2" title="直接引自修改2 原文">修改2</span>现有通知说明了原项目不再需要本人继续服务，但尚未说明公司无法安排本人从事其他业务或项目工作的具体情况。原项目不再需要本人服务，与公司是否无法安排其他工作，仍需分别说明。</p>
+        <p id="f13"><span class="src v2" title="直接引自修改2 原文">修改2</span>本人对本次是否符合第5.7条的适用条件提出书面异议，请公司明确：</p>
+        <p id="f14"><span class="src v2" title="直接引自修改2 原文">修改2</span>1. 本人被安排至百度项目工作的实际用工形式；如认定属于劳务派遣，请明确派遣单位、用工单位，以及本次退回的具体事实和依据。</p>
+        <p id="f15"><span class="src v2" title="直接引自修改2 原文">修改2</span>2. 本次安排待岗的具体事实、法律及合同依据；如同时依据公司规章制度，请提供相关内容及制定、公示或告知情况。</p>
+        <p id="f16"><span class="src v2" title="直接引自修改2 原文">修改2</span>3. 北京地区适合本人岗位的匹配情况、公司已经或计划采取的岗位匹配措施，以及目前暂不能安排本人工作的具体原因。</p>
+        <p id="f17"><span class="src v2" title="直接引自修改2 原文">修改2</span>4. 待岗预计期限、复岗条件及后续岗位匹配的预计时间。</p>
+        <p id="f18"><span class="src v2" title="直接引自修改2 原文">修改2</span>5. 自2026年12月1日起拟安排本人的具体工作、培训及管理内容，以及公司是否将该期间认定为无工作期间。</p>
+        <p id="f19"><span class="src v2" title="直接引自修改2 原文">修改2</span>本人提出异议期间，仍将按通知报到、出勤，并配合合理工作安排。本函同时作为本人依据劳动合同第11.1.3条、第14.2条就本次安排提出的书面异议。</p>
+        <h3 class="fin-h" id="f20"><span class="src v2" title="直接引自修改2 原文">修改2</span>三、关于工作地点及后续岗位安排</h3>
+        <p id="f21"><span class="src v1" title="直接引自第一版原文">第一版</span><mark class="fx" data-jump="r12">工作地点属于劳动合同约定的核心内容。根据《劳动合同法》第三十五条，变更劳动合同约定内容应当经双方协商一致并采用书面形式；即便公司主张客观情况发生重大变化，依据该法第四十条第（三）项，亦应先就变更劳动合同内容与本人协商，公司无权单方强制跨省市调岗。<sup>12</sup></mark></p>
+        <p id="f22"><span class="src new" title="两版均无，本次新增">新增</span><mark class="fx" data-jump="r13">公司目前仍在正常承接并执行业务，百度项目亦在存续期内，除该项目外公司在北京仍有其他在执行业务，不属于停工、停产情形。依据《劳动合同法》第十七条、第二十九条、第三十条，公司应当继续按劳动合同约定为本人提供原岗位工作并及时足额支付劳动报酬，不得以待岗安排替代其用工安排义务。为便于核对，请公司一并披露当前在执项目清单及北京地区适合本人的岗位清单。<sup>13</sup></mark></p>
+        <p id="f23"><span class="src v2" title="直接引自修改2 原文">修改2</span>对于此前会议中口头提出的跨城市外迁安排，本人因家庭及生活基础均在北京，跨城市迁移将造成实质性生活困难，明确不同意。</p>
+        <p id="f24"><span class="src v2" title="直接引自修改2 原文">修改2</span>本人希望继续在北京履行劳动合同，愿意配合公司在北京地区提供的、符合劳动合同约定并与本人工作经历和能力合理匹配的岗位安排。</p>
+        <p id="f25"><span class="src v2" title="直接引自修改2 原文">修改2</span>对于后续拟匹配的岗位，请公司提供具体工作地点、岗位职责、任职要求、职级及薪酬待遇等信息，以便充分沟通。</p>
+        <p id="f26"><span class="src v2" title="直接引自修改2 原文">修改2</span>本人参与岗位沟通、简历更新和面试，不代表同意跨城市变更工作地点或降低劳动合同约定待遇；公司不应仅因本人参与上述流程而认定双方已经就相关变更达成一致。</p>
+        <h3 class="fin-h" id="f27"><span class="src v2" title="直接引自修改2 原文">修改2</span>四、关于劳动报酬及社会保险、住房公积金</h3>
+        <p id="f28"><span class="src both" title="两版内容合并并改写">两版合并</span><mark class="fx" data-jump="r15">公司通知所援引的劳动合同第5.7条，本人从未确认其适用于本次情形。该条以「客观情况发生重大变化、公司无法安排本人在业务或项目上工作」为前提，本次待岗是否符合该前提，尚待公司举证说明。<sup>15</sup></mark></p>
+        <p id="f29"><span class="src v1" title="直接引自第一版原文">第一版</span><mark class="fx" data-jump="r15">在待岗是否依法成立确定之前，公司应按原劳动合同约定的正常工资标准支付劳动报酬。本人并非仅就支付金额提出异议，而是对本次待岗的成立条件本身提出异议。<sup>15</sup></mark></p>
+        <p id="f30"><span class="src v2" title="直接引自修改2 原文">修改2</span>请公司书面明确本次是否拟适用第5.7条，以及适用的具体事实、各阶段起止日期、支付金额、工资组成和计算方式，并明确社会保险及住房公积金的缴纳地点、基数和扣缴安排；如拟调整，请说明依据。</p>
+        <p id="f31"><span class="src v2" title="直接引自修改2 原文">修改2</span>如公司实际安排本人承担业务、项目工作，请按照合同关于恢复正常工作后薪资标准的约定执行。对于培训及其他工作安排，请结合实际履行情况依法支付相应劳动报酬。</p>
+        <p id="f32"><span class="src both" title="两版内容合并并改写">两版合并</span><mark class="fx" data-jump="r15">如公司未按照劳动合同约定提供劳动条件，或未依法足额支付劳动报酬，本人保留依据《劳动合同法》第三十八条第（一）项、第（二）项解除劳动合同并主张经济补偿及其他劳动权益的权利。<sup>15</sup></mark></p>
+        <h3 class="fin-h" id="f33"><span class="src v2" title="直接引自修改2 原文">修改2</span>五、关于项目交接</h3>
+        <p id="f34"><span class="src v2" title="直接引自修改2 原文">修改2</span>本人将在2026年12月1日前，按照公司及客户明确的要求和授权流程，配合完成本人职责范围内的工作资料、工作账号权限及相关资产交接。</p>
+        <p id="f35"><span class="src v2" title="直接引自修改2 原文">修改2</span><mark class="fx" data-jump="r16">请公司明确接收人员、交接清单及验收方式，并在交接完成后由接收人员签署交接清单、出具书面确认。<sup>16</sup></mark></p>
+        <p id="f36"><span class="src v2" title="直接引自修改2 原文">修改2</span>如交接需要其他人员配合或存在客观障碍，本人将及时反馈。</p>
+        <p id="f37"><span class="src v2" title="直接引自修改2 原文">修改2</span>本人办理的是项目工作交接，不代表本人申请离职、同意解除劳动合同，亦不代表本人认可待岗、跨城市调动或降低待遇。</p>
+        <h3 class="fin-h" id="f38"><span class="src v2" title="直接引自修改2 原文">修改2</span>六、关于后续处理及书面回复</h3>
+        <p id="f39"><span class="src v2" title="直接引自修改2 原文">修改2</span>本人希望公司优先提供符合劳动合同约定条件的北京岗位。如公司认为无法继续按照劳动合同约定安排工作，请书面说明原因及拟采取的处理方案。本人未提出解除劳动合同。</p>
+        <p id="f40"><span class="src v1" title="直接引自第一版原文">第一版</span><mark class="fx" data-jump="r17">请公司于收到本函后五个工作日内，书面撤销本次待岗决定，恢复本人原岗位及原工资待遇，并就上述事项一并作出书面回复；逾期未回复或未撤销的，本人将依法主张相应权利。<sup>17</sup></mark></p>
+        <p id="f41"><span class="src v1" title="直接引自第一版原文">第一版</span><mark class="fx" data-jump="r18">如公司拟协商解除劳动合同，应由公司提出解除动议，双方协商一致后依法支付经济补偿；<sup>18</sup></mark>相关解除条件、经济补偿及其他应付款项，应另行协商并以明确的书面协议为准。</p>
+        <p id="f42"><span class="src v1" title="直接引自第一版原文">第一版</span>依法应支付的工资、奖金、未休年休假工资及其他款项，应分别列明项目及金额，不应在未明确明细的情况下笼统包含在经济补偿中。</p>
+        <p id="f43"><span class="src v2" title="直接引自修改2 原文">修改2</span>本函仅用于提出异议、确认履约意愿及请求公司说明，不构成本人的辞职申请、解除劳动合同通知，亦不构成对降薪、跨城市调动或放弃劳动权益的同意。后续如另行签署协议，其效力及履行按协议约定和法律规定处理。</p>
+        <p id="f44"><span class="src v2" title="直接引自修改2 原文">修改2</span><mark class="fx" data-jump="r20">本人愿意在继续正常履行劳动合同的同时，以不降低劳动合同约定条件为前提，与公司就本次项目调整问题进行沟通。<sup>20</sup></mark></p>
         <p class="fin-r" id="f45">此致</p>
         <p class="fin-r" id="f46">上海微创软件股份有限公司北京分公司</p>
         <p class="fin-r" id="f47">回复人：_________________</p>
@@ -807,147 +820,147 @@ mark.flash{animation:flash2 1.5s ease}
     <p class="sec-desc">按正文出现顺序编号。「正文」「第一版」「修改2」为原文定位，「缺 n」为第 03 节对应缺陷。</p>
     <div class="rgrid">
       <article class="rcard" id="r1">
-        <div class="rtop"><span class="rn">01</span><h4>标题</h4><span class="rmk off">沿用修改2</span></div>
+        <div class="rtop"><span class="rn">01</span><h4>标题</h4><span class="src v2">修改2</span><span class="rmk off">沿用修改2</span></div>
         <p class="rhow"><span class="lb">改法</span>采用修改2 的总标题，覆盖「项目调整、待岗安排、合同履行」三个议题。</p>
         <p class="rlaw"><span class="lb law">依据</span>—</p>
         <p class="rgain"><span class="lb gain">赔偿利益</span>把后续关于劳动条件、报酬、解除补偿的主张一并纳入函件射程，避免被回复「超出函件范围」。</p>
         <div class="rjump"><a class="chip" href="#" data-jump="f0">正文</a><a class="chip" href="#" data-jump="pv1-0">第一版</a><a class="chip" href="#" data-jump="pv2-0">修改2</a></div>
       </article>
       <article class="rcard" id="r2">
-        <div class="rtop"><span class="rn">02</span><h4>致送对象</h4><span class="rmk">正文已标</span></div>
+        <div class="rtop"><span class="rn">02</span><h4>致送对象</h4><span class="src v2">修改2</span><span class="rmk">正文已标</span></div>
         <p class="rhow"><span class="lb">改法</span>收件人写「人力资源部及相关部门」，比「及相关管理部门」更具体。</p>
         <p class="rlaw"><span class="lb law">依据</span>—</p>
         <p class="rgain"><span class="lb gain">赔偿利益</span>送达实际决策部门，减少被前台或无关部门签收后搁置。</p>
         <div class="rjump"><a class="chip" href="#" data-jump="f1">正文</a><a class="chip" href="#" data-jump="pv1-1">第一版</a><a class="chip" href="#" data-jump="pv2-1">修改2</a></div>
       </article>
       <article class="rcard" id="r3">
-        <div class="rtop"><span class="rn">03</span><h4>身份信息</h4><span class="rmk off">沿用修改2</span></div>
+        <div class="rtop"><span class="rn">03</span><h4>身份信息</h4><span class="src v2">修改2</span><span class="rmk off">沿用修改2</span></div>
         <p class="rhow"><span class="lb">改法</span>采用修改2：删身份证号栏、把「贵公司」改为「公司」、补「劳动合同约定工作地点」。</p>
         <p class="rlaw"><span class="lb law">依据</span>《劳动合同法》第17条</p>
         <p class="rgain"><span class="lb gain">赔偿利益</span>工作地点写入后成为约定核心条款，单方变更须协商一致，是跨市调岗抗辩的合同支点。</p>
         <div class="rjump"><a class="chip" href="#" data-jump="f2">正文</a><a class="chip" href="#" data-jump="pv1-2">第一版</a><a class="chip" href="#" data-jump="pv2-2">修改2</a></div>
       </article>
       <article class="rcard" id="r4">
-        <div class="rtop"><span class="rn">04</span><h4>待岗事实陈述</h4><span class="rmk off">沿用修改2</span></div>
+        <div class="rtop"><span class="rn">04</span><h4>待岗事实陈述</h4><span class="src v2">修改2</span><span class="rmk off">沿用修改2</span></div>
         <p class="rhow"><span class="lb">改法</span>只作转述、不作评价；报到地址锚定为「通知载明的北京办公地点」。</p>
         <p class="rlaw"><span class="lb law">依据</span>—</p>
         <p class="rgain"><span class="lb gain">赔偿利益</span>避免在事实段作出「客户方业务调整成立」之类的自认；保留「等待后续安排」这一未提供工作的事实。</p>
         <div class="rjump"><a class="chip" href="#" data-jump="f3">正文</a><a class="chip" href="#" data-jump="pv1-3">第一版</a><a class="chip" href="#" data-jump="pv2-3">修改2</a></div>
       </article>
       <article class="rcard" id="r5">
-        <div class="rtop"><span class="rn">05</span><h4>诉求开场白</h4><span class="rmk off">沿用修改2</span></div>
+        <div class="rtop"><span class="rn">05</span><h4>诉求开场白</h4><span class="src v2">修改2</span><span class="rmk off">沿用修改2</span></div>
         <p class="rhow"><span class="lb">改法</span>沿用修改2 的过渡句「现就有关事项提出书面异议，并请求公司确认如下」。</p>
         <p class="rlaw"><span class="lb law">依据</span>—</p>
         <p class="rgain"><span class="lb gain">赔偿利益</span>把后文统一界定为「异议＋请求」，为证明已提出异议、公司拒不改正留痕。</p>
         <div class="rjump"><a class="chip" href="#" data-jump="f4">正文</a></div>
       </article>
       <article class="rcard" id="r6">
-        <div class="rtop"><span class="rn">06</span><h4>第一章 立场定性</h4><span class="rmk off">沿用修改2</span></div>
+        <div class="rtop"><span class="rn">06</span><h4>第一章 立场定性</h4><span class="src v2">修改2</span><span class="rmk off">沿用修改2</span></div>
         <p class="rhow"><span class="lb">改法</span>先表履约意愿、声明未申请待岗或离职，再点明报到与配合不构成对第5.7条的认可；把「明确不同意」后置。</p>
         <p class="rlaw"><span class="lb law">依据</span>《劳动合同法》第38条</p>
         <p class="rgain"><span class="lb gain">赔偿利益</span>公司难以主张本人拒不到岗或旷工，同时不放弃异议。</p>
         <div class="rjump"><a class="chip" href="#" data-jump="f5">正文</a><a class="chip" href="#" data-jump="pv1-4">第一版</a><a class="chip" href="#" data-jump="pv2-5">修改2</a></div>
       </article>
       <article class="rcard" id="r7">
-        <div class="rtop"><span class="rn">07</span><h4>通知未载明不能胜任或违纪</h4><span class="rmk off">沿用修改2</span></div>
+        <div class="rtop"><span class="rn">07</span><h4>通知未载明不能胜任或违纪</h4><span class="src v2">修改2</span><span class="rmk off">沿用修改2</span></div>
         <p class="rhow"><span class="lb">改法</span>新增此句，明确点出通知未给出任何不利事实依据。</p>
         <p class="rlaw"><span class="lb law">依据</span>《劳动合同法》第40条第(二)项</p>
         <p class="rgain"><span class="lb gain">赔偿利益</span>提前固定「公司未以不能胜任为由」的事实；公司日后改口即自相矛盾。</p>
         <div class="rjump"><a class="chip" href="#" data-jump="f6">正文</a><a class="chip" href="#" data-jump="pv2-6">修改2</a></div>
       </article>
       <article class="rcard" id="r8">
-        <div class="rtop"><span class="rn">08</span><h4>报到与配合声明</h4><span class="rmk">正文已标</span></div>
+        <div class="rtop"><span class="rn">08</span><h4>报到与配合声明</h4><span class="src v2">修改2</span><span class="rmk">正文已标</span></div>
         <p class="rhow"><span class="lb">改法</span>收窄为「报到只系履行出勤义务，不表示认可本次待岗的定性／符合第5.7条适用条件」。</p>
         <p class="rlaw"><span class="lb law">依据</span>《劳动合同法》第35条</p>
         <p class="rgain"><span class="lb gain">赔偿利益</span>既保留出勤事实（防止被认定旷工），又不构成默示同意变更——这是保留解除权的关键。</p>
         <div class="rjump"><a class="chip" href="#" data-jump="f7">正文</a><a class="chip" href="#" data-jump="pv1-14">第一版</a><a class="chip" href="#" data-jump="pv2-8">修改2</a><a class="chip dim" href="#" data-jump="d6">缺 6</a></div>
       </article>
       <article class="rcard" id="r9">
-        <div class="rtop"><span class="rn">09</span><h4>弹性打卡申请</h4><span class="rmk">正文已标</span></div>
+        <div class="rtop"><span class="rn">09</span><h4>弹性打卡申请</h4><span class="src v1">第一版</span><span class="rmk">正文已标</span></div>
         <p class="rhow"><span class="lb">改法</span>加回第一版的弹性打卡申请，但把前提改为「如公司在此期间安排实际工作」。</p>
         <p class="rlaw"><span class="lb law">依据</span>—</p>
         <p class="rgain"><span class="lb gain">赔偿利益</span>保留合作姿态，又避免「申请弹性打卡」被解读为已接受待岗安排。</p>
         <div class="rjump"><a class="chip" href="#" data-jump="f9">正文</a><a class="chip" href="#" data-jump="pv1-18">第一版</a><a class="chip dim" href="#" data-jump="d9">缺 9</a></div>
       </article>
       <article class="rcard" id="r10">
-        <div class="rtop"><span class="rn">10</span><h4>第二章 第5.7条适用前提</h4><span class="rmk off">沿用修改2</span></div>
+        <div class="rtop"><span class="rn">10</span><h4>第二章 第5.7条适用前提</h4><span class="src v2">修改2</span><span class="rmk off">沿用修改2</span></div>
         <p class="rhow"><span class="lb">改法</span>以条文文义解释为主攻：原项目不再需要 ≠ 公司无法安排其他工作，两者须分别说明。</p>
         <p class="rlaw"><span class="lb law">依据</span>劳动合同第5.7条；《劳动合同法》第35条</p>
         <p class="rgain"><span class="lb gain">赔偿利益</span>把「无法安排其他工作」的举证责任推给公司；待岗前提不成立，降薪即失去基础。</p>
         <div class="rjump"><a class="chip" href="#" data-jump="f11">正文</a><a class="chip" href="#" data-jump="pv1-7">第一版</a><a class="chip" href="#" data-jump="pv2-11">修改2</a></div>
       </article>
       <article class="rcard" id="r11">
-        <div class="rtop"><span class="rn">11</span><h4>书面询问清单</h4><span class="rmk off">沿用修改2</span></div>
+        <div class="rtop"><span class="rn">11</span><h4>书面询问清单</h4><span class="src v2">修改2</span><span class="rmk off">沿用修改2</span></div>
         <p class="rhow"><span class="lb">改法</span>保留修改2 的五项询问（用工形式、待岗依据、北京岗位匹配、待岗期限、12月起工作内容）。</p>
         <p class="rlaw"><span class="lb law">依据</span>《劳动争议调解仲裁法》第6条</p>
         <p class="rgain"><span class="lb gain">赔偿利益</span>公司不答复或答非所问，仲裁中可主张由其承担不利后果。</p>
         <div class="rjump"><a class="chip" href="#" data-jump="f14">正文</a><a class="chip" href="#" data-jump="pv2-14">修改2</a></div>
       </article>
       <article class="rcard" id="r12">
-        <div class="rtop"><span class="rn">12</span><h4>第三章 第三十五条论证</h4><span class="rmk">正文已标</span></div>
+        <div class="rtop"><span class="rn">12</span><h4>第三章 第三十五条论证</h4><span class="src v1">第一版</span><span class="rmk">正文已标</span></div>
         <p class="rhow"><span class="lb">改法</span>回补第一版的第三十五条论证，并加第四十条第（三）项「应先协商变更」。</p>
         <p class="rlaw"><span class="lb law">依据</span>《劳动合同法》第35条、第40条第(三)项</p>
         <p class="rgain"><span class="lb gain">赔偿利益</span>跨市调岗无协商一致即不生效；公司强行外迁构成未按约定提供劳动条件。</p>
         <div class="rjump"><a class="chip" href="#" data-jump="f21">正文</a><a class="chip" href="#" data-jump="pv1-5">第一版</a><a class="chip dim" href="#" data-jump="d7">缺 7</a></div>
       </article>
       <article class="rcard" id="r13">
-        <div class="rtop"><span class="rn">13</span><h4>项目存续：应按原岗位提供工作</h4><span class="rmk">正文已标</span></div>
+        <div class="rtop"><span class="rn">13</span><h4>项目存续：应按原岗位提供工作</h4><span class="src new">新增</span><span class="rmk">正文已标</span></div>
         <p class="rhow"><span class="lb">改法</span>新增：公司经营与百度项目仍在存续、不属于停工停产，应按原岗位提供工作并支付报酬；同时请公司披露在执项目与北京岗位清单。</p>
         <p class="rlaw"><span class="lb law">依据</span>《劳动合同法》第17、29、30条；《工资支付暂行规定》第12条</p>
         <p class="rgain"><span class="lb gain">赔偿利益</span>待岗的法定前提是停工停产，项目存续即前提不成立；直接支撑恢复原岗位与补发工资差额的主张。</p>
         <div class="rjump"><a class="chip" href="#" data-jump="f22">正文</a><a class="chip dim" href="#" data-jump="d13">缺 13</a></div>
       </article>
       <article class="rcard" id="r14">
-        <div class="rtop"><span class="rn">14</span><h4>岗位匹配与「参与≠同意」</h4><span class="rmk off">沿用修改2</span></div>
+        <div class="rtop"><span class="rn">14</span><h4>岗位匹配与「参与≠同意」</h4><span class="src v2">修改2</span><span class="rmk off">沿用修改2</span></div>
         <p class="rhow"><span class="lb">改法</span>要求公司提供工作地点、职责、任职要求、职级、薪酬；声明参与沟通、更新简历、面试不构成同意。</p>
         <p class="rlaw"><span class="lb law">依据</span>《劳动合同法》第35条</p>
         <p class="rgain"><span class="lb gain">赔偿利益</span>推动公司实际匹配岗位，同时堵住「已参加面试＝已同意调岗」的推定。</p>
         <div class="rjump"><a class="chip" href="#" data-jump="f23">正文</a><a class="chip" href="#" data-jump="pv1-5">第一版</a><a class="chip" href="#" data-jump="pv2-21">修改2</a></div>
       </article>
       <article class="rcard" id="r15">
-        <div class="rtop"><span class="rn">15</span><h4>第四章 劳动报酬</h4><span class="rmk">正文已标</span></div>
+        <div class="rtop"><span class="rn">15</span><h4>第四章 劳动报酬</h4><span class="src both">两版合并</span><span class="rmk">正文已标</span></div>
         <p class="rhow"><span class="lb">改法</span>删除「知悉第5.7条」的自认；改为「待岗是否成立未定，应先按原标准支付」；并列第38条第（一）（二）项。</p>
         <p class="rlaw"><span class="lb law">依据</span>《劳动合同法》第38条第(一)(二)项；《北京市工资支付规定》第27条</p>
         <p class="rgain"><span class="lb gain">赔偿利益</span>不在金额上纠缠（最低工资本身可能合法），而在「待岗是否成立」上发力；并列「未提供劳动条件」，扩大被迫解除与 N 的主张空间。</p>
         <div class="rjump"><a class="chip" href="#" data-jump="f28">正文</a><a class="chip" href="#" data-jump="pv1-19">第一版</a><a class="chip" href="#" data-jump="pv2-25">修改2</a><a class="chip dim" href="#" data-jump="d2">缺 2</a><a class="chip dim" href="#" data-jump="d3">缺 3</a><a class="chip dim" href="#" data-jump="d12">缺 12</a></div>
       </article>
       <article class="rcard" id="r16">
-        <div class="rtop"><span class="rn">16</span><h4>第五章 工作交接</h4><span class="rmk">正文已标</span></div>
+        <div class="rtop"><span class="rn">16</span><h4>第五章 工作交接</h4><span class="src v2">修改2</span><span class="rmk">正文已标</span></div>
         <p class="rhow"><span class="lb">改法</span>限定「职责范围内」「按授权流程」，要求接收人签署交接清单并出具书面确认；补「交接不代表离职」。</p>
         <p class="rlaw"><span class="lb law">依据</span>《劳动合同法》第50条</p>
         <p class="rgain"><span class="lb gain">赔偿利益</span>履行交接义务防被指拒不配合；书面确认可作为抗辩「未完成交接」的证据。</p>
         <div class="rjump"><a class="chip" href="#" data-jump="f34">正文</a><a class="chip" href="#" data-jump="pv1-27">第一版</a><a class="chip" href="#" data-jump="pv2-31">修改2</a><a class="chip dim" href="#" data-jump="d11">缺 11</a></div>
       </article>
       <article class="rcard" id="r17">
-        <div class="rtop"><span class="rn">17</span><h4>第六章 明确请求撤销待岗</h4><span class="rmk">正文已标</span></div>
+        <div class="rtop"><span class="rn">17</span><h4>第六章 明确请求撤销待岗</h4><span class="src v2">修改2</span><span class="rmk">正文已标</span></div>
         <p class="rhow"><span class="lb">改法</span>明确要求 5 个工作日内书面撤销待岗、恢复原岗位及原工资待遇，并写明逾期后果。</p>
         <p class="rlaw"><span class="lb law">依据</span>《劳动合同法》第38条</p>
         <p class="rgain"><span class="lb gain">赔偿利益</span>没有撤销请求，就无法证明公司「拒不改正」；这是后续被迫解除并主张经济补偿的请求基础。</p>
         <div class="rjump"><a class="chip" href="#" data-jump="f39">正文</a><a class="chip" href="#" data-jump="pv1-22">第一版</a><a class="chip" href="#" data-jump="pv2-35">修改2</a><a class="chip dim" href="#" data-jump="d4">缺 4</a><a class="chip dim" href="#" data-jump="d10">缺 10</a></div>
       </article>
       <article class="rcard" id="r18">
-        <div class="rtop"><span class="rn">18</span><h4>协商解除：由公司提出动议</h4><span class="rmk">正文已标</span></div>
+        <div class="rtop"><span class="rn">18</span><h4>协商解除：由公司提出动议</h4><span class="src v1">第一版</span><span class="rmk">正文已标</span></div>
         <p class="rhow"><span class="lb">改法</span>改为「如公司拟协商解除，应由公司提出解除动议，协商一致后依法支付经济补偿」。</p>
         <p class="rlaw"><span class="lb law">依据</span>《劳动合同法》第36条、第46条第(二)项</p>
         <p class="rgain"><span class="lb gain">赔偿利益</span>N 的支付前提是「用人单位提出」；若由劳动者提出，公司可拒付。</p>
         <div class="rjump"><a class="chip" href="#" data-jump="f41">正文</a><a class="chip" href="#" data-jump="pv1-25">第一版</a><a class="chip" href="#" data-jump="pv2-37">修改2</a><a class="chip dim" href="#" data-jump="d1">缺 1</a></div>
       </article>
       <article class="rcard" id="r19">
-        <div class="rtop"><span class="rn">19</span><h4>不构成同意声明</h4><span class="rmk off">沿用修改2</span></div>
+        <div class="rtop"><span class="rn">19</span><h4>不构成同意声明</h4><span class="src v2">修改2</span><span class="rmk off">沿用修改2</span></div>
         <p class="rhow"><span class="lb">改法</span>采用修改2 的完整声明，保留「后续另行签署协议按协议约定处理」。</p>
         <p class="rlaw"><span class="lb law">依据</span>《民法典》第136条、第496条</p>
         <p class="rgain"><span class="lb gain">赔偿利益</span>到岗、打卡、交接都会形成客观事实；声明越完整，越难被推定默示同意。</p>
         <div class="rjump"><a class="chip" href="#" data-jump="f43">正文</a><a class="chip" href="#" data-jump="pv1-26">第一版</a><a class="chip" href="#" data-jump="pv2-39">修改2</a></div>
       </article>
       <article class="rcard" id="r20">
-        <div class="rtop"><span class="rn">20</span><h4>边履行边协商</h4><span class="rmk">正文已标</span></div>
+        <div class="rtop"><span class="rn">20</span><h4>边履行边协商</h4><span class="src v2">修改2</span><span class="rmk">正文已标</span></div>
         <p class="rhow"><span class="lb">改法</span>保留该句，加限定「以不降低劳动合同约定条件为前提」。</p>
         <p class="rlaw"><span class="lb law">依据</span>《劳动合同法》第35条</p>
         <p class="rgain"><span class="lb gain">赔偿利益</span>留协商台阶，同时锁住底线，避免被解读为接受降薪或协商解除。</p>
         <div class="rjump"><a class="chip" href="#" data-jump="f44">正文</a><a class="chip" href="#" data-jump="pv2-40">修改2</a><a class="chip dim" href="#" data-jump="d8">缺 8</a></div>
       </article>
       <article class="rcard" id="r21">
-        <div class="rtop"><span class="rn">21</span><h4>落款</h4><span class="rmk off">沿用修改2</span></div>
+        <div class="rtop"><span class="rn">21</span><h4>落款</h4><span class="src both">两版合并</span><span class="rmk off">沿用修改2</span></div>
         <p class="rhow"><span class="lb">改法</span>与两版一致，保留回复人与日期。</p>
         <p class="rlaw"><span class="lb law">依据</span>—</p>
         <p class="rgain"><span class="lb gain">赔偿利益</span>无需修改。</p>
